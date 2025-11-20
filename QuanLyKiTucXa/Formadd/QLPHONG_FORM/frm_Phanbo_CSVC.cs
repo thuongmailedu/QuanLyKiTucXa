@@ -35,16 +35,22 @@ namespace QuanLyKiTucXa
             LoadComboBoxNha();
             LoadComboBoxCSVC();
 
+            // Set ReadOnly cho các textbox thông tin
+            txtTEN_CSVC.ReadOnly = true;
+            txtTEN_NHACC.ReadOnly = true;
+            txtCHITIET.ReadOnly = true; // Chi tiết chỉ đọc
+
             if (isEditMode)
             {
                 comNHA.Enabled = false;
-                comTEN_CSVC.Enabled = false;
+                comMA_CSVC.Enabled = false;
                 LoadPhanBoInfo();
             }
             else
             {
-                txtMA_CSVC.Text = "";
+                txtTEN_CSVC.Text = "";
                 txtTEN_NHACC.Text = "";
+                txtCHITIET.Text = "";
                 txtSOLUONG.Text = "";
             }
         }
@@ -85,17 +91,16 @@ namespace QuanLyKiTucXa
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    // Lấy CSVC có trạng thái "Áp dụng" và hiển thị cả tên nhà cung cấp
+                    // THÊM CỘT CHITIET VÀO QUERY
                     string query = @"SELECT 
                                         DM.MA_CSVC,
-                                        DM.TEN_CSVC + ' - ' + ISNULL(NC.TEN_NHACC, N'Chưa có NCC') AS DISPLAY_TEXT,
                                         DM.TEN_CSVC,
-                                        NC.TEN_NHACC,
-                                        DM.MA_NHACC
+                                        ISNULL(NC.TEN_NHACC, N'') AS TEN_NHACC,
+                                        ISNULL(DM.CHITIET, N'') AS CHITIET
                                     FROM DM_CSVC DM
                                     LEFT JOIN NHACC NC ON DM.MA_NHACC = NC.MA_NHACC
                                     WHERE DM.TRANGTHAI = N'Áp dụng'
-                                    ORDER BY DM.TEN_CSVC, NC.TEN_NHACC";
+                                    ORDER BY DM.MA_CSVC";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -103,10 +108,10 @@ namespace QuanLyKiTucXa
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
 
-                        comTEN_CSVC.DataSource = dt;
-                        comTEN_CSVC.DisplayMember = "DISPLAY_TEXT"; // Hiển thị "Tên CSVC - Nhà cung cấp"
-                        comTEN_CSVC.ValueMember = "MA_CSVC";
-                        comTEN_CSVC.SelectedIndex = -1;
+                        comMA_CSVC.DataSource = dt;
+                        comMA_CSVC.DisplayMember = "MA_CSVC";
+                        comMA_CSVC.ValueMember = "MA_CSVC";
+                        comMA_CSVC.SelectedIndex = -1;
                     }
                 }
             }
@@ -117,21 +122,31 @@ namespace QuanLyKiTucXa
             }
         }
 
-        private void comTEN_CSVC_SelectedIndexChanged(object sender, EventArgs e)
+        // ĐỔI TÊN HÀM CHO ĐÚNG
+        private void comMA_CSVC_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comTEN_CSVC.SelectedIndex >= 0 && !isEditMode)
+            if (comMA_CSVC.SelectedIndex >= 0)
             {
                 try
                 {
-                    DataRowView drv = (DataRowView)comTEN_CSVC.SelectedItem;
-                    txtMA_CSVC.Text = drv["MA_CSVC"].ToString();
+                    DataRowView drv = (DataRowView)comMA_CSVC.SelectedItem;
+                    // Tự động điền thông tin CSVC
+                    txtTEN_CSVC.Text = drv["TEN_CSVC"].ToString();
                     txtTEN_NHACC.Text = drv["TEN_NHACC"] != DBNull.Value ? drv["TEN_NHACC"].ToString() : "";
+                    txtCHITIET.Text = drv["CHITIET"] != DBNull.Value ? drv["CHITIET"].ToString() : ""; // THÊM DÒNG NÀY
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        // GIỮ LẠI HÀM CŨ ĐỂ TƯƠNG THÍCH (nếu có chỗ nào còn dùng)
+        private void comTEN_CSVC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Gọi hàm mới
+            comMA_CSVC_SelectedIndexChanged(sender, e);
         }
 
         private void LoadPhanBoInfo()
@@ -147,7 +162,8 @@ namespace QuanLyKiTucXa
                                         NC.SOLUONG,
                                         NC.GHICHU,
                                         DM.TEN_CSVC,
-                                        NCC.TEN_NHACC
+                                        ISNULL(NCC.TEN_NHACC, N'') AS TEN_NHACC,
+                                        ISNULL(DM.CHITIET, N'') AS CHITIET
                                     FROM NHA_CSVC NC
                                     INNER JOIN DM_CSVC DM ON NC.MA_CSVC = DM.MA_CSVC
                                     LEFT JOIN NHACC NCC ON DM.MA_NHACC = NCC.MA_NHACC
@@ -163,11 +179,11 @@ namespace QuanLyKiTucXa
                             if (reader.Read())
                             {
                                 comNHA.SelectedValue = reader["MANHA"].ToString();
-                                comTEN_CSVC.SelectedValue = reader["MA_CSVC"].ToString();
-                                txtMA_CSVC.Text = reader["MA_CSVC"].ToString();
-                                txtTEN_NHACC.Text = reader["TEN_NHACC"] != DBNull.Value ? reader["TEN_NHACC"].ToString() : "";
+                                comMA_CSVC.SelectedValue = reader["MA_CSVC"].ToString();
+                                txtTEN_CSVC.Text = reader["TEN_CSVC"].ToString();
+                                txtTEN_NHACC.Text = reader["TEN_NHACC"].ToString();
+                                txtCHITIET.Text = reader["CHITIET"].ToString(); // THÊM DÒNG NÀY
                                 txtSOLUONG.Text = reader["SOLUONG"].ToString();
-                                //txtGHICHU.Text = reader["GHICHU"] != DBNull.Value ? reader["GHICHU"].ToString() : "";
                             }
                         }
                     }
@@ -190,11 +206,11 @@ namespace QuanLyKiTucXa
                 return false;
             }
 
-            if (comTEN_CSVC.SelectedIndex == -1)
+            if (comMA_CSVC.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn cơ sở vật chất!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                comTEN_CSVC.Focus();
+                comMA_CSVC.Focus();
                 return false;
             }
 
@@ -232,9 +248,9 @@ namespace QuanLyKiTucXa
 
                     if (isEditMode)
                     {
+                        // Chế độ sửa: chỉ cập nhật số lượng
                         query = @"UPDATE NHA_CSVC 
-                                SET SOLUONG = @SOLUONG,
-                                    GHICHU = @GHICHU
+                                SET SOLUONG = @SOLUONG
                                 WHERE MANHA = @MANHA AND MA_CSVC = @MA_CSVC";
                     }
                     else
@@ -244,7 +260,7 @@ namespace QuanLyKiTucXa
                         using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                         {
                             checkCmd.Parameters.AddWithValue("@MANHA", comNHA.SelectedValue.ToString());
-                            checkCmd.Parameters.AddWithValue("@MA_CSVC", comTEN_CSVC.SelectedValue.ToString());
+                            checkCmd.Parameters.AddWithValue("@MA_CSVC", comMA_CSVC.SelectedValue.ToString());
 
                             int count = (int)checkCmd.ExecuteScalar();
                             if (count > 0)
@@ -256,7 +272,7 @@ namespace QuanLyKiTucXa
                         }
 
                         query = @"INSERT INTO NHA_CSVC (MANHA, MA_CSVC, SOLUONG, GHICHU)
-                                VALUES (@MANHA, @MA_CSVC, @SOLUONG, @GHICHU)";
+                                VALUES (@MANHA, @MA_CSVC, @SOLUONG, NULL)";
                     }
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -269,23 +285,29 @@ namespace QuanLyKiTucXa
                         else
                         {
                             cmd.Parameters.AddWithValue("@MANHA", comNHA.SelectedValue.ToString());
-                            cmd.Parameters.AddWithValue("@MA_CSVC", comTEN_CSVC.SelectedValue.ToString());
+                            cmd.Parameters.AddWithValue("@MA_CSVC", comMA_CSVC.SelectedValue.ToString());
                         }
 
                         cmd.Parameters.AddWithValue("@SOLUONG", int.Parse(txtSOLUONG.Text.Trim()));
-                        //cmd.Parameters.AddWithValue("@GHICHU",
-                            //   string.IsNullOrWhiteSpace(txtGHICHU.Text) ? (object)DBNull.Value : txtGHICHU.Text.Trim());
 
-                        cmd.ExecuteNonQuery();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể lưu dữ liệu!", "Lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message, "Lỗi",
+                MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message + "\n\n" + ex.StackTrace, "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -307,7 +329,7 @@ namespace QuanLyKiTucXa
 
         private void txtMA_CSVC_TextChanged(object sender, EventArgs e)
         {
-
+            // Không làm gì
         }
     }
 }

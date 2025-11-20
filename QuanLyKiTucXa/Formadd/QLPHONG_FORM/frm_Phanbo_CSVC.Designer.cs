@@ -86,6 +86,7 @@
             this.btnLuu.Size = new System.Drawing.Size(73, 45);
             this.btnLuu.TabIndex = 79;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label8
             // 
@@ -247,7 +248,7 @@
             this.comMA_CSVC.Size = new System.Drawing.Size(262, 46);
             this.comMA_CSVC.TabIndex = 81;
             this.comMA_CSVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.comMA_CSVC.SelectedIndexChanged += new System.EventHandler(this.comTEN_CSVC_SelectedIndexChanged);
+            this.comMA_CSVC.SelectedIndexChanged += new System.EventHandler(this.comMA_CSVC_SelectedIndexChanged);
             // 
             // txtTEN_CSVC
             // 
@@ -269,7 +270,6 @@
             this.txtTEN_CSVC.SelectedText = "";
             this.txtTEN_CSVC.Size = new System.Drawing.Size(247, 45);
             this.txtTEN_CSVC.TabIndex = 77;
-            this.txtTEN_CSVC.TextChanged += new System.EventHandler(this.txtMA_CSVC_TextChanged);
             // 
             // frm_Phanbo_CSVC
             // 

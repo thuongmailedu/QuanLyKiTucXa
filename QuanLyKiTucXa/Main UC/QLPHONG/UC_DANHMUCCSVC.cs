@@ -470,8 +470,8 @@ namespace QuanLyKiTucXa
                 }
 
                 string maNha = dgvNHA_CSVC.SelectedRows[0].Cells["MANHA"].Value?.ToString();
-                string maCSVC = dgvNHA_CSVC.SelectedRows[0].Cells["MA_CSVC"].Value?.ToString();
-                string tenCSVC = dgvNHA_CSVC.SelectedRows[0].Cells["TEN_CSVC"].Value?.ToString();
+                string maCSVC = dgvNHA_CSVC.SelectedRows[0].Cells["MA_CSVC_2"].Value?.ToString();
+                string tenCSVC = dgvNHA_CSVC.SelectedRows[0].Cells["TEN_CSVC_2"].Value?.ToString();
 
                 if (string.IsNullOrEmpty(maNha) || string.IsNullOrEmpty(maCSVC))
                 {
