@@ -48,10 +48,10 @@
             this.dtpNGAY_HOANTHANH = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.comNHA = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comPHONG = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtMA_CSVC = new Guna.UI2.WinForms.Guna2TextBox();
-            this.comTEN_CSVC = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpNGAY_YEUCAU = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.comTRANGTHAI = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // btnHuy
@@ -67,6 +67,7 @@
             this.btnHuy.Size = new System.Drawing.Size(91, 45);
             this.btnHuy.TabIndex = 77;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
@@ -81,6 +82,7 @@
             this.btnLuu.Size = new System.Drawing.Size(79, 45);
             this.btnLuu.TabIndex = 76;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtCHITIET
             // 
@@ -178,7 +180,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(38, 169);
+            this.label8.Location = new System.Drawing.Point(444, 166);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 20);
             this.label8.TabIndex = 58;
@@ -188,7 +190,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(445, 169);
+            this.label7.Location = new System.Drawing.Point(38, 166);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 20);
             this.label7.TabIndex = 57;
@@ -302,7 +304,6 @@
             this.comNHA.Location = new System.Drawing.Point(593, 72);
             this.comNHA.Name = "comNHA";
             this.comNHA.Size = new System.Drawing.Size(197, 46);
-            this.comNHA.StartIndex = 0;
             this.comNHA.TabIndex = 79;
             this.comNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -321,49 +322,8 @@
             this.comPHONG.Location = new System.Drawing.Point(1016, 71);
             this.comPHONG.Name = "comPHONG";
             this.comPHONG.Size = new System.Drawing.Size(181, 46);
-            this.comPHONG.StartIndex = 0;
             this.comPHONG.TabIndex = 79;
             this.comPHONG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtMA_CSVC
-            // 
-            this.txtMA_CSVC.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtMA_CSVC.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMA_CSVC.DefaultText = "";
-            this.txtMA_CSVC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMA_CSVC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMA_CSVC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMA_CSVC.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMA_CSVC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMA_CSVC.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMA_CSVC.ForeColor = System.Drawing.Color.Black;
-            this.txtMA_CSVC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMA_CSVC.Location = new System.Drawing.Point(593, 157);
-            this.txtMA_CSVC.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtMA_CSVC.Name = "txtMA_CSVC";
-            this.txtMA_CSVC.PlaceholderText = "";
-            this.txtMA_CSVC.SelectedText = "";
-            this.txtMA_CSVC.Size = new System.Drawing.Size(197, 45);
-            this.txtMA_CSVC.TabIndex = 69;
-            // 
-            // comTEN_CSVC
-            // 
-            this.comTEN_CSVC.BackColor = System.Drawing.Color.Transparent;
-            this.comTEN_CSVC.BorderColor = System.Drawing.Color.Gray;
-            this.comTEN_CSVC.BorderRadius = 12;
-            this.comTEN_CSVC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comTEN_CSVC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comTEN_CSVC.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comTEN_CSVC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comTEN_CSVC.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.comTEN_CSVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comTEN_CSVC.ItemHeight = 40;
-            this.comTEN_CSVC.Location = new System.Drawing.Point(180, 156);
-            this.comTEN_CSVC.Name = "comTEN_CSVC";
-            this.comTEN_CSVC.Size = new System.Drawing.Size(183, 46);
-            this.comTEN_CSVC.StartIndex = 0;
-            this.comTEN_CSVC.TabIndex = 79;
-            this.comTEN_CSVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dtpNGAY_YEUCAU
             // 
@@ -404,6 +364,45 @@
             this.comTRANGTHAI.TabIndex = 79;
             this.comTRANGTHAI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.BorderColor = System.Drawing.Color.Gray;
+            this.guna2ComboBox1.BorderRadius = 12;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.ItemHeight = 40;
+            this.guna2ComboBox1.Location = new System.Drawing.Point(180, 157);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.Size = new System.Drawing.Size(183, 46);
+            this.guna2ComboBox1.TabIndex = 79;
+            this.guna2ComboBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(593, 156);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(197, 45);
+            this.guna2TextBox1.TabIndex = 69;
+            // 
             // frm_SCCSVC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -413,7 +412,7 @@
             this.Controls.Add(this.dtpNGAY_HOANTHANH);
             this.Controls.Add(this.comPHONG);
             this.Controls.Add(this.comTRANGTHAI);
-            this.Controls.Add(this.comTEN_CSVC);
+            this.Controls.Add(this.guna2ComboBox1);
             this.Controls.Add(this.comNHA);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.btnHuy);
@@ -426,7 +425,7 @@
             this.Controls.Add(this.txtNHACC);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtMA_CSVC);
+            this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtMA_SCCSVC);
             this.Controls.Add(this.label1);
@@ -465,9 +464,9 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpNGAY_HOANTHANH;
         private Guna.UI2.WinForms.Guna2ComboBox comNHA;
         private Guna.UI2.WinForms.Guna2ComboBox comPHONG;
-        private Guna.UI2.WinForms.Guna2TextBox txtMA_CSVC;
-        private Guna.UI2.WinForms.Guna2ComboBox comTEN_CSVC;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpNGAY_YEUCAU;
         private Guna.UI2.WinForms.Guna2ComboBox comTRANGTHAI;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
     }
 }

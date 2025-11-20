@@ -16,5 +16,15 @@ namespace QuanLyKiTucXa.Formadd.QLPHONG_FORM
         {
             InitializeComponent();
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

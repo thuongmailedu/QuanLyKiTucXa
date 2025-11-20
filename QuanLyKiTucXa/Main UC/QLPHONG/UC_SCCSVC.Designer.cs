@@ -28,19 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblSinhVien = new System.Windows.Forms.Label();
             this.dgvSCCSVC = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnfillter_SCCSVC = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btndelete_SCCSVC = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnedit_SCCSVC = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnadd_SCCSVC = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.txtSearch_SCCSVC = new Guna.UI2.WinForms.Guna2TextBox();
-            this.comfillter_SCCSVC = new Guna.UI2.WinForms.Guna2ComboBox();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MA_SCCSVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +45,13 @@
             this.NGAY_HOANTHANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TRANGTHAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHITIET = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnfillter = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btndelete = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnedit = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnadd = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.comfillter = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSCCSVC)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -71,26 +71,26 @@
             // dgvSCCSVC
             // 
             this.dgvSCCSVC.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvSCCSVC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvSCCSVC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvSCCSVC.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvSCCSVC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSCCSVC.BackgroundColor = System.Drawing.Color.White;
             this.dgvSCCSVC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvSCCSVC.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvSCCSVC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSCCSVC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSCCSVC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvSCCSVC.ColumnHeadersHeight = 45;
             this.dgvSCCSVC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -108,152 +108,21 @@
             this.dgvSCCSVC.Location = new System.Drawing.Point(82, 138);
             this.dgvSCCSVC.Name = "dgvSCCSVC";
             this.dgvSCCSVC.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSCCSVC.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSCCSVC.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvSCCSVC.RowHeadersWidth = 62;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvSCCSVC.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvSCCSVC.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvSCCSVC.RowTemplate.Height = 45;
             this.dgvSCCSVC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSCCSVC.Size = new System.Drawing.Size(1482, 646);
             this.dgvSCCSVC.TabIndex = 19;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel2.Controls.Add(this.btnfillter_SCCSVC);
-            this.panel2.Controls.Add(this.btndelete_SCCSVC);
-            this.panel2.Controls.Add(this.btnedit_SCCSVC);
-            this.panel2.Controls.Add(this.btnadd_SCCSVC);
-            this.panel2.Controls.Add(this.txtSearch_SCCSVC);
-            this.panel2.Controls.Add(this.comfillter_SCCSVC);
-            this.panel2.Location = new System.Drawing.Point(82, 61);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1482, 71);
-            this.panel2.TabIndex = 18;
-            // 
-            // btnfillter_SCCSVC
-            // 
-            this.btnfillter_SCCSVC.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.filter;
-            this.btnfillter_SCCSVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnfillter_SCCSVC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnfillter_SCCSVC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnfillter_SCCSVC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnfillter_SCCSVC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnfillter_SCCSVC.FillColor = System.Drawing.Color.Transparent;
-            this.btnfillter_SCCSVC.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnfillter_SCCSVC.ForeColor = System.Drawing.Color.White;
-            this.btnfillter_SCCSVC.Location = new System.Drawing.Point(1288, 15);
-            this.btnfillter_SCCSVC.Name = "btnfillter_SCCSVC";
-            this.btnfillter_SCCSVC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnfillter_SCCSVC.Size = new System.Drawing.Size(35, 40);
-            this.btnfillter_SCCSVC.TabIndex = 14;
-            // 
-            // btndelete_SCCSVC
-            // 
-            this.btndelete_SCCSVC.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
-            this.btndelete_SCCSVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btndelete_SCCSVC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btndelete_SCCSVC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btndelete_SCCSVC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btndelete_SCCSVC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btndelete_SCCSVC.FillColor = System.Drawing.Color.Transparent;
-            this.btndelete_SCCSVC.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btndelete_SCCSVC.ForeColor = System.Drawing.Color.White;
-            this.btndelete_SCCSVC.Location = new System.Drawing.Point(1421, 19);
-            this.btndelete_SCCSVC.Name = "btndelete_SCCSVC";
-            this.btndelete_SCCSVC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btndelete_SCCSVC.Size = new System.Drawing.Size(35, 32);
-            this.btndelete_SCCSVC.TabIndex = 13;
-            // 
-            // btnedit_SCCSVC
-            // 
-            this.btnedit_SCCSVC.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
-            this.btnedit_SCCSVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnedit_SCCSVC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnedit_SCCSVC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnedit_SCCSVC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnedit_SCCSVC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnedit_SCCSVC.FillColor = System.Drawing.Color.Transparent;
-            this.btnedit_SCCSVC.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnedit_SCCSVC.ForeColor = System.Drawing.Color.White;
-            this.btnedit_SCCSVC.Location = new System.Drawing.Point(1384, 19);
-            this.btnedit_SCCSVC.Name = "btnedit_SCCSVC";
-            this.btnedit_SCCSVC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnedit_SCCSVC.Size = new System.Drawing.Size(31, 32);
-            this.btnedit_SCCSVC.TabIndex = 12;
-            // 
-            // btnadd_SCCSVC
-            // 
-            this.btnadd_SCCSVC.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
-            this.btnadd_SCCSVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnadd_SCCSVC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnadd_SCCSVC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnadd_SCCSVC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnadd_SCCSVC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnadd_SCCSVC.FillColor = System.Drawing.Color.Transparent;
-            this.btnadd_SCCSVC.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnadd_SCCSVC.ForeColor = System.Drawing.Color.White;
-            this.btnadd_SCCSVC.Location = new System.Drawing.Point(1339, 19);
-            this.btnadd_SCCSVC.Name = "btnadd_SCCSVC";
-            this.btnadd_SCCSVC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnadd_SCCSVC.Size = new System.Drawing.Size(30, 32);
-            this.btnadd_SCCSVC.TabIndex = 11;
-            this.btnadd_SCCSVC.Click += new System.EventHandler(this.btn_SCCSVC_Click);
-            // 
-            // txtSearch_SCCSVC
-            // 
-            this.txtSearch_SCCSVC.BorderColor = System.Drawing.Color.Gray;
-            this.txtSearch_SCCSVC.BorderRadius = 12;
-            this.txtSearch_SCCSVC.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch_SCCSVC.DefaultText = "";
-            this.txtSearch_SCCSVC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch_SCCSVC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch_SCCSVC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch_SCCSVC.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch_SCCSVC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch_SCCSVC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch_SCCSVC.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch_SCCSVC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch_SCCSVC.IconLeftOffset = new System.Drawing.Point(20, 0);
-            this.txtSearch_SCCSVC.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txtSearch_SCCSVC.Location = new System.Drawing.Point(177, 11);
-            this.txtSearch_SCCSVC.Margin = new System.Windows.Forms.Padding(5);
-            this.txtSearch_SCCSVC.Name = "txtSearch_SCCSVC";
-            this.txtSearch_SCCSVC.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch_SCCSVC.PlaceholderText = "Nhập để tìm kiếm";
-            this.txtSearch_SCCSVC.SelectedText = "";
-            this.txtSearch_SCCSVC.Size = new System.Drawing.Size(968, 51);
-            this.txtSearch_SCCSVC.TabIndex = 10;
-            this.txtSearch_SCCSVC.TextOffset = new System.Drawing.Point(10, 0);
-            // 
-            // comfillter_SCCSVC
-            // 
-            this.comfillter_SCCSVC.BackColor = System.Drawing.Color.Transparent;
-            this.comfillter_SCCSVC.BorderColor = System.Drawing.Color.Gray;
-            this.comfillter_SCCSVC.BorderRadius = 12;
-            this.comfillter_SCCSVC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comfillter_SCCSVC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comfillter_SCCSVC.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comfillter_SCCSVC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comfillter_SCCSVC.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.comfillter_SCCSVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comfillter_SCCSVC.ItemHeight = 45;
-            this.comfillter_SCCSVC.Items.AddRange(new object[] {
-            "Mã nhà",
-            "Mã phòng"});
-            this.comfillter_SCCSVC.Location = new System.Drawing.Point(3, 11);
-            this.comfillter_SCCSVC.Name = "comfillter_SCCSVC";
-            this.comfillter_SCCSVC.Size = new System.Drawing.Size(157, 51);
-            this.comfillter_SCCSVC.StartIndex = 0;
-            this.comfillter_SCCSVC.TabIndex = 0;
-            this.comfillter_SCCSVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // STT
             // 
@@ -332,6 +201,140 @@
             this.CHITIET.MinimumWidth = 6;
             this.CHITIET.Name = "CHITIET";
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.Controls.Add(this.btnfillter);
+            this.panel2.Controls.Add(this.btndelete);
+            this.panel2.Controls.Add(this.btnedit);
+            this.panel2.Controls.Add(this.btnadd);
+            this.panel2.Controls.Add(this.txtSearch);
+            this.panel2.Controls.Add(this.comfillter);
+            this.panel2.Location = new System.Drawing.Point(82, 61);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1482, 71);
+            this.panel2.TabIndex = 18;
+            // 
+            // btnfillter
+            // 
+            this.btnfillter.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.filter;
+            this.btnfillter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfillter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnfillter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnfillter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnfillter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnfillter.FillColor = System.Drawing.Color.Transparent;
+            this.btnfillter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnfillter.ForeColor = System.Drawing.Color.White;
+            this.btnfillter.Location = new System.Drawing.Point(1288, 15);
+            this.btnfillter.Name = "btnfillter";
+            this.btnfillter.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnfillter.Size = new System.Drawing.Size(35, 40);
+            this.btnfillter.TabIndex = 14;
+            this.btnfillter.Click += new System.EventHandler(this.btnfillter_Click);
+            // 
+            // btndelete
+            // 
+            this.btndelete.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
+            this.btndelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btndelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btndelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btndelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btndelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btndelete.FillColor = System.Drawing.Color.Transparent;
+            this.btndelete.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btndelete.ForeColor = System.Drawing.Color.White;
+            this.btndelete.Location = new System.Drawing.Point(1421, 19);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btndelete.Size = new System.Drawing.Size(35, 32);
+            this.btndelete.TabIndex = 13;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
+            // 
+            // btnedit
+            // 
+            this.btnedit.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
+            this.btnedit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnedit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnedit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnedit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnedit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnedit.FillColor = System.Drawing.Color.Transparent;
+            this.btnedit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnedit.ForeColor = System.Drawing.Color.White;
+            this.btnedit.Location = new System.Drawing.Point(1384, 19);
+            this.btnedit.Name = "btnedit";
+            this.btnedit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnedit.Size = new System.Drawing.Size(31, 32);
+            this.btnedit.TabIndex = 12;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
+            // 
+            // btnadd
+            // 
+            this.btnadd.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
+            this.btnadd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnadd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnadd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnadd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnadd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnadd.FillColor = System.Drawing.Color.Transparent;
+            this.btnadd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnadd.ForeColor = System.Drawing.Color.White;
+            this.btnadd.Location = new System.Drawing.Point(1339, 19);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnadd.Size = new System.Drawing.Size(30, 32);
+            this.btnadd.TabIndex = 11;
+            this.btnadd.Click += new System.EventHandler(this.btn_SCCSVC_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BorderColor = System.Drawing.Color.Gray;
+            this.txtSearch.BorderRadius = 12;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
+            this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.txtSearch.Location = new System.Drawing.Point(177, 11);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch.PlaceholderText = "Nhập để tìm kiếm";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(968, 51);
+            this.txtSearch.TabIndex = 10;
+            this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // comfillter
+            // 
+            this.comfillter.BackColor = System.Drawing.Color.Transparent;
+            this.comfillter.BorderColor = System.Drawing.Color.Gray;
+            this.comfillter.BorderRadius = 12;
+            this.comfillter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comfillter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comfillter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comfillter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comfillter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comfillter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comfillter.ItemHeight = 45;
+            this.comfillter.Items.AddRange(new object[] {
+            "Mã nhà",
+            "Mã phòng"});
+            this.comfillter.Location = new System.Drawing.Point(3, 11);
+            this.comfillter.Name = "comfillter";
+            this.comfillter.Size = new System.Drawing.Size(157, 51);
+            this.comfillter.StartIndex = 0;
+            this.comfillter.TabIndex = 0;
+            this.comfillter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // UC_SCCSVC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -357,12 +360,12 @@
         private System.Windows.Forms.Label lblSinhVien;
         private System.Windows.Forms.DataGridView dgvSCCSVC;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2CircleButton btnfillter_SCCSVC;
-        private Guna.UI2.WinForms.Guna2CircleButton btndelete_SCCSVC;
-        private Guna.UI2.WinForms.Guna2CircleButton btnedit_SCCSVC;
-        private Guna.UI2.WinForms.Guna2CircleButton btnadd_SCCSVC;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearch_SCCSVC;
-        private Guna.UI2.WinForms.Guna2ComboBox comfillter_SCCSVC;
+        private Guna.UI2.WinForms.Guna2CircleButton btnfillter;
+        private Guna.UI2.WinForms.Guna2CircleButton btndelete;
+        private Guna.UI2.WinForms.Guna2CircleButton btnedit;
+        private Guna.UI2.WinForms.Guna2CircleButton btnadd;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private Guna.UI2.WinForms.Guna2ComboBox comfillter;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA_SCCSVC;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANHA;
