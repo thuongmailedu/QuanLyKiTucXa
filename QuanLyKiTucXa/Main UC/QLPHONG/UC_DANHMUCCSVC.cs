@@ -27,7 +27,7 @@ namespace QuanLyKiTucXa
             comfillter_DMCSVC.Items.Add("Tên CSVC");
             comfillter_DMCSVC.Items.Add("Nhà cung cấp");
             comfillter_DMCSVC.Items.Add("Trạng thái");
-            comfillter_DMCSVC.SelectedIndex = 0;
+            comfillter_DMCSVC.SelectedIndex = 0 ;
         }
 
         private void LoadDanhMucCSVC(string filterType = "", string searchValue = "")
