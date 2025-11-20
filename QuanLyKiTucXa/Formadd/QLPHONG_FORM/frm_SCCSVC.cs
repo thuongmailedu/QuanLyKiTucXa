@@ -26,5 +26,10 @@ namespace QuanLyKiTucXa.Formadd.QLPHONG_FORM
         {
 
         }
+
+        private void frm_SCCSVC_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
