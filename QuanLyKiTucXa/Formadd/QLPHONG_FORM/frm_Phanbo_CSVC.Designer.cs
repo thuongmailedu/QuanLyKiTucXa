@@ -33,7 +33,7 @@
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtNHACC = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTEN_NHACC = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSOLUONG = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -107,26 +107,26 @@
             this.label7.TabIndex = 72;
             this.label7.Text = "Mã CSVC";
             // 
-            // txtNHACC
+            // txtTEN_NHACC
             // 
-            this.txtNHACC.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtNHACC.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNHACC.DefaultText = "";
-            this.txtNHACC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNHACC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNHACC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNHACC.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNHACC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNHACC.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNHACC.ForeColor = System.Drawing.Color.Black;
-            this.txtNHACC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNHACC.Location = new System.Drawing.Point(679, 224);
-            this.txtNHACC.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtNHACC.Name = "txtNHACC";
-            this.txtNHACC.PlaceholderText = "";
-            this.txtNHACC.SelectedText = "";
-            this.txtNHACC.Size = new System.Drawing.Size(247, 45);
-            this.txtNHACC.TabIndex = 76;
+            this.txtTEN_NHACC.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTEN_NHACC.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTEN_NHACC.DefaultText = "";
+            this.txtTEN_NHACC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTEN_NHACC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTEN_NHACC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTEN_NHACC.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTEN_NHACC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTEN_NHACC.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTEN_NHACC.ForeColor = System.Drawing.Color.Black;
+            this.txtTEN_NHACC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTEN_NHACC.Location = new System.Drawing.Point(679, 224);
+            this.txtTEN_NHACC.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTEN_NHACC.Name = "txtTEN_NHACC";
+            this.txtTEN_NHACC.PlaceholderText = "";
+            this.txtTEN_NHACC.SelectedText = "";
+            this.txtTEN_NHACC.Size = new System.Drawing.Size(247, 45);
+            this.txtTEN_NHACC.TabIndex = 76;
             // 
             // label6
             // 
@@ -283,7 +283,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtTEN_CSVC);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtNHACC);
+            this.Controls.Add(this.txtTEN_NHACC);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtCHITIET);
             this.Controls.Add(this.txtSOLUONG);
@@ -309,7 +309,7 @@
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2TextBox txtNHACC;
+        private Guna.UI2.WinForms.Guna2TextBox txtTEN_NHACC;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2TextBox txtSOLUONG;
         private System.Windows.Forms.Label label5;

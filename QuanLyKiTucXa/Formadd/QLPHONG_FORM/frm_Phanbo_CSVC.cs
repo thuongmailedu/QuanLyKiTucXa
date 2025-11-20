@@ -44,7 +44,7 @@ namespace QuanLyKiTucXa
             else
             {
                 txtMA_CSVC.Text = "";
-                txtNHACC.Text = "";
+                txtTEN_NHACC.Text = "";
                 txtSOLUONG.Text = "";
             }
         }
@@ -125,7 +125,7 @@ namespace QuanLyKiTucXa
                 {
                     DataRowView drv = (DataRowView)comTEN_CSVC.SelectedItem;
                     txtMA_CSVC.Text = drv["MA_CSVC"].ToString();
-                    txtNHACC.Text = drv["TEN_NHACC"] != DBNull.Value ? drv["TEN_NHACC"].ToString() : "";
+                    txtTEN_NHACC.Text = drv["TEN_NHACC"] != DBNull.Value ? drv["TEN_NHACC"].ToString() : "";
                 }
                 catch (Exception ex)
                 {
@@ -165,7 +165,7 @@ namespace QuanLyKiTucXa
                                 comNHA.SelectedValue = reader["MANHA"].ToString();
                                 comTEN_CSVC.SelectedValue = reader["MA_CSVC"].ToString();
                                 txtMA_CSVC.Text = reader["MA_CSVC"].ToString();
-                                txtNHACC.Text = reader["TEN_NHACC"] != DBNull.Value ? reader["TEN_NHACC"].ToString() : "";
+                                txtTEN_NHACC.Text = reader["TEN_NHACC"] != DBNull.Value ? reader["TEN_NHACC"].ToString() : "";
                                 txtSOLUONG.Text = reader["SOLUONG"].ToString();
                                 //txtGHICHU.Text = reader["GHICHU"] != DBNull.Value ? reader["GHICHU"].ToString() : "";
                             }
