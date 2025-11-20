@@ -50,13 +50,13 @@
             this.comPHONG = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpNGAY_YEUCAU = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.comTRANGTHAI = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dgv = new System.Windows.Forms.DataGridView();
+            this.dgvDM_CSVC = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MA_CSVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN_CSVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN_NHACC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHITIET = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDM_CSVC)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHuy
@@ -107,7 +107,7 @@
             this.txtCHITIET.Name = "txtCHITIET";
             this.txtCHITIET.PlaceholderText = "";
             this.txtCHITIET.SelectedText = "";
-            this.txtCHITIET.Size = new System.Drawing.Size(610, 51);
+            this.txtCHITIET.Size = new System.Drawing.Size(590, 51);
             this.txtCHITIET.TabIndex = 70;
             // 
             // label14
@@ -318,21 +318,21 @@
             this.comTRANGTHAI.TabIndex = 79;
             this.comTRANGTHAI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // dgv
+            // dgvDM_CSVC
             // 
-            this.dgv.AllowUserToResizeRows = false;
+            this.dgvDM_CSVC.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv.BackgroundColor = System.Drawing.Color.White;
-            this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvDM_CSVC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDM_CSVC.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvDM_CSVC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDM_CSVC.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDM_CSVC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvDM_CSVC.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvDM_CSVC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -340,18 +340,18 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv.ColumnHeadersHeight = 45;
-            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDM_CSVC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDM_CSVC.ColumnHeadersHeight = 45;
+            this.dgvDM_CSVC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
             this.MA_CSVC,
             this.TEN_CSVC,
             this.TEN_NHACC,
             this.CHITIET});
-            this.dgv.EnableHeadersVisualStyles = false;
-            this.dgv.Location = new System.Drawing.Point(42, 113);
-            this.dgv.Name = "dgv";
-            this.dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvDM_CSVC.EnableHeadersVisualStyles = false;
+            this.dgvDM_CSVC.Location = new System.Drawing.Point(42, 113);
+            this.dgvDM_CSVC.Name = "dgvDM_CSVC";
+            this.dgvDM_CSVC.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -359,14 +359,14 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv.RowHeadersWidth = 62;
+            this.dgvDM_CSVC.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDM_CSVC.RowHeadersWidth = 62;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv.RowTemplate.Height = 45;
-            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1155, 299);
-            this.dgv.TabIndex = 81;
+            this.dgvDM_CSVC.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDM_CSVC.RowTemplate.Height = 45;
+            this.dgvDM_CSVC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDM_CSVC.Size = new System.Drawing.Size(1155, 299);
+            this.dgvDM_CSVC.TabIndex = 81;
             // 
             // STT
             // 
@@ -408,7 +408,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1221, 647);
-            this.Controls.Add(this.dgv);
+            this.Controls.Add(this.dgvDM_CSVC);
             this.Controls.Add(this.dtpNGAY_YEUCAU);
             this.Controls.Add(this.dtpNGAY_HOANTHANH);
             this.Controls.Add(this.comPHONG);
@@ -433,7 +433,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm mới thông tin sửa chữa ";
             this.Load += new System.EventHandler(this.frm_SCCSVC_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDM_CSVC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,7 +459,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox comPHONG;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpNGAY_YEUCAU;
         private Guna.UI2.WinForms.Guna2ComboBox comTRANGTHAI;
-        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.DataGridView dgvDM_CSVC;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA_CSVC;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN_CSVC;
