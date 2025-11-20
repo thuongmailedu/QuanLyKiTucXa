@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84477FB5-A460-4428-AE2E-937C9DCFD082}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyKiTucXa</RootNamespace>
+    <AssemblyName>QuanLyKiTucXa</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Formadd\HSSV\frm_addHSSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\HSSV\frm_addHSSV.Designer.cs">
+      <DependentUpon>frm_addHSSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\QLDV_FORM\frm_addDICHVU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\QLDV_FORM\frm_addDICHVU.Designer.cs">
+      <DependentUpon>frm_addDICHVU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\QLDV_FORM\frm_addHD_DIEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\QLDV_FORM\frm_addHD_DIEN.Designer.cs">
+      <DependentUpon>frm_addHD_DIEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\QLDV_FORM\frm_addHD_INT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\QLDV_FORM\frm_addHD_INT.Designer.cs">
+      <DependentUpon>frm_addHD_INT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\QLDV_FORM\frm_addHD_NUOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\QLDV_FORM\frm_addHD_NUOC.Designer.cs">
+      <DependentUpon>frm_addHD_NUOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\QLHD_FORM\frm_addHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\QLHD_FORM\frm_addHopDong.Designer.cs">
+      <DependentUpon>frm_addHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\QLHD_FORM\frm_Traphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\QLHD_FORM\frm_Traphong.Designer.cs">
+      <DependentUpon>frm_Traphong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\QLPHONG_FORM\frm_DM_CSVC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\QLPHONG_FORM\frm_DM_CSVC.Designer.cs">
+      <DependentUpon>frm_DM_CSVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\QLPHONG_FORM\frm_DM_PHONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\QLPHONG_FORM\frm_DM_PHONG.Designer.cs">
+      <DependentUpon>frm_DM_PHONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\QLPHONG_FORM\frm_Phanbo_CSVC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\QLPHONG_FORM\frm_Phanbo_CSVC.Designer.cs">
+      <DependentUpon>frm_Phanbo_CSVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\QLPHONG_FORM\frm_SCCSVC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\QLPHONG_FORM\frm_SCCSVC.Designer.cs">
+      <DependentUpon>frm_SCCSVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\QLPHONG_FORM\frm_test_addphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\QLPHONG_FORM\frm_test_addphong.Designer.cs">
+      <DependentUpon>frm_test_addphong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\testadddata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\testadddata.Designer.cs">
+      <DependentUpon>testadddata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLayout.Designer.cs">
+      <DependentUpon>frmLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HopDongValidator.cs" />
+    <Compile Include="Main UC\QLDV\UC_DANHMUC_DV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLDV\UC_DANHMUC_DV.Designer.cs">
+      <DependentUpon>UC_DANHMUC_DV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLDV\UC_HD_DIEN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLDV\UC_HD_DIEN.Designer.cs">
+      <DependentUpon>UC_HD_DIEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLDV\UC_HD_INT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLDV\UC_HD_INT.Designer.cs">
+      <DependentUpon>UC_HD_INT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLDV\UC_HD_NUOC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLDV\UC_HD_NUOC.Designer.cs">
+      <DependentUpon>UC_HD_NUOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLDV\UC_HOADON_DV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLDV\UC_HOADON_DV.Designer.cs">
+      <DependentUpon>UC_HOADON_DV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLHD\UC_ThuePhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLHD\UC_ThuePhong.Designer.cs">
+      <DependentUpon>UC_ThuePhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLHD\UC_TraPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLHD\UC_TraPhong.Designer.cs">
+      <DependentUpon>UC_TraPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLPHONG\UC_DANHMUCCSVC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLPHONG\UC_DANHMUCCSVC.Designer.cs">
+      <DependentUpon>UC_DANHMUCCSVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLPHONG\UC_DANHMUCPHONG.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLPHONG\UC_DANHMUCPHONG.Designer.cs">
+      <DependentUpon>UC_DANHMUCPHONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLPHONG\UC_SCCSVC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLPHONG\UC_SCCSVC.Designer.cs">
+      <DependentUpon>UC_SCCSVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ribbons\UC_HOSOSINHVIEN_Ribbon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ribbons\UC_HOSOSINHVIEN_Ribbon.Designer.cs">
+      <DependentUpon>UC_HOSOSINHVIEN_Ribbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ribbons\UC_QLDV_Ribbon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ribbons\UC_QLDV_Ribbon.Designer.cs">
+      <DependentUpon>UC_QLDV_Ribbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ribbons\UC_QLHD_Ribbon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ribbons\UC_QLHD_Ribbon.Designer.cs">
+      <DependentUpon>UC_QLHD_Ribbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ribbons\UC_QLPHONG_Ribbon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ribbons\UC_QLPHONG_Ribbon.Designer.cs">
+      <DependentUpon>UC_QLPHONG_Ribbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ribbons\UC_TrangChu_Ribbon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ribbons\UC_TrangChu_Ribbon.Designer.cs">
+      <DependentUpon>UC_TrangChu_Ribbon.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Formadd\HSSV\frm_addHSSV.resx">
+      <DependentUpon>frm_addHSSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\QLDV_FORM\frm_addDICHVU.resx">
+      <DependentUpon>frm_addDICHVU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\QLDV_FORM\frm_addHD_DIEN.resx">
+      <DependentUpon>frm_addHD_DIEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\QLDV_FORM\frm_addHD_INT.resx">
+      <DependentUpon>frm_addHD_INT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\QLDV_FORM\frm_addHD_NUOC.resx">
+      <DependentUpon>frm_addHD_NUOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\QLHD_FORM\frm_addHopDong.resx">
+      <DependentUpon>frm_addHopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\QLHD_FORM\frm_Traphong.resx">
+      <DependentUpon>frm_Traphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\QLPHONG_FORM\frm_DM_CSVC.resx">
+      <DependentUpon>frm_DM_CSVC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\QLPHONG_FORM\frm_DM_PHONG.resx">
+      <DependentUpon>frm_DM_PHONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\QLPHONG_FORM\frm_Phanbo_CSVC.resx">
+      <DependentUpon>frm_Phanbo_CSVC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\QLPHONG_FORM\frm_SCCSVC.resx">
+      <DependentUpon>frm_SCCSVC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\QLPHONG_FORM\frm_test_addphong.resx">
+      <DependentUpon>frm_test_addphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\testadddata.resx">
+      <DependentUpon>testadddata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLayout.resx">
+      <DependentUpon>frmLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLDV\UC_DANHMUC_DV.resx">
+      <DependentUpon>UC_DANHMUC_DV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLDV\UC_HD_DIEN.resx">
+      <DependentUpon>UC_HD_DIEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLDV\UC_HD_INT.resx">
+      <DependentUpon>UC_HD_INT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLDV\UC_HD_NUOC.resx">
+      <DependentUpon>UC_HD_NUOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLDV\UC_HOADON_DV.resx">
+      <DependentUpon>UC_HOADON_DV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLHD\UC_ThuePhong.resx">
+      <DependentUpon>UC_ThuePhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLHD\UC_TraPhong.resx">
+      <DependentUpon>UC_TraPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLPHONG\UC_DANHMUCCSVC.resx">
+      <DependentUpon>UC_DANHMUCCSVC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLPHONG\UC_DANHMUCPHONG.resx">
+      <DependentUpon>UC_DANHMUCPHONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLPHONG\UC_SCCSVC.resx">
+      <DependentUpon>UC_SCCSVC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbons\UC_HOSOSINHVIEN_Ribbon.resx">
+      <DependentUpon>UC_HOSOSINHVIEN_Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbons\UC_QLDV_Ribbon.resx">
+      <DependentUpon>UC_QLDV_Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbons\UC_QLHD_Ribbon.resx">
+      <DependentUpon>UC_QLHD_Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbons\UC_QLPHONG_Ribbon.resx">
+      <DependentUpon>UC_QLPHONG_Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbons\UC_TrangChu_Ribbon.resx">
+      <DependentUpon>UC_TrangChu_Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-neu-inkythuatso-01-09-10-41-01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-10-25 170148.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-10-25 145054.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\create.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ayanami-rei-neon-genesis-evangelion-4k-live_thumb1-scaled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REMOVE1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\NewFolder1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle-ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
