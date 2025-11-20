@@ -514,6 +514,7 @@
             // 
             // MA_CSVC_2
             // 
+            this.MA_CSVC_2.DataPropertyName = "MA_CSVC";
             this.MA_CSVC_2.HeaderText = "Mã CSVC";
             this.MA_CSVC_2.MinimumWidth = 6;
             this.MA_CSVC_2.Name = "MA_CSVC_2";
@@ -534,7 +535,7 @@
             // 
             // NHACC_2
             // 
-            this.NHACC_2.DataPropertyName = "NHACC";
+            this.NHACC_2.DataPropertyName = "TEN_NHACC";
             this.NHACC_2.HeaderText = "Nhà cung cấp";
             this.NHACC_2.MinimumWidth = 8;
             this.NHACC_2.Name = "NHACC_2";
