@@ -1,4 +1,4 @@
-﻿namespace QuanLyKiTucXa.Formadd.QLPHONG_FORM
+﻿namespace QuanLyKiTucXa
 {
     partial class frm_Phanbo_CSVC
     {
@@ -69,6 +69,7 @@
             this.btnHuy.Size = new System.Drawing.Size(77, 45);
             this.btnHuy.TabIndex = 80;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
@@ -176,6 +177,7 @@
             this.txtSOLUONG.SelectedText = "";
             this.txtSOLUONG.Size = new System.Drawing.Size(225, 45);
             this.txtSOLUONG.TabIndex = 75;
+            this.txtSOLUONG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSOLUONG_KeyPress);
             // 
             // label5
             // 
@@ -212,7 +214,6 @@
             this.comNHA.Location = new System.Drawing.Point(151, 49);
             this.comNHA.Name = "comNHA";
             this.comNHA.Size = new System.Drawing.Size(225, 46);
-            this.comNHA.StartIndex = 0;
             this.comNHA.TabIndex = 81;
             this.comNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -233,6 +234,7 @@
             this.comTEN_CSVC.Size = new System.Drawing.Size(225, 46);
             this.comTEN_CSVC.TabIndex = 81;
             this.comTEN_CSVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.comTEN_CSVC.SelectedIndexChanged += new System.EventHandler(this.comTEN_CSVC_SelectedIndexChanged);
             // 
             // frm_Phanbo_CSVC
             // 
@@ -257,6 +259,7 @@
             this.Name = "frm_Phanbo_CSVC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phân bổ cơ sở vật chất";
+            this.Load += new System.EventHandler(this.frm_Phanbo_CSVC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
