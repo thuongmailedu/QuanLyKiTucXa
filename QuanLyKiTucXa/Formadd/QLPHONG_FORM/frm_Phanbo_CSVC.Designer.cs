@@ -32,7 +32,6 @@
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtMA_CSVC = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtNHACC = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -40,7 +39,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comNHA = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.comTEN_CSVC = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtCHITIET = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comMA_CSVC = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtTEN_CSVC = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -53,7 +55,7 @@
             this.panelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.panelMenu.MaximumSize = new System.Drawing.Size(1646, 125);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(904, 29);
+            this.panelMenu.Size = new System.Drawing.Size(964, 29);
             this.panelMenu.TabIndex = 55;
             // 
             // btnHuy
@@ -64,7 +66,7 @@
             this.btnHuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(679, 313);
+            this.btnHuy.Location = new System.Drawing.Point(755, 354);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(77, 45);
             this.btnHuy.TabIndex = 80;
@@ -79,7 +81,7 @@
             this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(777, 313);
+            this.btnLuu.Location = new System.Drawing.Point(853, 354);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(73, 45);
             this.btnLuu.TabIndex = 79;
@@ -89,38 +91,17 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(31, 152);
+            this.label8.Location = new System.Drawing.Point(559, 138);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 20);
             this.label8.TabIndex = 73;
             this.label8.Text = "Tên CSVC";
             // 
-            // txtMA_CSVC
-            // 
-            this.txtMA_CSVC.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtMA_CSVC.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMA_CSVC.DefaultText = "";
-            this.txtMA_CSVC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMA_CSVC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMA_CSVC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMA_CSVC.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMA_CSVC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMA_CSVC.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMA_CSVC.ForeColor = System.Drawing.Color.Black;
-            this.txtMA_CSVC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMA_CSVC.Location = new System.Drawing.Point(614, 140);
-            this.txtMA_CSVC.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtMA_CSVC.Name = "txtMA_CSVC";
-            this.txtMA_CSVC.PlaceholderText = "";
-            this.txtMA_CSVC.SelectedText = "";
-            this.txtMA_CSVC.Size = new System.Drawing.Size(225, 45);
-            this.txtMA_CSVC.TabIndex = 77;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(494, 152);
+            this.label7.Location = new System.Drawing.Point(31, 138);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 20);
             this.label7.TabIndex = 72;
@@ -139,19 +120,19 @@
             this.txtNHACC.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNHACC.ForeColor = System.Drawing.Color.Black;
             this.txtNHACC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNHACC.Location = new System.Drawing.Point(614, 224);
+            this.txtNHACC.Location = new System.Drawing.Point(679, 224);
             this.txtNHACC.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtNHACC.Name = "txtNHACC";
             this.txtNHACC.PlaceholderText = "";
             this.txtNHACC.SelectedText = "";
-            this.txtNHACC.Size = new System.Drawing.Size(225, 45);
+            this.txtNHACC.Size = new System.Drawing.Size(247, 45);
             this.txtNHACC.TabIndex = 76;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(494, 236);
+            this.label6.Location = new System.Drawing.Point(559, 236);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 20);
             this.label6.TabIndex = 71;
@@ -175,7 +156,7 @@
             this.txtSOLUONG.Name = "txtSOLUONG";
             this.txtSOLUONG.PlaceholderText = "";
             this.txtSOLUONG.SelectedText = "";
-            this.txtSOLUONG.Size = new System.Drawing.Size(225, 45);
+            this.txtSOLUONG.Size = new System.Drawing.Size(262, 45);
             this.txtSOLUONG.TabIndex = 75;
             this.txtSOLUONG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSOLUONG_KeyPress);
             // 
@@ -213,44 +194,100 @@
             this.comNHA.ItemHeight = 40;
             this.comNHA.Location = new System.Drawing.Point(151, 49);
             this.comNHA.Name = "comNHA";
-            this.comNHA.Size = new System.Drawing.Size(225, 46);
+            this.comNHA.Size = new System.Drawing.Size(262, 46);
             this.comNHA.TabIndex = 81;
             this.comNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // comTEN_CSVC
+            // txtCHITIET
             // 
-            this.comTEN_CSVC.BackColor = System.Drawing.Color.Transparent;
-            this.comTEN_CSVC.BorderColor = System.Drawing.Color.Gray;
-            this.comTEN_CSVC.BorderRadius = 12;
-            this.comTEN_CSVC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comTEN_CSVC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comTEN_CSVC.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comTEN_CSVC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comTEN_CSVC.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.comTEN_CSVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comTEN_CSVC.ItemHeight = 40;
-            this.comTEN_CSVC.Location = new System.Drawing.Point(151, 139);
-            this.comTEN_CSVC.Name = "comTEN_CSVC";
-            this.comTEN_CSVC.Size = new System.Drawing.Size(225, 46);
-            this.comTEN_CSVC.TabIndex = 81;
-            this.comTEN_CSVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.comTEN_CSVC.SelectedIndexChanged += new System.EventHandler(this.comTEN_CSVC_SelectedIndexChanged);
+            this.txtCHITIET.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtCHITIET.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCHITIET.DefaultText = "";
+            this.txtCHITIET.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCHITIET.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCHITIET.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCHITIET.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCHITIET.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCHITIET.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCHITIET.ForeColor = System.Drawing.Color.Black;
+            this.txtCHITIET.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCHITIET.Location = new System.Drawing.Point(151, 300);
+            this.txtCHITIET.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtCHITIET.Name = "txtCHITIET";
+            this.txtCHITIET.PlaceholderText = "";
+            this.txtCHITIET.SelectedText = "";
+            this.txtCHITIET.Size = new System.Drawing.Size(384, 99);
+            this.txtCHITIET.TabIndex = 75;
+            this.txtCHITIET.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSOLUONG_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(34, 314);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "Chi tiết";
+            // 
+            // comMA_CSVC
+            // 
+            this.comMA_CSVC.BackColor = System.Drawing.Color.Transparent;
+            this.comMA_CSVC.BorderColor = System.Drawing.Color.Gray;
+            this.comMA_CSVC.BorderRadius = 12;
+            this.comMA_CSVC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comMA_CSVC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comMA_CSVC.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comMA_CSVC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comMA_CSVC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comMA_CSVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comMA_CSVC.ItemHeight = 40;
+            this.comMA_CSVC.Location = new System.Drawing.Point(151, 125);
+            this.comMA_CSVC.Name = "comMA_CSVC";
+            this.comMA_CSVC.Size = new System.Drawing.Size(262, 46);
+            this.comMA_CSVC.TabIndex = 81;
+            this.comMA_CSVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.comMA_CSVC.SelectedIndexChanged += new System.EventHandler(this.comTEN_CSVC_SelectedIndexChanged);
+            // 
+            // txtTEN_CSVC
+            // 
+            this.txtTEN_CSVC.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTEN_CSVC.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTEN_CSVC.DefaultText = "";
+            this.txtTEN_CSVC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTEN_CSVC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTEN_CSVC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTEN_CSVC.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTEN_CSVC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTEN_CSVC.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTEN_CSVC.ForeColor = System.Drawing.Color.Black;
+            this.txtTEN_CSVC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTEN_CSVC.Location = new System.Drawing.Point(679, 125);
+            this.txtTEN_CSVC.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTEN_CSVC.Name = "txtTEN_CSVC";
+            this.txtTEN_CSVC.PlaceholderText = "";
+            this.txtTEN_CSVC.SelectedText = "";
+            this.txtTEN_CSVC.Size = new System.Drawing.Size(247, 45);
+            this.txtTEN_CSVC.TabIndex = 77;
+            this.txtTEN_CSVC.TextChanged += new System.EventHandler(this.txtMA_CSVC_TextChanged);
             // 
             // frm_Phanbo_CSVC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 409);
-            this.Controls.Add(this.comTEN_CSVC);
+            this.ClientSize = new System.Drawing.Size(964, 444);
+            this.Controls.Add(this.comMA_CSVC);
             this.Controls.Add(this.comNHA);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtMA_CSVC);
+            this.Controls.Add(this.txtTEN_CSVC);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtNHACC);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtCHITIET);
             this.Controls.Add(this.txtSOLUONG);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panelMenu);
@@ -271,7 +308,6 @@
         private Guna.UI2.WinForms.Guna2Button btnHuy;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2TextBox txtMA_CSVC;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TextBox txtNHACC;
         private System.Windows.Forms.Label label6;
@@ -279,6 +315,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2ComboBox comNHA;
-        private Guna.UI2.WinForms.Guna2ComboBox comTEN_CSVC;
+        private Guna.UI2.WinForms.Guna2TextBox txtCHITIET;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox comMA_CSVC;
+        private Guna.UI2.WinForms.Guna2TextBox txtTEN_CSVC;
     }
 }

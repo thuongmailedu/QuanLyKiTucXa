@@ -432,8 +432,8 @@ namespace QuanLyKiTucXa
                     return;
                 }
 
-                string maNha = dgvNHA_CSVC.SelectedRows[0].Cells["MANHA_NHA"].Value?.ToString();
-                string maCSVC = dgvNHA_CSVC.SelectedRows[0].Cells["MA_CSVC_NHA"].Value?.ToString();
+                string maNha = dgvNHA_CSVC.SelectedRows[0].Cells["MANHA"].Value?.ToString();
+                string maCSVC = dgvNHA_CSVC.SelectedRows[0].Cells["MA_CSVC_2"].Value?.ToString();
 
                 if (string.IsNullOrEmpty(maNha) || string.IsNullOrEmpty(maCSVC))
                 {
@@ -469,9 +469,9 @@ namespace QuanLyKiTucXa
                     return;
                 }
 
-                string maNha = dgvNHA_CSVC.SelectedRows[0].Cells["MANHA_NHA"].Value?.ToString();
-                string maCSVC = dgvNHA_CSVC.SelectedRows[0].Cells["MA_CSVC_NHA"].Value?.ToString();
-                string tenCSVC = dgvNHA_CSVC.SelectedRows[0].Cells["TEN_CSVC_NHA"].Value?.ToString();
+                string maNha = dgvNHA_CSVC.SelectedRows[0].Cells["MANHA"].Value?.ToString();
+                string maCSVC = dgvNHA_CSVC.SelectedRows[0].Cells["MA_CSVC"].Value?.ToString();
+                string tenCSVC = dgvNHA_CSVC.SelectedRows[0].Cells["TEN_CSVC"].Value?.ToString();
 
                 if (string.IsNullOrEmpty(maNha) || string.IsNullOrEmpty(maCSVC))
                 {

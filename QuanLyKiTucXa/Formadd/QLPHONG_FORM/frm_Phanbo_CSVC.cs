@@ -304,5 +304,10 @@ namespace QuanLyKiTucXa
                 e.Handled = true;
             }
         }
+
+        private void txtMA_CSVC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
