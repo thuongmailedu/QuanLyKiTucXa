@@ -56,6 +56,7 @@
             this.btnHuy.Size = new System.Drawing.Size(65, 45);
             this.btnHuy.TabIndex = 80;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
@@ -70,6 +71,7 @@
             this.btnLuu.Size = new System.Drawing.Size(73, 45);
             this.btnLuu.TabIndex = 79;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label8
             // 
@@ -152,7 +154,7 @@
             this.txtMA_CSVC.SelectedText = "";
             this.txtMA_CSVC.Size = new System.Drawing.Size(280, 45);
             this.txtMA_CSVC.TabIndex = 74;
-            this.txtMA_CSVC.TextChanged += new System.EventHandler(this.txtMA_CSVC_TextChanged);
+//            this.txtMA_CSVC.TextChanged += new System.EventHandler(this.txtMA_CSVC_TextChanged);
             // 
             // label4
             // 

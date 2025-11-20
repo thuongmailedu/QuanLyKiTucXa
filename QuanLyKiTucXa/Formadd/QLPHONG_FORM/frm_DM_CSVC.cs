@@ -7,7 +7,7 @@ namespace QuanLyKiTucXa
 {
     public partial class frm_DM_CSVC : Form
     {
-        private string connectionString = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True"; // Thay bằng connection string của bạn
+        private string connectionString = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True";
         private string maCSVC = "";
         private bool isEditMode = false;
 
@@ -42,7 +42,8 @@ namespace QuanLyKiTucXa
             {
                 txtMA_CSVC.Text = GenerateNewMACSVC();
                 txtMA_CSVC.ReadOnly = true;
-                txtTEN_CSVC.Text = txtMA_CSVC.Text; // Hiển thị tên theo mã
+                txtTEN_CSVC.Text = ""; // Để trống tên CSVC
+                txtTEN_CSVC.Focus(); // Focus vào ô tên để người dùng nhập
                 comTRANGTHAI.SelectedIndex = 0; // Mặc định "Áp dụng"
             }
         }
@@ -123,6 +124,8 @@ namespace QuanLyKiTucXa
             }
         }
 
+        // XÓA HOẶC COMMENT LẠI HÀM NÀY vì nó tự động điền tên theo mã
+        /*
         private void txtMA_CSVC_TextChanged(object sender, EventArgs e)
         {
             // Tự động cập nhật tên CSVC theo mã khi thêm mới
@@ -131,6 +134,7 @@ namespace QuanLyKiTucXa
                 txtTEN_CSVC.Text = txtMA_CSVC.Text;
             }
         }
+        */
 
         private void LoadCSVCInfo()
         {
