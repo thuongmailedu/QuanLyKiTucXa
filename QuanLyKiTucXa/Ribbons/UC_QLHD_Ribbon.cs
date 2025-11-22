@@ -1,4 +1,5 @@
 ﻿using QuanLyKiTucXa.Main_UC.QLHD;
+using QuanLyKiTucXa.Main_UC.QLPHONG;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,11 @@ namespace QuanLyKiTucXa.Ribbons
         private void btnTraPhong_Click(object sender, EventArgs e)
         {
             addUserControl(new UC_TraPhong());
+        }
+
+        private void btnDATPHONG_Click(object sender, EventArgs e)
+        {
+            addUserControl(new UC_DANHMUCPHONG());
         }
     }
 }

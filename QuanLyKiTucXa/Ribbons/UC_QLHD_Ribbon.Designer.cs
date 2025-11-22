@@ -32,12 +32,14 @@
             this.btnThuePhong = new Guna.UI2.WinForms.Guna2Button();
             this.btnTraPhong = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnDATPHONG = new Guna.UI2.WinForms.Guna2Button();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BorderColor = System.Drawing.Color.Black;
+            this.panelMenu.Controls.Add(this.btnDATPHONG);
             this.panelMenu.Controls.Add(this.btnThuePhong);
             this.panelMenu.Controls.Add(this.btnTraPhong);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -65,7 +67,7 @@
             this.btnThuePhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             this.btnThuePhong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThuePhong.ForeColor = System.Drawing.Color.White;
-            this.btnThuePhong.Location = new System.Drawing.Point(0, 0);
+            this.btnThuePhong.Location = new System.Drawing.Point(279, 0);
             this.btnThuePhong.Name = "btnThuePhong";
             this.btnThuePhong.Size = new System.Drawing.Size(273, 80);
             this.btnThuePhong.TabIndex = 3;
@@ -88,7 +90,7 @@
             this.btnTraPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             this.btnTraPhong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraPhong.ForeColor = System.Drawing.Color.White;
-            this.btnTraPhong.Location = new System.Drawing.Point(268, 0);
+            this.btnTraPhong.Location = new System.Drawing.Point(558, 0);
             this.btnTraPhong.Name = "btnTraPhong";
             this.btnTraPhong.Size = new System.Drawing.Size(273, 80);
             this.btnTraPhong.TabIndex = 2;
@@ -102,6 +104,29 @@
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1646, 1062);
             this.panelContainer.TabIndex = 1;
+            // 
+            // btnDATPHONG
+            // 
+            this.btnDATPHONG.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDATPHONG.CheckedState.CustomBorderColor = System.Drawing.Color.Green;
+            this.btnDATPHONG.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnDATPHONG.CheckedState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDATPHONG.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnDATPHONG.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnDATPHONG.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.btnDATPHONG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDATPHONG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDATPHONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDATPHONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDATPHONG.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnDATPHONG.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDATPHONG.ForeColor = System.Drawing.Color.White;
+            this.btnDATPHONG.Location = new System.Drawing.Point(0, 0);
+            this.btnDATPHONG.Name = "btnDATPHONG";
+            this.btnDATPHONG.Size = new System.Drawing.Size(273, 80);
+            this.btnDATPHONG.TabIndex = 3;
+            this.btnDATPHONG.Text = "ĐẶT PHÒNG";
+            this.btnDATPHONG.Click += new System.EventHandler(this.btnDATPHONG_Click);
             // 
             // UC_QLHD_Ribbon
             // 
@@ -125,5 +150,6 @@
         private Guna.UI2.WinForms.Guna2Button btnThuePhong;
         private Guna.UI2.WinForms.Guna2Button btnTraPhong;
         private Guna.UI2.WinForms.Guna2Panel panelContainer;
+        private Guna.UI2.WinForms.Guna2Button btnDATPHONG;
     }
 }

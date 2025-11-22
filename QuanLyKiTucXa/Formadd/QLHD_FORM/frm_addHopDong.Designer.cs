@@ -51,7 +51,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtMANV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTENNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -397,26 +397,26 @@
             this.label13.TabIndex = 18;
             this.label13.Text = "Người ký";
             // 
-            // txtMANV
+            // txtTENNV
             // 
-            this.txtMANV.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtMANV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMANV.DefaultText = "";
-            this.txtMANV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMANV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMANV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMANV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMANV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMANV.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMANV.ForeColor = System.Drawing.Color.Black;
-            this.txtMANV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMANV.Location = new System.Drawing.Point(164, 487);
-            this.txtMANV.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtMANV.Name = "txtMANV";
-            this.txtMANV.PlaceholderText = "";
-            this.txtMANV.SelectedText = "";
-            this.txtMANV.Size = new System.Drawing.Size(221, 45);
-            this.txtMANV.TabIndex = 19;
+            this.txtTENNV.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTENNV.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTENNV.DefaultText = "";
+            this.txtTENNV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTENNV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTENNV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTENNV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTENNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTENNV.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTENNV.ForeColor = System.Drawing.Color.Black;
+            this.txtTENNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTENNV.Location = new System.Drawing.Point(164, 487);
+            this.txtTENNV.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTENNV.Name = "txtTENNV";
+            this.txtTENNV.PlaceholderText = "";
+            this.txtTENNV.SelectedText = "";
+            this.txtTENNV.Size = new System.Drawing.Size(221, 45);
+            this.txtTENNV.TabIndex = 19;
             // 
             // label14
             // 
@@ -604,7 +604,7 @@
             this.Controls.Add(this.txtTENSV);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.txtMANV);
+            this.Controls.Add(this.txtTENNV);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -665,7 +665,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private Guna.UI2.WinForms.Guna2TextBox txtMANV;
+        private Guna.UI2.WinForms.Guna2TextBox txtTENNV;
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
