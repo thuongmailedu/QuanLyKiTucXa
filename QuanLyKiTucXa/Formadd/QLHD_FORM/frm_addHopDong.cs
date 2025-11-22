@@ -11,7 +11,7 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
         string constr = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True";
         private HopDongValidator validator;
         private bool isFromUCDanhMucPhong = false;
-        private string maNhanVien = ""; // Lưu MANV (chính là TENDN)
+        private string maNhanVien = "";
 
         public frm_addHopDong()
         {
@@ -21,23 +21,31 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
 
         private void frm_addHopDong_Load(object sender, EventArgs e)
         {
-            constr = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True";
-            conn.ConnectionString = constr;
-            conn.Open();
+            try
+            {
+                // Kết nối database
+                conn.ConnectionString = constr;
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
 
-            // Tự động điền tên hợp đồng
-            txtTENHD.Text = "HỢP ĐỒNG ĐĂNG KÝ PHÒNG KTX";
+                // Tự động điền tên hợp đồng
+                txtTENHD.Text = "HỢP ĐỒNG ĐĂNG KÝ PHÒNG KTX";
 
-            // Load thông tin nhân viên đang đăng nhập
-            LoadThongTinNhanVien();
+                // Load thông tin nhân viên
+                LoadThongTinNhanVien();
 
-            // Đăng ký event cho txtMASV
-            txtMASV.Leave += txtMASV_Leave;
+                // Đăng ký event cho txtMASV
+                txtMASV.Leave += txtMASV_Leave;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi khởi tạo form: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        /// <summary>
-        /// Load thông tin nhân viên dựa trên TENDN từ UserSession
-        /// </summary>
         private void LoadThongTinNhanVien()
         {
             try
@@ -51,6 +59,12 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
 
                 // TENDN chính là MANV
                 maNhanVien = UserSession.TenDangNhap;
+
+                // Đảm bảo connection mở
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
 
                 // Lấy tên nhân viên từ bảng NHANVIEN
                 string query = "SELECT TENNV FROM NHANVIEN WHERE MANV = @MANV";
@@ -79,9 +93,6 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             }
         }
 
-        /// <summary>
-        /// Kiểm tra và hiển thị tên sinh viên khi nhập MASV
-        /// </summary>
         private void txtMASV_Leave(object sender, EventArgs e)
         {
             string maSV = txtMASV.Text.Trim();
@@ -94,6 +105,12 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
 
             try
             {
+                // Đảm bảo connection mở
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+
                 string query = "SELECT TENSV FROM SINHVIEN WHERE MASV = @MASV";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -125,7 +142,6 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             }
         }
 
-        // Method gọi từ UC_DANHMUCPHONG
         public void SetThongTinPhong(string maPhong, string maNha, string loaiPhong,
             decimal giaPhong, DateTime tuNgay, DateTime denNgay, int thoiHan, decimal tongTien)
         {
@@ -153,13 +169,11 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             txtTHOIHAN.ReadOnly = true;
             txtTONGTIEN.ReadOnly = true;
             dateTUNGAY.Enabled = false;
-            dateDENNGAY.Enabled = true; // Cho phép sửa DENNGAY
+            dateDENNGAY.Enabled = true;
 
-            // Đăng ký event để tính lại khi thay đổi DENNGAY
             dateDENNGAY.ValueChanged += DateChanged;
         }
 
-        // Method gọi từ UC_ThuePhong
         public void SetThongTinPhongTuUCThuePhong(string maPhong, string maNha,
             string loaiPhong, string gioiTinh, decimal giaPhong)
         {
@@ -175,10 +189,8 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             dateDENNGAY.MinDate = DateTime.Now;
             dateNGAYKY.Value = DateTime.Now;
 
-            // Tạo mã hợp đồng
             txtMAHD.Text = GenerateMaHD();
 
-            // Enable/Disable controls
             txtMA_PHONG.ReadOnly = true;
             txtMANHA.ReadOnly = true;
             txtLOAIPHONG.ReadOnly = true;
@@ -188,7 +200,6 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             dateTUNGAY.Enabled = true;
             dateDENNGAY.Enabled = true;
 
-            // Đăng ký events
             dateTUNGAY.ValueChanged += DateChanged;
             dateDENNGAY.ValueChanged += DateChanged;
         }
@@ -207,7 +218,6 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                     return;
                 }
 
-                // Tính số tháng
                 int thang = ((dateDENNGAY.Value.Year - dateTUNGAY.Value.Year) * 12) +
                            dateDENNGAY.Value.Month - dateTUNGAY.Value.Month;
 
@@ -218,7 +228,6 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
 
                 txtTHOIHAN.Text = thang.ToString();
 
-                // Tính tổng tiền
                 if (!string.IsNullOrWhiteSpace(txtGIAPHONG.Text))
                 {
                     decimal giaPhong = decimal.Parse(txtGIAPHONG.Text.Replace(",", ""));
@@ -228,7 +237,6 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             }
             catch
             {
-                // Bỏ qua lỗi
             }
         }
 
@@ -241,7 +249,7 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                 DateTime tuNgay = dateTUNGAY.Value;
                 DateTime denNgay = dateDENNGAY.Value;
 
-                // 1. Validate cơ bản
+                // Validate cơ bản
                 if (string.IsNullOrEmpty(maSV))
                 {
                     MessageBox.Show("Vui lòng nhập mã sinh viên!", "Thông báo",
@@ -273,7 +281,6 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                     return;
                 }
 
-                // Kiểm tra có mã nhân viên không
                 if (string.IsNullOrEmpty(maNhanVien))
                 {
                     MessageBox.Show("Không tìm thấy mã nhân viên! Vui lòng đăng nhập lại.", "Lỗi",
@@ -281,24 +288,24 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                     return;
                 }
 
-                // 2. SỬ DỤNG HopDongValidator
+                // Sử dụng HopDongValidator
                 if (validator.KiemTraHopDongTrung(maSV, tuNgay, denNgay))
                 {
-                    return; // Validator đã hiển thị message
+                    return;
                 }
 
                 if (!validator.KiemTraPhongConCho(maPhong, tuNgay, denNgay))
                 {
-                    return; // Validator đã hiển thị message
+                    return;
                 }
 
-                // 3. Kiểm tra giới tính
+                // Kiểm tra giới tính
                 if (!KiemTraGioiTinh(maSV, maPhong))
                 {
                     return;
                 }
 
-                // 4. Lưu hợp đồng
+                // Lưu hợp đồng
                 if (LuuHopDong())
                 {
                     MessageBox.Show("Lưu hợp đồng thành công!", "Thành công",
@@ -318,11 +325,23 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
         {
             try
             {
+                // Đảm bảo connection mở
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+
+                // SỬA LẠI QUERY - Đã sửa lỗi logic
                 string query = @"
                     SELECT SV.GIOITINH AS GT_SINHVIEN, N.GIOITINH AS GT_PHONG
-                    FROM SINHVIEN SV, PHONG P
-                    INNER JOIN NHA N ON P.MANHA = N.MANHA
-                    WHERE SV.MASV = @MASV AND P.MA_PHONG = @MA_PHONG";
+                    FROM SINHVIEN SV
+                    CROSS JOIN (
+                        SELECT P.MA_PHONG, N.GIOITINH
+                        FROM PHONG P
+                        INNER JOIN NHA N ON P.MANHA = N.MANHA
+                        WHERE P.MA_PHONG = @MA_PHONG
+                    ) N
+                    WHERE SV.MASV = @MASV";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -333,10 +352,11 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                     {
                         if (reader.Read())
                         {
-                            string gtSV = reader["GT_SINHVIEN"].ToString();
-                            string gtPhong = reader["GT_PHONG"].ToString();
+                            string gtSV = reader["GT_SINHVIEN"].ToString().Trim();
+                            string gtPhong = reader["GT_PHONG"].ToString().Trim();
 
-                            if (gtSV != gtPhong)
+                            // SỬA LẠI LOGIC - So sánh không phân biệt hoa thường
+                            if (!string.Equals(gtSV, gtPhong, StringComparison.OrdinalIgnoreCase))
                             {
                                 MessageBox.Show($"Sinh viên {gtSV} không thể ở phòng dành cho {gtPhong}!",
                                     "Lỗi giới tính", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -349,7 +369,8 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi kiểm tra giới tính: " + ex.Message);
+                MessageBox.Show("Lỗi kiểm tra giới tính: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -358,9 +379,14 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
         {
             try
             {
+                // Đảm bảo connection mở
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+
                 string maHD = txtMAHD.Text.Trim();
 
-                // Kiểm tra nếu mã hợp đồng trống thì tạo mới
                 if (string.IsNullOrEmpty(maHD))
                 {
                     maHD = GenerateMaHD();
@@ -383,7 +409,7 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                     cmd.Parameters.AddWithValue("@DENNGAY", dateDENNGAY.Value);
                     cmd.Parameters.AddWithValue("@THOIHAN", int.Parse(txtTHOIHAN.Text));
                     cmd.Parameters.AddWithValue("@DONGIA", decimal.Parse(txtGIAPHONG.Text.Replace(",", "")));
-                    cmd.Parameters.AddWithValue("@MANV", maNhanVien); // TENDN từ UserSession
+                    cmd.Parameters.AddWithValue("@MANV", maNhanVien);
                     cmd.Parameters.AddWithValue("@NGAYKY", dateNGAYKY.Value);
                     cmd.Parameters.AddWithValue("@TONGTIEN", decimal.Parse(txtTONGTIEN.Text.Replace(",", "")));
 
@@ -393,14 +419,13 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             }
             catch (SqlException sqlEx)
             {
-                if (sqlEx.Number == 2627) // Lỗi trùng khóa chính
+                if (sqlEx.Number == 2627)
                 {
                     MessageBox.Show("Mã hợp đồng đã tồn tại! Hệ thống sẽ tạo mã mới.",
                         "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                    // Tạo mã mới và thử lại
                     txtMAHD.Text = GenerateMaHD();
-                    return LuuHopDong(); // Đệ quy để thử lại
+                    return LuuHopDong();
                 }
                 else
                 {
@@ -417,13 +442,16 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             }
         }
 
-        /// <summary>
-        /// Tạo mã hợp đồng tự động theo format HD000001, HD000002, ...
-        /// </summary>
         private string GenerateMaHD()
         {
             try
             {
+                // Đảm bảo connection mở
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+
                 string query = @"
                     SELECT TOP 1 MAHD 
                     FROM HOPDONG 
@@ -437,28 +465,21 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                     if (result != null)
                     {
                         string lastMaHD = result.ToString();
-
-                        // Lấy phần số từ mã cuối cùng (VD: HD000047 -> 47)
-                        string numberPart = lastMaHD.Substring(2); // Bỏ "HD"
+                        string numberPart = lastMaHD.Substring(2);
 
                         if (int.TryParse(numberPart, out int lastNumber))
                         {
-                            // Tăng lên 1
                             int newNumber = lastNumber + 1;
-
-                            // Format lại thành HD000048
                             return "HD" + newNumber.ToString("D6");
                         }
                     }
 
-                    // Nếu chưa có hợp đồng nào, bắt đầu từ HD000001
                     return "HD000001";
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi tạo mã hợp đồng: " + ex.Message);
-                // Fallback: dùng timestamp
                 return "HD" + DateTime.Now.ToString("yyyyMMddHHmmss");
             }
         }
@@ -467,6 +488,16 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        // Đóng connection khi form đóng
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            if (conn != null && conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
         }
     }
 }
