@@ -32,7 +32,7 @@
             this.txtMATKHAU = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnLOGIN = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDangNhap = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // txtTENDN
@@ -78,7 +78,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(313, 210);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(102, 22);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(94, 18);
             this.guna2HtmlLabel1.TabIndex = 1;
             this.guna2HtmlLabel1.Text = "Tên đăng nhập";
             // 
@@ -87,30 +87,31 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(313, 309);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(64, 22);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(57, 18);
             this.guna2HtmlLabel2.TabIndex = 1;
             this.guna2HtmlLabel2.Text = "Mật khẩu";
             // 
-            // btnLOGIN
+            // btnDangNhap
             // 
-            this.btnLOGIN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLOGIN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLOGIN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLOGIN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLOGIN.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLOGIN.ForeColor = System.Drawing.Color.White;
-            this.btnLOGIN.Location = new System.Drawing.Point(313, 439);
-            this.btnLOGIN.Name = "btnLOGIN";
-            this.btnLOGIN.Size = new System.Drawing.Size(290, 45);
-            this.btnLOGIN.TabIndex = 2;
-            this.btnLOGIN.Text = "Đăng nhập";
+            this.btnDangNhap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangNhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDangNhap.ForeColor = System.Drawing.Color.White;
+            this.btnDangNhap.Location = new System.Drawing.Point(313, 439);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(290, 45);
+            this.btnDangNhap.TabIndex = 2;
+            this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 639);
-            this.Controls.Add(this.btnLOGIN);
+            this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.txtMATKHAU);
@@ -119,6 +120,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_Login";
             this.Text = "frm_Login";
+            this.Load += new System.EventHandler(this.frm_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,6 +132,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMATKHAU;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2Button btnLOGIN;
+        private Guna.UI2.WinForms.Guna2Button btnDangNhap;
     }
 }

@@ -295,6 +295,7 @@
       <DependentUpon>UC_TrangChu_Ribbon.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="Formadd\HSSV\frm_addHSSV.resx">
       <DependentUpon>frm_addHSSV.cs</DependentUpon>
     </EmbeddedResource>
