@@ -1,4 +1,4 @@
-﻿namespace QuanLyKiTucXa.Formadd.QLPHONG_FORM
+﻿namespace QuanLyKiTucXa
 {
     partial class frm_SCCSVC
     {
@@ -260,6 +260,7 @@
             this.comNHA.Size = new System.Drawing.Size(197, 46);
             this.comNHA.TabIndex = 79;
             this.comNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.comNHA.SelectedIndexChanged += new System.EventHandler(this.comNHA_SelectedIndexChanged);
             // 
             // comPHONG
             // 

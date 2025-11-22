@@ -30,10 +30,10 @@ namespace QuanLyKiTucXa
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btncancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnupdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnfillter = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -103,7 +103,7 @@ namespace QuanLyKiTucXa
             this.btnfillter.FillColor = System.Drawing.Color.Transparent;
             this.btnfillter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnfillter.ForeColor = System.Drawing.Color.White;
-            this.btnfillter.Location = new System.Drawing.Point(1199, 99);
+            this.btnfillter.Location = new System.Drawing.Point(1280, 109);
             this.btnfillter.Name = "btnfillter";
             this.btnfillter.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnfillter.Size = new System.Drawing.Size(35, 40);
@@ -121,7 +121,7 @@ namespace QuanLyKiTucXa
             this.btnDelete.FillColor = System.Drawing.Color.Transparent;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(1332, 107);
+            this.btnDelete.Location = new System.Drawing.Point(1337, 113);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnDelete.Size = new System.Drawing.Size(35, 32);
@@ -141,25 +141,24 @@ namespace QuanLyKiTucXa
             // dgv_HD_TONGHOP
             // 
             this.dgv_HD_TONGHOP.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgv_HD_TONGHOP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.dgv_HD_TONGHOP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgv_HD_TONGHOP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_HD_TONGHOP.BackgroundColor = System.Drawing.Color.White;
             this.dgv_HD_TONGHOP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_HD_TONGHOP.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgv_HD_TONGHOP.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_HD_TONGHOP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_HD_TONGHOP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_HD_TONGHOP.ColumnHeadersHeight = 45;
             this.dgv_HD_TONGHOP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -180,17 +179,17 @@ namespace QuanLyKiTucXa
             this.dgv_HD_TONGHOP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgv_HD_TONGHOP.Name = "dgv_HD_TONGHOP";
             this.dgv_HD_TONGHOP.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_HD_TONGHOP.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_HD_TONGHOP.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_HD_TONGHOP.RowHeadersWidth = 62;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_HD_TONGHOP.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_HD_TONGHOP.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_HD_TONGHOP.RowTemplate.Height = 45;
             this.dgv_HD_TONGHOP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_HD_TONGHOP.Size = new System.Drawing.Size(1490, 602);
@@ -202,7 +201,7 @@ namespace QuanLyKiTucXa
             this.STT.HeaderText = "STT";
             this.STT.MinimumWidth = 8;
             this.STT.Name = "STT";
-            this.STT.Width = 60;
+            this.STT.Width = 110;
             // 
             // MANHA
             // 
@@ -210,7 +209,7 @@ namespace QuanLyKiTucXa
             this.MANHA.HeaderText = "Mã nhà";
             this.MANHA.MinimumWidth = 6;
             this.MANHA.Name = "MANHA";
-            this.MANHA.Width = 79;
+            this.MANHA.Width = 109;
             // 
             // MA_PHONG
             // 
@@ -218,7 +217,7 @@ namespace QuanLyKiTucXa
             this.MA_PHONG.HeaderText = "Mã phòng";
             this.MA_PHONG.MinimumWidth = 6;
             this.MA_PHONG.Name = "MA_PHONG";
-            this.MA_PHONG.Width = 96;
+            this.MA_PHONG.Width = 110;
             // 
             // TENHD_TH
             // 
@@ -226,7 +225,7 @@ namespace QuanLyKiTucXa
             this.TENHD_TH.HeaderText = "Tên hóa đơn";
             this.TENHD_TH.MinimumWidth = 8;
             this.TENHD_TH.Name = "TENHD_TH";
-            this.TENHD_TH.Width = 108;
+            this.TENHD_TH.Width = 110;
             // 
             // THOIGIAN
             // 
@@ -234,7 +233,7 @@ namespace QuanLyKiTucXa
             this.THOIGIAN.HeaderText = "Thời gian";
             this.THOIGIAN.MinimumWidth = 8;
             this.THOIGIAN.Name = "THOIGIAN";
-            this.THOIGIAN.Width = 90;
+            this.THOIGIAN.Width = 109;
             // 
             // MAHD_DIEN
             // 
@@ -242,7 +241,7 @@ namespace QuanLyKiTucXa
             this.MAHD_DIEN.HeaderText = "Mã HD Điện";
             this.MAHD_DIEN.MinimumWidth = 8;
             this.MAHD_DIEN.Name = "MAHD_DIEN";
-            this.MAHD_DIEN.Width = 108;
+            this.MAHD_DIEN.Width = 110;
             // 
             // TIENDIEN
             // 
@@ -250,7 +249,7 @@ namespace QuanLyKiTucXa
             this.TIENDIEN.HeaderText = "Tiền điện";
             this.TIENDIEN.MinimumWidth = 6;
             this.TIENDIEN.Name = "TIENDIEN";
-            this.TIENDIEN.Width = 90;
+            this.TIENDIEN.Width = 110;
             // 
             // MAHD_NUOC
             // 
@@ -258,7 +257,7 @@ namespace QuanLyKiTucXa
             this.MAHD_NUOC.HeaderText = "Mã HD Nước";
             this.MAHD_NUOC.MinimumWidth = 6;
             this.MAHD_NUOC.Name = "MAHD_NUOC";
-            this.MAHD_NUOC.Width = 113;
+            this.MAHD_NUOC.Width = 110;
             // 
             // TIENNUOC
             // 
@@ -266,7 +265,7 @@ namespace QuanLyKiTucXa
             this.TIENNUOC.HeaderText = "Tiền nước";
             this.TIENNUOC.MinimumWidth = 6;
             this.TIENNUOC.Name = "TIENNUOC";
-            this.TIENNUOC.Width = 93;
+            this.TIENNUOC.Width = 109;
             // 
             // MAHD_INT
             // 
@@ -274,7 +273,7 @@ namespace QuanLyKiTucXa
             this.MAHD_INT.HeaderText = "Mã HD Internet";
             this.MAHD_INT.MinimumWidth = 6;
             this.MAHD_INT.Name = "MAHD_INT";
-            this.MAHD_INT.Width = 126;
+            this.MAHD_INT.Width = 110;
             // 
             // TIENINTERNET
             // 
@@ -282,7 +281,7 @@ namespace QuanLyKiTucXa
             this.TIENINTERNET.HeaderText = "Tiền internet";
             this.TIENINTERNET.MinimumWidth = 6;
             this.TIENINTERNET.Name = "TIENINTERNET";
-            this.TIENINTERNET.Width = 109;
+            this.TIENINTERNET.Width = 110;
             // 
             // TONGTIEN
             // 
@@ -290,7 +289,7 @@ namespace QuanLyKiTucXa
             this.TONGTIEN.HeaderText = "Tổng tiền";
             this.TONGTIEN.MinimumWidth = 6;
             this.TONGTIEN.Name = "TONGTIEN";
-            this.TONGTIEN.Width = 91;
+            this.TONGTIEN.Width = 109;
             // 
             // TINHTRANGTT
             // 
@@ -298,7 +297,7 @@ namespace QuanLyKiTucXa
             this.TINHTRANGTT.HeaderText = "Trạng thái";
             this.TINHTRANGTT.MinimumWidth = 6;
             this.TINHTRANGTT.Name = "TINHTRANGTT";
-            this.TINHTRANGTT.Width = 94;
+            this.TINHTRANGTT.Width = 110;
             // 
             // comTRANGTHAI
             // 

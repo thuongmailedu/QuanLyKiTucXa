@@ -34,13 +34,7 @@ namespace QuanLyKiTucXa
         private void InitializeControls()
         {
             // Thiết lập DateTimePicker
-            dtpTHOIGIAN.Format = DateTimePickerFormat.Custom;
-            dtpTHOIGIAN.CustomFormat = "MM/yyyy";
-            dtpTHOIGIAN.ShowUpDown = true;
             
-            //dtpTHOIGIAN.Value = DateTime.Now;
-          //  dtpTHOIGIAN.ValueChanged += dtpTHOIGIAN_ValueChanged;
-
             // Thiết lập ComboBox
             comNHA.DropDownStyle = ComboBoxStyle.DropDownList;
             comPHONG.DropDownStyle = ComboBoxStyle.DropDownList;

@@ -46,5 +46,10 @@ namespace QuanLyKiTucXa.Ribbons
         {
             addUserControl(new UC_SCCSVC());
         }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

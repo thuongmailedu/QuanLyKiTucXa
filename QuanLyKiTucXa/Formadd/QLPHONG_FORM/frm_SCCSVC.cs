@@ -1,35 +1,467 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace QuanLyKiTucXa.Formadd.QLPHONG_FORM
+namespace QuanLyKiTucXa
 {
     public partial class frm_SCCSVC : Form
     {
+        private string connectionString = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True";
+        private string maSCCSVC = "";
+        private bool isEditMode = false;
+        private DateTime? ngayHoanThanh = null;
+
+        // Constructor cho chế độ thêm mới
         public frm_SCCSVC()
         {
             InitializeComponent();
+            isEditMode = false;
+            this.Text = "Thêm yêu cầu sửa chữa CSVC";
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
+        // Constructor cho chế độ sửa
+        public frm_SCCSVC(string maSCCSVC)
         {
-
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-
+            InitializeComponent();
+            this.maSCCSVC = maSCCSVC;
+            isEditMode = true;
+            this.Text = "Sửa yêu cầu sửa chữa CSVC";
         }
 
         private void frm_SCCSVC_Load(object sender, EventArgs e)
         {
+            LoadComboBoxTrangThai();
+            LoadComboBoxNha();
 
+            // Thiết lập DateTimePicker cho phép NULL
+            dtpNGAY_HOANTHANH.ShowCheckBox = true; // Hiển thị checkbox để bật/tắt
+            dtpNGAY_HOANTHANH.Checked = false; // Mặc định không chọn (NULL)
+
+            if (isEditMode)
+            {
+                txtMA_SCCSVC.ReadOnly = true;
+                comNHA.Enabled = false;
+                comPHONG.Enabled = false;
+                LoadYeuCauInfo();
+            }
+            else
+            {
+                txtMA_SCCSVC.Text = GenerateNewMASCCSVC();
+                txtMA_SCCSVC.ReadOnly = true;
+                dtpNGAY_YEUCAU.Value = DateTime.Now;
+                // KHÔNG gán giá trị cho dtpNGAY_HOANTHANH - để null
+                // dtpNGAY_HOANTHANH.Value = DateTime.Now.AddDays(7); // XÓA DÒNG NÀY
+                comTRANGTHAI.SelectedIndex = 0;
+            }
+        }
+
+        private void LoadComboBoxTrangThai()
+        {
+            comTRANGTHAI.Items.Clear();
+            comTRANGTHAI.Items.Add("Đã tiếp nhận");
+            comTRANGTHAI.Items.Add("Đang xử lý");
+            comTRANGTHAI.Items.Add("Hoàn thành");
+        }
+
+        private void LoadComboBoxNha()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT MANHA FROM NHA ORDER BY MANHA";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+
+                        comNHA.DataSource = dt;
+                        comNHA.DisplayMember = "MANHA";
+                        comNHA.ValueMember = "MANHA";
+                        comNHA.SelectedIndex = -1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải danh sách nhà: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void comNHA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comNHA.SelectedIndex >= 0 && !isEditMode)
+            {
+                LoadComboBoxPhong();
+                LoadDanhMucCSVCTheoNha();
+            }
+        }
+
+        private void LoadComboBoxPhong()
+        {
+            try
+            {
+                if (comNHA.SelectedValue == null)
+                    return;
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT MA_PHONG FROM PHONG WHERE MANHA = @MANHA ORDER BY MA_PHONG";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MANHA", comNHA.SelectedValue.ToString());
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+
+                        comPHONG.DataSource = dt;
+                        comPHONG.DisplayMember = "MA_PHONG";
+                        comPHONG.ValueMember = "MA_PHONG";
+                        comPHONG.SelectedIndex = -1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải danh sách phòng: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadDanhMucCSVCTheoNha()
+        {
+            try
+            {
+                if (comNHA.SelectedValue == null)
+                    return;
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query = @"SELECT 
+                                        NC.MA_CSVC,
+                                        DM.TEN_CSVC,
+                                        ISNULL(NCC.TEN_NHACC, N'') AS TEN_NHACC,
+                                        NC.SOLUONG,
+                                        ISNULL(DM.CHITIET, N'') AS CHITIET
+                                    FROM NHA_CSVC NC
+                                    INNER JOIN DM_CSVC DM ON NC.MA_CSVC = DM.MA_CSVC
+                                    LEFT JOIN NHACC NCC ON DM.MA_NHACC = NCC.MA_NHACC
+                                    WHERE NC.MANHA = @MANHA
+                                    ORDER BY DM.TEN_CSVC";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MANHA", comNHA.SelectedValue.ToString());
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+
+                        // Thêm cột STT
+                        dt.Columns.Add("STT", typeof(int));
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            dt.Rows[i]["STT"] = i + 1;
+                        }
+
+                        dgvDM_CSVC.AutoGenerateColumns = false;
+                        dgvDM_CSVC.DataSource = dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải danh mục CSVC: " + ex.Message + "\n\n" + ex.StackTrace, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadCSVCDuocChon(string maNha, string maCSVC)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query = @"SELECT 
+                                        NC.MA_CSVC,
+                                        DM.TEN_CSVC,
+                                        ISNULL(NCC.TEN_NHACC, N'') AS TEN_NHACC,
+                                        NC.SOLUONG,
+                                        ISNULL(DM.CHITIET, N'') AS CHITIET
+                                    FROM NHA_CSVC NC
+                                    INNER JOIN DM_CSVC DM ON NC.MA_CSVC = DM.MA_CSVC
+                                    LEFT JOIN NHACC NCC ON DM.MA_NHACC = NCC.MA_NHACC
+                                    WHERE NC.MANHA = @MANHA AND NC.MA_CSVC = @MA_CSVC";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MANHA", maNha);
+                        cmd.Parameters.AddWithValue("@MA_CSVC", maCSVC);
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+
+                        dt.Columns.Add("STT", typeof(int));
+                        if (dt.Rows.Count > 0)
+                        {
+                            dt.Rows[0]["STT"] = 1;
+                        }
+
+                        dgvDM_CSVC.AutoGenerateColumns = false;
+                        dgvDM_CSVC.DataSource = dt;
+
+                        if (dgvDM_CSVC.Rows.Count > 0)
+                        {
+                            dgvDM_CSVC.Rows[0].Selected = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải thông tin CSVC: " + ex.Message + "\n\n" + ex.StackTrace, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private string GenerateNewMASCCSVC()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = @"SELECT TOP 1 MA_SCCSVC 
+                                   FROM SC_CSVC 
+                                   WHERE MA_SCCSVC LIKE 'SC%' 
+                                   ORDER BY MA_SCCSVC DESC";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            string lastCode = result.ToString();
+                            string numberPart = lastCode.Substring(2);
+                            int number = int.Parse(numberPart);
+                            return "SC" + (number + 1).ToString("D6");
+                        }
+                        else
+                        {
+                            return "SC000001";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi sinh mã sửa chữa: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "SC000001";
+            }
+        }
+
+        private void LoadYeuCauInfo()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = @"SELECT 
+                                        SC.MA_SCCSVC,
+                                        SC.MA_PHONG,
+                                        P.MANHA,
+                                        SC.MA_CSVC,
+                                        SC.NGAY_YEUCAU,
+                                        SC.NGAY_HOANTHANH,
+                                        SC.CHITIET,
+                                        SC.TRANGTHAI
+                                    FROM SC_CSVC SC
+                                    INNER JOIN PHONG P ON SC.MA_PHONG = P.MA_PHONG
+                                    WHERE SC.MA_SCCSVC = @MA_SCCSVC";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MA_SCCSVC", maSCCSVC);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                txtMA_SCCSVC.Text = reader["MA_SCCSVC"].ToString();
+                                string maNha = reader["MANHA"].ToString();
+                                string maCSVC = reader["MA_CSVC"].ToString();
+
+                                comNHA.SelectedValue = maNha;
+                                LoadComboBoxPhong();
+                                LoadCSVCDuocChon(maNha, maCSVC);
+
+                                comPHONG.SelectedValue = reader["MA_PHONG"].ToString();
+                                dtpNGAY_YEUCAU.Value = Convert.ToDateTime(reader["NGAY_YEUCAU"]);
+
+                                // Xử lý NGAY_HOANTHANH nullable
+                                if (reader["NGAY_HOANTHANH"] != DBNull.Value)
+                                {
+                                    dtpNGAY_HOANTHANH.Checked = true;
+                                    dtpNGAY_HOANTHANH.Value = Convert.ToDateTime(reader["NGAY_HOANTHANH"]);
+                                }
+                                else
+                                {
+                                    dtpNGAY_HOANTHANH.Checked = false;
+                                }
+
+                                txtCHITIET.Text = reader["CHITIET"]?.ToString() ?? "";
+                                comTRANGTHAI.SelectedItem = reader["TRANGTHAI"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải thông tin yêu cầu: " + ex.Message + "\n\n" + ex.StackTrace, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool ValidateInput()
+        {
+            if (comNHA.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn nhà!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                comNHA.Focus();
+                return false;
+            }
+
+            if (comPHONG.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn phòng!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                comPHONG.Focus();
+                return false;
+            }
+
+            if (dgvDM_CSVC.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn cơ sở vật chất cần sửa chữa!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (comTRANGTHAI.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn trạng thái!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                comTRANGTHAI.Focus();
+                return false;
+            }
+
+            if (dtpNGAY_HOANTHANH.Checked && dtpNGAY_YEUCAU.Value > dtpNGAY_HOANTHANH.Value)
+            {
+                MessageBox.Show("Ngày hoàn thành phải sau ngày yêu cầu!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpNGAY_HOANTHANH.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (!ValidateInput())
+                return;
+
+            try
+            {
+                string maCSVC = dgvDM_CSVC.SelectedRows[0].Cells["MA_CSVC"].Value?.ToString();
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query;
+
+                    if (isEditMode)
+                    {
+                        query = @"UPDATE SC_CSVC 
+                                SET NGAY_HOANTHANH = @NGAY_HOANTHANH,
+                                    CHITIET = @CHITIET,
+                                    TRANGTHAI = @TRANGTHAI
+                                WHERE MA_SCCSVC = @MA_SCCSVC";
+                    }
+                    else
+                    {
+                        query = @"INSERT INTO SC_CSVC (MA_SCCSVC, MA_PHONG, MA_CSVC, NGAY_YEUCAU, NGAY_HOANTHANH, CHITIET, TRANGTHAI, MANV)
+                                VALUES (@MA_SCCSVC, @MA_PHONG, @MA_CSVC, @NGAY_YEUCAU, @NGAY_HOANTHANH, @CHITIET, @TRANGTHAI, NULL)";
+                    }
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MA_SCCSVC", txtMA_SCCSVC.Text.Trim());
+
+                        if (!isEditMode)
+                        {
+                            cmd.Parameters.AddWithValue("@MA_PHONG", comPHONG.SelectedValue.ToString());
+                            cmd.Parameters.AddWithValue("@MA_CSVC", maCSVC);
+                            cmd.Parameters.AddWithValue("@NGAY_YEUCAU", dtpNGAY_YEUCAU.Value);
+                        }
+
+                        // Xử lý ngày hoàn thành nullable
+                        if (dtpNGAY_HOANTHANH.Checked)
+                        {
+                            cmd.Parameters.AddWithValue("@NGAY_HOANTHANH", dtpNGAY_HOANTHANH.Value);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@NGAY_HOANTHANH", DBNull.Value);
+                        }
+
+                        cmd.Parameters.AddWithValue("@CHITIET",
+                            string.IsNullOrWhiteSpace(txtCHITIET.Text) ? (object)DBNull.Value : txtCHITIET.Text.Trim());
+                        cmd.Parameters.AddWithValue("@TRANGTHAI", comTRANGTHAI.SelectedItem.ToString());
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể lưu dữ liệu!", "Lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message + "\n\n" + ex.StackTrace, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

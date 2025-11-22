@@ -519,6 +519,8 @@
             // 
             // grdData
             // 
+            this.grdData.AllowUserToResizeColumns = false;
+            this.grdData.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -562,7 +564,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdData.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grdData.RowTemplate.Height = 45;
-            this.grdData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.grdData.Size = new System.Drawing.Size(1555, 410);
             this.grdData.TabIndex = 10;
             this.grdData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdData_CellContentClick);
@@ -578,48 +580,38 @@
             // 
             // HoTen
             // 
-            this.HoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.HoTen.DataPropertyName = "TENSV";
             this.HoTen.HeaderText = "Họ và tên";
             this.HoTen.MinimumWidth = 8;
             this.HoTen.Name = "HoTen";
-            this.HoTen.Width = 92;
             // 
             // MaSV
             // 
-            this.MaSV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.MaSV.DataPropertyName = "MASV";
             this.MaSV.HeaderText = "Mã sinh viên";
             this.MaSV.MinimumWidth = 8;
             this.MaSV.Name = "MaSV";
-            this.MaSV.Width = 108;
             // 
             // phong
             // 
-            this.phong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.phong.DataPropertyName = "MA_PHONG";
             this.phong.HeaderText = "Phòng";
             this.phong.MinimumWidth = 8;
             this.phong.Name = "phong";
-            this.phong.Width = 78;
             // 
             // NHA
             // 
-            this.NHA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.NHA.DataPropertyName = "MANHA";
             this.NHA.HeaderText = "Nhà";
             this.NHA.MinimumWidth = 8;
             this.NHA.Name = "NHA";
-            this.NHA.Width = 63;
             // 
             // TinhTrang
             // 
-            this.TinhTrang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.TinhTrang.DataPropertyName = "TINHTRANG_CUTRU";
             this.TinhTrang.HeaderText = "Tình trạng cư trú";
             this.TinhTrang.MinimumWidth = 8;
             this.TinhTrang.Name = "TinhTrang";
-            this.TinhTrang.Width = 117;
             // 
             // UC_HOSOSINHVIEN_Ribbon
             // 

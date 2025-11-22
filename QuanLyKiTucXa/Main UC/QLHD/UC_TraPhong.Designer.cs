@@ -46,11 +46,12 @@
             this.TenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DENNGAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYKTTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTraPhong)).BeginInit();
@@ -191,7 +192,6 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvTraPhong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTraPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dgvTraPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvTraPhong.BackgroundColor = System.Drawing.Color.White;
             this.dgvTraPhong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvTraPhong.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -212,11 +212,12 @@
             this.TenSV,
             this.GioiTinh,
             this.MaPhong,
-            this.Column1,
+            this.TENNV,
             this.Nha,
             this.LoaiPhong,
             this.NgayBatDau,
-            this.NgayKetThuc,
+            this.DENNGAY,
+            this.NGAYKTTT,
             this.NgayKy});
             this.dgvTraPhong.EnableHeadersVisualStyles = false;
             this.dgvTraPhong.Location = new System.Drawing.Point(46, 145);
@@ -234,7 +235,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTraPhong.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTraPhong.RowTemplate.Height = 45;
-            this.dgvTraPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTraPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvTraPhong.Size = new System.Drawing.Size(1555, 859);
             this.dgvTraPhong.TabIndex = 15;
             // 
@@ -244,7 +245,7 @@
             this.MaHD.HeaderText = "Mã HD";
             this.MaHD.MinimumWidth = 8;
             this.MaHD.Name = "MaHD";
-            this.MaHD.Width = 77;
+            this.MaHD.Width = 124;
             // 
             // TenHopDong
             // 
@@ -252,7 +253,7 @@
             this.TenHopDong.HeaderText = "Tên hợp đồng";
             this.TenHopDong.MinimumWidth = 8;
             this.TenHopDong.Name = "TenHopDong";
-            this.TenHopDong.Width = 117;
+            this.TenHopDong.Width = 300;
             // 
             // MaSV
             // 
@@ -260,7 +261,7 @@
             this.MaSV.HeaderText = "Mã SV";
             this.MaSV.MinimumWidth = 8;
             this.MaSV.Name = "MaSV";
-            this.MaSV.Width = 57;
+            this.MaSV.Width = 124;
             // 
             // TenSV
             // 
@@ -268,7 +269,7 @@
             this.TenSV.HeaderText = "Tên SV";
             this.TenSV.MinimumWidth = 8;
             this.TenSV.Name = "TenSV";
-            this.TenSV.Width = 59;
+            this.TenSV.Width = 200;
             // 
             // GioiTinh
             // 
@@ -276,7 +277,7 @@
             this.GioiTinh.HeaderText = "Giới tính";
             this.GioiTinh.MinimumWidth = 8;
             this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.Width = 63;
+            this.GioiTinh.Width = 124;
             // 
             // MaPhong
             // 
@@ -284,15 +285,15 @@
             this.MaPhong.HeaderText = "Mã Phòng";
             this.MaPhong.MinimumWidth = 8;
             this.MaPhong.Name = "MaPhong";
-            this.MaPhong.Width = 95;
+            this.MaPhong.Width = 125;
             // 
-            // Column1
+            // TENNV
             // 
-            this.Column1.DataPropertyName = "MANV";
-            this.Column1.HeaderText = "Người ký";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 89;
+            this.TENNV.DataPropertyName = "TENNV";
+            this.TENNV.HeaderText = "Người ký";
+            this.TENNV.MinimumWidth = 6;
+            this.TENNV.Name = "TENNV";
+            this.TENNV.Width = 200;
             // 
             // Nha
             // 
@@ -300,7 +301,7 @@
             this.Nha.HeaderText = "Nhà";
             this.Nha.MinimumWidth = 8;
             this.Nha.Name = "Nha";
-            this.Nha.Width = 63;
+            this.Nha.Width = 124;
             // 
             // LoaiPhong
             // 
@@ -308,7 +309,7 @@
             this.LoaiPhong.HeaderText = "Loại phòng";
             this.LoaiPhong.MinimumWidth = 8;
             this.LoaiPhong.Name = "LoaiPhong";
-            this.LoaiPhong.Width = 102;
+            this.LoaiPhong.Width = 124;
             // 
             // NgayBatDau
             // 
@@ -316,15 +317,23 @@
             this.NgayBatDau.HeaderText = "Ngày bắt đầu";
             this.NgayBatDau.MinimumWidth = 8;
             this.NgayBatDau.Name = "NgayBatDau";
-            this.NgayBatDau.Width = 93;
+            this.NgayBatDau.Width = 200;
             // 
-            // NgayKetThuc
+            // DENNGAY
             // 
-            this.NgayKetThuc.DataPropertyName = "DENNGAY";
-            this.NgayKetThuc.HeaderText = "Ngày kết thúc";
-            this.NgayKetThuc.MinimumWidth = 8;
-            this.NgayKetThuc.Name = "NgayKetThuc";
-            this.NgayKetThuc.Width = 91;
+            this.DENNGAY.DataPropertyName = "DENNGAY";
+            this.DENNGAY.HeaderText = "Ngày kết thúc";
+            this.DENNGAY.MinimumWidth = 6;
+            this.DENNGAY.Name = "DENNGAY";
+            this.DENNGAY.Width = 125;
+            // 
+            // NGAYKTTT
+            // 
+            this.NGAYKTTT.DataPropertyName = "NGAYKTTT";
+            this.NGAYKTTT.HeaderText = "Ngày thanh lý";
+            this.NGAYKTTT.MinimumWidth = 8;
+            this.NGAYKTTT.Name = "NGAYKTTT";
+            this.NGAYKTTT.Width = 200;
             // 
             // NgayKy
             // 
@@ -332,7 +341,7 @@
             this.NgayKy.HeaderText = "Ngày ký";
             this.NgayKy.MinimumWidth = 8;
             this.NgayKy.Name = "NgayKy";
-            this.NgayKy.Width = 82;
+            this.NgayKy.Width = 200;
             // 
             // UC_TraPhong
             // 
@@ -370,11 +379,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSV;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nha;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoaiPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayBatDau;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayKetThuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DENNGAY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKTTT;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayKy;
     }
 }

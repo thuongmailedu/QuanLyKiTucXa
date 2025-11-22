@@ -31,6 +31,8 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
         {
             //Khong sua, header no bi loi stytle
             dgvTraPhong.ColumnHeadersDefaultCellStyle.Font = new Font(dgvTraPhong.Font, FontStyle.Bold);
+
+
             constr = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True";
 
             conn.ConnectionString = constr;
