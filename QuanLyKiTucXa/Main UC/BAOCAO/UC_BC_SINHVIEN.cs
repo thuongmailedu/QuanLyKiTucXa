@@ -16,5 +16,10 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
         {
             InitializeComponent();
         }
+
+        private void btnadd_BC_DS_SINHVIEN_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

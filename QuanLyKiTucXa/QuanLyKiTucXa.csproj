@@ -252,6 +252,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReportsSystem\DataSets\Dts_DS_SINHVIEN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DS_SINHVIEN.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Ribbons\UC_BAOCAO_Ribbon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -388,6 +393,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportsSystem\Reports\rptSINHVIEN.rdlc" />
     <EmbeddedResource Include="Ribbons\UC_BAOCAO_Ribbon.resx">
       <DependentUpon>UC_BAOCAO_Ribbon.cs</DependentUpon>
     </EmbeddedResource>
@@ -421,6 +427,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ReportsSystem\DataSets\Dts_DS_SINHVIEN.xsc">
+      <DependentUpon>Dts_DS_SINHVIEN.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\Dts_DS_SINHVIEN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DS_SINHVIEN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportsSystem\DataSets\Dts_DS_SINHVIEN.xss">
+      <DependentUpon>Dts_DS_SINHVIEN.xsd</DependentUpon>
+    </None>
     <None Include="Resources\logo-neu-inkythuatso-01-09-10-41-01.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -454,8 +471,6 @@
     <None Include="Resources\REMOVE1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ReportsSystem\DataSets\" />
-    <Folder Include="ReportsSystem\Reports\" />
     <Folder Include="Resources\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
