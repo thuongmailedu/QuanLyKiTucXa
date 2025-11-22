@@ -16,6 +16,9 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
         public frm_addHopDong()
         {
             InitializeComponent();
+
+            // Khởi tạo connection string TRƯỚC KHI khởi tạo validator
+            conn.ConnectionString = constr;
             validator = new HopDongValidator(constr);
         }
 
@@ -23,8 +26,7 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
         {
             try
             {
-                // Kết nối database
-                conn.ConnectionString = constr;
+                // Mở connection
                 if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
@@ -57,16 +59,13 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                     return;
                 }
 
-                // TENDN chính là MANV
                 maNhanVien = UserSession.TenDangNhap;
 
-                // Đảm bảo connection mở
                 if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
                 }
 
-                // Lấy tên nhân viên từ bảng NHANVIEN
                 string query = "SELECT TENNV FROM NHANVIEN WHERE MANV = @MANV";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -93,6 +92,9 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             }
         }
 
+        /// <summary>
+        /// Hiển thị tên sinh viên và giới tính khi nhập MASV
+        /// </summary>
         private void txtMASV_Leave(object sender, EventArgs e)
         {
             string maSV = txtMASV.Text.Trim();
@@ -100,38 +102,63 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             if (string.IsNullOrEmpty(maSV))
             {
                 txtTENSV.Clear();
+                comGIOITINH.SelectedIndex = -1;
                 return;
             }
 
             try
             {
-                // Đảm bảo connection mở
                 if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
                 }
 
-                string query = "SELECT TENSV FROM SINHVIEN WHERE MASV = @MASV";
+                // Lấy cả TENSV và GIOITINH
+                string query = "SELECT TENSV, GIOITINH FROM SINHVIEN WHERE MASV = @MASV";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@MASV", maSV);
 
-                    object result = cmd.ExecuteScalar();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Hiển thị tên sinh viên
+                            txtTENSV.Text = reader["TENSV"].ToString();
 
-                    if (result != null)
-                    {
-                        txtTENSV.Text = result.ToString();
-                    }
-                    else
-                    {
-                        txtTENSV.Clear();
-                        MessageBox.Show($"Sinh viên với mã {maSV} chưa tồn tại trong hệ thống!",
-                            "Không tìm thấy sinh viên",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-                        txtMASV.Focus();
-                        txtMASV.SelectAll();
+                            // Hiển thị giới tính trong ComboBox
+                            string gioiTinh = reader["GIOITINH"].ToString().Trim();
+
+                            // Tìm và chọn item trong ComboBox
+                            int index = comGIOITINH.FindStringExact(gioiTinh);
+                            if (index >= 0)
+                            {
+                                comGIOITINH.SelectedIndex = index;
+                            }
+                            else
+                            {
+                                // Nếu không tìm thấy, thêm vào ComboBox
+                                comGIOITINH.Items.Add(gioiTinh);
+                                comGIOITINH.SelectedItem = gioiTinh;
+                            }
+
+                            // Disable ComboBox để không cho sửa
+                            comGIOITINH.Enabled = false;
+                        }
+                        else
+                        {
+                            txtTENSV.Clear();
+                            comGIOITINH.SelectedIndex = -1;
+                            comGIOITINH.Enabled = true;
+
+                            MessageBox.Show($"Sinh viên với mã {maSV} chưa tồn tại trong hệ thống!",
+                                "Không tìm thấy sinh viên",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                            txtMASV.Focus();
+                            txtMASV.SelectAll();
+                        }
                     }
                 }
             }
@@ -161,7 +188,6 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             // Tạo mã hợp đồng
             txtMAHD.Text = GenerateMaHD();
 
-            // Disable/Enable các control
             txtMA_PHONG.ReadOnly = true;
             txtMANHA.ReadOnly = true;
             txtLOAIPHONG.ReadOnly = true;
@@ -249,7 +275,6 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                 DateTime tuNgay = dateTUNGAY.Value;
                 DateTime denNgay = dateDENNGAY.Value;
 
-                // Validate cơ bản
                 if (string.IsNullOrEmpty(maSV))
                 {
                     MessageBox.Show("Vui lòng nhập mã sinh viên!", "Thông báo",
@@ -325,13 +350,11 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
         {
             try
             {
-                // Đảm bảo connection mở
                 if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
                 }
 
-                // SỬA LẠI QUERY - Đã sửa lỗi logic
                 string query = @"
                     SELECT SV.GIOITINH AS GT_SINHVIEN, N.GIOITINH AS GT_PHONG
                     FROM SINHVIEN SV
@@ -355,7 +378,6 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                             string gtSV = reader["GT_SINHVIEN"].ToString().Trim();
                             string gtPhong = reader["GT_PHONG"].ToString().Trim();
 
-                            // SỬA LẠI LOGIC - So sánh không phân biệt hoa thường
                             if (!string.Equals(gtSV, gtPhong, StringComparison.OrdinalIgnoreCase))
                             {
                                 MessageBox.Show($"Sinh viên {gtSV} không thể ở phòng dành cho {gtPhong}!",
@@ -379,7 +401,6 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
         {
             try
             {
-                // Đảm bảo connection mở
                 if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
@@ -442,6 +463,12 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             }
         }
 
+        /// <summary>
+        /// Tạo mã hợp đồng tự động HD000001, HD000002,...
+        /// </summary>
+        /// <summary>
+        /// Tạo mã hợp đồng tự động HD000001, HD000002,...
+        /// </summary>
         private string GenerateMaHD()
         {
             try
@@ -452,34 +479,53 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                     conn.Open();
                 }
 
+                // Query lấy mã hợp đồng lớn nhất có dạng HD + 6 chữ số
                 string query = @"
-                    SELECT TOP 1 MAHD 
-                    FROM HOPDONG 
-                    WHERE MAHD LIKE 'HD%' 
-                    ORDER BY MAHD DESC";
+            SELECT TOP 1 MAHD 
+            FROM HOPDONG 
+            WHERE MAHD LIKE 'HD[0-9][0-9][0-9][0-9][0-9][0-9]'
+            ORDER BY CAST(SUBSTRING(MAHD, 3, 6) AS INT) DESC";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     object result = cmd.ExecuteScalar();
 
-                    if (result != null)
+                    if (result != null && result != DBNull.Value)
                     {
                         string lastMaHD = result.ToString();
-                        string numberPart = lastMaHD.Substring(2);
 
-                        if (int.TryParse(numberPart, out int lastNumber))
+                        // Debug: Kiểm tra giá trị lấy được
+                        System.Diagnostics.Debug.WriteLine($"Last MAHD: {lastMaHD}");
+
+                        // Lấy phần số (6 ký tự cuối)
+                        if (lastMaHD.Length >= 8) // HD + 6 số
                         {
-                            int newNumber = lastNumber + 1;
-                            return "HD" + newNumber.ToString("D6");
+                            string numberPart = lastMaHD.Substring(2); // Bỏ "HD"
+
+                            if (int.TryParse(numberPart, out int lastNumber))
+                            {
+                                int newNumber = lastNumber + 1;
+                                string newMaHD = "HD" + newNumber.ToString("D6");
+
+                                // Debug
+                                System.Diagnostics.Debug.WriteLine($"Generated MAHD: {newMaHD}");
+
+                                return newMaHD;
+                            }
                         }
                     }
 
+                    // Nếu chưa có hợp đồng nào hoặc parse lỗi, bắt đầu từ HD000001
+                    System.Diagnostics.Debug.WriteLine("No existing MAHD found, starting from HD000001");
                     return "HD000001";
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tạo mã hợp đồng: " + ex.Message);
+                MessageBox.Show("Lỗi khi tạo mã hợp đồng: " + ex.Message + "\n\n" + ex.StackTrace,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                // Fallback: dùng timestamp
                 return "HD" + DateTime.Now.ToString("yyyyMMddHHmmss");
             }
         }
@@ -490,7 +536,6 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             this.Close();
         }
 
-        // Đóng connection khi form đóng
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
