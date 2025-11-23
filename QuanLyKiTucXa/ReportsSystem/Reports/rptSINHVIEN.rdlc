@@ -1105,7 +1105,7 @@ CÔNG NGHỆ ĐÔNG Á</Value>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="prTHANG">
-      <DataType>String</DataType>
+      <DataType>DateTime</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="prTENNV">

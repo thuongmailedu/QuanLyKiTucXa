@@ -184,16 +184,10 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
             try
             {
                 // ✅ SỬA ĐƯỜNG DẪN CHO ĐÚNG VỚI CẤU TRÚC THƯ MỤC
-                string reportPath = Application.StartupPath + "\\ReportsSystem\\Reports\\rptSINHVIEN.rdlc";
+               
+                reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyKitucXa.ReportsSystem.Reports.rptSINHVIEN.rdlc";
 
-                if (!System.IO.File.Exists(reportPath))
-                {
-                    MessageBox.Show("File không tồn tại:\n" + reportPath, "Lỗi",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                reportViewer1.LocalReport.ReportPath = reportPath;
+                //reportViewer1.LocalReport.ReportPath = reportPath;
                 reportViewer1.LocalReport.DataSources.Clear();
 
                 ReportDataSource rds = new ReportDataSource("DataSet_DS_SINHVIEN", data);
