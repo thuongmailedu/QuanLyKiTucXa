@@ -50,7 +50,7 @@
             this.btnXemBaoCao.FillColor = System.Drawing.Color.Transparent;
             this.btnXemBaoCao.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnXemBaoCao.ForeColor = System.Drawing.Color.White;
-            this.btnXemBaoCao.Location = new System.Drawing.Point(1341, 151);
+            this.btnXemBaoCao.Location = new System.Drawing.Point(1346, 133);
             this.btnXemBaoCao.Name = "btnXemBaoCao";
             this.btnXemBaoCao.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnXemBaoCao.Size = new System.Drawing.Size(31, 34);
@@ -116,10 +116,10 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(116, 197);
+            this.reportViewer1.Location = new System.Drawing.Point(116, 173);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1261, 694);
+            this.reportViewer1.Size = new System.Drawing.Size(1261, 619);
             this.reportViewer1.TabIndex = 46;
             // 
             // label8

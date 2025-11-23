@@ -19,19 +19,14 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
         {
             try
             {
-                // Load danh sách nhà
                 LoadComboNha();
-
-                // Load danh sách tình trạng
                 LoadComboTinhTrang();
 
-                // Thiết lập DateTimePicker - chỉ hiển thị tháng/năm
                 //dtpTHANG.Format = DateTimePickerFormat.Custom;
                 //dtpTHANG.CustomFormat = "MM/yyyy";
-                //dtpTHANG.ShowUpDown = true; // Dùng nút lên/xuống
+                //dtpTHANG.ShowUpDown = true;
                 //dtpTHANG.Value = DateTime.Now;
 
-                // Load ReportViewer
                 this.reportViewer1.RefreshReport();
             }
             catch (Exception ex)
@@ -56,7 +51,6 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    // Thêm "Tất cả"
                     DataRow rowAll = dt.NewRow();
                     rowAll["MANHA"] = "ALL";
                     rowAll["TENNHA"] = "--- Tất cả ---";
@@ -79,7 +73,6 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
         {
             try
             {
-                // Tạo danh sách tình trạng
                 DataTable dt = new DataTable();
                 dt.Columns.Add("VALUE");
                 dt.Columns.Add("DISPLAY");
@@ -91,7 +84,7 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
                 comTINHTRANG.DataSource = dt;
                 comTINHTRANG.DisplayMember = "DISPLAY";
                 comTINHTRANG.ValueMember = "VALUE";
-                comTINHTRANG.SelectedIndex = 0; // Mặc định chọn "Tất cả"
+                comTINHTRANG.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -100,12 +93,10 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
             }
         }
 
-        // ⚡ EVENT: Nút Xem báo cáo
         private void btnXemBaoCao_Click(object sender, EventArgs e)
         {
             try
             {
-                // Lấy tham số
                 string maNha = (comNHA.SelectedValue != null && comNHA.SelectedValue.ToString() != "ALL")
                                ? comNHA.SelectedValue.ToString() : null;
 
@@ -115,8 +106,8 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
 
                 int thang = dtpTHANG.Value.Month;
                 int nam = dtpTHANG.Value.Year;
+                string tenNV = GetTenNhanVien(UserSession.TenDangNhap);
 
-                // Load dữ liệu
                 DataTable dtBaoCao = GetDataBaoCao(maNha, thang, nam, tinhTrang);
 
                 if (dtBaoCao.Rows.Count == 0)
@@ -126,13 +117,33 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
                     return;
                 }
 
-                // Hiển thị báo cáo
-                HienThiBaoCao(dtBaoCao, maNha, thang, nam, tinhTrang);
+                HienThiBaoCao(dtBaoCao, maNha, thang, nam, tinhTrang, tenNV);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message + "\n\n" + ex.StackTrace, "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private string GetTenNhanVien(string tenDN)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT TENNV FROM NHANVIEN WHERE MANV = @TENDN";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@TENDN", tenDN);
+
+                    conn.Open();
+                    object result = cmd.ExecuteScalar();
+                    return result != null ? result.ToString() : "";
+                }
+            }
+            catch
+            {
+                return "";
             }
         }
 
@@ -143,7 +154,6 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
                 SqlCommand cmd = new SqlCommand("sp_BaoCaoTinhTrangPhong", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                // Truyền tham số
                 cmd.Parameters.AddWithValue("@MANHA", (object)maNha ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("@THANG", thang);
                 cmd.Parameters.AddWithValue("@NAM", nam);
@@ -157,24 +167,22 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
             }
         }
 
-        private void HienThiBaoCao(DataTable data, string maNha, int thang, int nam, string tinhTrang)
+        private void HienThiBaoCao(DataTable data, string maNha, int thang, int nam, string tinhTrang, string tenNV)
         {
             try
             {
-                // Sử dụng Embedded Resource
                 reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyKiTucXa.ReportsSystem.Reports.rpt_TT_PHONG.rdlc";
                 reportViewer1.LocalReport.DataSources.Clear();
 
-                // Gán DataSource
                 ReportDataSource rds = new ReportDataSource("DataSet_TT_PHONG", data);
                 reportViewer1.LocalReport.DataSources.Add(rds);
 
-                // Thiết lập Parameters
                 ReportParameter[] parameters = new ReportParameter[]
                 {
                     new ReportParameter("prMANHA", string.IsNullOrEmpty(maNha) ? "Tất cả" : maNha),
                     new ReportParameter("prTHANG", $"Tháng {thang:00}/{nam}"),
-                    new ReportParameter("prTINHTRANG", string.IsNullOrEmpty(tinhTrang) ? "Tất cả" : tinhTrang)
+                    new ReportParameter("prTINHTRANG", string.IsNullOrEmpty(tinhTrang) ? "Tất cả" : tinhTrang),
+                    new ReportParameter("prTENNV", string.IsNullOrEmpty(tenNV) ? "" : tenNV)
                 };
 
                 reportViewer1.LocalReport.SetParameters(parameters);
@@ -186,7 +194,5 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-       
     }
 }
