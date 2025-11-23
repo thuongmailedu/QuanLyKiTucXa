@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Dts_TT_PHONG" targetNamespace="http://tempuri.org/Dts_TT_PHONG.xsd" xmlns:mstns="http://tempuri.org/Dts_TT_PHONG.xsd" xmlns="http://tempuri.org/Dts_TT_PHONG.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Dts_TT_PHONG" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="Dts_TT_PHONG" msprop:Generator_DataSetName="Dts_TT_PHONG">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Dtb_TT_PHONG" msprop:Generator_RowEvHandlerName="Dtb_TT_PHONGRowChangeEventHandler" msprop:Generator_RowDeletedName="Dtb_TT_PHONGRowDeleted" msprop:Generator_RowDeletingName="Dtb_TT_PHONGRowDeleting" msprop:Generator_RowEvArgName="Dtb_TT_PHONGRowChangeEvent" msprop:Generator_TablePropName="Dtb_TT_PHONG" msprop:Generator_RowChangedName="Dtb_TT_PHONGRowChanged" msprop:Generator_RowChangingName="Dtb_TT_PHONGRowChanging" msprop:Generator_TableClassName="Dtb_TT_PHONGDataTable" msprop:Generator_RowClassName="Dtb_TT_PHONGRow" msprop:Generator_TableVarName="tableDtb_TT_PHONG" msprop:Generator_UserTableName="Dtb_TT_PHONG">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MANHA" msprop:Generator_ColumnPropNameInRow="MANHA" msprop:Generator_ColumnPropNameInTable="MANHAColumn" msprop:Generator_ColumnVarNameInTable="columnMANHA" msprop:Generator_UserColumnName="MANHA" type="xs:string" minOccurs="0" />
+              <xs:element name="MA_PHONG" msprop:Generator_ColumnPropNameInRow="MA_PHONG" msprop:Generator_ColumnPropNameInTable="MA_PHONGColumn" msprop:Generator_ColumnVarNameInTable="columnMA_PHONG" msprop:Generator_UserColumnName="MA_PHONG" type="xs:string" minOccurs="0" />
+              <xs:element name="SOLUONG" msprop:Generator_ColumnPropNameInRow="SOLUONG" msprop:Generator_ColumnPropNameInTable="SOLUONGColumn" msprop:Generator_ColumnVarNameInTable="columnSOLUONG" msprop:Generator_UserColumnName="SOLUONG" type="xs:string" minOccurs="0" />
+              <xs:element name="TOIDA" msprop:Generator_ColumnPropNameInRow="TOIDA" msprop:Generator_ColumnPropNameInTable="TOIDAColumn" msprop:Generator_ColumnVarNameInTable="columnTOIDA" msprop:Generator_UserColumnName="TOIDA" type="xs:string" minOccurs="0" />
+              <xs:element name="CONTRONG" msprop:Generator_ColumnPropNameInRow="CONTRONG" msprop:Generator_ColumnPropNameInTable="CONTRONGColumn" msprop:Generator_ColumnVarNameInTable="columnCONTRONG" msprop:Generator_UserColumnName="CONTRONG" type="xs:string" minOccurs="0" />
+              <xs:element name="TINHTRANG" msprop:Generator_ColumnPropNameInRow="TINHTRANG" msprop:Generator_ColumnPropNameInTable="TINHTRANGColumn" msprop:Generator_ColumnVarNameInTable="columnTINHTRANG" msprop:Generator_UserColumnName="TINHTRANG" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

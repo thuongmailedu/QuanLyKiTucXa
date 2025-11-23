@@ -52,12 +52,6 @@
             this.txtSearch_NHA_CSVC = new Guna.UI2.WinForms.Guna2TextBox();
             this.comfillter_NHA_CSVC = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgvDMCSVC = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MA_CSVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN_CSVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NHACC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRANGTHAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHITIET = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvNHA_CSVC = new System.Windows.Forms.DataGridView();
             this.STT_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +59,12 @@
             this.TEN_CSVC_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NHACC_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MA_CSVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN_CSVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN_NHACC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRANGTHAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHITIET = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDMCSVC)).BeginInit();
@@ -382,7 +382,7 @@
             this.STT,
             this.MA_CSVC,
             this.TEN_CSVC,
-            this.NHACC,
+            this.TEN_NHACC,
             this.TRANGTHAI,
             this.CHITIET});
             this.dgvDMCSVC.EnableHeadersVisualStyles = false;
@@ -404,48 +404,6 @@
             this.dgvDMCSVC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDMCSVC.Size = new System.Drawing.Size(716, 603);
             this.dgvDMCSVC.TabIndex = 16;
-            // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 8;
-            this.STT.Name = "STT";
-            // 
-            // MA_CSVC
-            // 
-            this.MA_CSVC.DataPropertyName = "MA_CSVC";
-            this.MA_CSVC.HeaderText = "Mã CSVC";
-            this.MA_CSVC.MinimumWidth = 8;
-            this.MA_CSVC.Name = "MA_CSVC";
-            // 
-            // TEN_CSVC
-            // 
-            this.TEN_CSVC.DataPropertyName = "TEN_CSVC";
-            this.TEN_CSVC.HeaderText = "Tên CSVC";
-            this.TEN_CSVC.MinimumWidth = 8;
-            this.TEN_CSVC.Name = "TEN_CSVC";
-            // 
-            // NHACC
-            // 
-            this.NHACC.DataPropertyName = "NHACC";
-            this.NHACC.HeaderText = "Nhà cung cấp";
-            this.NHACC.MinimumWidth = 8;
-            this.NHACC.Name = "NHACC";
-            // 
-            // TRANGTHAI
-            // 
-            this.TRANGTHAI.DataPropertyName = "TRANGTHAI";
-            this.TRANGTHAI.HeaderText = "Trạng thái";
-            this.TRANGTHAI.MinimumWidth = 8;
-            this.TRANGTHAI.Name = "TRANGTHAI";
-            // 
-            // CHITIET
-            // 
-            this.CHITIET.DataPropertyName = "CHITIET";
-            this.CHITIET.HeaderText = "Chi tiết";
-            this.CHITIET.MinimumWidth = 8;
-            this.CHITIET.Name = "CHITIET";
             // 
             // dgvNHA_CSVC
             // 
@@ -540,6 +498,48 @@
             this.NHACC_2.MinimumWidth = 8;
             this.NHACC_2.Name = "NHACC_2";
             // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 8;
+            this.STT.Name = "STT";
+            // 
+            // MA_CSVC
+            // 
+            this.MA_CSVC.DataPropertyName = "MA_CSVC";
+            this.MA_CSVC.HeaderText = "Mã CSVC";
+            this.MA_CSVC.MinimumWidth = 8;
+            this.MA_CSVC.Name = "MA_CSVC";
+            // 
+            // TEN_CSVC
+            // 
+            this.TEN_CSVC.DataPropertyName = "TEN_CSVC";
+            this.TEN_CSVC.HeaderText = "Tên CSVC";
+            this.TEN_CSVC.MinimumWidth = 8;
+            this.TEN_CSVC.Name = "TEN_CSVC";
+            // 
+            // TEN_NHACC
+            // 
+            this.TEN_NHACC.DataPropertyName = "TEN_NHACC";
+            this.TEN_NHACC.HeaderText = "Nhà cung cấp";
+            this.TEN_NHACC.MinimumWidth = 8;
+            this.TEN_NHACC.Name = "TEN_NHACC";
+            // 
+            // TRANGTHAI
+            // 
+            this.TRANGTHAI.DataPropertyName = "TRANGTHAI";
+            this.TRANGTHAI.HeaderText = "Trạng thái";
+            this.TRANGTHAI.MinimumWidth = 8;
+            this.TRANGTHAI.Name = "TRANGTHAI";
+            // 
+            // CHITIET
+            // 
+            this.CHITIET.DataPropertyName = "CHITIET";
+            this.CHITIET.HeaderText = "Chi tiết";
+            this.CHITIET.MinimumWidth = 8;
+            this.CHITIET.Name = "CHITIET";
+            // 
             // UC_DANHMUCCSVC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -582,17 +582,17 @@
         private Guna.UI2.WinForms.Guna2ComboBox comfillter_NHA_CSVC;
         private System.Windows.Forms.DataGridView dgvDMCSVC;
         private System.Windows.Forms.DataGridView dgvNHA_CSVC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MA_CSVC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TEN_CSVC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NHACC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TRANGTHAI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHITIET;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANHA;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA_CSVC_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN_CSVC_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn NHACC_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA_CSVC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN_CSVC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN_NHACC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TRANGTHAI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHITIET;
     }
 }

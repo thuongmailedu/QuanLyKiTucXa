@@ -21,5 +21,10 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
         {
 
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

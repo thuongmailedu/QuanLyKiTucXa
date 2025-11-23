@@ -26,10 +26,10 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
                 LoadComboTrangThai();
 
                 // Thiết lập DateTimePicker - chỉ hiển thị tháng/năm
-                dtpTHANG.Format = DateTimePickerFormat.Custom;
-                dtpTHANG.CustomFormat = "MM/yyyy";
-                dtpTHANG.ShowUpDown = true; // Dùng nút lên/xuống thay vì calendar
-                dtpTHANG.Value = DateTime.Now;
+                //dtpTHANG.Format = DateTimePickerFormat.Custom;
+                //dtpTHANG.CustomFormat = "MM/yyyy";
+                //dtpTHANG.ShowUpDown = true; // Dùng nút lên/xuống thay vì calendar
+                //dtpTHANG.Value = DateTime.Now;
 
                 // Load ReportViewer
                 this.reportViewer1.RefreshReport();
@@ -243,7 +243,7 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
             try
             {
                 // Sử dụng Embedded Resource
-                reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyKiTucXa.ReportsSystem.Reports.rptHOADON.rdlc";
+                reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyKiTucXa.ReportsSystem.Reports.rptHDTONGHOP.rdlc";
                 reportViewer1.LocalReport.DataSources.Clear();
 
                 // Gán DataSource

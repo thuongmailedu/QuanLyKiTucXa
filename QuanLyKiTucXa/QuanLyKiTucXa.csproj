@@ -270,6 +270,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dts_DS_SINHVIEN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ReportsSystem\DataSets\Dts_TT_PHONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_TT_PHONG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Ribbons\UC_BAOCAO_Ribbon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -409,6 +414,7 @@
     <EmbeddedResource Include="ReportsSystem\Reports\rptHDTONGHOP.rdlc" />
     <EmbeddedResource Include="ReportsSystem\Reports\rptHOPDONG.rdlc" />
     <EmbeddedResource Include="ReportsSystem\Reports\rptSINHVIEN.rdlc" />
+    <EmbeddedResource Include="ReportsSystem\Reports\rpt_TT_PHONG.rdlc" />
     <EmbeddedResource Include="Ribbons\UC_BAOCAO_Ribbon.resx">
       <DependentUpon>UC_BAOCAO_Ribbon.cs</DependentUpon>
     </EmbeddedResource>
@@ -474,6 +480,17 @@
     </None>
     <None Include="ReportsSystem\DataSets\Dts_DS_SINHVIEN.xss">
       <DependentUpon>Dts_DS_SINHVIEN.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\Dts_TT_PHONG.xsc">
+      <DependentUpon>Dts_TT_PHONG.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\Dts_TT_PHONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_TT_PHONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportsSystem\DataSets\Dts_TT_PHONG.xss">
+      <DependentUpon>Dts_TT_PHONG.xsd</DependentUpon>
     </None>
     <None Include="Resources\logo-neu-inkythuatso-01-09-10-41-01.jpg" />
   </ItemGroup>

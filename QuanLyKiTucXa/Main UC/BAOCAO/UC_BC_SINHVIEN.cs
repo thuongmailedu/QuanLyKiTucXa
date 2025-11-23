@@ -20,9 +20,9 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
             try
             {
                 LoadComboNha();
-                dtpTHOIGIAN.Format = DateTimePickerFormat.Custom;
-                dtpTHOIGIAN.CustomFormat = "MM/yyyy";
-                dtpTHOIGIAN.Value = DateTime.Now;
+                dtpTHANG.Format = DateTimePickerFormat.Custom;
+                dtpTHANG.CustomFormat = "MM/yyyy";
+                dtpTHANG.Value = DateTime.Now;
                 this.reportViewer1.RefreshReport();
             }
             catch (Exception ex)
@@ -121,8 +121,8 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
                 if (comPHONG.SelectedValue != null && comPHONG.SelectedValue.ToString() != "ALL")
                     maPhong = comPHONG.SelectedValue.ToString();
 
-                int thang = dtpTHOIGIAN.Value.Month;
-                int nam = dtpTHOIGIAN.Value.Year;
+                int thang = dtpTHANG.Value.Month;
+                int nam = dtpTHANG.Value.Year;
                 string tenNV = GetTenNhanVien(UserSession.TenDangNhap);
 
                 DataTable dtBaoCao = GetDataBaoCao(maNha, maPhong, thang, nam);
