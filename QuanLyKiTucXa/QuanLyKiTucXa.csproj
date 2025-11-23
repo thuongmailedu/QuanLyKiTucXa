@@ -252,6 +252,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReportsSystem\DataSets\Dts_DS_HDTONGHOP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DS_HDTONGHOP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ReportsSystem\DataSets\Dts_DS_HOPDONG.cs">
       <DependentUpon>Dts_DS_HOPDONG.xsd</DependentUpon>
     </Compile>
@@ -401,6 +406,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportsSystem\Reports\rptHDTONGHOP.rdlc" />
     <EmbeddedResource Include="ReportsSystem\Reports\rptHOPDONG.rdlc" />
     <EmbeddedResource Include="ReportsSystem\Reports\rptSINHVIEN.rdlc" />
     <EmbeddedResource Include="Ribbons\UC_BAOCAO_Ribbon.resx">
@@ -436,6 +442,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ReportsSystem\DataSets\Dts_DS_HDTONGHOP.xsc">
+      <DependentUpon>Dts_DS_HDTONGHOP.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\Dts_DS_HDTONGHOP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DS_HDTONGHOP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportsSystem\DataSets\Dts_DS_HDTONGHOP.xss">
+      <DependentUpon>Dts_DS_HDTONGHOP.xsd</DependentUpon>
+    </None>
     <None Include="ReportsSystem\DataSets\Dts_DS_HOPDONG.xsc">
       <DependentUpon>Dts_DS_HOPDONG.xsd</DependentUpon>
     </None>
