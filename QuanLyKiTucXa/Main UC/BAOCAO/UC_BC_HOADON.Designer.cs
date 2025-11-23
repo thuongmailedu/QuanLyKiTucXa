@@ -57,6 +57,7 @@
             this.btnXemBaoCao.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnXemBaoCao.Size = new System.Drawing.Size(31, 34);
             this.btnXemBaoCao.TabIndex = 64;
+            this.btnXemBaoCao.Click += new System.EventHandler(this.btnXemBaoCao_Click);
             // 
             // dtpTHANG
             // 
@@ -141,6 +142,7 @@
             this.comNHA.Size = new System.Drawing.Size(189, 51);
             this.comNHA.TabIndex = 57;
             this.comNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.comNHA.SelectedIndexChanged += new System.EventHandler(this.comNHA_SelectedIndexChanged);
             // 
             // reportViewer1
             // 
@@ -210,6 +212,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_BC_HOADON";
             this.Size = new System.Drawing.Size(1593, 867);
+            this.Load += new System.EventHandler(this.UC_BC_HOADON_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
