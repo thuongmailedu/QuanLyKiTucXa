@@ -1,5 +1,4 @@
-﻿
-using QuanLyKiTucXa.Main_UC.BAOCAO;
+﻿using QuanLyKiTucXa.Main_UC.BAOCAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

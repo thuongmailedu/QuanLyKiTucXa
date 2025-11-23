@@ -38,6 +38,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_BC_HOPDONG";
             this.Size = new System.Drawing.Size(1375, 942);
+            this.Load += new System.EventHandler(this.UC_BC_HOPDONG_Load);
             this.ResumeLayout(false);
 
         }

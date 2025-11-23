@@ -1,34 +1,40 @@
-﻿using QuanLyKiTucXa.Main_UC.BAOCAO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 
-namespace QuanLyKiTucXa.UserControls
+namespace QuanLyKiTucXa.Main_UC.BAOCAO
 {
     public partial class UC_BC_SINHVIEN : UserControl
     {
-        private string connectionString = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True";
+        SqlConnection conn = new SqlConnection();
+        string connectionString = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True";
 
         public UC_BC_SINHVIEN()
         {
             InitializeComponent();
-            LoadData();
+            conn.ConnectionString = connectionString;
         }
 
-        private void LoadData()
+        private void UC_BC_SINHVIEN_Load(object sender, EventArgs e)
         {
             try
             {
+                // Load combo Nhà
                 LoadComboNha();
+
+                // Thiết lập DateTimePicker
+                dtpTHOIGIAN.Format = DateTimePickerFormat.Custom;
+                dtpTHOIGIAN.CustomFormat = "MM/yyyy";
                 dtpTHOIGIAN.Value = DateTime.Now;
+
+                // Load ReportViewer
+                reportViewer1.RefreshReport();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi load dữ liệu: " + ex.Message, "Lỗi",
+                MessageBox.Show("Lỗi khi load: " + ex.Message, "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -43,27 +49,62 @@ namespace QuanLyKiTucXa.UserControls
                                      MANHA + ' - ' + LOAIPHONG + ' (' + GIOITINH + ')' AS TENNHA 
                                      FROM NHA 
                                      ORDER BY MANHA";
+
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
+                    // Thêm dòng "Tất cả"
+                    DataRow rowAll = dt.NewRow();
+                    rowAll["MANHA"] = "ALL";
+                    rowAll["TENNHA"] = "--- Tất cả ---";
+                    dt.Rows.InsertAt(rowAll, 0);
+
                     comNHA.DataSource = dt;
                     comNHA.DisplayMember = "TENNHA";
                     comNHA.ValueMember = "MANHA";
-                    comNHA.SelectedIndex = -1;
+                    comNHA.SelectedIndex = 0;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi load danh sách nhà: " + ex.Message);
+                MessageBox.Show("Lỗi load nhà: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void comNHA_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comNHA.SelectedIndex >= 0)
+            try
             {
-                LoadComboPhong(comNHA.SelectedValue.ToString());
+                if (comNHA.SelectedValue == null || comNHA.SelectedIndex < 0)
+                    return;
+
+                string maNha = comNHA.SelectedValue.ToString();
+
+                if (maNha != "ALL")
+                {
+                    LoadComboPhong(maNha);
+                }
+                else
+                {
+                    // Reset combo phòng khi chọn "Tất cả"
+                    DataTable dtEmpty = new DataTable();
+                    dtEmpty.Columns.Add("MA_PHONG");
+                    DataRow row = dtEmpty.NewRow();
+                    row["MA_PHONG"] = "ALL";
+                    dtEmpty.Rows.Add(row);
+
+                    comPHONG.DataSource = dtEmpty;
+                    comPHONG.DisplayMember = "MA_PHONG";
+                    comPHONG.ValueMember = "MA_PHONG";
+                    comPHONG.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -81,7 +122,7 @@ namespace QuanLyKiTucXa.UserControls
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    // Thêm dòng "Tất cả" vào đầu
+                    // Thêm "Tất cả"
                     DataRow rowAll = dt.NewRow();
                     rowAll["MA_PHONG"] = "ALL";
                     dt.Rows.InsertAt(rowAll, 0);
@@ -94,7 +135,8 @@ namespace QuanLyKiTucXa.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi load danh sách phòng: " + ex.Message);
+                MessageBox.Show("Lỗi load phòng: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -102,39 +144,35 @@ namespace QuanLyKiTucXa.UserControls
         {
             try
             {
-                // Kiểm tra đầu vào
-                if (comNHA.SelectedIndex < 0)
+                string maNha = (comNHA.SelectedValue != null && comNHA.SelectedValue.ToString() != "ALL")
+                               ? comNHA.SelectedValue.ToString()
+                               : null;
+
+                string maPhong = null;
+                if (comPHONG.SelectedValue != null && comPHONG.SelectedValue.ToString() != "ALL")
                 {
-                    MessageBox.Show("Vui lòng chọn nhà!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    comNHA.Focus();
-                    return;
+                    maPhong = comPHONG.SelectedValue.ToString();
                 }
 
-                // Lấy thông tin
-                string maNha = comNHA.SelectedValue.ToString();
-                string maPhong = (comPHONG.SelectedValue.ToString() == "ALL") ? null : comPHONG.SelectedValue.ToString();
                 int thang = dtpTHOIGIAN.Value.Month;
                 int nam = dtpTHOIGIAN.Value.Year;
                 string tenNV = GetTenNhanVien(UserSession.TenDangNhap);
 
-                // Load dữ liệu
                 DataTable dtBaoCao = GetDataBaoCao(maNha, maPhong, thang, nam);
 
                 if (dtBaoCao.Rows.Count == 0)
                 {
-                    MessageBox.Show($"Không có sinh viên nào đang cư trú trong tháng {thang}/{nam}!",
+                    MessageBox.Show($"Không có sinh viên cư trú trong tháng {thang:00}/{nam}!",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
-                // Hiển thị báo cáo
                 HienThiBaoCao(dtBaoCao, maNha, maPhong, thang, nam, tenNV);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi xem báo cáo: " + ex.Message, "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi: " + ex.Message + "\n\n" + ex.StackTrace,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -150,12 +188,12 @@ namespace QuanLyKiTucXa.UserControls
 
                     conn.Open();
                     object result = cmd.ExecuteScalar();
-                    return result != null ? result.ToString() : "";
+                    return result != null ? result.ToString() : "Quản trị viên";
                 }
             }
             catch
             {
-                return "";
+                return "Quản trị viên";
             }
         }
 
@@ -166,7 +204,7 @@ namespace QuanLyKiTucXa.UserControls
                 SqlCommand cmd = new SqlCommand("sp_BaoCaoSinhVienTheoThang", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@MANHA", maNha);
+                cmd.Parameters.AddWithValue("@MANHA", (object)maNha ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("@MA_PHONG", (object)maPhong ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("@THANG", thang);
                 cmd.Parameters.AddWithValue("@NAM", nam);
@@ -183,20 +221,27 @@ namespace QuanLyKiTucXa.UserControls
         {
             try
             {
-                reportViewer1.LocalReport.ReportPath = "Reports/rptSINHVIEN.rdlc";
+                string reportPath = Application.StartupPath + "ReportsSystem\\Reports\\rptSINHVIEN.rdlc";
+
+                if (!System.IO.File.Exists(reportPath))
+                {
+                    MessageBox.Show("File báo cáo không tồn tại:\n" + reportPath, "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                reportViewer1.LocalReport.ReportPath = reportPath;
                 reportViewer1.LocalReport.DataSources.Clear();
 
-                // Gán DataSource với tên DataSet giống trong RDLC
                 ReportDataSource rds = new ReportDataSource("DataSet_DS_SINHVIEN", data);
                 reportViewer1.LocalReport.DataSources.Add(rds);
 
-                // Thiết lập các tham số
                 ReportParameter[] parameters = new ReportParameter[]
                 {
-                    new ReportParameter("prMANHA", maNha),
+                    new ReportParameter("prMANHA", string.IsNullOrEmpty(maNha) ? "Tất cả" : maNha),
                     new ReportParameter("prMA_PHONG", string.IsNullOrEmpty(maPhong) ? "Tất cả" : maPhong),
                     new ReportParameter("prTHANG", $"Tháng {thang:00}/{nam}"),
-                    new ReportParameter("prTENNV", tenNV)
+                    new ReportParameter("prTENNV", string.IsNullOrEmpty(tenNV) ? "Quản trị viên" : tenNV)
                 };
 
                 reportViewer1.LocalReport.SetParameters(parameters);
@@ -204,14 +249,9 @@ namespace QuanLyKiTucXa.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi hiển thị báo cáo: " + ex.Message, "Lỗi",
+                MessageBox.Show("Lỗi hiển thị:\n" + ex.Message + "\n\n" + ex.StackTrace, "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void UC_BC_SINHVIEN_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

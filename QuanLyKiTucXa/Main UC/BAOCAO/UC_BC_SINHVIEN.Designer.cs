@@ -1,4 +1,4 @@
-﻿namespace QuanLyKiTucXa.UserControls
+﻿namespace QuanLyKiTucXa.Main_UC.BAOCAO
 {
     partial class UC_BC_SINHVIEN
     {
@@ -75,6 +75,7 @@
             this.comNHA.Size = new System.Drawing.Size(244, 51);
             this.comNHA.TabIndex = 40;
             this.comNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+          //  this.comNHA.SelectedValueChanged += new System.EventHandler(this.comNHA_SelectedValueChanged);
             // 
             // guna2HtmlLabel1
             // 
