@@ -30,11 +30,11 @@
         {
             this.label8 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comNHA = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dateNgayCap = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.comPHONG = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dtpTHOIGIAN = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnadd_BC_DS_SINHVIEN = new Guna.UI2.WinForms.Guna2CircleButton();
             this.SuspendLayout();
@@ -43,7 +43,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(430, 23);
+            this.label8.Location = new System.Drawing.Point(411, 17);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(498, 41);
@@ -52,94 +52,93 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(75, 202);
+            this.reportViewer1.Location = new System.Drawing.Point(61, 202);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1261, 694);
             this.reportViewer1.TabIndex = 39;
             // 
-            // guna2ComboBox1
+            // comNHA
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderColor = System.Drawing.Color.Gray;
-            this.guna2ComboBox1.BorderRadius = 12;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 45;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(181, 101);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(244, 51);
-            this.guna2ComboBox1.StartIndex = 0;
-            this.guna2ComboBox1.TabIndex = 40;
-            this.guna2ComboBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.comNHA.BackColor = System.Drawing.Color.Transparent;
+            this.comNHA.BorderColor = System.Drawing.Color.Gray;
+            this.comNHA.BorderRadius = 12;
+            this.comNHA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comNHA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comNHA.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comNHA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comNHA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comNHA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comNHA.ItemHeight = 45;
+            this.comNHA.Location = new System.Drawing.Point(162, 95);
+            this.comNHA.Name = "comNHA";
+            this.comNHA.Size = new System.Drawing.Size(244, 51);
+            this.comNHA.TabIndex = 40;
+            this.comNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(124, 118);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(105, 112);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(30, 22);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(28, 18);
             this.guna2HtmlLabel1.TabIndex = 41;
             this.guna2HtmlLabel1.Text = "Nhà";
             // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(945, 118);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(926, 112);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(65, 22);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(59, 18);
             this.guna2HtmlLabel2.TabIndex = 42;
             this.guna2HtmlLabel2.Text = "Thời gian";
             // 
-            // guna2ComboBox2
+            // comPHONG
             // 
-            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox2.BorderColor = System.Drawing.Color.Gray;
-            this.guna2ComboBox2.BorderRadius = 12;
-            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox2.ItemHeight = 45;
-            this.guna2ComboBox2.Location = new System.Drawing.Point(632, 101);
-            this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.Size = new System.Drawing.Size(231, 51);
-            this.guna2ComboBox2.TabIndex = 40;
-            this.guna2ComboBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.comPHONG.BackColor = System.Drawing.Color.Transparent;
+            this.comPHONG.BorderColor = System.Drawing.Color.Gray;
+            this.comPHONG.BorderRadius = 12;
+            this.comPHONG.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comPHONG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comPHONG.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comPHONG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comPHONG.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comPHONG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comPHONG.ItemHeight = 45;
+            this.comPHONG.Location = new System.Drawing.Point(613, 95);
+            this.comPHONG.Name = "comPHONG";
+            this.comPHONG.Size = new System.Drawing.Size(231, 51);
+            this.comPHONG.TabIndex = 40;
+            this.comPHONG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // dateNgayCap
+            // dtpTHOIGIAN
             // 
-            this.dateNgayCap.BackColor = System.Drawing.Color.White;
-            this.dateNgayCap.BorderColor = System.Drawing.Color.Silver;
-            this.dateNgayCap.BorderThickness = 1;
-            this.dateNgayCap.Checked = true;
-            this.dateNgayCap.CheckedState.FillColor = System.Drawing.Color.White;
-            this.dateNgayCap.CustomFormat = "MM/yyyy";
-            this.dateNgayCap.FillColor = System.Drawing.Color.White;
-            this.dateNgayCap.FocusedColor = System.Drawing.Color.White;
-            this.dateNgayCap.Font = new System.Drawing.Font("Segoe UI", 9.857143F);
-            this.dateNgayCap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateNgayCap.Location = new System.Drawing.Point(1049, 101);
-            this.dateNgayCap.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dateNgayCap.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dateNgayCap.Name = "dateNgayCap";
-            this.dateNgayCap.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateNgayCap.Size = new System.Drawing.Size(210, 51);
-            this.dateNgayCap.TabIndex = 43;
-            this.dateNgayCap.Value = new System.DateTime(2025, 10, 25, 0, 0, 0, 0);
+            this.dtpTHOIGIAN.BackColor = System.Drawing.Color.White;
+            this.dtpTHOIGIAN.BorderColor = System.Drawing.Color.Silver;
+            this.dtpTHOIGIAN.BorderThickness = 1;
+            this.dtpTHOIGIAN.Checked = true;
+            this.dtpTHOIGIAN.CheckedState.FillColor = System.Drawing.Color.White;
+            this.dtpTHOIGIAN.CustomFormat = "MM/yyyy";
+            this.dtpTHOIGIAN.FillColor = System.Drawing.Color.White;
+            this.dtpTHOIGIAN.FocusedColor = System.Drawing.Color.White;
+            this.dtpTHOIGIAN.Font = new System.Drawing.Font("Segoe UI", 9.857143F);
+            this.dtpTHOIGIAN.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTHOIGIAN.Location = new System.Drawing.Point(1030, 95);
+            this.dtpTHOIGIAN.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpTHOIGIAN.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpTHOIGIAN.Name = "dtpTHOIGIAN";
+            this.dtpTHOIGIAN.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpTHOIGIAN.Size = new System.Drawing.Size(210, 51);
+            this.dtpTHOIGIAN.TabIndex = 43;
+            this.dtpTHOIGIAN.Value = new System.DateTime(2025, 10, 25, 0, 0, 0, 0);
             // 
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(560, 118);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(541, 112);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(45, 22);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(42, 18);
             this.guna2HtmlLabel3.TabIndex = 42;
             this.guna2HtmlLabel3.Text = "Phòng";
             // 
@@ -154,7 +153,7 @@
             this.btnadd_BC_DS_SINHVIEN.FillColor = System.Drawing.Color.Transparent;
             this.btnadd_BC_DS_SINHVIEN.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnadd_BC_DS_SINHVIEN.ForeColor = System.Drawing.Color.White;
-            this.btnadd_BC_DS_SINHVIEN.Location = new System.Drawing.Point(1305, 162);
+            this.btnadd_BC_DS_SINHVIEN.Location = new System.Drawing.Point(1286, 156);
             this.btnadd_BC_DS_SINHVIEN.Name = "btnadd_BC_DS_SINHVIEN";
             this.btnadd_BC_DS_SINHVIEN.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnadd_BC_DS_SINHVIEN.Size = new System.Drawing.Size(31, 34);
@@ -166,18 +165,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnadd_BC_DS_SINHVIEN);
-            this.Controls.Add(this.dateNgayCap);
+            this.Controls.Add(this.dtpTHOIGIAN);
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2HtmlLabel1);
-            this.Controls.Add(this.guna2ComboBox2);
-            this.Controls.Add(this.guna2ComboBox1);
+            this.Controls.Add(this.comPHONG);
+            this.Controls.Add(this.comNHA);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.label8);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_BC_SINHVIEN";
             this.Size = new System.Drawing.Size(1450, 945);
+            this.Load += new System.EventHandler(this.UC_BC_SINHVIEN_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,11 +187,11 @@
 
         private System.Windows.Forms.Label label8;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox comNHA;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dateNgayCap;
+        private Guna.UI2.WinForms.Guna2ComboBox comPHONG;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpTHOIGIAN;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2CircleButton btnadd_BC_DS_SINHVIEN;
     }

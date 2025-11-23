@@ -73,5 +73,10 @@ namespace QuanLyKiTucXa
         {
 
         }
+
+        private void btnBaocao_Click(object sender, EventArgs e)
+        {
+            addUserControl(new UC_BAOCAO_Ribbon());
+        }
     }
 }

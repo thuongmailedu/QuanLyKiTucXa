@@ -34,6 +34,8 @@
             this.panelBottom = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
             this.panelSideBar = new System.Windows.Forms.Panel();
+            this.btnBaocao = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDanhmuckhac = new Guna.UI2.WinForms.Guna2Button();
             this.btn_qldv = new Guna.UI2.WinForms.Guna2Button();
             this.btnPhong = new Guna.UI2.WinForms.Guna2Button();
             this.line = new System.Windows.Forms.Panel();
@@ -43,8 +45,6 @@
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnDanhmuckhac = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBaocao = new Guna.UI2.WinForms.Guna2Button();
             this.panelTop.SuspendLayout();
             this.panelBottom.SuspendLayout();
             this.panelSideBar.SuspendLayout();
@@ -112,6 +112,59 @@
             this.panelSideBar.Name = "panelSideBar";
             this.panelSideBar.Size = new System.Drawing.Size(304, 878);
             this.panelSideBar.TabIndex = 2;
+            // 
+            // btnBaocao
+            // 
+            this.btnBaocao.AutoRoundedCorners = true;
+            this.btnBaocao.BorderRadius = 32;
+            this.btnBaocao.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnBaocao.CheckedState.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnBaocao.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnBaocao.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBaocao.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBaocao.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBaocao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBaocao.FillColor = System.Drawing.Color.White;
+            this.btnBaocao.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaocao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnBaocao.HoverState.FillColor = System.Drawing.Color.AliceBlue;
+            this.btnBaocao.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnBaocao.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBaocao.ImageOffset = new System.Drawing.Point(60, 0);
+            this.btnBaocao.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnBaocao.Location = new System.Drawing.Point(36, 730);
+            this.btnBaocao.Name = "btnBaocao";
+            this.btnBaocao.PressedColor = System.Drawing.Color.AliceBlue;
+            this.btnBaocao.Size = new System.Drawing.Size(232, 66);
+            this.btnBaocao.TabIndex = 9;
+            this.btnBaocao.Text = "Báo cáo thống kê";
+            this.btnBaocao.Click += new System.EventHandler(this.btnBaocao_Click);
+            // 
+            // btnDanhmuckhac
+            // 
+            this.btnDanhmuckhac.AutoRoundedCorners = true;
+            this.btnDanhmuckhac.BorderRadius = 32;
+            this.btnDanhmuckhac.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDanhmuckhac.CheckedState.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnDanhmuckhac.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnDanhmuckhac.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDanhmuckhac.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDanhmuckhac.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDanhmuckhac.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDanhmuckhac.FillColor = System.Drawing.Color.White;
+            this.btnDanhmuckhac.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDanhmuckhac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnDanhmuckhac.HoverState.FillColor = System.Drawing.Color.AliceBlue;
+            this.btnDanhmuckhac.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnDanhmuckhac.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDanhmuckhac.ImageOffset = new System.Drawing.Point(60, 0);
+            this.btnDanhmuckhac.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnDanhmuckhac.Location = new System.Drawing.Point(36, 658);
+            this.btnDanhmuckhac.Name = "btnDanhmuckhac";
+            this.btnDanhmuckhac.PressedColor = System.Drawing.Color.AliceBlue;
+            this.btnDanhmuckhac.Size = new System.Drawing.Size(232, 66);
+            this.btnDanhmuckhac.TabIndex = 9;
+            this.btnDanhmuckhac.Text = "Danh mục khác";
             // 
             // btn_qldv
             // 
@@ -282,58 +335,6 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnDanhmuckhac
-            // 
-            this.btnDanhmuckhac.AutoRoundedCorners = true;
-            this.btnDanhmuckhac.BorderRadius = 32;
-            this.btnDanhmuckhac.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnDanhmuckhac.CheckedState.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btnDanhmuckhac.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnDanhmuckhac.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDanhmuckhac.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDanhmuckhac.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDanhmuckhac.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDanhmuckhac.FillColor = System.Drawing.Color.White;
-            this.btnDanhmuckhac.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhmuckhac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnDanhmuckhac.HoverState.FillColor = System.Drawing.Color.AliceBlue;
-            this.btnDanhmuckhac.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnDanhmuckhac.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDanhmuckhac.ImageOffset = new System.Drawing.Point(60, 0);
-            this.btnDanhmuckhac.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDanhmuckhac.Location = new System.Drawing.Point(36, 658);
-            this.btnDanhmuckhac.Name = "btnDanhmuckhac";
-            this.btnDanhmuckhac.PressedColor = System.Drawing.Color.AliceBlue;
-            this.btnDanhmuckhac.Size = new System.Drawing.Size(232, 66);
-            this.btnDanhmuckhac.TabIndex = 9;
-            this.btnDanhmuckhac.Text = "Danh mục khác";
-            // 
-            // btnBaocao
-            // 
-            this.btnBaocao.AutoRoundedCorners = true;
-            this.btnBaocao.BorderRadius = 32;
-            this.btnBaocao.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnBaocao.CheckedState.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btnBaocao.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnBaocao.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBaocao.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBaocao.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBaocao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBaocao.FillColor = System.Drawing.Color.White;
-            this.btnBaocao.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaocao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnBaocao.HoverState.FillColor = System.Drawing.Color.AliceBlue;
-            this.btnBaocao.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnBaocao.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBaocao.ImageOffset = new System.Drawing.Point(60, 0);
-            this.btnBaocao.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnBaocao.Location = new System.Drawing.Point(36, 730);
-            this.btnBaocao.Name = "btnBaocao";
-            this.btnBaocao.PressedColor = System.Drawing.Color.AliceBlue;
-            this.btnBaocao.Size = new System.Drawing.Size(232, 66);
-            this.btnBaocao.TabIndex = 9;
-            this.btnBaocao.Text = "Báo cáo thống kê";
             // 
             // frmLayout
             // 
