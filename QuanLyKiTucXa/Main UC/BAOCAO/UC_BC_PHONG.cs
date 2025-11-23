@@ -16,5 +16,10 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
         {
             InitializeComponent();
         }
+
+        private void UC_BC_PHONG_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace QuanLyKiTucXa.Main_UC.BAOCAO
+﻿namespace QuanLyKiTucXa.UserControls
 {
     partial class UC_BC_SINHVIEN
     {
@@ -36,7 +36,7 @@
             this.comPHONG = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpTHOIGIAN = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnadd_BC_DS_SINHVIEN = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnXemBaoCao = new Guna.UI2.WinForms.Guna2CircleButton();
             this.SuspendLayout();
             // 
             // label8
@@ -142,29 +142,29 @@
             this.guna2HtmlLabel3.TabIndex = 42;
             this.guna2HtmlLabel3.Text = "Phòng";
             // 
-            // btnadd_BC_DS_SINHVIEN
+            // btnXemBaoCao
             // 
-            this.btnadd_BC_DS_SINHVIEN.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
-            this.btnadd_BC_DS_SINHVIEN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnadd_BC_DS_SINHVIEN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnadd_BC_DS_SINHVIEN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnadd_BC_DS_SINHVIEN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnadd_BC_DS_SINHVIEN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnadd_BC_DS_SINHVIEN.FillColor = System.Drawing.Color.Transparent;
-            this.btnadd_BC_DS_SINHVIEN.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnadd_BC_DS_SINHVIEN.ForeColor = System.Drawing.Color.White;
-            this.btnadd_BC_DS_SINHVIEN.Location = new System.Drawing.Point(1286, 156);
-            this.btnadd_BC_DS_SINHVIEN.Name = "btnadd_BC_DS_SINHVIEN";
-            this.btnadd_BC_DS_SINHVIEN.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnadd_BC_DS_SINHVIEN.Size = new System.Drawing.Size(31, 34);
-            this.btnadd_BC_DS_SINHVIEN.TabIndex = 44;
-            this.btnadd_BC_DS_SINHVIEN.Click += new System.EventHandler(this.btnadd_BC_DS_SINHVIEN_Click);
+            this.btnXemBaoCao.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
+            this.btnXemBaoCao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnXemBaoCao.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXemBaoCao.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXemBaoCao.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXemBaoCao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXemBaoCao.FillColor = System.Drawing.Color.Transparent;
+            this.btnXemBaoCao.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXemBaoCao.ForeColor = System.Drawing.Color.White;
+            this.btnXemBaoCao.Location = new System.Drawing.Point(1286, 156);
+            this.btnXemBaoCao.Name = "btnXemBaoCao";
+            this.btnXemBaoCao.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnXemBaoCao.Size = new System.Drawing.Size(31, 34);
+            this.btnXemBaoCao.TabIndex = 44;
+            this.btnXemBaoCao.Click += new System.EventHandler(this.btnXemBaoCao_Click);
             // 
             // UC_BC_SINHVIEN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnadd_BC_DS_SINHVIEN);
+            this.Controls.Add(this.btnXemBaoCao);
             this.Controls.Add(this.dtpTHOIGIAN);
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.guna2HtmlLabel2);
@@ -193,6 +193,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox comPHONG;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTHOIGIAN;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2CircleButton btnadd_BC_DS_SINHVIEN;
+        private Guna.UI2.WinForms.Guna2CircleButton btnXemBaoCao;
     }
 }

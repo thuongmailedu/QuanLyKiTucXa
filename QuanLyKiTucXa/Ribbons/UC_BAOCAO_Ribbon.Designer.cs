@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panelMenu = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnBC_HOADON = new Guna.UI2.WinForms.Guna2Button();
             this.btnBC_HOPDONG = new Guna.UI2.WinForms.Guna2Button();
             this.btnBC_SINHVIEN = new Guna.UI2.WinForms.Guna2Button();
             this.btnBC_PHONG = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBC_HOADON = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +51,29 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(1620, 80);
             this.panelMenu.TabIndex = 3;
+            // 
+            // btnBC_HOADON
+            // 
+            this.btnBC_HOADON.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnBC_HOADON.CheckedState.CustomBorderColor = System.Drawing.Color.Green;
+            this.btnBC_HOADON.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnBC_HOADON.CheckedState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBC_HOADON.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnBC_HOADON.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnBC_HOADON.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.btnBC_HOADON.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBC_HOADON.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBC_HOADON.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBC_HOADON.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBC_HOADON.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnBC_HOADON.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBC_HOADON.ForeColor = System.Drawing.Color.White;
+            this.btnBC_HOADON.Location = new System.Drawing.Point(857, 0);
+            this.btnBC_HOADON.Name = "btnBC_HOADON";
+            this.btnBC_HOADON.Size = new System.Drawing.Size(273, 80);
+            this.btnBC_HOADON.TabIndex = 4;
+            this.btnBC_HOADON.Text = "BÁO CÁO HÓA ĐƠN";
+            this.btnBC_HOADON.Click += new System.EventHandler(this.btnBC_HOADON_Click);
             // 
             // btnBC_HOPDONG
             // 
@@ -121,29 +144,6 @@
             this.btnBC_PHONG.Text = "BÁO CÁO PHÒNG";
             this.btnBC_PHONG.Click += new System.EventHandler(this.btnBC_PHONG_Click);
             // 
-            // btnBC_HOADON
-            // 
-            this.btnBC_HOADON.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnBC_HOADON.CheckedState.CustomBorderColor = System.Drawing.Color.Green;
-            this.btnBC_HOADON.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnBC_HOADON.CheckedState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBC_HOADON.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.btnBC_HOADON.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnBC_HOADON.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.btnBC_HOADON.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBC_HOADON.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBC_HOADON.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBC_HOADON.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBC_HOADON.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnBC_HOADON.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBC_HOADON.ForeColor = System.Drawing.Color.White;
-            this.btnBC_HOADON.Location = new System.Drawing.Point(857, 0);
-            this.btnBC_HOADON.Name = "btnBC_HOADON";
-            this.btnBC_HOADON.Size = new System.Drawing.Size(273, 80);
-            this.btnBC_HOADON.TabIndex = 4;
-            this.btnBC_HOADON.Text = "BÁO CÁO HÓA ĐƠN";
-            this.btnBC_HOADON.Click += new System.EventHandler(this.btnBC_HOADON_Click);
-            // 
             // panelContainer
             // 
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -151,6 +151,7 @@
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1620, 911);
             this.panelContainer.TabIndex = 4;
+            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
             // UC_BAOCAO_Ribbon
             // 

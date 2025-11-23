@@ -38,6 +38,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_BC_PHONG";
             this.Size = new System.Drawing.Size(1432, 949);
+            this.Load += new System.EventHandler(this.UC_BC_PHONG_Load);
             this.ResumeLayout(false);
 
         }
