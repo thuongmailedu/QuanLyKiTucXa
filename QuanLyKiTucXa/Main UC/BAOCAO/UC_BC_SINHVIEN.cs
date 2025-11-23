@@ -27,7 +27,7 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
 
@@ -57,7 +57,7 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi load nhà: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi load nhà: " + ex.Message);
             }
         }
 
@@ -69,7 +69,6 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
 
             if (maNha == "ALL")
             {
-                // Chọn tất cả -> không load phòng
                 comPHONG.DataSource = null;
                 comPHONG.Items.Clear();
                 comPHONG.Items.Add("--- Tất cả ---");
@@ -77,7 +76,6 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
             }
             else
             {
-                // Chọn nhà cụ thể -> load danh sách phòng
                 LoadComboPhong(maNha);
             }
         }
@@ -108,7 +106,7 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi load phòng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi load phòng: " + ex.Message);
             }
         }
 
@@ -131,8 +129,7 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
 
                 if (dtBaoCao.Rows.Count == 0)
                 {
-                    MessageBox.Show($"Không có sinh viên cư trú trong tháng {thang:00}/{nam}!",
-                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Không có dữ liệu tháng {thang:00}/{nam}!", "Thông báo");
                     return;
                 }
 
@@ -140,7 +137,7 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi: " + ex.Message + "\n\n" + ex.StackTrace, "Lỗi");
             }
         }
 
@@ -155,10 +152,10 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
                     cmd.Parameters.AddWithValue("@TENDN", tenDN);
                     conn.Open();
                     object result = cmd.ExecuteScalar();
-                    return result != null ? result.ToString() : "Quản trị viên";
+                    return result != null ? result.ToString() : "";
                 }
             }
-            catch { return "Quản trị viên"; }
+            catch { return ""; }
         }
 
         private DataTable GetDataBaoCao(string maNha, string maPhong, int thang, int nam)
@@ -183,11 +180,7 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
         {
             try
             {
-                // ✅ SỬA ĐƯỜNG DẪN CHO ĐÚNG VỚI CẤU TRÚC THƯ MỤC
-               
-                reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyKitucXa.ReportsSystem.Reports.rptSINHVIEN.rdlc";
-
-                //reportViewer1.LocalReport.ReportPath = reportPath;
+                reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyKiTucXa.ReportsSystem.Reports.rptSINHVIEN.rdlc";
                 reportViewer1.LocalReport.DataSources.Clear();
 
                 ReportDataSource rds = new ReportDataSource("DataSet_DS_SINHVIEN", data);
@@ -206,8 +199,7 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi hiển thị báo cáo:\n" + ex.Message, "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi:\n" + ex.Message + "\n\n" + ex.StackTrace, "Lỗi");
             }
         }
     }

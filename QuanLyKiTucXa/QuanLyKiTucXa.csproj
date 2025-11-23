@@ -252,6 +252,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReportsSystem\DataSets\Dts_DS_HOPDONG.cs">
+      <DependentUpon>Dts_DS_HOPDONG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\DataSets\Dts_DS_HOPDONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DS_HOPDONG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ReportsSystem\DataSets\Dts_DS_SINHVIEN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -393,6 +401,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportsSystem\Reports\rptHOPDONG.rdlc" />
     <EmbeddedResource Include="ReportsSystem\Reports\rptSINHVIEN.rdlc" />
     <EmbeddedResource Include="Ribbons\UC_BAOCAO_Ribbon.resx">
       <DependentUpon>UC_BAOCAO_Ribbon.cs</DependentUpon>
@@ -427,6 +436,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ReportsSystem\DataSets\Dts_DS_HOPDONG.xsc">
+      <DependentUpon>Dts_DS_HOPDONG.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\Dts_DS_HOPDONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DS_HOPDONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportsSystem\DataSets\Dts_DS_HOPDONG.xss">
+      <DependentUpon>Dts_DS_HOPDONG.xsd</DependentUpon>
+    </None>
     <None Include="ReportsSystem\DataSets\Dts_DS_SINHVIEN.xsc">
       <DependentUpon>Dts_DS_SINHVIEN.xsd</DependentUpon>
     </None>
