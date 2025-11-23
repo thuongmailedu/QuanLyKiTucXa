@@ -55,6 +55,7 @@
             this.btnXemBaoCao.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnXemBaoCao.Size = new System.Drawing.Size(31, 34);
             this.btnXemBaoCao.TabIndex = 53;
+            this.btnXemBaoCao.Click += new System.EventHandler(this.btnXemBaoCao_Click);
             // 
             // dtpTHANG
             // 
@@ -128,10 +129,9 @@
             this.label8.Location = new System.Drawing.Point(466, 12);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(580, 51);
+            this.label8.Size = new System.Drawing.Size(464, 41);
             this.label8.TabIndex = 45;
             this.label8.Text = "BÁO CÁO TÌNH TRẠNG PHÒNG";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // guna2HtmlLabel4
             // 

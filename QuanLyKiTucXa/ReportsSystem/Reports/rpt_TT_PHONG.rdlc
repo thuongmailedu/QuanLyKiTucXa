@@ -1595,6 +1595,11 @@ CÔNG NGHỆ ĐÔNG Á</Value>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="prTENNV">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -1615,6 +1620,11 @@ CÔNG NGHỆ ĐÔNG Á</Value>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>prTRANGTHAI</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>prTENNV</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
