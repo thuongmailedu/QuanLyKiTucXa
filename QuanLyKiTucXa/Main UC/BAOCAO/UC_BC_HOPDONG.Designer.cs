@@ -57,6 +57,7 @@
             this.btnXemBaoCao.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnXemBaoCao.Size = new System.Drawing.Size(31, 34);
             this.btnXemBaoCao.TabIndex = 53;
+            this.btnXemBaoCao.Click += new System.EventHandler(this.btnXemBaoCao_Click);  // ← PHẢI CÓ DÒNG NÀY
             // 
             // dtpTU
             // 
@@ -141,6 +142,7 @@
             this.comNHA.Size = new System.Drawing.Size(189, 51);
             this.comNHA.TabIndex = 48;
             this.comNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.comNHA.SelectedIndexChanged += new System.EventHandler(this.comNHA_SelectedIndexChanged);  // ← PHẢI CÓ DÒNG NÀY
             // 
             // reportViewer1
             // 
@@ -160,7 +162,7 @@
             this.label8.Size = new System.Drawing.Size(676, 41);
             this.label8.TabIndex = 45;
             this.label8.Text = "BÁO CÁO DANH SÁCH HỢP ĐỒNG PHÁT SINH";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+//            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // guna2HtmlLabel4
             // 
