@@ -383,6 +383,9 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
             LoadDataGridView();
         }
 
-        
+        private void UC_HD_DIEN_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

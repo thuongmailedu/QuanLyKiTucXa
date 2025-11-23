@@ -1,4 +1,7 @@
-﻿using System;
+﻿using QuanLyKiTucXa.Main_UC.BAOCAO;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -8,7 +11,7 @@ namespace QuanLyKiTucXa.UserControls
 {
     public partial class UC_BC_SINHVIEN : UserControl
     {
-        private string connectionString = "your_connection_string_here";
+        private string connectionString = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True";
 
         public UC_BC_SINHVIEN()
         {

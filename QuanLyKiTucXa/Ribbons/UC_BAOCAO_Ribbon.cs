@@ -1,4 +1,4 @@
-﻿using QuanLyKiTucXa.Main_UC.QLPHONG;
+﻿
 using QuanLyKiTucXa.Main_UC.BAOCAO;
 using System;
 using System.Collections.Generic;

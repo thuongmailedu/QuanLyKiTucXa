@@ -441,7 +441,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_HD_DIEN";
             this.Size = new System.Drawing.Size(1602, 1024);
-//            this.Load += new System.EventHandler(this.UC_HD_DIEN_Load_1);
+            this.Load += new System.EventHandler(this.UC_HD_DIEN_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HD_DIEN)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
