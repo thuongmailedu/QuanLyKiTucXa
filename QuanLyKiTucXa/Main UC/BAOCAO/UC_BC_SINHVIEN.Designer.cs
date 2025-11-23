@@ -75,7 +75,8 @@
             this.comNHA.Size = new System.Drawing.Size(244, 51);
             this.comNHA.TabIndex = 40;
             this.comNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-          //  this.comNHA.SelectedValueChanged += new System.EventHandler(this.comNHA_SelectedValueChanged);
+        //    this.comNHA.SelectedIndexChanged += new System.EventHandler(this.comNHA_SelectedIndexChanged_1);
+            this.comNHA.SelectedIndexChanged += new System.EventHandler(this.comNHA_SelectedIndexChanged);  // ← THÊM DÒNG NÀY
             // 
             // guna2HtmlLabel1
             // 
