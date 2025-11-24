@@ -55,6 +55,7 @@
             this.btnHuy.Size = new System.Drawing.Size(65, 45);
             this.btnHuy.TabIndex = 80;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
@@ -69,6 +70,7 @@
             this.btnLuu.Size = new System.Drawing.Size(73, 45);
             this.btnLuu.TabIndex = 79;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtTOIDA
             // 
@@ -248,6 +250,7 @@
             this.Name = "frm_DM_NHA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_DM_NHA";
+            this.Load += new System.EventHandler(this.frm_DM_NHA_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -20,7 +20,7 @@ namespace QuanLyKiTucXa.Ribbons
 
         private void UC_QLPHONG_Ribbon_Load(object sender, EventArgs e)
         {
-            btnDMCSVC.Checked = true;
+            btnDMPhong.Checked = true;
             addUserControl(new UC_NHA_PHONG());
        
         }
