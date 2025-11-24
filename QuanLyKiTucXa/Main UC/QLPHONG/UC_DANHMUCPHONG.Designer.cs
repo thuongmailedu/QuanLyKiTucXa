@@ -42,12 +42,6 @@
             this.numericUpDownNam = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.comboBoxNHA = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btn_addHD = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MANHA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIAPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOIDA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MA_PHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TOIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +57,12 @@
             this.T10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.T11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.T12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANHA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIOITINH_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAIPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIAPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOIDA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDMPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTinhTrangPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNam)).BeginInit();
@@ -107,8 +107,8 @@
             this.dgvDMPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
             this.MANHA_2,
-            this.GioiTinh,
-            this.TenSV,
+            this.GIOITINH_2,
+            this.LOAIPHONG,
             this.GIAPHONG,
             this.TOIDA_2});
             this.dgvDMPhong.EnableHeadersVisualStyles = false;
@@ -240,45 +240,6 @@
             this.btn_addHD.TabIndex = 29;
             this.btn_addHD.Click += new System.EventHandler(this.btn_addHD_Click);
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            // 
-            // MANHA_2
-            // 
-            this.MANHA_2.DataPropertyName = "MANHA";
-            this.MANHA_2.HeaderText = "Mã nhà";
-            this.MANHA_2.MinimumWidth = 8;
-            this.MANHA_2.Name = "MANHA_2";
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.HeaderText = "Giới tính";
-            this.GioiTinh.MinimumWidth = 8;
-            this.GioiTinh.Name = "GioiTinh";
-            // 
-            // TenSV
-            // 
-            this.TenSV.HeaderText = "Loại phòng";
-            this.TenSV.MinimumWidth = 8;
-            this.TenSV.Name = "TenSV";
-            // 
-            // GIAPHONG
-            // 
-            this.GIAPHONG.DataPropertyName = "GIAPHONG";
-            this.GIAPHONG.HeaderText = "Giá phòng";
-            this.GIAPHONG.MinimumWidth = 8;
-            this.GIAPHONG.Name = "GIAPHONG";
-            // 
-            // TOIDA_2
-            // 
-            this.TOIDA_2.DataPropertyName = "TOIDA";
-            this.TOIDA_2.HeaderText = "Tối đa";
-            this.TOIDA_2.MinimumWidth = 6;
-            this.TOIDA_2.Name = "TOIDA_2";
-            // 
             // MANHA
             // 
             this.MANHA.DataPropertyName = "MANHA";
@@ -384,6 +345,48 @@
             this.T12.MinimumWidth = 6;
             this.T12.Name = "T12";
             // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            // 
+            // MANHA_2
+            // 
+            this.MANHA_2.DataPropertyName = "MANHA";
+            this.MANHA_2.HeaderText = "Mã nhà";
+            this.MANHA_2.MinimumWidth = 8;
+            this.MANHA_2.Name = "MANHA_2";
+            // 
+            // GIOITINH_2
+            // 
+            this.GIOITINH_2.DataPropertyName = "GIOITINH";
+            this.GIOITINH_2.HeaderText = "Giới tính";
+            this.GIOITINH_2.MinimumWidth = 8;
+            this.GIOITINH_2.Name = "GIOITINH_2";
+            // 
+            // LOAIPHONG
+            // 
+            this.LOAIPHONG.DataPropertyName = "LOAIPHONG";
+            this.LOAIPHONG.HeaderText = "Loại phòng";
+            this.LOAIPHONG.MinimumWidth = 8;
+            this.LOAIPHONG.Name = "LOAIPHONG";
+            // 
+            // GIAPHONG
+            // 
+            this.GIAPHONG.DataPropertyName = "GIAPHONG";
+            this.GIAPHONG.HeaderText = "Giá phòng";
+            this.GIAPHONG.MinimumWidth = 8;
+            this.GIAPHONG.Name = "GIAPHONG";
+            // 
+            // TOIDA_2
+            // 
+            this.TOIDA_2.DataPropertyName = "TOIDA";
+            this.TOIDA_2.HeaderText = "Tối đa";
+            this.TOIDA_2.MinimumWidth = 6;
+            this.TOIDA_2.Name = "TOIDA_2";
+            // 
             // UC_DANHMUCPHONG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -416,12 +419,6 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown numericUpDownNam;
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxNHA;
         private Guna.UI2.WinForms.Guna2CircleButton btn_addHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MANHA_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GIAPHONG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TOIDA_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANHA;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA_PHONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn TOIDA;
@@ -437,5 +434,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn T10;
         private System.Windows.Forms.DataGridViewTextBoxColumn T11;
         private System.Windows.Forms.DataGridViewTextBoxColumn T12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MANHA_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIOITINH_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOAIPHONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIAPHONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TOIDA_2;
     }
 }
