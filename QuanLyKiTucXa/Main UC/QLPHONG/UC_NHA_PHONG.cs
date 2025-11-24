@@ -34,7 +34,6 @@ namespace QuanLyKiTucXa.Main_UC.QLPHONG
                                         GIOITINH,
                                         GIAPHONG,
                                         TOIDA
-                                       
                                      FROM NHA
                                      ORDER BY MANHA";
 
@@ -44,29 +43,22 @@ namespace QuanLyKiTucXa.Main_UC.QLPHONG
                         DataTable dt = new DataTable();
                         da.Fill(dt);
 
-                        dgvDM_NHA.DataSource = dt;
+                        // Xóa dữ liệu cũ
+                        dgvDM_NHA.Rows.Clear();
 
-                        // Thiết lập tiêu đề cột
-                        if (dgvDM_NHA.Columns["MANHA"] != null)
-                            dgvDM_NHA.Columns["MANHA"].HeaderText = "Mã Nhà";
-
-                        if (dgvDM_NHA.Columns["LOAIPHONG"] != null)
-                            dgvDM_NHA.Columns["LOAIPHONG"].HeaderText = "Loại Phòng";
-
-                        if (dgvDM_NHA.Columns["GIOITINH"] != null)
-                            dgvDM_NHA.Columns["GIOITINH"].HeaderText = "Giới Tính";
-
-                        if (dgvDM_NHA.Columns["GIAPHONG"] != null)
+                        int stt = 1;
+                        foreach (DataRow row in dt.Rows)
                         {
-                            dgvDM_NHA.Columns["GIAPHONG"].HeaderText = "Giá Phòng";
-                            dgvDM_NHA.Columns["GIAPHONG"].DefaultCellStyle.Format = "N0";
+                            int index = dgvDM_NHA.Rows.Add();
+
+                            // Đổ dữ liệu vào các cột
+                            dgvDM_NHA.Rows[index].Cells["STT"].Value = stt++;
+                            dgvDM_NHA.Rows[index].Cells["MANHA_2"].Value = row["MANHA"].ToString();
+                            dgvDM_NHA.Rows[index].Cells["GIOITINH_2"].Value = row["GIOITINH"].ToString();
+                            dgvDM_NHA.Rows[index].Cells["LOAIPHONG"].Value = row["LOAIPHONG"].ToString();
+                            dgvDM_NHA.Rows[index].Cells["GIAPHONG"].Value = Convert.ToDecimal(row["GIAPHONG"]).ToString("N0");
+                            dgvDM_NHA.Rows[index].Cells["TOIDA_2"].Value = row["TOIDA"].ToString();
                         }
-
-                        if (dgvDM_NHA.Columns["TOIDA"] != null)
-                            dgvDM_NHA.Columns["TOIDA"].HeaderText = "Tối Đa";
-
-                        //if (dgvDM_NHA.Columns["TRANGTHAI"] != null)
-                        //    dgvDM_NHA.Columns["TRANGTHAI"].HeaderText = "Trạng Thái";
                     }
                 }
             }
@@ -100,11 +92,15 @@ namespace QuanLyKiTucXa.Main_UC.QLPHONG
 
             DataGridViewRow row = dgvDM_NHA.SelectedRows[0];
 
-            string maNha = row.Cells["MANHA"].Value.ToString();
+            string maNha = row.Cells["MANHA_2"].Value.ToString();
             string loaiPhong = row.Cells["LOAIPHONG"].Value.ToString();
-            string gioiTinh = row.Cells["GIOITINH"].Value.ToString();
-            decimal giaPhong = Convert.ToDecimal(row.Cells["GIAPHONG"].Value);
-            int toiDa = Convert.ToInt32(row.Cells["TOIDA"].Value);
+            string gioiTinh = row.Cells["GIOITINH_2"].Value.ToString();
+
+            // Parse giá phòng (loại bỏ dấu phẩy nếu có)
+            string giaPhongStr = row.Cells["GIAPHONG"].Value.ToString().Replace(",", "");
+            decimal giaPhong = Convert.ToDecimal(giaPhongStr);
+
+            int toiDa = Convert.ToInt32(row.Cells["TOIDA_2"].Value);
 
             frm_DM_NHA form = new frm_DM_NHA(maNha, loaiPhong, gioiTinh, giaPhong, toiDa);
 
@@ -125,7 +121,7 @@ namespace QuanLyKiTucXa.Main_UC.QLPHONG
             }
 
             DataGridViewRow row = dgvDM_NHA.SelectedRows[0];
-            string maNha = row.Cells["MANHA"].Value.ToString();
+            string maNha = row.Cells["MANHA_2"].Value.ToString();
 
             // Kiểm tra xem nhà đã có phòng chưa
             try
@@ -185,7 +181,5 @@ namespace QuanLyKiTucXa.Main_UC.QLPHONG
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        
     }
 }
