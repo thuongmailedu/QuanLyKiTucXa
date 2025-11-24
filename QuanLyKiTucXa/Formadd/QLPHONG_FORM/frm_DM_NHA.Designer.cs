@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comLOAIPHONG = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comGIOITINH = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.panelMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.SuspendLayout();
             // 
             // btnHuy
@@ -50,7 +51,7 @@
             this.btnHuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(792, 185);
+            this.btnHuy.Location = new System.Drawing.Point(788, 209);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(65, 45);
             this.btnHuy.TabIndex = 80;
@@ -65,7 +66,7 @@
             this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(877, 185);
+            this.btnLuu.Location = new System.Drawing.Point(873, 209);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(73, 45);
             this.btnLuu.TabIndex = 79;
@@ -85,7 +86,7 @@
             this.txtTOIDA.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTOIDA.ForeColor = System.Drawing.Color.Black;
             this.txtTOIDA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTOIDA.Location = new System.Drawing.Point(476, 122);
+            this.txtTOIDA.Location = new System.Drawing.Point(472, 146);
             this.txtTOIDA.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTOIDA.Name = "txtTOIDA";
             this.txtTOIDA.PlaceholderText = "";
@@ -97,7 +98,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(379, 134);
+            this.label8.Location = new System.Drawing.Point(375, 158);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 20);
             this.label8.TabIndex = 73;
@@ -116,7 +117,7 @@
             this.txtGIAPHONG.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGIAPHONG.ForeColor = System.Drawing.Color.Black;
             this.txtGIAPHONG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGIAPHONG.Location = new System.Drawing.Point(160, 122);
+            this.txtGIAPHONG.Location = new System.Drawing.Point(156, 146);
             this.txtGIAPHONG.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtGIAPHONG.Name = "txtGIAPHONG";
             this.txtGIAPHONG.PlaceholderText = "";
@@ -128,7 +129,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(40, 134);
+            this.label7.Location = new System.Drawing.Point(36, 158);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 20);
             this.label7.TabIndex = 72;
@@ -138,7 +139,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(680, 49);
+            this.label6.Location = new System.Drawing.Point(676, 73);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 20);
             this.label6.TabIndex = 71;
@@ -148,7 +149,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(379, 49);
+            this.label5.Location = new System.Drawing.Point(375, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 20);
             this.label5.TabIndex = 70;
@@ -167,7 +168,7 @@
             this.txtMANHA.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMANHA.ForeColor = System.Drawing.Color.Black;
             this.txtMANHA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMANHA.Location = new System.Drawing.Point(160, 31);
+            this.txtMANHA.Location = new System.Drawing.Point(156, 55);
             this.txtMANHA.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtMANHA.Name = "txtMANHA";
             this.txtMANHA.PlaceholderText = "";
@@ -179,7 +180,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(40, 49);
+            this.label4.Location = new System.Drawing.Point(36, 73);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 20);
             this.label4.TabIndex = 69;
@@ -200,7 +201,7 @@
             this.comLOAIPHONG.Items.AddRange(new object[] {
             "CLC",
             "TC"});
-            this.comLOAIPHONG.Location = new System.Drawing.Point(793, 31);
+            this.comLOAIPHONG.Location = new System.Drawing.Point(789, 55);
             this.comLOAIPHONG.Name = "comLOAIPHONG";
             this.comLOAIPHONG.Size = new System.Drawing.Size(157, 51);
             this.comLOAIPHONG.StartIndex = 0;
@@ -222,17 +223,31 @@
             this.comGIOITINH.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.comGIOITINH.Location = new System.Drawing.Point(476, 31);
+            this.comGIOITINH.Location = new System.Drawing.Point(472, 55);
             this.comGIOITINH.Name = "comGIOITINH";
             this.comGIOITINH.Size = new System.Drawing.Size(157, 51);
             this.comGIOITINH.TabIndex = 81;
             this.comGIOITINH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // panelMenu
+            // 
+            this.panelMenu.AutoScroll = true;
+            this.panelMenu.BorderColor = System.Drawing.Color.Black;
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.panelMenu.MaximumSize = new System.Drawing.Size(1646, 125);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(986, 24);
+            this.panelMenu.TabIndex = 82;
+            // 
             // frm_DM_NHA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 263);
+            this.ClientSize = new System.Drawing.Size(986, 294);
+            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.comGIOITINH);
             this.Controls.Add(this.comLOAIPHONG);
             this.Controls.Add(this.btnHuy);
@@ -270,5 +285,6 @@
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2ComboBox comLOAIPHONG;
         private Guna.UI2.WinForms.Guna2ComboBox comGIOITINH;
+        private Guna.UI2.WinForms.Guna2Panel panelMenu;
     }
 }
