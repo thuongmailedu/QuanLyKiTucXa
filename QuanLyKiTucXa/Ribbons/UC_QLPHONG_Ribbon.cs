@@ -20,8 +20,9 @@ namespace QuanLyKiTucXa.Ribbons
 
         private void UC_QLPHONG_Ribbon_Load(object sender, EventArgs e)
         {
-            btnDMPhong.Checked = true;
-            addUserControl(new UC_DANHMUCPHONG());
+            btnDMCSVC.Checked = true;
+            //addUserControl(new UC_DANHMUCPHONG());
+            addUserControl(new UC_DANHMUCCSVC());
         }
 
         private void addUserControl(UserControl userControl)
@@ -34,7 +35,7 @@ namespace QuanLyKiTucXa.Ribbons
 
         private void btnDMPhong_Click(object sender, EventArgs e)
         {
-            addUserControl(new UC_DANHMUCPHONG());
+            //addUserControl(new UC_DANHMUCPHONG());
         }
 
         private void btnDMCSVC_Click(object sender, EventArgs e)

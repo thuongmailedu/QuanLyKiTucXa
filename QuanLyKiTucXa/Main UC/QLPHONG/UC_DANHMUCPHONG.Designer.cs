@@ -38,15 +38,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblSinhVien = new System.Windows.Forms.Label();
             this.dgvDMPhong = new System.Windows.Forms.DataGridView();
-            this.TenHopDong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTinhTrangPhong = new System.Windows.Forms.DataGridView();
-            this.MA_PHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numericUpDownNam = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.comboBoxNHA = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btn_addHD = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANHA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIAPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOIDA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MA_PHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TOIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.T1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.T2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,19 +63,8 @@
             this.T10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.T11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.T12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btn_addPhong = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.numericUpDownNam = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.comboBoxNHA = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btn_addHD = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDMPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTinhTrangPhong)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNam)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +76,7 @@
             this.lblSinhVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             this.lblSinhVien.Location = new System.Drawing.Point(652, 16);
             this.lblSinhVien.Name = "lblSinhVien";
-            this.lblSinhVien.Size = new System.Drawing.Size(278, 58);
+            this.lblSinhVien.Size = new System.Drawing.Size(222, 46);
             this.lblSinhVien.TabIndex = 15;
             this.lblSinhVien.Text = "ĐẶT PHÒNG";
             // 
@@ -113,14 +105,14 @@
             this.dgvDMPhong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDMPhong.ColumnHeadersHeight = 45;
             this.dgvDMPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenHopDong,
-            this.MaSV,
-            this.TenSV,
+            this.STT,
+            this.MANHA_2,
             this.GioiTinh,
-            this.MaPhong,
-            this.Column1});
+            this.TenSV,
+            this.GIAPHONG,
+            this.TOIDA_2});
             this.dgvDMPhong.EnableHeadersVisualStyles = false;
-            this.dgvDMPhong.Location = new System.Drawing.Point(22, 147);
+            this.dgvDMPhong.Location = new System.Drawing.Point(22, 136);
             this.dgvDMPhong.Name = "dgvDMPhong";
             this.dgvDMPhong.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -136,44 +128,8 @@
             this.dgvDMPhong.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDMPhong.RowTemplate.Height = 45;
             this.dgvDMPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDMPhong.Size = new System.Drawing.Size(570, 621);
+            this.dgvDMPhong.Size = new System.Drawing.Size(579, 621);
             this.dgvDMPhong.TabIndex = 17;
-            // 
-            // TenHopDong
-            // 
-            this.TenHopDong.HeaderText = "Mã nhà";
-            this.TenHopDong.MinimumWidth = 8;
-            this.TenHopDong.Name = "TenHopDong";
-            // 
-            // MaSV
-            // 
-            this.MaSV.HeaderText = "Mã phòng";
-            this.MaSV.MinimumWidth = 8;
-            this.MaSV.Name = "MaSV";
-            // 
-            // TenSV
-            // 
-            this.TenSV.HeaderText = "Loại phòng";
-            this.TenSV.MinimumWidth = 8;
-            this.TenSV.Name = "TenSV";
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.HeaderText = "Giới tính";
-            this.GioiTinh.MinimumWidth = 8;
-            this.GioiTinh.Name = "GioiTinh";
-            // 
-            // MaPhong
-            // 
-            this.MaPhong.HeaderText = "Số lượng";
-            this.MaPhong.MinimumWidth = 8;
-            this.MaPhong.Name = "MaPhong";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Tối đa";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
             // 
             // dgvTinhTrangPhong
             // 
@@ -202,8 +158,8 @@
             this.dgvTinhTrangPhong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTinhTrangPhong.ColumnHeadersHeight = 45;
             this.dgvTinhTrangPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MA_PHONG,
             this.MANHA,
+            this.MA_PHONG,
             this.TOIDA,
             this.T1,
             this.T2,
@@ -218,7 +174,7 @@
             this.T11,
             this.T12});
             this.dgvTinhTrangPhong.EnableHeadersVisualStyles = false;
-            this.dgvTinhTrangPhong.Location = new System.Drawing.Point(611, 146);
+            this.dgvTinhTrangPhong.Location = new System.Drawing.Point(607, 135);
             this.dgvTinhTrangPhong.Name = "dgvTinhTrangPhong";
             this.dgvTinhTrangPhong.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -237,12 +193,91 @@
             this.dgvTinhTrangPhong.Size = new System.Drawing.Size(990, 622);
             this.dgvTinhTrangPhong.TabIndex = 17;
             // 
-            // MA_PHONG
+            // numericUpDownNam
             // 
-            this.MA_PHONG.DataPropertyName = "MA_PHONG";
-            this.MA_PHONG.HeaderText = "Mã phòng";
-            this.MA_PHONG.MinimumWidth = 6;
-            this.MA_PHONG.Name = "MA_PHONG";
+            this.numericUpDownNam.BackColor = System.Drawing.Color.Transparent;
+            this.numericUpDownNam.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.numericUpDownNam.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.numericUpDownNam.Location = new System.Drawing.Point(1380, 69);
+            this.numericUpDownNam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numericUpDownNam.Name = "numericUpDownNam";
+            this.numericUpDownNam.Size = new System.Drawing.Size(114, 48);
+            this.numericUpDownNam.TabIndex = 26;
+            // 
+            // comboBoxNHA
+            // 
+            this.comboBoxNHA.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxNHA.BorderColor = System.Drawing.Color.Gray;
+            this.comboBoxNHA.BorderRadius = 12;
+            this.comboBoxNHA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxNHA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxNHA.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxNHA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxNHA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comboBoxNHA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBoxNHA.ItemHeight = 45;
+            this.comboBoxNHA.Location = new System.Drawing.Point(1185, 66);
+            this.comboBoxNHA.Name = "comboBoxNHA";
+            this.comboBoxNHA.Size = new System.Drawing.Size(157, 51);
+            this.comboBoxNHA.TabIndex = 28;
+            this.comboBoxNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btn_addHD
+            // 
+            this.btn_addHD.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
+            this.btn_addHD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_addHD.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_addHD.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_addHD.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_addHD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_addHD.FillColor = System.Drawing.Color.Transparent;
+            this.btn_addHD.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_addHD.ForeColor = System.Drawing.Color.White;
+            this.btn_addHD.Location = new System.Drawing.Point(1527, 75);
+            this.btn_addHD.Name = "btn_addHD";
+            this.btn_addHD.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btn_addHD.Size = new System.Drawing.Size(30, 32);
+            this.btn_addHD.TabIndex = 29;
+            this.btn_addHD.Click += new System.EventHandler(this.btn_addHD_Click);
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            // 
+            // MANHA_2
+            // 
+            this.MANHA_2.DataPropertyName = "MANHA";
+            this.MANHA_2.HeaderText = "Mã nhà";
+            this.MANHA_2.MinimumWidth = 8;
+            this.MANHA_2.Name = "MANHA_2";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.MinimumWidth = 8;
+            this.GioiTinh.Name = "GioiTinh";
+            // 
+            // TenSV
+            // 
+            this.TenSV.HeaderText = "Loại phòng";
+            this.TenSV.MinimumWidth = 8;
+            this.TenSV.Name = "TenSV";
+            // 
+            // GIAPHONG
+            // 
+            this.GIAPHONG.DataPropertyName = "GIAPHONG";
+            this.GIAPHONG.HeaderText = "Giá phòng";
+            this.GIAPHONG.MinimumWidth = 8;
+            this.GIAPHONG.Name = "GIAPHONG";
+            // 
+            // TOIDA_2
+            // 
+            this.TOIDA_2.DataPropertyName = "TOIDA";
+            this.TOIDA_2.HeaderText = "Tối đa";
+            this.TOIDA_2.MinimumWidth = 6;
+            this.TOIDA_2.Name = "TOIDA_2";
             // 
             // MANHA
             // 
@@ -250,6 +285,13 @@
             this.MANHA.HeaderText = "Nhà";
             this.MANHA.MinimumWidth = 6;
             this.MANHA.Name = "MANHA";
+            // 
+            // MA_PHONG
+            // 
+            this.MA_PHONG.DataPropertyName = "MA_PHONG";
+            this.MA_PHONG.HeaderText = "Mã phòng";
+            this.MA_PHONG.MinimumWidth = 6;
+            this.MA_PHONG.Name = "MA_PHONG";
             // 
             // TOIDA
             // 
@@ -342,185 +384,6 @@
             this.T12.MinimumWidth = 6;
             this.T12.Name = "T12";
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.Controls.Add(this.guna2CircleButton4);
-            this.panel1.Controls.Add(this.guna2CircleButton3);
-            this.panel1.Controls.Add(this.guna2CircleButton2);
-            this.panel1.Controls.Add(this.btn_addPhong);
-            this.panel1.Controls.Add(this.txtSearch);
-            this.panel1.Controls.Add(this.guna2ComboBox1);
-            this.panel1.Location = new System.Drawing.Point(22, 70);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(570, 71);
-            this.panel1.TabIndex = 18;
-            // 
-            // guna2CircleButton4
-            // 
-            this.guna2CircleButton4.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.filter;
-            this.guna2CircleButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2CircleButton4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton4.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton4.Location = new System.Drawing.Point(372, 22);
-            this.guna2CircleButton4.Name = "guna2CircleButton4";
-            this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton4.Size = new System.Drawing.Size(35, 40);
-            this.guna2CircleButton4.TabIndex = 14;
-            // 
-            // guna2CircleButton3
-            // 
-            this.guna2CircleButton3.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
-            this.guna2CircleButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2CircleButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton3.Location = new System.Drawing.Point(505, 30);
-            this.guna2CircleButton3.Name = "guna2CircleButton3";
-            this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton3.Size = new System.Drawing.Size(35, 32);
-            this.guna2CircleButton3.TabIndex = 13;
-            // 
-            // guna2CircleButton2
-            // 
-            this.guna2CircleButton2.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
-            this.guna2CircleButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton2.Location = new System.Drawing.Point(468, 30);
-            this.guna2CircleButton2.Name = "guna2CircleButton2";
-            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton2.Size = new System.Drawing.Size(31, 32);
-            this.guna2CircleButton2.TabIndex = 12;
-            // 
-            // btn_addPhong
-            // 
-            this.btn_addPhong.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
-            this.btn_addPhong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_addPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_addPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_addPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_addPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_addPhong.FillColor = System.Drawing.Color.Transparent;
-            this.btn_addPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_addPhong.ForeColor = System.Drawing.Color.White;
-            this.btn_addPhong.Location = new System.Drawing.Point(423, 30);
-            this.btn_addPhong.Name = "btn_addPhong";
-            this.btn_addPhong.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btn_addPhong.Size = new System.Drawing.Size(30, 32);
-            this.btn_addPhong.TabIndex = 11;
-            this.btn_addPhong.Click += new System.EventHandler(this.btn_addPhong_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BorderColor = System.Drawing.Color.Gray;
-            this.txtSearch.BorderRadius = 12;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
-            this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txtSearch.Location = new System.Drawing.Point(136, 11);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(5);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch.PlaceholderText = "Nhập để tìm kiếm";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(213, 51);
-            this.txtSearch.TabIndex = 10;
-            this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
-            // 
-            // guna2ComboBox1
-            // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderColor = System.Drawing.Color.Gray;
-            this.guna2ComboBox1.BorderRadius = 12;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 45;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
-            "Mã HĐ",
-            "Mã SV",
-            "Tên SV"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(3, 11);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(125, 51);
-            this.guna2ComboBox1.StartIndex = 0;
-            this.guna2ComboBox1.TabIndex = 0;
-            this.guna2ComboBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // numericUpDownNam
-            // 
-            this.numericUpDownNam.BackColor = System.Drawing.Color.Transparent;
-            this.numericUpDownNam.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.numericUpDownNam.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numericUpDownNam.Location = new System.Drawing.Point(1382, 82);
-            this.numericUpDownNam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numericUpDownNam.Name = "numericUpDownNam";
-            this.numericUpDownNam.Size = new System.Drawing.Size(114, 48);
-            this.numericUpDownNam.TabIndex = 26;
-            // 
-            // comboBoxNHA
-            // 
-            this.comboBoxNHA.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxNHA.BorderColor = System.Drawing.Color.Gray;
-            this.comboBoxNHA.BorderRadius = 12;
-            this.comboBoxNHA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxNHA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxNHA.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxNHA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxNHA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.comboBoxNHA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comboBoxNHA.ItemHeight = 45;
-            this.comboBoxNHA.Location = new System.Drawing.Point(1187, 79);
-            this.comboBoxNHA.Name = "comboBoxNHA";
-            this.comboBoxNHA.Size = new System.Drawing.Size(157, 51);
-            this.comboBoxNHA.TabIndex = 28;
-            this.comboBoxNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btn_addHD
-            // 
-            this.btn_addHD.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
-            this.btn_addHD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_addHD.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_addHD.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_addHD.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_addHD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_addHD.FillColor = System.Drawing.Color.Transparent;
-            this.btn_addHD.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_addHD.ForeColor = System.Drawing.Color.White;
-            this.btn_addHD.Location = new System.Drawing.Point(1529, 88);
-            this.btn_addHD.Name = "btn_addHD";
-            this.btn_addHD.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btn_addHD.Size = new System.Drawing.Size(30, 32);
-            this.btn_addHD.TabIndex = 29;
-            this.btn_addHD.Click += new System.EventHandler(this.btn_addHD_Click);
-            // 
             // UC_DANHMUCPHONG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -529,7 +392,6 @@
             this.Controls.Add(this.btn_addHD);
             this.Controls.Add(this.comboBoxNHA);
             this.Controls.Add(this.numericUpDownNam);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvTinhTrangPhong);
             this.Controls.Add(this.dgvDMPhong);
             this.Controls.Add(this.lblSinhVien);
@@ -540,7 +402,6 @@
             this.Load += new System.EventHandler(this.UC_DANHMUCPHONG_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDMPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTinhTrangPhong)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNam)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -552,17 +413,17 @@
         private System.Windows.Forms.Label lblSinhVien;
         private System.Windows.Forms.DataGridView dgvDMPhong;
         private System.Windows.Forms.DataGridView dgvTinhTrangPhong;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
-        private Guna.UI2.WinForms.Guna2CircleButton btn_addPhong;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2NumericUpDown numericUpDownNam;
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxNHA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MA_PHONG;
+        private Guna.UI2.WinForms.Guna2CircleButton btn_addHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MANHA_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIAPHONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TOIDA_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANHA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA_PHONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn TOIDA;
         private System.Windows.Forms.DataGridViewTextBoxColumn T1;
         private System.Windows.Forms.DataGridViewTextBoxColumn T2;
@@ -576,12 +437,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn T10;
         private System.Windows.Forms.DataGridViewTextBoxColumn T11;
         private System.Windows.Forms.DataGridViewTextBoxColumn T12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenHopDong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private Guna.UI2.WinForms.Guna2CircleButton btn_addHD;
     }
 }
