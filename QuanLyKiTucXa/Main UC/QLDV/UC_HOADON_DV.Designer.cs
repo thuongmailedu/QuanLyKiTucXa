@@ -176,7 +176,7 @@ namespace QuanLyKiTucXa
             this.TONGTIEN,
             this.TINHTRANGTT});
             this.dgv_HD_TONGHOP.EnableHeadersVisualStyles = false;
-            this.dgv_HD_TONGHOP.Location = new System.Drawing.Point(13, 137);
+            this.dgv_HD_TONGHOP.Location = new System.Drawing.Point(33, 147);
             this.dgv_HD_TONGHOP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgv_HD_TONGHOP.Name = "dgv_HD_TONGHOP";
             this.dgv_HD_TONGHOP.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -394,6 +394,7 @@ namespace QuanLyKiTucXa
             this.btnXuatHD.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnXuatHD.Size = new System.Drawing.Size(31, 34);
             this.btnXuatHD.TabIndex = 64;
+            this.btnXuatHD.Click += new System.EventHandler(this.btnXuatHD_Click);
             // 
             // UC_HOADON_DV
             // 

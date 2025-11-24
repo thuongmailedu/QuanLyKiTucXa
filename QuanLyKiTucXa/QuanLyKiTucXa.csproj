@@ -258,6 +258,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReportsSystem\DataSets\Dts_CHITIET_HOADON.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_CHITIET_HOADON.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ReportsSystem\DataSets\Dts_DS_HDTONGHOP.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -458,6 +463,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ReportsSystem\DataSets\Dts_CHITIET_HOADON.xsc">
+      <DependentUpon>Dts_CHITIET_HOADON.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\Dts_CHITIET_HOADON.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_CHITIET_HOADON.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportsSystem\DataSets\Dts_CHITIET_HOADON.xss">
+      <DependentUpon>Dts_CHITIET_HOADON.xsd</DependentUpon>
+    </None>
     <None Include="ReportsSystem\DataSets\Dts_DS_HDTONGHOP.xsc">
       <DependentUpon>Dts_DS_HDTONGHOP.xsd</DependentUpon>
     </None>

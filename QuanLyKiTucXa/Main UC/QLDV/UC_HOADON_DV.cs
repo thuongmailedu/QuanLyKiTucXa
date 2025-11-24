@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyKiTucXa.Formadd.QLDV_FORM;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -90,7 +91,13 @@ namespace QuanLyKiTucXa
                 Name = "MA_PHONG",
                 Width = 100
             });
-
+            dgv_HD_TONGHOP.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "THOIGIAN",
+                HeaderText = "Thời gian",
+                Name = "THOIGIAN",
+                Width = 100
+            });
             dgv_HD_TONGHOP.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "TENHD",
@@ -377,5 +384,54 @@ namespace QuanLyKiTucXa
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnXuatHD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Kiểm tra có chọn dòng không
+                if (dgv_HD_TONGHOP.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn một hóa đơn để xuất!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Lấy dòng được chọn
+                DataGridViewRow selectedRow = dgv_HD_TONGHOP.SelectedRows[0];
+
+                // Lấy các giá trị từ các cột
+                string maNha = selectedRow.Cells["MANHA"].Value?.ToString();
+                string maPhong = selectedRow.Cells["MA_PHONG"].Value?.ToString();
+                DateTime thoiGian = Convert.ToDateTime(selectedRow.Cells["THOIGIAN"].Value);
+                string ttThanhToan = selectedRow.Cells["TINHTRANGTT"].Value?.ToString();
+
+                // Kiểm tra dữ liệu
+                if (string.IsNullOrEmpty(maPhong))
+                {
+                    MessageBox.Show("Không tìm thấy thông tin phòng!", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Mở form hóa đơn tổng hợp
+                frm_HD_TONGHOP frmHoaDon = new frm_HD_TONGHOP(
+                    maNha,
+                    maPhong,
+                    thoiGian.Month,
+                    thoiGian.Year,
+                    ttThanhToan
+                );
+
+                frmHoaDon.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xuất hóa đơn: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
+
     }
+}
 }
