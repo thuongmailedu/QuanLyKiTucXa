@@ -38,10 +38,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblSinhVien = new System.Windows.Forms.Label();
             this.dgvDMPhong = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANHA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIOITINH_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAIPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIAPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOIDA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTinhTrangPhong = new System.Windows.Forms.DataGridView();
-            this.numericUpDownNam = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.comboBoxNHA = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btn_addHD = new Guna.UI2.WinForms.Guna2CircleButton();
             this.MANHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MA_PHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TOIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,12 +60,9 @@
             this.T10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.T11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.T12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MANHA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIOITINH_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAIPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIAPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOIDA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numericUpDownNam = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.comboBoxNHA = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btn_addHD = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDMPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTinhTrangPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNam)).BeginInit();
@@ -131,6 +131,48 @@
             this.dgvDMPhong.Size = new System.Drawing.Size(579, 621);
             this.dgvDMPhong.TabIndex = 17;
             // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            // 
+            // MANHA_2
+            // 
+            this.MANHA_2.DataPropertyName = "MANHA";
+            this.MANHA_2.HeaderText = "Mã nhà";
+            this.MANHA_2.MinimumWidth = 8;
+            this.MANHA_2.Name = "MANHA_2";
+            // 
+            // GIOITINH_2
+            // 
+            this.GIOITINH_2.DataPropertyName = "GIOITINH";
+            this.GIOITINH_2.HeaderText = "Giới tính";
+            this.GIOITINH_2.MinimumWidth = 8;
+            this.GIOITINH_2.Name = "GIOITINH_2";
+            // 
+            // LOAIPHONG
+            // 
+            this.LOAIPHONG.DataPropertyName = "LOAIPHONG";
+            this.LOAIPHONG.HeaderText = "Loại phòng";
+            this.LOAIPHONG.MinimumWidth = 8;
+            this.LOAIPHONG.Name = "LOAIPHONG";
+            // 
+            // GIAPHONG
+            // 
+            this.GIAPHONG.DataPropertyName = "GIAPHONG";
+            this.GIAPHONG.HeaderText = "Giá phòng";
+            this.GIAPHONG.MinimumWidth = 8;
+            this.GIAPHONG.Name = "GIAPHONG";
+            // 
+            // TOIDA_2
+            // 
+            this.TOIDA_2.DataPropertyName = "TOIDA";
+            this.TOIDA_2.HeaderText = "Tối đa";
+            this.TOIDA_2.MinimumWidth = 6;
+            this.TOIDA_2.Name = "TOIDA_2";
+            // 
             // dgvTinhTrangPhong
             // 
             this.dgvTinhTrangPhong.AllowUserToAddRows = false;
@@ -192,53 +234,6 @@
             this.dgvTinhTrangPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvTinhTrangPhong.Size = new System.Drawing.Size(990, 622);
             this.dgvTinhTrangPhong.TabIndex = 17;
-            // 
-            // numericUpDownNam
-            // 
-            this.numericUpDownNam.BackColor = System.Drawing.Color.Transparent;
-            this.numericUpDownNam.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.numericUpDownNam.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numericUpDownNam.Location = new System.Drawing.Point(1380, 69);
-            this.numericUpDownNam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numericUpDownNam.Name = "numericUpDownNam";
-            this.numericUpDownNam.Size = new System.Drawing.Size(114, 48);
-            this.numericUpDownNam.TabIndex = 26;
-            // 
-            // comboBoxNHA
-            // 
-            this.comboBoxNHA.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxNHA.BorderColor = System.Drawing.Color.Gray;
-            this.comboBoxNHA.BorderRadius = 12;
-            this.comboBoxNHA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxNHA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxNHA.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxNHA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxNHA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.comboBoxNHA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comboBoxNHA.ItemHeight = 45;
-            this.comboBoxNHA.Location = new System.Drawing.Point(1185, 66);
-            this.comboBoxNHA.Name = "comboBoxNHA";
-            this.comboBoxNHA.Size = new System.Drawing.Size(157, 51);
-            this.comboBoxNHA.TabIndex = 28;
-            this.comboBoxNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btn_addHD
-            // 
-            this.btn_addHD.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
-            this.btn_addHD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_addHD.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_addHD.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_addHD.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_addHD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_addHD.FillColor = System.Drawing.Color.Transparent;
-            this.btn_addHD.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_addHD.ForeColor = System.Drawing.Color.White;
-            this.btn_addHD.Location = new System.Drawing.Point(1527, 75);
-            this.btn_addHD.Name = "btn_addHD";
-            this.btn_addHD.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btn_addHD.Size = new System.Drawing.Size(30, 32);
-            this.btn_addHD.TabIndex = 29;
-            this.btn_addHD.Click += new System.EventHandler(this.btn_addHD_Click);
             // 
             // MANHA
             // 
@@ -345,47 +340,52 @@
             this.T12.MinimumWidth = 6;
             this.T12.Name = "T12";
             // 
-            // STT
+            // numericUpDownNam
             // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
+            this.numericUpDownNam.BackColor = System.Drawing.Color.Transparent;
+            this.numericUpDownNam.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.numericUpDownNam.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.numericUpDownNam.Location = new System.Drawing.Point(1380, 69);
+            this.numericUpDownNam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numericUpDownNam.Name = "numericUpDownNam";
+            this.numericUpDownNam.Size = new System.Drawing.Size(114, 48);
+            this.numericUpDownNam.TabIndex = 26;
             // 
-            // MANHA_2
+            // comboBoxNHA
             // 
-            this.MANHA_2.DataPropertyName = "MANHA";
-            this.MANHA_2.HeaderText = "Mã nhà";
-            this.MANHA_2.MinimumWidth = 8;
-            this.MANHA_2.Name = "MANHA_2";
+            this.comboBoxNHA.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxNHA.BorderColor = System.Drawing.Color.Gray;
+            this.comboBoxNHA.BorderRadius = 12;
+            this.comboBoxNHA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxNHA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxNHA.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxNHA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxNHA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comboBoxNHA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBoxNHA.ItemHeight = 45;
+            this.comboBoxNHA.Location = new System.Drawing.Point(1185, 66);
+            this.comboBoxNHA.Name = "comboBoxNHA";
+            this.comboBoxNHA.Size = new System.Drawing.Size(157, 51);
+            this.comboBoxNHA.TabIndex = 28;
+            this.comboBoxNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // GIOITINH_2
+            // btn_addHD
             // 
-            this.GIOITINH_2.DataPropertyName = "GIOITINH";
-            this.GIOITINH_2.HeaderText = "Giới tính";
-            this.GIOITINH_2.MinimumWidth = 8;
-            this.GIOITINH_2.Name = "GIOITINH_2";
-            // 
-            // LOAIPHONG
-            // 
-            this.LOAIPHONG.DataPropertyName = "LOAIPHONG";
-            this.LOAIPHONG.HeaderText = "Loại phòng";
-            this.LOAIPHONG.MinimumWidth = 8;
-            this.LOAIPHONG.Name = "LOAIPHONG";
-            // 
-            // GIAPHONG
-            // 
-            this.GIAPHONG.DataPropertyName = "GIAPHONG";
-            this.GIAPHONG.HeaderText = "Giá phòng";
-            this.GIAPHONG.MinimumWidth = 8;
-            this.GIAPHONG.Name = "GIAPHONG";
-            // 
-            // TOIDA_2
-            // 
-            this.TOIDA_2.DataPropertyName = "TOIDA";
-            this.TOIDA_2.HeaderText = "Tối đa";
-            this.TOIDA_2.MinimumWidth = 6;
-            this.TOIDA_2.Name = "TOIDA_2";
+            this.btn_addHD.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
+            this.btn_addHD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_addHD.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_addHD.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_addHD.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_addHD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_addHD.FillColor = System.Drawing.Color.Transparent;
+            this.btn_addHD.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_addHD.ForeColor = System.Drawing.Color.White;
+            this.btn_addHD.Location = new System.Drawing.Point(1527, 75);
+            this.btn_addHD.Name = "btn_addHD";
+            this.btn_addHD.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btn_addHD.Size = new System.Drawing.Size(30, 32);
+            this.btn_addHD.TabIndex = 29;
+            this.btn_addHD.Click += new System.EventHandler(this.btn_addHD_Click);
             // 
             // UC_DANHMUCPHONG
             // 

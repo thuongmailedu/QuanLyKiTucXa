@@ -46,9 +46,47 @@ namespace QuanLyKiTucXa.Main_UC.QLPHONG
 
             LoadComboBoxNHA();
             LoadDuLieuPhong();
-
+            LoadTrangThaiNha();
         }
+        private void LoadTrangThaiNha()
+        {
+            try
+            {
+                string query = @"
+            SELECT *
+                
+            FROM NHA ";
 
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dgvDMPhong.Rows.Clear();
+                    int stt = 1;
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        int index = dgvDMPhong.Rows.Add();
+                        dgvDMPhong.Rows[index].Cells["STT"].Value = stt++;
+                     //   dgvDMPhong.Rows[index].Cells["colMaPhong"].Value = row["MA_PHONG"];
+                        dgvDMPhong.Rows[index].Cells["MANHA_2"].Value = row["MANHA"];
+                        dgvDMPhong.Rows[index].Cells["LOAIPHONG"].Value = row["LOAIPHONG"];
+                        dgvDMPhong.Rows[index].Cells["GIOITINH_2"].Value = row["GIOITINH"];
+                        dgvDMPhong.Rows[index].Cells["GIAPHONG"].Value = Convert.ToDecimal(row["GIAPHONG"]).ToString("N0");
+                        dgvDMPhong.Rows[index].Cells["TOIDA_2"].Value = row["TOIDA"];
+                       // dgvDMPhong.Rows[index].Cells["colTrangThaiPhong"].Value = row["TRANGTHAI_PHONG"];
+                      //  dgvDMPhong.Rows[index].Cells["colTrangThaiNha"].Value = row["TRANGTHAI_NHA"];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi load dữ liệu: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void btn_addPhong_Click(object sender, EventArgs e)
         {
             frm_DM_PHONG form = new frm_DM_PHONG(); // Tạo instance

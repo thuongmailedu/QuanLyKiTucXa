@@ -32,6 +32,7 @@
             this.panelMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSCCSVC = new Guna.UI2.WinForms.Guna2Button();
             this.btnDMCSVC = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDMPhong = new Guna.UI2.WinForms.Guna2Button();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             // 
             this.panelMenu.BorderColor = System.Drawing.Color.Transparent;
             this.panelMenu.Controls.Add(this.btnSCCSVC);
+            this.panelMenu.Controls.Add(this.btnDMPhong);
             this.panelMenu.Controls.Add(this.btnDMCSVC);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
@@ -96,12 +98,35 @@
             this.btnDMCSVC.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             this.btnDMCSVC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDMCSVC.ForeColor = System.Drawing.Color.White;
-            this.btnDMCSVC.Location = new System.Drawing.Point(273, 0);
+            this.btnDMCSVC.Location = new System.Drawing.Point(282, 0);
             this.btnDMCSVC.Name = "btnDMCSVC";
             this.btnDMCSVC.Size = new System.Drawing.Size(273, 80);
             this.btnDMCSVC.TabIndex = 2;
             this.btnDMCSVC.Text = "DANH MỤC CSVC";
             this.btnDMCSVC.Click += new System.EventHandler(this.btnDMCSVC_Click);
+            // 
+            // btnDMPhong
+            // 
+            this.btnDMPhong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDMPhong.CheckedState.CustomBorderColor = System.Drawing.Color.Green;
+            this.btnDMPhong.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnDMPhong.CheckedState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDMPhong.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnDMPhong.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnDMPhong.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.btnDMPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDMPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDMPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDMPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDMPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnDMPhong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDMPhong.ForeColor = System.Drawing.Color.White;
+            this.btnDMPhong.Location = new System.Drawing.Point(3, 0);
+            this.btnDMPhong.Name = "btnDMPhong";
+            this.btnDMPhong.Size = new System.Drawing.Size(273, 80);
+            this.btnDMPhong.TabIndex = 2;
+            this.btnDMPhong.Text = "DANH SÁCH NHÀ_PHÒNG";
+            this.btnDMPhong.Click += new System.EventHandler(this.btnDMPhong_Click);
             // 
             // UC_QLPHONG_Ribbon
             // 
@@ -124,5 +149,6 @@
         private Guna.UI2.WinForms.Guna2Panel panelMenu;
         private Guna.UI2.WinForms.Guna2Button btnSCCSVC;
         private Guna.UI2.WinForms.Guna2Button btnDMCSVC;
+        private Guna.UI2.WinForms.Guna2Button btnDMPhong;
     }
 }

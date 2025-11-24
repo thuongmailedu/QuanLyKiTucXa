@@ -124,6 +124,12 @@
     <Compile Include="Formadd\QLPHONG_FORM\frm_DM_CSVC.Designer.cs">
       <DependentUpon>frm_DM_CSVC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formadd\QLPHONG_FORM\frm_DM_NHA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\QLPHONG_FORM\frm_DM_NHA.Designer.cs">
+      <DependentUpon>frm_DM_NHA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formadd\QLPHONG_FORM\frm_DM_PHONG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,12 +147,6 @@
     </Compile>
     <Compile Include="Formadd\QLPHONG_FORM\frm_SCCSVC.Designer.cs">
       <DependentUpon>frm_SCCSVC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formadd\QLPHONG_FORM\frm_test_addphong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formadd\QLPHONG_FORM\frm_test_addphong.Designer.cs">
-      <DependentUpon>frm_test_addphong.cs</DependentUpon>
     </Compile>
     <Compile Include="Formadd\testadddata.cs">
       <SubType>Form</SubType>
@@ -244,6 +244,12 @@
     </Compile>
     <Compile Include="Main UC\QLPHONG\UC_DANHMUCPHONG.Designer.cs">
       <DependentUpon>UC_DANHMUCPHONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLPHONG\UC_NHA_PHONG.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLPHONG\UC_NHA_PHONG.Designer.cs">
+      <DependentUpon>UC_NHA_PHONG.cs</DependentUpon>
     </Compile>
     <Compile Include="Main UC\QLPHONG\UC_SCCSVC.cs">
       <SubType>UserControl</SubType>
@@ -357,6 +363,9 @@
     <EmbeddedResource Include="Formadd\QLPHONG_FORM\frm_DM_CSVC.resx">
       <DependentUpon>frm_DM_CSVC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\QLPHONG_FORM\frm_DM_NHA.resx">
+      <DependentUpon>frm_DM_NHA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formadd\QLPHONG_FORM\frm_DM_PHONG.resx">
       <DependentUpon>frm_DM_PHONG.cs</DependentUpon>
     </EmbeddedResource>
@@ -365,9 +374,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formadd\QLPHONG_FORM\frm_SCCSVC.resx">
       <DependentUpon>frm_SCCSVC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formadd\QLPHONG_FORM\frm_test_addphong.resx">
-      <DependentUpon>frm_test_addphong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formadd\testadddata.resx">
       <DependentUpon>testadddata.cs</DependentUpon>
@@ -416,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main UC\QLPHONG\UC_DANHMUCPHONG.resx">
       <DependentUpon>UC_DANHMUCPHONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLPHONG\UC_NHA_PHONG.resx">
+      <DependentUpon>UC_NHA_PHONG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main UC\QLPHONG\UC_SCCSVC.resx">
       <DependentUpon>UC_SCCSVC.cs</DependentUpon>

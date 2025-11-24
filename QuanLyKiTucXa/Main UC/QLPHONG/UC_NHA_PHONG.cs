@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyKiTucXa.Formadd.QLPHONG_FORM
+namespace QuanLyKiTucXa.Main_UC.QLPHONG
 {
-    public partial class frm_test_addphong : Form
+    public partial class UC_NHA_PHONG : UserControl
     {
-        public frm_test_addphong()
+        public UC_NHA_PHONG()
         {
             InitializeComponent();
+        }
+
+        private void btnadd_NHA_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
