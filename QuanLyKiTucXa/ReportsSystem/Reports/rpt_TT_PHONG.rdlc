@@ -1612,7 +1612,7 @@
             <Top>1.48833in</Top>
             <Left>0.69406in</Left>
             <Height>1.75in</Height>
-            <Width>7.52313in</Width>
+            <Width>7.52314in</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -1717,7 +1717,7 @@
       <Width>9.54966in</Width>
       <Page>
         <PageHeader>
-          <Height>1in</Height>
+          <Height>1.04167in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>

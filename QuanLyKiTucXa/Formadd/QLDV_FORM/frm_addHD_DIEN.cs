@@ -682,9 +682,9 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
                             {
                                 // ← INSERT cho hóa đơn mới
                                 string insertQuery = @"INSERT INTO HD_DIEN 
-                                                      (MAHD_DIEN, MA_PHONG, MADV, CHISOCU, CHISOMOI, DONGIA, THOIGIAN, NGAYGHI, TINHTRANGTT, TONGTIEN)
+                                                      (MAHD_DIEN, MA_PHONG, MADV, CHISOCU, CHISOMOI, DONGIA, THOIGIAN, NGAYGHI, TINHTRANGTT, TONGTIEN , TENHD)
                                                       VALUES 
-                                                      (@MAHD_DIEN, @MA_PHONG, @MADV, @CHISOCU, @CHISOMOI, @DONGIA, @THOIGIAN, @NGAYGHI, @TINHTRANGTT, @TONGTIEN)";
+                                                      (@MAHD_DIEN, @MA_PHONG, @MADV, @CHISOCU, @CHISOMOI, @DONGIA, @THOIGIAN, @NGAYGHI, @TINHTRANGTT, @TONGTIEN ,@TENHD)";
 
                                 SqlCommand cmdInsert = new SqlCommand(insertQuery, conn, transaction);
                                 cmdInsert.Parameters.AddWithValue("@MAHD_DIEN", maHD);
@@ -697,6 +697,7 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
                                 cmdInsert.Parameters.AddWithValue("@NGAYGHI", row["NGAYGHI"]);
                                 cmdInsert.Parameters.AddWithValue("@TINHTRANGTT", row["TINHTRANGTT"]);
                                 cmdInsert.Parameters.AddWithValue("@TONGTIEN", row["TONGTIEN"]);
+                                cmdInsert.Parameters.AddWithValue("@TENHD", row["TENHD"]);
 
                                 cmdInsert.ExecuteNonQuery();
                             }

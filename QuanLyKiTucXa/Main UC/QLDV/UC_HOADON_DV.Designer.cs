@@ -57,6 +57,7 @@ namespace QuanLyKiTucXa
             this.comPHONG = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comNHA = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpTHOIGIAN = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btnXuatHD = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HD_TONGHOP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +71,7 @@ namespace QuanLyKiTucXa
             this.btncancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btncancel.ForeColor = System.Drawing.Color.White;
             this.btncancel.Image = global::QuanLyKiTucXa.Properties.Resources.cancel;
-            this.btncancel.Location = new System.Drawing.Point(1394, 105);
+            this.btncancel.Location = new System.Drawing.Point(1270, 64);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(46, 40);
             this.btncancel.TabIndex = 62;
@@ -86,7 +87,7 @@ namespace QuanLyKiTucXa
             this.btnupdate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnupdate.ForeColor = System.Drawing.Color.White;
             this.btnupdate.Image = global::QuanLyKiTucXa.Properties.Resources.circle_ok;
-            this.btnupdate.Location = new System.Drawing.Point(1457, 109);
+            this.btnupdate.Location = new System.Drawing.Point(1333, 68);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(40, 36);
             this.btnupdate.TabIndex = 61;
@@ -103,7 +104,7 @@ namespace QuanLyKiTucXa
             this.btnfillter.FillColor = System.Drawing.Color.Transparent;
             this.btnfillter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnfillter.ForeColor = System.Drawing.Color.White;
-            this.btnfillter.Location = new System.Drawing.Point(1280, 109);
+            this.btnfillter.Location = new System.Drawing.Point(1156, 68);
             this.btnfillter.Name = "btnfillter";
             this.btnfillter.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnfillter.Size = new System.Drawing.Size(35, 40);
@@ -121,7 +122,7 @@ namespace QuanLyKiTucXa
             this.btnDelete.FillColor = System.Drawing.Color.Transparent;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(1337, 113);
+            this.btnDelete.Location = new System.Drawing.Point(1213, 72);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnDelete.Size = new System.Drawing.Size(35, 32);
@@ -131,7 +132,7 @@ namespace QuanLyKiTucXa
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(579, 30);
+            this.label8.Location = new System.Drawing.Point(586, 10);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(328, 41);
@@ -175,7 +176,7 @@ namespace QuanLyKiTucXa
             this.TONGTIEN,
             this.TINHTRANGTT});
             this.dgv_HD_TONGHOP.EnableHeadersVisualStyles = false;
-            this.dgv_HD_TONGHOP.Location = new System.Drawing.Point(16, 172);
+            this.dgv_HD_TONGHOP.Location = new System.Drawing.Point(13, 137);
             this.dgv_HD_TONGHOP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgv_HD_TONGHOP.Name = "dgv_HD_TONGHOP";
             this.dgv_HD_TONGHOP.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -314,7 +315,7 @@ namespace QuanLyKiTucXa
             this.comTRANGTHAI.Items.AddRange(new object[] {
             "Đã thanh toán",
             "Chưa thanh toán"});
-            this.comTRANGTHAI.Location = new System.Drawing.Point(757, 100);
+            this.comTRANGTHAI.Location = new System.Drawing.Point(732, 63);
             this.comTRANGTHAI.Name = "comTRANGTHAI";
             this.comTRANGTHAI.Size = new System.Drawing.Size(157, 51);
             this.comTRANGTHAI.TabIndex = 51;
@@ -332,7 +333,7 @@ namespace QuanLyKiTucXa
             this.comPHONG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comPHONG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comPHONG.ItemHeight = 45;
-            this.comPHONG.Location = new System.Drawing.Point(523, 100);
+            this.comPHONG.Location = new System.Drawing.Point(498, 63);
             this.comPHONG.Name = "comPHONG";
             this.comPHONG.Size = new System.Drawing.Size(157, 51);
             this.comPHONG.TabIndex = 52;
@@ -350,7 +351,7 @@ namespace QuanLyKiTucXa
             this.comNHA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comNHA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comNHA.ItemHeight = 45;
-            this.comNHA.Location = new System.Drawing.Point(320, 100);
+            this.comNHA.Location = new System.Drawing.Point(295, 63);
             this.comNHA.Name = "comNHA";
             this.comNHA.Size = new System.Drawing.Size(157, 51);
             this.comNHA.TabIndex = 53;
@@ -368,7 +369,7 @@ namespace QuanLyKiTucXa
             this.dtpTHOIGIAN.FocusedColor = System.Drawing.Color.White;
             this.dtpTHOIGIAN.Font = new System.Drawing.Font("Segoe UI", 9.857143F);
             this.dtpTHOIGIAN.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTHOIGIAN.Location = new System.Drawing.Point(959, 105);
+            this.dtpTHOIGIAN.Location = new System.Drawing.Point(934, 68);
             this.dtpTHOIGIAN.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpTHOIGIAN.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpTHOIGIAN.Name = "dtpTHOIGIAN";
@@ -377,10 +378,28 @@ namespace QuanLyKiTucXa
             this.dtpTHOIGIAN.TabIndex = 63;
             this.dtpTHOIGIAN.Value = new System.DateTime(2025, 10, 25, 0, 0, 0, 0);
             // 
+            // btnXuatHD
+            // 
+            this.btnXuatHD.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
+            this.btnXuatHD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnXuatHD.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXuatHD.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXuatHD.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXuatHD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXuatHD.FillColor = System.Drawing.Color.Transparent;
+            this.btnXuatHD.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXuatHD.ForeColor = System.Drawing.Color.White;
+            this.btnXuatHD.Location = new System.Drawing.Point(1460, 95);
+            this.btnXuatHD.Name = "btnXuatHD";
+            this.btnXuatHD.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnXuatHD.Size = new System.Drawing.Size(31, 34);
+            this.btnXuatHD.TabIndex = 64;
+            // 
             // UC_HOADON_DV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnXuatHD);
             this.Controls.Add(this.dtpTHOIGIAN);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.btnupdate);
@@ -427,5 +446,6 @@ namespace QuanLyKiTucXa
         private System.Windows.Forms.DataGridViewTextBoxColumn TONGTIEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn TINHTRANGTT;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTHOIGIAN;
+        private Guna.UI2.WinForms.Guna2CircleButton btnXuatHD;
     }
 }
