@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyKiTucXa.Formadd.DM_KHAC_FORM
 {
-    public partial class frmadd_NHA : Form
+    public partial class frmadd_KHOA : Form
     {
-        public frmadd_NHA()
+        public frmadd_KHOA()
         {
             InitializeComponent();
         }

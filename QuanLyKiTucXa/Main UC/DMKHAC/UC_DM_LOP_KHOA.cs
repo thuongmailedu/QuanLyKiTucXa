@@ -16,5 +16,55 @@ namespace QuanLyKiTucXa.Main_UC.DMKHAC
         {
             InitializeComponent();
         }
+
+        private void UC_DM_LOP_KHOA_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSinhVien_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btndelete_KHOA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btndelete_NHA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnedit_KHOA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnedit_NHA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnadd_KHOA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnadd_NHA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvDMPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

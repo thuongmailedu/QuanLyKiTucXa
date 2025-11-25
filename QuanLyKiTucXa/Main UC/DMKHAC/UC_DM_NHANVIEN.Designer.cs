@@ -33,11 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDM_NHANVIEN = new System.Windows.Forms.DataGridView();
-            this.lblSinhVien = new System.Windows.Forms.Label();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblSinhVien = new System.Windows.Forms.Label();
             this.btndelete_NHA = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnedit_NHANVIEN = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnadd_NHANVIEN = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -93,18 +93,6 @@
             this.dgvDM_NHANVIEN.Size = new System.Drawing.Size(1438, 653);
             this.dgvDM_NHANVIEN.TabIndex = 18;
             // 
-            // lblSinhVien
-            // 
-            this.lblSinhVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblSinhVien.AutoSize = true;
-            this.lblSinhVien.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSinhVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.lblSinhVien.Location = new System.Drawing.Point(466, 23);
-            this.lblSinhVien.Name = "lblSinhVien";
-            this.lblSinhVien.Size = new System.Drawing.Size(620, 46);
-            this.lblSinhVien.TabIndex = 19;
-            this.lblSinhVien.Text = "DANH MỤC NHÂN VIÊN _TÀI KHOẢN";
-            // 
             // STT
             // 
             this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -139,6 +127,18 @@
             this.TENNV.MinimumWidth = 8;
             this.TENNV.Name = "TENNV";
             // 
+            // lblSinhVien
+            // 
+            this.lblSinhVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblSinhVien.AutoSize = true;
+            this.lblSinhVien.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSinhVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.lblSinhVien.Location = new System.Drawing.Point(466, 23);
+            this.lblSinhVien.Name = "lblSinhVien";
+            this.lblSinhVien.Size = new System.Drawing.Size(620, 46);
+            this.lblSinhVien.TabIndex = 19;
+            this.lblSinhVien.Text = "DANH MỤC NHÂN VIÊN _TÀI KHOẢN";
+            // 
             // btndelete_NHA
             // 
             this.btndelete_NHA.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
@@ -155,6 +155,7 @@
             this.btndelete_NHA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btndelete_NHA.Size = new System.Drawing.Size(35, 32);
             this.btndelete_NHA.TabIndex = 22;
+            this.btndelete_NHA.Click += new System.EventHandler(this.btndelete_NHA_Click);
             // 
             // btnedit_NHANVIEN
             // 
@@ -172,6 +173,7 @@
             this.btnedit_NHANVIEN.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnedit_NHANVIEN.Size = new System.Drawing.Size(31, 32);
             this.btnedit_NHANVIEN.TabIndex = 21;
+            this.btnedit_NHANVIEN.Click += new System.EventHandler(this.btnedit_NHANVIEN_Click);
             // 
             // btnadd_NHANVIEN
             // 
@@ -189,6 +191,7 @@
             this.btnadd_NHANVIEN.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnadd_NHANVIEN.Size = new System.Drawing.Size(30, 32);
             this.btnadd_NHANVIEN.TabIndex = 20;
+            this.btnadd_NHANVIEN.Click += new System.EventHandler(this.btnadd_NHANVIEN_Click);
             // 
             // UC_DM_NHANVIEN
             // 
@@ -203,6 +206,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_DM_NHANVIEN";
             this.Size = new System.Drawing.Size(1588, 870);
+            this.Load += new System.EventHandler(this.UC_DM_NHANVIEN_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_NHANVIEN)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

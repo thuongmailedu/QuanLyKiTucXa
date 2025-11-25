@@ -70,17 +70,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formadd\DM_KHAC_FORM\frmadd_KHOA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\DM_KHAC_FORM\frmadd_KHOA.Designer.cs">
+      <DependentUpon>frmadd_KHOA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formadd\DM_KHAC_FORM\frmadd_LOP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formadd\DM_KHAC_FORM\frmadd_LOP.Designer.cs">
       <DependentUpon>frmadd_LOP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formadd\DM_KHAC_FORM\frmadd_NHA.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formadd\DM_KHAC_FORM\frmadd_NHA.Designer.cs">
-      <DependentUpon>frmadd_NHA.cs</DependentUpon>
     </Compile>
     <Compile Include="Formadd\DM_KHAC_FORM\frmadd_NHACC.cs">
       <SubType>Form</SubType>
@@ -378,11 +378,11 @@
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserSession.cs" />
+    <EmbeddedResource Include="Formadd\DM_KHAC_FORM\frmadd_KHOA.resx">
+      <DependentUpon>frmadd_KHOA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formadd\DM_KHAC_FORM\frmadd_LOP.resx">
       <DependentUpon>frmadd_LOP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formadd\DM_KHAC_FORM\frmadd_NHA.resx">
-      <DependentUpon>frmadd_NHA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formadd\DM_KHAC_FORM\frmadd_NHACC.resx">
       <DependentUpon>frmadd_NHACC.cs</DependentUpon>

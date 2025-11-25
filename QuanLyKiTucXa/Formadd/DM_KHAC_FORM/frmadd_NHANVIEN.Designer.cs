@@ -60,7 +60,6 @@
             this.comQUYEN.Location = new System.Drawing.Point(615, 150);
             this.comQUYEN.Name = "comQUYEN";
             this.comQUYEN.Size = new System.Drawing.Size(223, 51);
-            this.comQUYEN.StartIndex = 0;
             this.comQUYEN.TabIndex = 59;
             this.comQUYEN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -77,6 +76,7 @@
             this.btnLuu.Size = new System.Drawing.Size(85, 45);
             this.btnLuu.TabIndex = 56;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
@@ -91,6 +91,7 @@
             this.btnHuy.Size = new System.Drawing.Size(93, 45);
             this.btnHuy.TabIndex = 57;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // label7
             // 
@@ -156,6 +157,7 @@
             this.txtMANV.SelectedText = "";
             this.txtMANV.Size = new System.Drawing.Size(231, 48);
             this.txtMANV.TabIndex = 45;
+            this.txtMANV.TextChanged += new System.EventHandler(this.txtMANV_TextChanged);
             // 
             // comMANHA
             // 
@@ -172,7 +174,6 @@
             this.comMANHA.Location = new System.Drawing.Point(190, 150);
             this.comMANHA.Name = "comMANHA";
             this.comMANHA.Size = new System.Drawing.Size(231, 51);
-            this.comMANHA.StartIndex = 0;
             this.comMANHA.TabIndex = 59;
             this.comMANHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -271,7 +272,7 @@
             this.panelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.panelMenu.MaximumSize = new System.Drawing.Size(1646, 100);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(885, 29);
+            this.panelMenu.Size = new System.Drawing.Size(885, 21);
             this.panelMenu.TabIndex = 60;
             // 
             // frmadd_NHANVIEN
@@ -299,6 +300,7 @@
             this.Name = "frmadd_NHANVIEN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmadd_NHANVIEN";
+            this.Load += new System.EventHandler(this.frmadd_NHANVIEN_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
