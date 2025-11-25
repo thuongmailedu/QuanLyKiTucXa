@@ -28,195 +28,216 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvDMPhong = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgvDM_NHACC = new System.Windows.Forms.DataGridView();
+            this.btndelete_NHACC = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnedit_NHACC = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnadd_NHACC = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.lblSinhVien = new System.Windows.Forms.Label();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MANHA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIOITINH_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAIPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIAPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOIDA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btndelete_NHA = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnedit_NHA = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnadd_NHA = new Guna.UI2.WinForms.Guna2CircleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDMPhong)).BeginInit();
+            this.MA_NHACC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN_NHACC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GHICHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDM_NHACC)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvDMPhong
+            // dgvDM_NHACC
             // 
-            this.dgvDMPhong.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvDMPhong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvDMPhong.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvDMPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDMPhong.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDMPhong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvDMPhong.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvDMPhong.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDMPhong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvDMPhong.ColumnHeadersHeight = 45;
-            this.dgvDMPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDM_NHACC.AllowUserToResizeRows = false;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvDM_NHACC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvDM_NHACC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDM_NHACC.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDM_NHACC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvDM_NHACC.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvDM_NHACC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDM_NHACC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvDM_NHACC.ColumnHeadersHeight = 45;
+            this.dgvDM_NHACC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
-            this.MANHA_2,
-            this.GIOITINH_2,
-            this.LOAIPHONG,
-            this.GIAPHONG,
-            this.TOIDA_2});
-            this.dgvDMPhong.EnableHeadersVisualStyles = false;
-            this.dgvDMPhong.Location = new System.Drawing.Point(801, 196);
-            this.dgvDMPhong.Name = "dgvDMPhong";
-            this.dgvDMPhong.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDMPhong.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvDMPhong.RowHeadersWidth = 62;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDMPhong.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvDMPhong.RowTemplate.Height = 45;
-            this.dgvDMPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDMPhong.Size = new System.Drawing.Size(579, 621);
-            this.dgvDMPhong.TabIndex = 18;
+            this.MA_NHACC,
+            this.TEN_NHACC,
+            this.SDT,
+            this.DIACHI,
+            this.GHICHU});
+            this.dgvDM_NHACC.EnableHeadersVisualStyles = false;
+            this.dgvDM_NHACC.Location = new System.Drawing.Point(68, 120);
+            this.dgvDM_NHACC.Name = "dgvDM_NHACC";
+            this.dgvDM_NHACC.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDM_NHACC.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvDM_NHACC.RowHeadersWidth = 62;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDM_NHACC.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvDM_NHACC.RowTemplate.Height = 45;
+            this.dgvDM_NHACC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDM_NHACC.Size = new System.Drawing.Size(1331, 660);
+            this.dgvDM_NHACC.TabIndex = 18;
+            // 
+            // btndelete_NHACC
+            // 
+            this.btndelete_NHACC.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
+            this.btndelete_NHACC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btndelete_NHACC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btndelete_NHACC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btndelete_NHACC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btndelete_NHACC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btndelete_NHACC.FillColor = System.Drawing.Color.Transparent;
+            this.btndelete_NHACC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btndelete_NHACC.ForeColor = System.Drawing.Color.White;
+            this.btndelete_NHACC.Location = new System.Drawing.Point(1364, 82);
+            this.btndelete_NHACC.Name = "btndelete_NHACC";
+            this.btndelete_NHACC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btndelete_NHACC.Size = new System.Drawing.Size(35, 32);
+            this.btndelete_NHACC.TabIndex = 21;
+            this.btndelete_NHACC.Click += new System.EventHandler(this.btndelete_NHACC_Click);
+            // 
+            // btnedit_NHACC
+            // 
+            this.btnedit_NHACC.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
+            this.btnedit_NHACC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnedit_NHACC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnedit_NHACC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnedit_NHACC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnedit_NHACC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnedit_NHACC.FillColor = System.Drawing.Color.Transparent;
+            this.btnedit_NHACC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnedit_NHACC.ForeColor = System.Drawing.Color.White;
+            this.btnedit_NHACC.Location = new System.Drawing.Point(1327, 82);
+            this.btnedit_NHACC.Name = "btnedit_NHACC";
+            this.btnedit_NHACC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnedit_NHACC.Size = new System.Drawing.Size(31, 32);
+            this.btnedit_NHACC.TabIndex = 20;
+            this.btnedit_NHACC.Click += new System.EventHandler(this.btnedit_NHACC_Click);
+            // 
+            // btnadd_NHACC
+            // 
+            this.btnadd_NHACC.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
+            this.btnadd_NHACC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnadd_NHACC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnadd_NHACC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnadd_NHACC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnadd_NHACC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnadd_NHACC.FillColor = System.Drawing.Color.Transparent;
+            this.btnadd_NHACC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnadd_NHACC.ForeColor = System.Drawing.Color.White;
+            this.btnadd_NHACC.Location = new System.Drawing.Point(1282, 82);
+            this.btnadd_NHACC.Name = "btnadd_NHACC";
+            this.btnadd_NHACC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnadd_NHACC.Size = new System.Drawing.Size(30, 32);
+            this.btnadd_NHACC.TabIndex = 19;
+            this.btnadd_NHACC.Click += new System.EventHandler(this.btnadd_NHACC_Click);
+            // 
+            // lblSinhVien
+            // 
+            this.lblSinhVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblSinhVien.AutoSize = true;
+            this.lblSinhVien.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSinhVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.lblSinhVien.Location = new System.Drawing.Point(491, 33);
+            this.lblSinhVien.Name = "lblSinhVien";
+            this.lblSinhVien.Size = new System.Drawing.Size(476, 46);
+            this.lblSinhVien.TabIndex = 23;
+            this.lblSinhVien.Text = "DANH MỤC NHÀ CUNG CẤP";
             // 
             // STT
             // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.STT.DataPropertyName = "STT";
             this.STT.HeaderText = "STT";
             this.STT.MinimumWidth = 6;
             this.STT.Name = "STT";
+            this.STT.Width = 60;
             // 
-            // MANHA_2
+            // MA_NHACC
             // 
-            this.MANHA_2.DataPropertyName = "MANHA";
-            this.MANHA_2.HeaderText = "Mã nhà";
-            this.MANHA_2.MinimumWidth = 8;
-            this.MANHA_2.Name = "MANHA_2";
+            this.MA_NHACC.DataPropertyName = "MA_NHACC";
+            this.MA_NHACC.HeaderText = "Mã nhà cung cấp";
+            this.MA_NHACC.MinimumWidth = 8;
+            this.MA_NHACC.Name = "MA_NHACC";
             // 
-            // GIOITINH_2
+            // TEN_NHACC
             // 
-            this.GIOITINH_2.DataPropertyName = "GIOITINH";
-            this.GIOITINH_2.HeaderText = "Giới tính";
-            this.GIOITINH_2.MinimumWidth = 8;
-            this.GIOITINH_2.Name = "GIOITINH_2";
+            this.TEN_NHACC.DataPropertyName = "TEN_NHACC";
+            this.TEN_NHACC.HeaderText = "Tên nhà cung cấp";
+            this.TEN_NHACC.MinimumWidth = 8;
+            this.TEN_NHACC.Name = "TEN_NHACC";
             // 
-            // LOAIPHONG
+            // SDT
             // 
-            this.LOAIPHONG.DataPropertyName = "LOAIPHONG";
-            this.LOAIPHONG.HeaderText = "Loại phòng";
-            this.LOAIPHONG.MinimumWidth = 8;
-            this.LOAIPHONG.Name = "LOAIPHONG";
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.MinimumWidth = 8;
+            this.SDT.Name = "SDT";
             // 
-            // GIAPHONG
+            // DIACHI
             // 
-            this.GIAPHONG.DataPropertyName = "GIAPHONG";
-            this.GIAPHONG.HeaderText = "Giá phòng";
-            this.GIAPHONG.MinimumWidth = 8;
-            this.GIAPHONG.Name = "GIAPHONG";
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa chỉ";
+            this.DIACHI.MinimumWidth = 8;
+            this.DIACHI.Name = "DIACHI";
             // 
-            // TOIDA_2
+            // GHICHU
             // 
-            this.TOIDA_2.DataPropertyName = "TOIDA";
-            this.TOIDA_2.HeaderText = "Tối đa";
-            this.TOIDA_2.MinimumWidth = 6;
-            this.TOIDA_2.Name = "TOIDA_2";
-            // 
-            // btndelete_NHA
-            // 
-            this.btndelete_NHA.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
-            this.btndelete_NHA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btndelete_NHA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btndelete_NHA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btndelete_NHA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btndelete_NHA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btndelete_NHA.FillColor = System.Drawing.Color.Transparent;
-            this.btndelete_NHA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btndelete_NHA.ForeColor = System.Drawing.Color.White;
-            this.btndelete_NHA.Location = new System.Drawing.Point(751, 410);
-            this.btndelete_NHA.Name = "btndelete_NHA";
-            this.btndelete_NHA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btndelete_NHA.Size = new System.Drawing.Size(35, 32);
-            this.btndelete_NHA.TabIndex = 21;
-            // 
-            // btnedit_NHA
-            // 
-            this.btnedit_NHA.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
-            this.btnedit_NHA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnedit_NHA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnedit_NHA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnedit_NHA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnedit_NHA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnedit_NHA.FillColor = System.Drawing.Color.Transparent;
-            this.btnedit_NHA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnedit_NHA.ForeColor = System.Drawing.Color.White;
-            this.btnedit_NHA.Location = new System.Drawing.Point(714, 410);
-            this.btnedit_NHA.Name = "btnedit_NHA";
-            this.btnedit_NHA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnedit_NHA.Size = new System.Drawing.Size(31, 32);
-            this.btnedit_NHA.TabIndex = 20;
-            // 
-            // btnadd_NHA
-            // 
-            this.btnadd_NHA.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
-            this.btnadd_NHA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnadd_NHA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnadd_NHA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnadd_NHA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnadd_NHA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnadd_NHA.FillColor = System.Drawing.Color.Transparent;
-            this.btnadd_NHA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnadd_NHA.ForeColor = System.Drawing.Color.White;
-            this.btnadd_NHA.Location = new System.Drawing.Point(669, 410);
-            this.btnadd_NHA.Name = "btnadd_NHA";
-            this.btnadd_NHA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnadd_NHA.Size = new System.Drawing.Size(30, 32);
-            this.btnadd_NHA.TabIndex = 19;
+            this.GHICHU.DataPropertyName = "GHICHU";
+            this.GHICHU.HeaderText = "Ghi chú";
+            this.GHICHU.MinimumWidth = 6;
+            this.GHICHU.Name = "GHICHU";
             // 
             // UC_NHACC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btndelete_NHA);
-            this.Controls.Add(this.btnedit_NHA);
-            this.Controls.Add(this.btnadd_NHA);
-            this.Controls.Add(this.dgvDMPhong);
+            this.Controls.Add(this.lblSinhVien);
+            this.Controls.Add(this.btndelete_NHACC);
+            this.Controls.Add(this.btnedit_NHACC);
+            this.Controls.Add(this.btnadd_NHACC);
+            this.Controls.Add(this.dgvDM_NHACC);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_NHACC";
-            this.Size = new System.Drawing.Size(1455, 853);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDMPhong)).EndInit();
+            this.Size = new System.Drawing.Size(1474, 846);
+            this.Load += new System.EventHandler(this.UC_NHACC_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDM_NHACC)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvDMPhong;
+        private System.Windows.Forms.DataGridView dgvDM_NHACC;
+        private Guna.UI2.WinForms.Guna2CircleButton btndelete_NHACC;
+        private Guna.UI2.WinForms.Guna2CircleButton btnedit_NHACC;
+        private Guna.UI2.WinForms.Guna2CircleButton btnadd_NHACC;
+        private System.Windows.Forms.Label lblSinhVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MANHA_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GIOITINH_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LOAIPHONG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GIAPHONG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TOIDA_2;
-        private Guna.UI2.WinForms.Guna2CircleButton btndelete_NHA;
-        private Guna.UI2.WinForms.Guna2CircleButton btnedit_NHA;
-        private Guna.UI2.WinForms.Guna2CircleButton btnadd_NHA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA_NHACC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN_NHACC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
     }
 }
