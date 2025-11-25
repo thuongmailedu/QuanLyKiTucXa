@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvDMPhong = new System.Windows.Forms.DataGridView();
+            this.dgvDM_NHANVIEN = new System.Windows.Forms.DataGridView();
             this.lblSinhVien = new System.Windows.Forms.Label();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,24 +41,24 @@
             this.btndelete_NHA = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnedit_NHANVIEN = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnadd_NHANVIEN = new Guna.UI2.WinForms.Guna2CircleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDMPhong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDM_NHANVIEN)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvDMPhong
+            // dgvDM_NHANVIEN
             // 
-            this.dgvDMPhong.AllowUserToResizeRows = false;
+            this.dgvDM_NHANVIEN.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvDMPhong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDMPhong.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvDMPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDMPhong.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDMPhong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvDMPhong.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvDMPhong.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvDM_NHANVIEN.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDM_NHANVIEN.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvDM_NHANVIEN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDM_NHANVIEN.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDM_NHANVIEN.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvDM_NHANVIEN.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvDM_NHANVIEN.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,17 +66,17 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDMPhong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDMPhong.ColumnHeadersHeight = 45;
-            this.dgvDMPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDM_NHANVIEN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDM_NHANVIEN.ColumnHeadersHeight = 45;
+            this.dgvDM_NHANVIEN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
             this.MANHA,
             this.MANV,
             this.TENNV});
-            this.dgvDMPhong.EnableHeadersVisualStyles = false;
-            this.dgvDMPhong.Location = new System.Drawing.Point(65, 109);
-            this.dgvDMPhong.Name = "dgvDMPhong";
-            this.dgvDMPhong.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvDM_NHANVIEN.EnableHeadersVisualStyles = false;
+            this.dgvDM_NHANVIEN.Location = new System.Drawing.Point(65, 127);
+            this.dgvDM_NHANVIEN.Name = "dgvDM_NHANVIEN";
+            this.dgvDM_NHANVIEN.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -84,14 +84,14 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDMPhong.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDMPhong.RowHeadersWidth = 62;
+            this.dgvDM_NHANVIEN.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDM_NHANVIEN.RowHeadersWidth = 62;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDMPhong.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDMPhong.RowTemplate.Height = 45;
-            this.dgvDMPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDMPhong.Size = new System.Drawing.Size(1438, 653);
-            this.dgvDMPhong.TabIndex = 18;
+            this.dgvDM_NHANVIEN.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDM_NHANVIEN.RowTemplate.Height = 45;
+            this.dgvDM_NHANVIEN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDM_NHANVIEN.Size = new System.Drawing.Size(1438, 653);
+            this.dgvDM_NHANVIEN.TabIndex = 18;
             // 
             // lblSinhVien
             // 
@@ -198,12 +198,12 @@
             this.Controls.Add(this.btnedit_NHANVIEN);
             this.Controls.Add(this.btnadd_NHANVIEN);
             this.Controls.Add(this.lblSinhVien);
-            this.Controls.Add(this.dgvDMPhong);
+            this.Controls.Add(this.dgvDM_NHANVIEN);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_DM_NHANVIEN";
             this.Size = new System.Drawing.Size(1588, 870);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDMPhong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDM_NHANVIEN)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,7 +211,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvDMPhong;
+        private System.Windows.Forms.DataGridView dgvDM_NHANVIEN;
         private System.Windows.Forms.Label lblSinhVien;
         private Guna.UI2.WinForms.Guna2CircleButton btndelete_NHA;
         private Guna.UI2.WinForms.Guna2CircleButton btnedit_NHANVIEN;
