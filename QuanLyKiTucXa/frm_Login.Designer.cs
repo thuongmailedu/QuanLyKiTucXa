@@ -46,7 +46,7 @@
             this.txtTENDN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTENDN.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTENDN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTENDN.Location = new System.Drawing.Point(313, 239);
+            this.txtTENDN.Location = new System.Drawing.Point(87, 140);
             this.txtTENDN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTENDN.Name = "txtTENDN";
             this.txtTENDN.PlaceholderText = "";
@@ -65,7 +65,7 @@
             this.txtMATKHAU.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMATKHAU.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMATKHAU.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMATKHAU.Location = new System.Drawing.Point(313, 338);
+            this.txtMATKHAU.Location = new System.Drawing.Point(87, 239);
             this.txtMATKHAU.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMATKHAU.Name = "txtMATKHAU";
             this.txtMATKHAU.PlaceholderText = "";
@@ -76,7 +76,7 @@
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(313, 210);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(87, 111);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(94, 18);
             this.guna2HtmlLabel1.TabIndex = 1;
@@ -85,7 +85,7 @@
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(313, 309);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(87, 210);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(57, 18);
             this.guna2HtmlLabel2.TabIndex = 1;
@@ -99,7 +99,7 @@
             this.btnDangNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDangNhap.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.Location = new System.Drawing.Point(313, 439);
+            this.btnDangNhap.Location = new System.Drawing.Point(87, 340);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(290, 45);
             this.btnDangNhap.TabIndex = 2;
@@ -110,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 639);
+            this.ClientSize = new System.Drawing.Size(934, 594);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -119,6 +119,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Login";
             this.Load += new System.EventHandler(this.frm_Login_Load);
             this.ResumeLayout(false);

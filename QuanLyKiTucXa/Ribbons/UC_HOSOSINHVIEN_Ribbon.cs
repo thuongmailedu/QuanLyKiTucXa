@@ -36,16 +36,7 @@ namespace QuanLyKiTucXa.Ribbons
             grdData.AutoGenerateColumns = false;
 
             constr = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True";
-            //conn.ConnectionString = constr;
-            //conn.Open();
-            //sql = "Select MASV, TENSV, MA_PHONG, MANHA , TTCUTRU FROM SINHVIEN  "
-            //      + " JOIN PHONG ON SINHVIEN.MA_PHONG = PHONG.MA_PHONG "
-            //      + " JOIN NHA ON PHONG.MANHA = NHA.MANHA ";
-            //da = new SqlDataAdapter(sql, conn);
-            //dt.Clear();
-            //da.Fill(dt);
-            //grdData.DataSource = dt;
-            //grdData.Refresh();
+            
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -65,15 +56,7 @@ namespace QuanLyKiTucXa.Ribbons
                 grdData.DataSource = dt;
             }
         }
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grbThongTinSinhVien_Enter(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void grdData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -36,8 +36,8 @@ namespace QuanLyKiTucXa.Formadd
             da = new SqlDataAdapter(sql, conn);
             dt.Clear();
             da.Fill(dt);
-            grdData.DataSource = dt;
-            grdData.Refresh();
+            //grdData.DataSource = dt;
+            //grdData.Refresh();
             
         }
     }
