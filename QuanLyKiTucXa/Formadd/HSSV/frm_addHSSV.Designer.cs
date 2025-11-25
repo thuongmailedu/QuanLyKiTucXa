@@ -30,7 +30,7 @@
         {
             this.panelMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtTTCUTRU = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTINHTRANG_CUTRU = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCCCD = new Guna.UI2.WinForms.Guna2TextBox();
@@ -87,26 +87,26 @@
             this.label8.Text = "Trạng thái cư trú";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // txtTTCUTRU
+            // txtTINHTRANG_CUTRU
             // 
-            this.txtTTCUTRU.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtTTCUTRU.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTTCUTRU.DefaultText = "";
-            this.txtTTCUTRU.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTTCUTRU.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTTCUTRU.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTTCUTRU.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTTCUTRU.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTTCUTRU.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTTCUTRU.ForeColor = System.Drawing.Color.Black;
-            this.txtTTCUTRU.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTTCUTRU.Location = new System.Drawing.Point(1055, 360);
-            this.txtTTCUTRU.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtTTCUTRU.Name = "txtTTCUTRU";
-            this.txtTTCUTRU.PlaceholderText = "";
-            this.txtTTCUTRU.SelectedText = "";
-            this.txtTTCUTRU.Size = new System.Drawing.Size(313, 45);
-            this.txtTTCUTRU.TabIndex = 31;
+            this.txtTINHTRANG_CUTRU.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTINHTRANG_CUTRU.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTINHTRANG_CUTRU.DefaultText = "";
+            this.txtTINHTRANG_CUTRU.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTINHTRANG_CUTRU.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTINHTRANG_CUTRU.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTINHTRANG_CUTRU.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTINHTRANG_CUTRU.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTINHTRANG_CUTRU.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTINHTRANG_CUTRU.ForeColor = System.Drawing.Color.Black;
+            this.txtTINHTRANG_CUTRU.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTINHTRANG_CUTRU.Location = new System.Drawing.Point(1055, 360);
+            this.txtTINHTRANG_CUTRU.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTINHTRANG_CUTRU.Name = "txtTINHTRANG_CUTRU";
+            this.txtTINHTRANG_CUTRU.PlaceholderText = "";
+            this.txtTINHTRANG_CUTRU.SelectedText = "";
+            this.txtTINHTRANG_CUTRU.Size = new System.Drawing.Size(313, 45);
+            this.txtTINHTRANG_CUTRU.TabIndex = 31;
             // 
             // label7
             // 
@@ -577,7 +577,7 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtTTCUTRU);
+            this.Controls.Add(this.txtTINHTRANG_CUTRU);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtTENSV);
@@ -620,7 +620,7 @@
 
         private Guna.UI2.WinForms.Guna2Panel panelMenu;
         private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2TextBox txtTTCUTRU;
+        private Guna.UI2.WinForms.Guna2TextBox txtTINHTRANG_CUTRU;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox txtCCCD;

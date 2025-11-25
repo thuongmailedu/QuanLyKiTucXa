@@ -42,11 +42,11 @@
             this.comfillter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.grdData = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MASV_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MA_PHONG_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TINHTRANG_CUTRU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
             this.SuspendLayout();
@@ -218,11 +218,11 @@
             this.grdData.ColumnHeadersHeight = 45;
             this.grdData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
-            this.HoTen,
-            this.MaSV,
-            this.phong,
-            this.NHA,
-            this.TinhTrang});
+            this.TENSV,
+            this.MASV_2,
+            this.MA_PHONG_2,
+            this.MANHA,
+            this.TINHTRANG_CUTRU});
             this.grdData.EnableHeadersVisualStyles = false;
             this.grdData.Location = new System.Drawing.Point(37, 142);
             this.grdData.Name = "grdData";
@@ -248,45 +248,46 @@
             // STT
             // 
             this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.STT.DataPropertyName = "STT";
             this.STT.HeaderText = "STT";
             this.STT.MinimumWidth = 8;
             this.STT.Name = "STT";
             this.STT.Width = 60;
             // 
-            // HoTen
+            // TENSV
             // 
-            this.HoTen.DataPropertyName = "TENSV";
-            this.HoTen.HeaderText = "Họ và tên";
-            this.HoTen.MinimumWidth = 8;
-            this.HoTen.Name = "HoTen";
+            this.TENSV.DataPropertyName = "TENSV";
+            this.TENSV.HeaderText = "Họ và tên";
+            this.TENSV.MinimumWidth = 8;
+            this.TENSV.Name = "TENSV";
             // 
-            // MaSV
+            // MASV_2
             // 
-            this.MaSV.DataPropertyName = "MASV";
-            this.MaSV.HeaderText = "Mã sinh viên";
-            this.MaSV.MinimumWidth = 8;
-            this.MaSV.Name = "MaSV";
+            this.MASV_2.DataPropertyName = "MASV";
+            this.MASV_2.HeaderText = "Mã sinh viên";
+            this.MASV_2.MinimumWidth = 8;
+            this.MASV_2.Name = "MASV_2";
             // 
-            // phong
+            // MA_PHONG_2
             // 
-            this.phong.DataPropertyName = "MA_PHONG";
-            this.phong.HeaderText = "Phòng";
-            this.phong.MinimumWidth = 8;
-            this.phong.Name = "phong";
+            this.MA_PHONG_2.DataPropertyName = "MA_PHONG";
+            this.MA_PHONG_2.HeaderText = "Phòng";
+            this.MA_PHONG_2.MinimumWidth = 8;
+            this.MA_PHONG_2.Name = "MA_PHONG_2";
             // 
-            // NHA
+            // MANHA
             // 
-            this.NHA.DataPropertyName = "MANHA";
-            this.NHA.HeaderText = "Nhà";
-            this.NHA.MinimumWidth = 8;
-            this.NHA.Name = "NHA";
+            this.MANHA.DataPropertyName = "MANHA";
+            this.MANHA.HeaderText = "Nhà";
+            this.MANHA.MinimumWidth = 8;
+            this.MANHA.Name = "MANHA";
             // 
-            // TinhTrang
+            // TINHTRANG_CUTRU
             // 
-            this.TinhTrang.DataPropertyName = "TINHTRANG_CUTRU";
-            this.TinhTrang.HeaderText = "Tình trạng cư trú";
-            this.TinhTrang.MinimumWidth = 8;
-            this.TinhTrang.Name = "TinhTrang";
+            this.TINHTRANG_CUTRU.DataPropertyName = "TINHTRANG_CUTRU";
+            this.TINHTRANG_CUTRU.HeaderText = "Tình trạng cư trú";
+            this.TINHTRANG_CUTRU.MinimumWidth = 8;
+            this.TINHTRANG_CUTRU.Name = "TINHTRANG_CUTRU";
             // 
             // UC_HOSOSINHVIEN_Ribbon
             // 
@@ -320,12 +321,12 @@
         private System.Windows.Forms.DataGridView grdData;
         private Guna.UI2.WinForms.Guna2DataGridViewStyler guna2DataGridViewStyler1;
         private Guna.UI2.WinForms.Guna2DataGridViewStyler guna2DataGridViewStyler2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NHA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
         private Guna.UI2.WinForms.Guna2CircleButton btnfillter_SINHVIEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MASV_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA_PHONG_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MANHA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TINHTRANG_CUTRU;
     }
 }
