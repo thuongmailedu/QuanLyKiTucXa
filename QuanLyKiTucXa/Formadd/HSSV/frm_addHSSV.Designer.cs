@@ -45,7 +45,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtTENSV = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTEN_THANNHAN = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtMOIQUANHE = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.comTENKHOA = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comTENLOP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comGIOITINH = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comMOIQUANHE = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -313,27 +313,6 @@
             this.txtTEN_THANNHAN.Size = new System.Drawing.Size(313, 45);
             this.txtTEN_THANNHAN.TabIndex = 22;
             // 
-            // txtMOIQUANHE
-            // 
-            this.txtMOIQUANHE.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtMOIQUANHE.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMOIQUANHE.DefaultText = "";
-            this.txtMOIQUANHE.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMOIQUANHE.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMOIQUANHE.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMOIQUANHE.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMOIQUANHE.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMOIQUANHE.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMOIQUANHE.ForeColor = System.Drawing.Color.Black;
-            this.txtMOIQUANHE.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMOIQUANHE.Location = new System.Drawing.Point(233, 518);
-            this.txtMOIQUANHE.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtMOIQUANHE.Name = "txtMOIQUANHE";
-            this.txtMOIQUANHE.PlaceholderText = "";
-            this.txtMOIQUANHE.SelectedText = "";
-            this.txtMOIQUANHE.Size = new System.Drawing.Size(313, 45);
-            this.txtMOIQUANHE.TabIndex = 22;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -565,6 +544,28 @@
             this.comGIOITINH.TabIndex = 45;
             this.comGIOITINH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // comMOIQUANHE
+            // 
+            this.comMOIQUANHE.BackColor = System.Drawing.Color.Transparent;
+            this.comMOIQUANHE.BorderColor = System.Drawing.Color.Gray;
+            this.comMOIQUANHE.BorderRadius = 12;
+            this.comMOIQUANHE.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comMOIQUANHE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comMOIQUANHE.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comMOIQUANHE.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comMOIQUANHE.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comMOIQUANHE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comMOIQUANHE.ItemHeight = 45;
+            this.comMOIQUANHE.Items.AddRange(new object[] {
+            "Cha/con",
+            "Mẹ/con",
+            "Khác"});
+            this.comMOIQUANHE.Location = new System.Drawing.Point(233, 512);
+            this.comMOIQUANHE.Name = "comMOIQUANHE";
+            this.comMOIQUANHE.Size = new System.Drawing.Size(313, 51);
+            this.comMOIQUANHE.TabIndex = 45;
+            this.comMOIQUANHE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // frm_addHSSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -572,6 +573,7 @@
             this.ClientSize = new System.Drawing.Size(1397, 684);
             this.Controls.Add(this.comGIOITINH);
             this.Controls.Add(this.comTENLOP);
+            this.Controls.Add(this.comMOIQUANHE);
             this.Controls.Add(this.comTENKHOA);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnHuy);
@@ -598,7 +600,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtDIACHI);
-            this.Controls.Add(this.txtMOIQUANHE);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSDT_THANNHAN);
             this.Controls.Add(this.txtTEN_THANNHAN);
@@ -633,7 +634,6 @@
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2TextBox txtTENSV;
         private Guna.UI2.WinForms.Guna2TextBox txtTEN_THANNHAN;
-        private Guna.UI2.WinForms.Guna2TextBox txtMOIQUANHE;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -649,5 +649,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox comTENKHOA;
         private Guna.UI2.WinForms.Guna2ComboBox comTENLOP;
         private Guna.UI2.WinForms.Guna2ComboBox comGIOITINH;
+        private Guna.UI2.WinForms.Guna2ComboBox comMOIQUANHE;
     }
 }
