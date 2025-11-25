@@ -41,10 +41,11 @@
             this.txtMAKHOA = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvadd_KHOA = new System.Windows.Forms.DataGridView();
             this.btnaddtemp_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.MAKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btndeletetemp_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnedittemp_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvadd_KHOA)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +64,7 @@
             // 
             // btnLuu
             // 
+            this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -74,9 +76,11 @@
             this.btnLuu.Size = new System.Drawing.Size(85, 45);
             this.btnLuu.TabIndex = 72;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
+            this.btnHuy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnHuy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -88,9 +92,11 @@
             this.btnHuy.Size = new System.Drawing.Size(89, 45);
             this.btnHuy.TabIndex = 73;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(63, 65);
@@ -102,6 +108,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(501, 65);
@@ -113,6 +120,7 @@
             // 
             // txtTENKHOA
             // 
+            this.txtTENKHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTENKHOA.BorderColor = System.Drawing.Color.DarkGray;
             this.txtTENKHOA.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTENKHOA.DefaultText = "";
@@ -134,6 +142,7 @@
             // 
             // txtMAKHOA
             // 
+            this.txtMAKHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMAKHOA.BorderColor = System.Drawing.Color.DarkGray;
             this.txtMAKHOA.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMAKHOA.DefaultText = "";
@@ -178,6 +187,7 @@
             this.dgvadd_KHOA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvadd_KHOA.ColumnHeadersHeight = 45;
             this.dgvadd_KHOA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
             this.MAKHOA,
             this.TENKHOA});
             this.dgvadd_KHOA.EnableHeadersVisualStyles = false;
@@ -199,6 +209,7 @@
             this.dgvadd_KHOA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvadd_KHOA.Size = new System.Drawing.Size(784, 289);
             this.dgvadd_KHOA.TabIndex = 74;
+            this.dgvadd_KHOA.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvadd_KHOA_CellClick);
             // 
             // btnaddtemp_KHOA
             // 
@@ -217,20 +228,7 @@
             this.btnaddtemp_KHOA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnaddtemp_KHOA.Size = new System.Drawing.Size(30, 32);
             this.btnaddtemp_KHOA.TabIndex = 75;
-            // 
-            // MAKHOA
-            // 
-            this.MAKHOA.DataPropertyName = "MAKHOA";
-            this.MAKHOA.HeaderText = "Mã khoa";
-            this.MAKHOA.MinimumWidth = 8;
-            this.MAKHOA.Name = "MAKHOA";
-            // 
-            // TENKHOA
-            // 
-            this.TENKHOA.DataPropertyName = "TENKHOA";
-            this.TENKHOA.HeaderText = "Tên khoa";
-            this.TENKHOA.MinimumWidth = 8;
-            this.TENKHOA.Name = "TENKHOA";
+            this.btnaddtemp_KHOA.Click += new System.EventHandler(this.btnaddtemp_KHOA_Click);
             // 
             // btndeletetemp_KHOA
             // 
@@ -249,6 +247,7 @@
             this.btndeletetemp_KHOA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btndeletetemp_KHOA.Size = new System.Drawing.Size(35, 32);
             this.btndeletetemp_KHOA.TabIndex = 77;
+            this.btndeletetemp_KHOA.Click += new System.EventHandler(this.btndeletetemp_KHOA_Click);
             // 
             // btnedittemp_KHOA
             // 
@@ -267,6 +266,28 @@
             this.btnedittemp_KHOA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnedittemp_KHOA.Size = new System.Drawing.Size(31, 32);
             this.btnedittemp_KHOA.TabIndex = 76;
+            this.btnedittemp_KHOA.Click += new System.EventHandler(this.btnedittemp_KHOA_Click);
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            // 
+            // MAKHOA
+            // 
+            this.MAKHOA.DataPropertyName = "MAKHOA";
+            this.MAKHOA.HeaderText = "Mã khoa";
+            this.MAKHOA.MinimumWidth = 8;
+            this.MAKHOA.Name = "MAKHOA";
+            // 
+            // TENKHOA
+            // 
+            this.TENKHOA.DataPropertyName = "TENKHOA";
+            this.TENKHOA.HeaderText = "Tên khoa";
+            this.TENKHOA.MinimumWidth = 8;
+            this.TENKHOA.Name = "TENKHOA";
             // 
             // frmadd_KHOA
             // 
@@ -289,6 +310,7 @@
             this.Name = "frmadd_KHOA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmadd_KHOA";
+            this.Load += new System.EventHandler(this.frmadd_KHOA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvadd_KHOA)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -305,10 +327,11 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTENKHOA;
         private Guna.UI2.WinForms.Guna2TextBox txtMAKHOA;
         private System.Windows.Forms.DataGridView dgvadd_KHOA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MAKHOA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENKHOA;
         private Guna.UI2.WinForms.Guna2CircleButton btnaddtemp_KHOA;
         private Guna.UI2.WinForms.Guna2CircleButton btndeletetemp_KHOA;
         private Guna.UI2.WinForms.Guna2CircleButton btnedittemp_KHOA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAKHOA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENKHOA;
     }
 }
