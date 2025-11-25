@@ -165,6 +165,7 @@
             this.btnDanhmuckhac.Size = new System.Drawing.Size(232, 66);
             this.btnDanhmuckhac.TabIndex = 9;
             this.btnDanhmuckhac.Text = "Danh mục khác";
+            this.btnDanhmuckhac.Click += new System.EventHandler(this.btnDanhmuckhac_Click);
             // 
             // btn_qldv
             // 

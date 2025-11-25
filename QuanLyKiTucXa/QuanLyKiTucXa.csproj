@@ -70,6 +70,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formadd\DM_KHAC_FORM\frmadd_LOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\DM_KHAC_FORM\frmadd_LOP.Designer.cs">
+      <DependentUpon>frmadd_LOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\DM_KHAC_FORM\frmadd_NHA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\DM_KHAC_FORM\frmadd_NHA.Designer.cs">
+      <DependentUpon>frmadd_NHA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\DM_KHAC_FORM\frmadd_NHACC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\DM_KHAC_FORM\frmadd_NHACC.Designer.cs">
+      <DependentUpon>frmadd_NHACC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\DM_KHAC_FORM\frmadd_NHANVIEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\DM_KHAC_FORM\frmadd_NHANVIEN.Designer.cs">
+      <DependentUpon>frmadd_NHANVIEN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formadd\HSSV\frm_addHSSV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +214,24 @@
     </Compile>
     <Compile Include="Main UC\BAOCAO\UC_BC_SINHVIEN.Designer.cs">
       <DependentUpon>UC_BC_SINHVIEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\DMKHAC\UC_DM_LOP_KHOA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\DMKHAC\UC_DM_LOP_KHOA.Designer.cs">
+      <DependentUpon>UC_DM_LOP_KHOA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\DMKHAC\UC_DM_NHANVIEN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\DMKHAC\UC_DM_NHANVIEN.Designer.cs">
+      <DependentUpon>UC_DM_NHANVIEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\DMKHAC\UC_NHACC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\DMKHAC\UC_NHACC.Designer.cs">
+      <DependentUpon>UC_NHACC.cs</DependentUpon>
     </Compile>
     <Compile Include="Main UC\QLDV\UC_DANHMUC_DV.cs">
       <SubType>UserControl</SubType>
@@ -336,6 +378,18 @@
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserSession.cs" />
+    <EmbeddedResource Include="Formadd\DM_KHAC_FORM\frmadd_LOP.resx">
+      <DependentUpon>frmadd_LOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\DM_KHAC_FORM\frmadd_NHA.resx">
+      <DependentUpon>frmadd_NHA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\DM_KHAC_FORM\frmadd_NHACC.resx">
+      <DependentUpon>frmadd_NHACC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\DM_KHAC_FORM\frmadd_NHANVIEN.resx">
+      <DependentUpon>frmadd_NHANVIEN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formadd\HSSV\frm_addHSSV.resx">
       <DependentUpon>frm_addHSSV.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,6 +450,15 @@
     <EmbeddedResource Include="Main UC\BAOCAO\UC_BC_SINHVIEN.resx">
       <DependentUpon>UC_BC_SINHVIEN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\DMKHAC\UC_DM_LOP_KHOA.resx">
+      <DependentUpon>UC_DM_LOP_KHOA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\DMKHAC\UC_DM_NHANVIEN.resx">
+      <DependentUpon>UC_DM_NHANVIEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\DMKHAC\UC_NHACC.resx">
+      <DependentUpon>UC_NHACC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main UC\QLDV\UC_DANHMUC_DV.resx">
       <DependentUpon>UC_DANHMUC_DV.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,6 +504,9 @@
     <EmbeddedResource Include="ReportsSystem\Reports\rpt_TT_PHONG.rdlc" />
     <EmbeddedResource Include="Ribbons\UC_BAOCAO_Ribbon.resx">
       <DependentUpon>UC_BAOCAO_Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbons\UC_DMKHAC_Ribbon.resx">
+      <DependentUpon>UC_DMKHAC_Ribbon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ribbons\UC_HOSOSINHVIEN_Ribbon.resx">
       <DependentUpon>UC_HOSOSINHVIEN_Ribbon.cs</DependentUpon>

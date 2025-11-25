@@ -78,5 +78,10 @@ namespace QuanLyKiTucXa
         {
             addUserControl(new UC_BAOCAO_Ribbon());
         }
+
+        private void btnDanhmuckhac_Click(object sender, EventArgs e)
+        {
+            addUserControl(new UC_DMKHAC_Ribbon());
+        }
     }
 }
