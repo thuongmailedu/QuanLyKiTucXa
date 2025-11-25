@@ -91,6 +91,7 @@
             this.btnfillter_SINHVIEN.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnfillter_SINHVIEN.Size = new System.Drawing.Size(35, 40);
             this.btnfillter_SINHVIEN.TabIndex = 15;
+            this.btnfillter_SINHVIEN.Click += new System.EventHandler(this.btnfillter_SINHVIEN_Click);
             // 
             // btndelete_SINHVIEN
             // 
@@ -108,6 +109,7 @@
             this.btndelete_SINHVIEN.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btndelete_SINHVIEN.Size = new System.Drawing.Size(35, 34);
             this.btndelete_SINHVIEN.TabIndex = 13;
+            this.btndelete_SINHVIEN.Click += new System.EventHandler(this.btndelete_SINHVIEN_Click);
             // 
             // btnedit_SINHVIEN
             // 
@@ -125,6 +127,7 @@
             this.btnedit_SINHVIEN.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnedit_SINHVIEN.Size = new System.Drawing.Size(40, 34);
             this.btnedit_SINHVIEN.TabIndex = 12;
+            this.btnedit_SINHVIEN.Click += new System.EventHandler(this.btnedit_SINHVIEN_Click);
             // 
             // btn_addHSSV
             // 
@@ -242,6 +245,7 @@
             this.grdData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.grdData.Size = new System.Drawing.Size(1555, 694);
             this.grdData.TabIndex = 10;
+            this.grdData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdData_CellClick);
             this.grdData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdData_CellContentClick);
             this.grdData.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.grdData_RowPostPaint);
             // 

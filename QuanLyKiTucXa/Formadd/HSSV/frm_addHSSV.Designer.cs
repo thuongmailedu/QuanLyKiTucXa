@@ -39,7 +39,6 @@
             this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtGIOITINH = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMASV = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.comTENKHOA = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comTENLOP = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comGIOITINH = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -85,7 +85,6 @@
             this.label8.Size = new System.Drawing.Size(126, 20);
             this.label8.TabIndex = 32;
             this.label8.Text = "Trạng thái cư trú";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtTINHTRANG_CUTRU
             // 
@@ -220,28 +219,6 @@
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 19;
             this.label1.Text = "Giới tính";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // txtGIOITINH
-            // 
-            this.txtGIOITINH.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtGIOITINH.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGIOITINH.DefaultText = "";
-            this.txtGIOITINH.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtGIOITINH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtGIOITINH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGIOITINH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGIOITINH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGIOITINH.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGIOITINH.ForeColor = System.Drawing.Color.Black;
-            this.txtGIOITINH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGIOITINH.Location = new System.Drawing.Point(233, 131);
-            this.txtGIOITINH.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtGIOITINH.Name = "txtGIOITINH";
-            this.txtGIOITINH.PlaceholderText = "";
-            this.txtGIOITINH.SelectedText = "";
-            this.txtGIOITINH.Size = new System.Drawing.Size(313, 45);
-            this.txtGIOITINH.TabIndex = 18;
             // 
             // label2
             // 
@@ -386,7 +363,6 @@
             this.label12.Size = new System.Drawing.Size(61, 20);
             this.label12.TabIndex = 19;
             this.label12.Text = "Mã nhà";
-            this.label12.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtMANHA
             // 
@@ -515,6 +491,7 @@
             this.btnLuu.Size = new System.Drawing.Size(104, 45);
             this.btnLuu.TabIndex = 43;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
@@ -529,6 +506,7 @@
             this.btnHuy.Size = new System.Drawing.Size(104, 45);
             this.btnHuy.TabIndex = 44;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // comTENKHOA
             // 
@@ -545,7 +523,6 @@
             this.comTENKHOA.Location = new System.Drawing.Point(233, 275);
             this.comTENKHOA.Name = "comTENKHOA";
             this.comTENKHOA.Size = new System.Drawing.Size(313, 51);
-            this.comTENKHOA.StartIndex = 0;
             this.comTENKHOA.TabIndex = 45;
             this.comTENKHOA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -567,11 +544,33 @@
             this.comTENLOP.TabIndex = 45;
             this.comTENLOP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // comGIOITINH
+            // 
+            this.comGIOITINH.BackColor = System.Drawing.Color.Transparent;
+            this.comGIOITINH.BorderColor = System.Drawing.Color.Gray;
+            this.comGIOITINH.BorderRadius = 12;
+            this.comGIOITINH.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comGIOITINH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comGIOITINH.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comGIOITINH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comGIOITINH.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comGIOITINH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comGIOITINH.ItemHeight = 45;
+            this.comGIOITINH.Items.AddRange(new object[] {
+            "NAM",
+            "NỮ"});
+            this.comGIOITINH.Location = new System.Drawing.Point(233, 125);
+            this.comGIOITINH.Name = "comGIOITINH";
+            this.comGIOITINH.Size = new System.Drawing.Size(313, 51);
+            this.comGIOITINH.TabIndex = 45;
+            this.comGIOITINH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // frm_addHSSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1397, 684);
+            this.Controls.Add(this.comGIOITINH);
             this.Controls.Add(this.comTENLOP);
             this.Controls.Add(this.comTENKHOA);
             this.Controls.Add(this.btnLuu);
@@ -588,7 +587,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMANHA);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtGIOITINH);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtCCCD);
             this.Controls.Add(this.label1);
@@ -629,7 +627,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSDT;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox txtGIOITINH;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtMASV;
         private System.Windows.Forms.Label label9;
@@ -651,5 +648,6 @@
         private Guna.UI2.WinForms.Guna2Button btnHuy;
         private Guna.UI2.WinForms.Guna2ComboBox comTENKHOA;
         private Guna.UI2.WinForms.Guna2ComboBox comTENLOP;
+        private Guna.UI2.WinForms.Guna2ComboBox comGIOITINH;
     }
 }
