@@ -73,7 +73,7 @@
             this.panelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.panelMenu.MaximumSize = new System.Drawing.Size(1646, 100);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1397, 29);
+            this.panelMenu.Size = new System.Drawing.Size(1397, 27);
             this.panelMenu.TabIndex = 3;
             // 
             // label8
@@ -493,11 +493,13 @@
             this.comTENKHOA.BorderColor = System.Drawing.Color.Gray;
             this.comTENKHOA.BorderRadius = 12;
             this.comTENKHOA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comTENKHOA.DropDownHeight = 360;
             this.comTENKHOA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comTENKHOA.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comTENKHOA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comTENKHOA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comTENKHOA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comTENKHOA.IntegralHeight = false;
             this.comTENKHOA.ItemHeight = 45;
             this.comTENKHOA.Location = new System.Drawing.Point(233, 275);
             this.comTENKHOA.Name = "comTENKHOA";
@@ -516,7 +518,7 @@
             this.comTENLOP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comTENLOP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comTENLOP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comTENLOP.ItemHeight = 45;
+            this.comTENLOP.ItemHeight = 360;
             this.comTENLOP.Location = new System.Drawing.Point(843, 275);
             this.comTENLOP.Name = "comTENLOP";
             this.comTENLOP.Size = new System.Drawing.Size(313, 51);

@@ -155,12 +155,128 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
             LoadData(tenDV, keyword);
         }
 
+
+
+        // Nút XÓA dịch vụ
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgv_DICHVU.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn một dịch vụ để xóa!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DataGridViewRow row = dgv_DICHVU.SelectedRows[0];
+            string maDV = row.Cells["MADV"].Value?.ToString();
+            string tenDV = row.Cells["TENDV"].Value?.ToString();
+
+            if (string.IsNullOrEmpty(maDV))
+                return;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(constr))
+                {
+                    conn.Open();
+
+                    // Kiểm tra xem dịch vụ đã được sử dụng trong hóa đơn chưa
+                    string checkQuery = @"
+                SELECT 
+                    (SELECT COUNT(*) FROM HD_DIEN WHERE MADV = @MADV) +
+                    (SELECT COUNT(*) FROM HD_NUOC WHERE MADV = @MADV) +
+                    (SELECT COUNT(*) FROM HD_INTERNET WHERE MADV = @MADV) AS TongHoaDon";
+
+                    using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@MADV", maDV);
+                        int tongHoaDon = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                        if (tongHoaDon > 0)
+                        {
+                            MessageBox.Show(
+                                $"Không thể xóa dịch vụ '{tenDV}' (Mã: {maDV})!\n\n" +
+                                $"Dịch vụ này đã được sử dụng trong {tongHoaDon} hóa đơn.\n" +
+                                $"Vui lòng xóa các hóa đơn liên quan trước khi xóa dịch vụ.",
+                                "Không thể xóa",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    // Xác nhận xóa
+                    DialogResult result = MessageBox.Show(
+                        $"Bạn có chắc chắn muốn xóa dịch vụ '{tenDV}' (Mã: {maDV})?\n\n" +
+                        $"Hành động này không thể hoàn tác! ",
+                        "Xác nhận xóa",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        // Thực hiện xóa
+                        string deleteQuery = "DELETE FROM DICHVU WHERE MADV = @MADV";
+
+                        using (SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn))
+                        {
+                            deleteCmd.Parameters.AddWithValue("@MADV", maDV);
+                            int affectedRows = deleteCmd.ExecuteNonQuery();
+
+                            if (affectedRows > 0)
+                            {
+                                MessageBox.Show(
+                                    $"Đã xóa dịch vụ '{tenDV}' thành công! ",
+                                    "Thông báo",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+
+                                // Refresh lại danh sách
+                                LoadData();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Lỗi khi xóa dịch vụ: " + ex.Message,
+                    "Lỗi",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
         // Nút LÀM MỚI - Reset bộ lọc
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             comGIATRI.SelectedIndex = 0;
             txtSearch.Clear();
             LoadData();
+        }
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+            if (dgv_DICHVU.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn một dịch vụ để sửa!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DataGridViewRow row = dgv_DICHVU.SelectedRows[0];
+            string maDV = row.Cells["MADV"].Value?.ToString();
+
+            if (!string.IsNullOrEmpty(maDV))
+            {
+                using (frm_addDICHVU form = new frm_addDICHVU(maDV))
+                {
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        LoadData(); // Refresh lại danh sách
+                    }
+                }
+            }
         }
     }
 }

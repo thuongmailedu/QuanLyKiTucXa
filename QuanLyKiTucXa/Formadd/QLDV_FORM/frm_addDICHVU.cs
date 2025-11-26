@@ -7,7 +7,7 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
 {
     public partial class frm_addDICHVU : Form
     {
-        private string connectionString = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True";
+        private string constr = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True";
         private bool isEditMode = false;
         private string editingMADV = "";
 
@@ -30,12 +30,31 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
             // Load ComboBox nhà cung cấp
             LoadComboBoxNhaCC();
 
-            // Đăng ký event
-            comTEN_NHACC.SelectedIndexChanged += comTEN_NHACC_SelectedIndexChanged;
-
             if (isEditMode)
             {
+                // Chế độ sửa: Load dữ liệu
                 LoadDichVu(editingMADV);
+            }
+            else
+            {
+                // Chế độ thêm mới: Thiết lập các giá trị mặc định
+
+                // Load ComboBox tên dịch vụ
+                comTENDV.Items.Clear();
+                comTENDV.Items.Add("Điện");
+                comTENDV.Items.Add("Nước");
+                comTENDV.Items.Add("Internet");
+                comTENDV.SelectedIndex = 0;
+
+                // Set ngày mặc định
+                dtpTUNGAY.Value = DateTime.Now;
+                dtpDENNGAY.Value = DateTime.Now.AddMonths(12); // Mặc định 1 năm
+
+                // Disable txtMADV vì sẽ tự sinh
+                txtMADV.Enabled = false;
+
+                // Đăng ký event cho comTENDV
+                comTENDV.SelectedIndexChanged += comTENDV_SelectedIndexChanged;
             }
         }
 
@@ -44,7 +63,7 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(constr))
                 {
                     conn.Open();
                     string query = "SELECT MA_NHACC, TEN_NHACC FROM NHACC ORDER BY TEN_NHACC";
@@ -69,10 +88,135 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
             }
         }
 
-        // Event khi chọn nhà cung cấp (nếu cần hiển thị thêm thông tin)
-        private void comTEN_NHACC_SelectedIndexChanged(object sender, EventArgs e)
+        // ⭐ Khi chọn tên dịch vụ (chỉ khi thêm mới)
+        private void comTENDV_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Có thể bổ sung logic hiển thị thông tin nhà cung cấp nếu cần
+            string tenDV = comTENDV.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(tenDV))
+                return;
+
+            switch (tenDV)
+            {
+                case "Điện":
+                    txtMADV.Text = TaoMaDichVu("DIEN");
+                    txtDONVI.Text = "KwH";
+                    break;
+
+                case "Nước":
+                    txtMADV.Text = TaoMaDichVu("NUOC");
+                    txtDONVI.Text = "Khối";
+                    break;
+
+                case "Internet":
+                    txtMADV.Text = TaoMaDichVu("INT");
+                    txtDONVI.Text = "Người";
+                    break;
+            }
+        }
+
+        // ⭐ Tự động sinh mã dịch vụ
+        private string TaoMaDichVu(string prefix)
+        {
+            string maDV = "";
+            try
+            {
+                string sql = $@"SELECT TOP 1 MADV 
+                               FROM DICHVU 
+                               WHERE MADV LIKE '{prefix}_%' 
+                               ORDER BY MADV DESC";
+
+                using (SqlConnection conn = new SqlConnection(constr))
+                {
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        conn.Open();
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            // Ví dụ: DIEN_01 -> DIEN_02
+                            string maCuoi = result.ToString();
+                            string[] parts = maCuoi.Split('_');
+                            int soThuTu = int.Parse(parts[1]) + 1;
+                            maDV = $"{prefix}_{soThuTu:D2}";
+                        }
+                        else
+                        {
+                            // Chưa có dịch vụ nào
+                            maDV = $"{prefix}_01";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tạo mã dịch vụ: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                maDV = $"{prefix}_{DateTime.Now:yyyyMMddHHmmss}";
+            }
+
+            return maDV;
+        }
+
+        // ⭐ Kiểm tra trùng thời gian dịch vụ
+        private bool KiemTraTrungThoiGian(string tenDV, DateTime tuNgay, DateTime denNgay, string maDV_HienTai = null)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(constr))
+                {
+                    conn.Open();
+
+                    // Gọi stored procedure
+                    string query = "EXEC sp_KiemTraTrungThoiGianDichVu @LOAI_DV, @TUNGAY, @DENNGAY, @MADV_HIENTAI";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@LOAI_DV", tenDV);
+                        cmd.Parameters.AddWithValue("@TUNGAY", tuNgay);
+                        cmd.Parameters.AddWithValue("@DENNGAY", denNgay);
+                        cmd.Parameters.AddWithValue("@MADV_HIENTAI", string.IsNullOrEmpty(maDV_HienTai) ? (object)DBNull.Value : maDV_HienTai);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                int biTrung = Convert.ToInt32(reader["BiTrung"]);
+
+                                if (biTrung == 1)
+                                {
+                                    // Đọc thông tin dịch vụ bị trùng
+                                    string maDV = reader["MADV"].ToString();
+                                    DateTime tungay = Convert.ToDateTime(reader["TUNGAY"]);
+                                    DateTime denngay = reader["DENNGAY"] != DBNull.Value ?
+                                        Convert.ToDateTime(reader["DENNGAY"]) : DateTime.MaxValue;
+
+                                    MessageBox.Show(
+                                        $"Dịch vụ '{tenDV}' đã tồn tại trong khoảng thời gian này!\n\n" +
+                                        $"Mã DV: {maDV}\n" +
+                                        $"Từ ngày: {tungay:dd/MM/yyyy}\n" +
+                                        $"Đến ngày: {(denngay == DateTime.MaxValue ? "Không giới hạn" : denngay.ToString("dd/MM/yyyy"))}\n\n" +
+                                        $"Vui lòng chọn khoảng thời gian khác! ",
+                                        "Thông báo",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Warning);
+
+                                    return true; // Có trùng
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi kiểm tra trùng thời gian: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true; // Coi như có lỗi, không cho lưu
+            }
+
+            return false; // Không trùng
         }
 
         // Load dữ liệu dịch vụ khi sửa
@@ -80,7 +224,7 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(constr))
                 {
                     conn.Open();
                     string query = @"SELECT MADV, TENDV, DONGIA, DONVI, TUNGAY, DENNGAY, TRANGTHAI, MA_NHACC
@@ -96,9 +240,11 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
                             if (reader.Read())
                             {
                                 txtMADV.Text = reader["MADV"].ToString();
-                                txtMADV.ReadOnly = true; // Không cho sửa mã
+                                txtMADV.Enabled = false; // Không cho sửa mã
 
                                 comTENDV.Text = reader["TENDV"].ToString();
+                                comTENDV.Enabled = false; // Không cho đổi loại dịch vụ
+
                                 txtDONGIA.Text = reader["DONGIA"].ToString();
                                 txtDONVI.Text = reader["DONVI"] != DBNull.Value ? reader["DONVI"].ToString() : "";
                                 dtpTUNGAY.Value = Convert.ToDateTime(reader["TUNGAY"]);
@@ -138,7 +284,7 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
 
             if (string.IsNullOrWhiteSpace(comTENDV.Text))
             {
-                MessageBox.Show("Vui lòng nhập tên dịch vụ!", "Thông báo",
+                MessageBox.Show("Vui lòng chọn tên dịch vụ!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 comTENDV.Focus();
                 return;
@@ -152,9 +298,15 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
                 return;
             }
 
+            // ⭐ KIỂM TRA TRÙNG THỜI GIAN
+            if (KiemTraTrungThoiGian(comTENDV.Text, dtpTUNGAY.Value, dtpDENNGAY.Value, isEditMode ? editingMADV : null))
+            {
+                return; // Có trùng, không cho lưu
+            }
+
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(constr))
                 {
                     conn.Open();
 
@@ -238,7 +390,7 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
             }
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
+        private void btnhuy_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
