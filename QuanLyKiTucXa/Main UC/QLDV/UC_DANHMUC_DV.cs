@@ -1,13 +1,8 @@
 ﻿using QuanLyKiTucXa.Formadd.QLDV_FORM;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyKiTucXa.Main_UC.QLDV
@@ -18,23 +13,11 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
         SqlDataAdapter da = new SqlDataAdapter();
         DataTable dt = new DataTable();
         string sql, constr;
+
         public UC_DANHMUC_DV()
         {
             InitializeComponent();
         }
-
-        
-       
-        //private void btnadd_Click(object sender, EventArgs e)
-        //{
-        //    frm_addDICHVU form = new frm_addDICHVU(); // Tạo instance
-        //    form.ShowDialog();
-        //    if (form.ShowDialog() == DialogResult.OK)
-        //    {
-        //        // Refresh lại danh sách sau khi thêm
-        //       // LoadData();
-        //    }
-        //}
 
         private void UC_DANHMUC_DV_Load(object sender, EventArgs e)
         {
@@ -58,9 +41,9 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
                 MessageBox.Show("Lỗi khi load UC: " + ex.Message, "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-        // ⭐ Load ComboBox để lọc
+
+        // Load ComboBox để lọc
         private void LoadComboBoxFilter()
         {
             comGIATRI.Items.Clear();
@@ -71,29 +54,38 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
             comGIATRI.SelectedIndex = 0; // Mặc định "Tất cả"
         }
 
-        // ⭐ Load dữ liệu từ database
+        // Load dữ liệu từ database - THÊM TEN_NHACC
         private void LoadData(string tenDichVu = null, string keyword = null)
         {
             try
             {
-                // SQL cơ bản
-                sql = @"SELECT MADV, TENDV, DONGIA, DONVI, TUNGAY, DENNGAY, TRANGTHAI 
-                        FROM DICHVU 
+                // SQL bổ sung JOIN với NHACC để lấy TEN_NHACC
+                sql = @"SELECT 
+                            DV.MADV, 
+                            DV.TENDV, 
+                            DV. DONGIA, 
+                            DV.DONVI, 
+                            DV.TUNGAY, 
+                            DV.DENNGAY, 
+                            DV.TRANGTHAI,
+                            NC.TEN_NHACC
+                        FROM DICHVU DV
+                        LEFT JOIN NHACC NC ON DV.MA_NHACC = NC. MA_NHACC
                         WHERE 1=1";
 
                 // Thêm điều kiện lọc theo tên dịch vụ
                 if (!string.IsNullOrEmpty(tenDichVu) && tenDichVu != "Tất cả")
                 {
-                    sql += " AND TENDV = @TENDV";
+                    sql += " AND DV.TENDV = @TENDV";
                 }
 
                 // Thêm điều kiện tìm kiếm
                 if (!string.IsNullOrEmpty(keyword))
                 {
-                    sql += " AND (MADV LIKE @Keyword OR TENDV LIKE @Keyword OR TRANGTHAI LIKE @Keyword)";
+                    sql += " AND (DV.MADV LIKE @Keyword OR DV. TENDV LIKE @Keyword OR DV.TRANGTHAI LIKE @Keyword OR NC.TEN_NHACC LIKE @Keyword)";
                 }
 
-                sql += " ORDER BY TUNGAY DESC, MADV";
+                sql += " ORDER BY DV.TUNGAY DESC, DV.MADV";
 
                 using (SqlConnection connection = new SqlConnection(constr))
                 {
@@ -114,8 +106,6 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
                         dt = new DataTable();
                         da.Fill(dt);
 
-
-                        // Thêm cột STT
                         // Thêm cột STT
                         dt.Columns.Add("STT", typeof(int));
                         for (int i = 0; i < dt.Rows.Count; i++)
@@ -125,8 +115,6 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
 
                         // Đổ dữ liệu vào DataGridView
                         dgv_DICHVU.DataSource = dt;
-
-                       
                         dgv_DICHVU.Refresh();
                     }
                 }
@@ -137,15 +125,16 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        // ⭐ Khi chọn ComboBox - TỰ ĐỘNG LỌC
+
+        // Khi chọn ComboBox - TỰ ĐỘNG LỌC
         private void comGIATRI_SelectedIndexChanged(object sender, EventArgs e)
         {
             string tenDV = comGIATRI.SelectedItem?.ToString();
             string keyword = txtSearch.Text.Trim();
             LoadData(tenDV, keyword);
         }
-        
-        // ⭐ Nút THÊM dịch vụ
+
+        // Nút THÊM dịch vụ
         private void btnadd_Click(object sender, EventArgs e)
         {
             using (frm_addDICHVU form = new frm_addDICHVU())
@@ -157,6 +146,7 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
                 }
             }
         }
+
         // Nút FILTER - Tìm kiếm
         private void btnFilter_Click(object sender, EventArgs e)
         {
@@ -164,13 +154,13 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
             string keyword = txtSearch.Text.Trim();
             LoadData(tenDV, keyword);
         }
-        // ⭐ Nút LÀM MỚI - Reset bộ lọc
+
+        // Nút LÀM MỚI - Reset bộ lọc
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             comGIATRI.SelectedIndex = 0;
             txtSearch.Clear();
             LoadData();
         }
-
     }
 }
