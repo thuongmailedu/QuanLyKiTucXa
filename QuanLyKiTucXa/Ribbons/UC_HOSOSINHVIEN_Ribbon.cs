@@ -21,6 +21,14 @@ namespace QuanLyKiTucXa.Ribbons
             grdData.ColumnHeadersDefaultCellStyle.Font = new Font(grdData.Font, FontStyle.Bold);
             grdData.AutoGenerateColumns = false;
 
+            // Đổi SelectionMode thành FullRowSelect
+            grdData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Đăng ký các event
+            btnedit_SINHVIEN.Click += btnedit_SINHVIEN_Click;
+            btndelete_SINHVIEN.Click += btndelete_SINHVIEN_Click;
+            btnfillter_SINHVIEN.Click += btnfillter_SINHVIEN_Click;
+
             LoadDanhSachSinhVien();
         }
 
@@ -95,7 +103,7 @@ namespace QuanLyKiTucXa.Ribbons
 
         private void grdData_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            grdData.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+            grdData.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
         }
 
         private void btn_addHSSV_Click(object sender, EventArgs e)
@@ -104,7 +112,7 @@ namespace QuanLyKiTucXa.Ribbons
 
             if (form.ShowDialog() == DialogResult.OK)
             {
-                LoadDanhSachSinhVien();
+                LoadDanhSachSinhVien(); // Reload lại sau khi lưu
             }
         }
 
@@ -128,7 +136,7 @@ namespace QuanLyKiTucXa.Ribbons
 
             if (form.ShowDialog() == DialogResult.OK)
             {
-                LoadDanhSachSinhVien();
+                LoadDanhSachSinhVien(); // Reload lại sau khi lưu
             }
         }
 
@@ -201,7 +209,7 @@ namespace QuanLyKiTucXa.Ribbons
                             transaction.Commit();
                             MessageBox.Show("Xóa sinh viên thành công!", "Thông báo",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LoadDanhSachSinhVien();
+                            LoadDanhSachSinhVien(); // Reload lại
                         }
                         catch (Exception ex)
                         {
@@ -228,11 +236,6 @@ namespace QuanLyKiTucXa.Ribbons
 
         private void grdData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-        }
-
-        private void grdData_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

@@ -34,6 +34,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.dgv_DICHVU = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnfillter = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnedit = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnadd = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.comGIATRI = new Guna.UI2.WinForms.Guna2ComboBox();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MADV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,14 +48,8 @@
             this.DONVI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TUNGAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DENNGAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN_NHACC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TRANGTHAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.comGIATRI = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnfillter = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnedit = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnadd = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DICHVU)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +74,7 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgv_DICHVU.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_DICHVU.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgv_DICHVU.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_DICHVU.BackgroundColor = System.Drawing.Color.White;
             this.dgv_DICHVU.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_DICHVU.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -95,9 +96,10 @@
             this.DONVI,
             this.TUNGAY,
             this.DENNGAY,
+            this.TEN_NHACC,
             this.TRANGTHAI});
             this.dgv_DICHVU.EnableHeadersVisualStyles = false;
-            this.dgv_DICHVU.Location = new System.Drawing.Point(46, 166);
+            this.dgv_DICHVU.Location = new System.Drawing.Point(46, 160);
             this.dgv_DICHVU.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgv_DICHVU.Name = "dgv_DICHVU";
             this.dgv_DICHVU.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -117,70 +119,6 @@
             this.dgv_DICHVU.Size = new System.Drawing.Size(1490, 602);
             this.dgv_DICHVU.TabIndex = 19;
             // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 8;
-            this.STT.Name = "STT";
-            this.STT.Width = 60;
-            // 
-            // MADV
-            // 
-            this.MADV.DataPropertyName = "MADV";
-            this.MADV.HeaderText = "Mã dịch vụ";
-            this.MADV.MinimumWidth = 8;
-            this.MADV.Name = "MADV";
-            this.MADV.Width = 86;
-            // 
-            // TENDV
-            // 
-            this.TENDV.DataPropertyName = "TENDV";
-            this.TENDV.HeaderText = "Tên dịch vụ";
-            this.TENDV.MinimumWidth = 8;
-            this.TENDV.Name = "TENDV";
-            this.TENDV.Width = 88;
-            // 
-            // DONGIA
-            // 
-            this.DONGIA.DataPropertyName = "DONGIA";
-            this.DONGIA.HeaderText = "Đơn giá";
-            this.DONGIA.MinimumWidth = 8;
-            this.DONGIA.Name = "DONGIA";
-            this.DONGIA.Width = 82;
-            // 
-            // DONVI
-            // 
-            this.DONVI.DataPropertyName = "DONVI";
-            this.DONVI.HeaderText = "Đơn vị";
-            this.DONVI.MinimumWidth = 8;
-            this.DONVI.Name = "DONVI";
-            this.DONVI.Width = 73;
-            // 
-            // TUNGAY
-            // 
-            this.TUNGAY.DataPropertyName = "TUNGAY";
-            this.TUNGAY.HeaderText = "Từ ngày";
-            this.TUNGAY.MinimumWidth = 8;
-            this.TUNGAY.Name = "TUNGAY";
-            this.TUNGAY.Width = 82;
-            // 
-            // DENNGAY
-            // 
-            this.DENNGAY.DataPropertyName = "DENNGAY";
-            this.DENNGAY.HeaderText = "Đến ngày";
-            this.DENNGAY.MinimumWidth = 6;
-            this.DENNGAY.Name = "DENNGAY";
-            this.DENNGAY.Width = 91;
-            // 
-            // TRANGTHAI
-            // 
-            this.TRANGTHAI.DataPropertyName = "TRANGTHAI";
-            this.TRANGTHAI.HeaderText = "Trạng thái";
-            this.TRANGTHAI.MinimumWidth = 6;
-            this.TRANGTHAI.Name = "TRANGTHAI";
-            this.TRANGTHAI.Width = 94;
-            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -194,54 +132,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(716, 71);
             this.panel1.TabIndex = 26;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BorderColor = System.Drawing.Color.Gray;
-            this.txtSearch.BorderRadius = 12;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
-            this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txtSearch.Location = new System.Drawing.Point(177, 11);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(5);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch.PlaceholderText = "Nhập để tìm kiếm";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(346, 51);
-            this.txtSearch.TabIndex = 10;
-            this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
-            // 
-            // comGIATRI
-            // 
-            this.comGIATRI.BackColor = System.Drawing.Color.Transparent;
-            this.comGIATRI.BorderColor = System.Drawing.Color.Gray;
-            this.comGIATRI.BorderRadius = 12;
-            this.comGIATRI.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comGIATRI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comGIATRI.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comGIATRI.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comGIATRI.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.comGIATRI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comGIATRI.ItemHeight = 45;
-            this.comGIATRI.Items.AddRange(new object[] {
-            "TENDV"});
-            this.comGIATRI.Location = new System.Drawing.Point(3, 11);
-            this.comGIATRI.Name = "comGIATRI";
-            this.comGIATRI.Size = new System.Drawing.Size(157, 51);
-            this.comGIATRI.StartIndex = 0;
-            this.comGIATRI.TabIndex = 0;
-            this.comGIATRI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.comGIATRI.SelectedIndexChanged += new System.EventHandler(this.comGIATRI_SelectedIndexChanged);
             // 
             // btnfillter
             // 
@@ -312,6 +202,119 @@
             this.btnadd.TabIndex = 11;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.BorderColor = System.Drawing.Color.Gray;
+            this.txtSearch.BorderRadius = 12;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
+            this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.txtSearch.Location = new System.Drawing.Point(177, 11);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch.PlaceholderText = "Nhập để tìm kiếm";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(346, 51);
+            this.txtSearch.TabIndex = 10;
+            this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // comGIATRI
+            // 
+            this.comGIATRI.BackColor = System.Drawing.Color.Transparent;
+            this.comGIATRI.BorderColor = System.Drawing.Color.Gray;
+            this.comGIATRI.BorderRadius = 12;
+            this.comGIATRI.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comGIATRI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comGIATRI.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comGIATRI.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comGIATRI.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comGIATRI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comGIATRI.ItemHeight = 45;
+            this.comGIATRI.Items.AddRange(new object[] {
+            "TENDV"});
+            this.comGIATRI.Location = new System.Drawing.Point(3, 11);
+            this.comGIATRI.Name = "comGIATRI";
+            this.comGIATRI.Size = new System.Drawing.Size(157, 51);
+            this.comGIATRI.StartIndex = 0;
+            this.comGIATRI.TabIndex = 0;
+            this.comGIATRI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.comGIATRI.SelectedIndexChanged += new System.EventHandler(this.comGIATRI_SelectedIndexChanged);
+            // 
+            // STT
+            // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 8;
+            this.STT.Name = "STT";
+            this.STT.Width = 60;
+            // 
+            // MADV
+            // 
+            this.MADV.DataPropertyName = "MADV";
+            this.MADV.HeaderText = "Mã dịch vụ";
+            this.MADV.MinimumWidth = 8;
+            this.MADV.Name = "MADV";
+            // 
+            // TENDV
+            // 
+            this.TENDV.DataPropertyName = "TENDV";
+            this.TENDV.HeaderText = "Tên dịch vụ";
+            this.TENDV.MinimumWidth = 8;
+            this.TENDV.Name = "TENDV";
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            this.DONGIA.HeaderText = "Đơn giá";
+            this.DONGIA.MinimumWidth = 8;
+            this.DONGIA.Name = "DONGIA";
+            // 
+            // DONVI
+            // 
+            this.DONVI.DataPropertyName = "DONVI";
+            this.DONVI.HeaderText = "Đơn vị";
+            this.DONVI.MinimumWidth = 8;
+            this.DONVI.Name = "DONVI";
+            // 
+            // TUNGAY
+            // 
+            this.TUNGAY.DataPropertyName = "TUNGAY";
+            this.TUNGAY.HeaderText = "Từ ngày";
+            this.TUNGAY.MinimumWidth = 8;
+            this.TUNGAY.Name = "TUNGAY";
+            // 
+            // DENNGAY
+            // 
+            this.DENNGAY.DataPropertyName = "DENNGAY";
+            this.DENNGAY.HeaderText = "Đến ngày";
+            this.DENNGAY.MinimumWidth = 6;
+            this.DENNGAY.Name = "DENNGAY";
+            // 
+            // TEN_NHACC
+            // 
+            this.TEN_NHACC.DataPropertyName = "TEN_NHACC";
+            this.TEN_NHACC.HeaderText = "Nhà cung cấp";
+            this.TEN_NHACC.MinimumWidth = 6;
+            this.TEN_NHACC.Name = "TEN_NHACC";
+            // 
+            // TRANGTHAI
+            // 
+            this.TRANGTHAI.DataPropertyName = "TRANGTHAI";
+            this.TRANGTHAI.HeaderText = "Trạng thái";
+            this.TRANGTHAI.MinimumWidth = 6;
+            this.TRANGTHAI.Name = "TRANGTHAI";
+            // 
             // UC_DANHMUC_DV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -348,6 +351,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DONVI;
         private System.Windows.Forms.DataGridViewTextBoxColumn TUNGAY;
         private System.Windows.Forms.DataGridViewTextBoxColumn DENNGAY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN_NHACC;
         private System.Windows.Forms.DataGridViewTextBoxColumn TRANGTHAI;
     }
 }

@@ -245,7 +245,7 @@
             this.grdData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.grdData.Size = new System.Drawing.Size(1555, 694);
             this.grdData.TabIndex = 10;
-            this.grdData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdData_CellClick);
+//            this.grdData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdData_CellClick);
             this.grdData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdData_CellContentClick);
             this.grdData.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.grdData_RowPostPaint);
             // 

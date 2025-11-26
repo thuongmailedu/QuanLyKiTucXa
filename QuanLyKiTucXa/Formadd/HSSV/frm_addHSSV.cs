@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace QuanLyKiTucXa.Formadd.HSSV
@@ -11,70 +10,66 @@ namespace QuanLyKiTucXa.Formadd.HSSV
         private string connectionString = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True";
         private bool isEditMode = false;
         private string editingMASV = "";
+        private string editingMAKHOA = "";
+        private string editingMALOP = "";
 
         public frm_addHSSV()
         {
             InitializeComponent();
-            LoadComboBoxLop();
-
-            // Disable các textbox không được nhập
-            txtMA_PHONG.ReadOnly = true;
-            txtMANHA.ReadOnly = true;
-            txtTINHTRANG_CUTRU.ReadOnly = true;
-
-            txtMA_PHONG.BackColor = SystemColors.Control;
-            txtMANHA.BackColor = SystemColors.Control;
-            txtTINHTRANG_CUTRU.BackColor = SystemColors.Control;
         }
 
         // Constructor cho chế độ sửa
         public frm_addHSSV(string maSV, string maPhong, string maNha, string tinhTrangCuTru)
         {
             InitializeComponent();
-            LoadComboBoxLop();
 
             isEditMode = true;
             editingMASV = maSV;
-
-            // Disable các textbox
-            txtMA_PHONG.ReadOnly = true;
-            txtMANHA.ReadOnly = true;
-            txtTINHTRANG_CUTRU.ReadOnly = true;
-
-            txtMA_PHONG.BackColor = SystemColors.Control;
-            txtMANHA.BackColor = SystemColors.Control;
-            txtTINHTRANG_CUTRU.BackColor = SystemColors.Control;
 
             // Hiển thị thông tin
             txtMA_PHONG.Text = maPhong;
             txtMANHA.Text = maNha;
             txtTINHTRANG_CUTRU.Text = tinhTrangCuTru;
 
-            LoadSinhVien(maSV);
-
             this.Text = "Cập nhật thông tin sinh viên";
         }
 
         private void frm_addHSSV_Load(object sender, EventArgs e)
         {
+            // Disable các textbox không được nhập
+            txtMA_PHONG.ReadOnly = true;
+            txtMANHA.ReadOnly = true;
+            txtTINHTRANG_CUTRU.ReadOnly = true;
+
+            txtMA_PHONG.BackColor = System.Drawing.SystemColors.Control;
+            txtMANHA.BackColor = System.Drawing.SystemColors.Control;
+            txtTINHTRANG_CUTRU.BackColor = System.Drawing.SystemColors.Control;
+
+            // Load combo Khoa trước
+            LoadComboBoxKhoa();
+
+            // Đăng ký sự kiện cho comTENKHOA SAU KHI đã load xong
+            comTENKHOA.SelectedIndexChanged += comTENKHOA_SelectedIndexChanged;
+
             if (!isEditMode)
             {
-                // Đặt giá trị mặc định
                 txtTINHTRANG_CUTRU.Text = "Chưa có hợp đồng";
+            }
+            else
+            {
+                // Load dữ liệu sinh viên SAU KHI đã load combo và đăng ký event
+                LoadSinhVien(editingMASV);
             }
         }
 
-        private void LoadComboBoxLop()
+        private void LoadComboBoxKhoa()
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = @"SELECT L.MALOP, L.TENLOP + ' - ' + K.TENKHOA AS DISPLAY_TEXT
-                                   FROM LOP L
-                                   INNER JOIN KHOA K ON L.MAKHOA = K.MAKHOA
-                                   ORDER BY L.MALOP";
+                    string query = "SELECT MAKHOA, TENKHOA FROM KHOA ORDER BY MAKHOA";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -82,10 +77,64 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                         DataTable dt = new DataTable();
                         da.Fill(dt);
 
+                        comTENKHOA.DataSource = dt;
+                        comTENKHOA.DisplayMember = "TENKHOA";
+                        comTENKHOA.ValueMember = "MAKHOA";
+                        comTENKHOA.SelectedIndex = -1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi load danh sách khoa: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void comTENKHOA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comTENKHOA.SelectedIndex != -1 && comTENKHOA.SelectedValue != null)
+            {
+                string maKhoa = comTENKHOA.SelectedValue.ToString();
+                LoadComboBoxLop(maKhoa);
+            }
+            else
+            {
+                comTENLOP.DataSource = null;
+            }
+        }
+
+        private void LoadComboBoxLop(string maKhoa)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT MALOP, TENLOP FROM LOP WHERE MAKHOA = @MAKHOA ORDER BY MALOP";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MAKHOA", maKhoa);
+
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
                         comTENLOP.DataSource = dt;
-                        comTENLOP.DisplayMember = "DISPLAY_TEXT";
+                        comTENLOP.DisplayMember = "TENLOP";
                         comTENLOP.ValueMember = "MALOP";
-                        comTENLOP.SelectedIndex = -1;
+
+                        // Nếu đang ở chế độ edit và có mã lớp được lưu trước đó
+                        if (isEditMode && !string.IsNullOrEmpty(editingMALOP))
+                        {
+                            comTENLOP.SelectedValue = editingMALOP;
+                            editingMALOP = ""; // Reset để không bị set lại
+                        }
+                        else
+                        {
+                            comTENLOP.SelectedIndex = -1;
+                        }
                     }
                 }
             }
@@ -104,10 +153,11 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                 {
                     conn.Open();
                     string query = @"SELECT SV.MASV, SV.TENSV, SV.NGAYSINH, SV.GIOITINH, 
-                                          SV.CCCD, SV.SDT, SV.MALOP, SV.DKTOTNGHIEP,
+                                          SV.CCCD, SV.SDT, SV.MALOP, L.MAKHOA,
                                           TN.TEN_THANNHAN, TN.SDT AS SDT_THANNHAN, 
                                           TN.MOIQUANHE, TN.DIACHI
                                    FROM SINHVIEN SV
+                                   INNER JOIN LOP L ON SV.MALOP = L.MALOP
                                    LEFT JOIN THANNHAN TN ON SV.MASV = TN.MASV
                                    WHERE SV.MASV = @MASV";
 
@@ -131,15 +181,26 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                                 txtCCCD.Text = reader["CCCD"] != DBNull.Value ? reader["CCCD"].ToString() : "";
                                 txtSDT.Text = reader["SDT"] != DBNull.Value ? reader["SDT"].ToString() : "";
 
-                                comTENLOP.SelectedValue = reader["MALOP"].ToString();
+                                // Lưu mã khoa và mã lớp
+                                editingMAKHOA = reader["MAKHOA"].ToString();
+                                editingMALOP = reader["MALOP"].ToString();
 
-                                //if (reader["DKTOTNGHIEP"] != DBNull.Value)
-                                //    dtpDKTOTNGHIEP.Value = Convert.ToDateTime(reader["DKTOTNGHIEP"]);
+                                // Tạm thời bỏ đăng ký event để tránh trigger nhiều lần
+                                comTENKHOA.SelectedIndexChanged -= comTENKHOA_SelectedIndexChanged;
+
+                                // Set khoa - điều này sẽ trigger LoadComboBoxLop
+                                comTENKHOA.SelectedValue = editingMAKHOA;
+
+                                // Đăng ký lại event
+                                comTENKHOA.SelectedIndexChanged += comTENKHOA_SelectedIndexChanged;
+
+                                // Trigger load lớp thủ công
+                                LoadComboBoxLop(editingMAKHOA);
 
                                 // Thông tin thân nhân
                                 txtTEN_THANNHAN.Text = reader["TEN_THANNHAN"] != DBNull.Value ? reader["TEN_THANNHAN"].ToString() : "";
                                 txtSDT_THANNHAN.Text = reader["SDT_THANNHAN"] != DBNull.Value ? reader["SDT_THANNHAN"].ToString() : "";
-                                txtMOIQUANHE.Text = reader["MOIQUANHE"] != DBNull.Value ? reader["MOIQUANHE"].ToString() : "";
+                                comMOIQUANHE.Text = reader["MOIQUANHE"] != DBNull.Value ? reader["MOIQUANHE"].ToString() : "";
                                 txtDIACHI.Text = reader["DIACHI"] != DBNull.Value ? reader["DIACHI"].ToString() : "";
                             }
                         }
@@ -191,7 +252,7 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                     {
                         if (isEditMode)
                         {
-                            // Cập nhật sinh viên
+                            // Cập nhật sinh viên (không có DKTOTNGHIEP)
                             string queryUpdateSV = @"UPDATE SINHVIEN 
                                                    SET TENSV = @TENSV,
                                                        NGAYSINH = @NGAYSINH,
@@ -199,7 +260,6 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                                                        CCCD = @CCCD,
                                                        SDT = @SDT,
                                                        MALOP = @MALOP
-                                                     
                                                    WHERE MASV = @MASV";
 
                             using (SqlCommand cmd = new SqlCommand(queryUpdateSV, conn, transaction))
@@ -211,14 +271,12 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                                 cmd.Parameters.AddWithValue("@CCCD", string.IsNullOrEmpty(txtCCCD.Text) ? (object)DBNull.Value : txtCCCD.Text.Trim());
                                 cmd.Parameters.AddWithValue("@SDT", string.IsNullOrEmpty(txtSDT.Text) ? (object)DBNull.Value : txtSDT.Text.Trim());
                                 cmd.Parameters.AddWithValue("@MALOP", comTENLOP.SelectedValue.ToString());
-                               // cmd.Parameters.AddWithValue("@DKTOTNGHIEP", dtpDKTOTNGHIEP.Value);
                                 cmd.ExecuteNonQuery();
                             }
 
                             // Cập nhật hoặc thêm thân nhân
                             if (!string.IsNullOrWhiteSpace(txtTEN_THANNHAN.Text))
                             {
-                                // Kiểm tra đã có thân nhân chưa
                                 string checkTN = "SELECT COUNT(*) FROM THANNHAN WHERE MASV = @MASV";
                                 using (SqlCommand checkCmd = new SqlCommand(checkTN, conn, transaction))
                                 {
@@ -227,7 +285,6 @@ namespace QuanLyKiTucXa.Formadd.HSSV
 
                                     if (countTN > 0)
                                     {
-                                        // Update
                                         string queryUpdateTN = @"UPDATE THANNHAN 
                                                                SET TEN_THANNHAN = @TEN_THANNHAN,
                                                                    SDT = @SDT,
@@ -239,14 +296,13 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                                             cmdTN.Parameters.AddWithValue("@MASV", txtMASV.Text.Trim());
                                             cmdTN.Parameters.AddWithValue("@TEN_THANNHAN", txtTEN_THANNHAN.Text.Trim());
                                             cmdTN.Parameters.AddWithValue("@SDT", txtSDT_THANNHAN.Text.Trim());
-                                            cmdTN.Parameters.AddWithValue("@MOIQUANHE", string.IsNullOrEmpty(txtMOIQUANHE.Text) ? (object)DBNull.Value : txtMOIQUANHE.Text.Trim());
+                                            cmdTN.Parameters.AddWithValue("@MOIQUANHE", string.IsNullOrEmpty(comMOIQUANHE.Text) ? (object)DBNull.Value : comMOIQUANHE.Text);
                                             cmdTN.Parameters.AddWithValue("@DIACHI", string.IsNullOrEmpty(txtDIACHI.Text) ? (object)DBNull.Value : txtDIACHI.Text.Trim());
                                             cmdTN.ExecuteNonQuery();
                                         }
                                     }
                                     else
                                     {
-                                        // Insert
                                         string queryInsertTN = @"INSERT INTO THANNHAN (MASV, TEN_THANNHAN, SDT, MOIQUANHE, DIACHI)
                                                                VALUES (@MASV, @TEN_THANNHAN, @SDT, @MOIQUANHE, @DIACHI)";
                                         using (SqlCommand cmdTN = new SqlCommand(queryInsertTN, conn, transaction))
@@ -254,7 +310,7 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                                             cmdTN.Parameters.AddWithValue("@MASV", txtMASV.Text.Trim());
                                             cmdTN.Parameters.AddWithValue("@TEN_THANNHAN", txtTEN_THANNHAN.Text.Trim());
                                             cmdTN.Parameters.AddWithValue("@SDT", txtSDT_THANNHAN.Text.Trim());
-                                            cmdTN.Parameters.AddWithValue("@MOIQUANHE", string.IsNullOrEmpty(txtMOIQUANHE.Text) ? (object)DBNull.Value : txtMOIQUANHE.Text.Trim());
+                                            cmdTN.Parameters.AddWithValue("@MOIQUANHE", string.IsNullOrEmpty(comMOIQUANHE.Text) ? (object)DBNull.Value : comMOIQUANHE.Text);
                                             cmdTN.Parameters.AddWithValue("@DIACHI", string.IsNullOrEmpty(txtDIACHI.Text) ? (object)DBNull.Value : txtDIACHI.Text.Trim());
                                             cmdTN.ExecuteNonQuery();
                                         }
@@ -284,7 +340,7 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                                 }
                             }
 
-                            // Thêm mới sinh viên
+                            // Thêm mới sinh viên (không có DKTOTNGHIEP)
                             string queryInsertSV = @"INSERT INTO SINHVIEN (MASV, TENSV, NGAYSINH, GIOITINH, CCCD, SDT, MALOP)
                                                    VALUES (@MASV, @TENSV, @NGAYSINH, @GIOITINH, @CCCD, @SDT, @MALOP)";
 
@@ -297,7 +353,6 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                                 cmd.Parameters.AddWithValue("@CCCD", string.IsNullOrEmpty(txtCCCD.Text) ? (object)DBNull.Value : txtCCCD.Text.Trim());
                                 cmd.Parameters.AddWithValue("@SDT", string.IsNullOrEmpty(txtSDT.Text) ? (object)DBNull.Value : txtSDT.Text.Trim());
                                 cmd.Parameters.AddWithValue("@MALOP", comTENLOP.SelectedValue.ToString());
-                               // cmd.Parameters.AddWithValue("@DKTOTNGHIEP", dtpDKTOTNGHIEP.Value);
                                 cmd.ExecuteNonQuery();
                             }
 
@@ -312,7 +367,7 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                                     cmdTN.Parameters.AddWithValue("@MASV", txtMASV.Text.Trim());
                                     cmdTN.Parameters.AddWithValue("@TEN_THANNHAN", txtTEN_THANNHAN.Text.Trim());
                                     cmdTN.Parameters.AddWithValue("@SDT", txtSDT_THANNHAN.Text.Trim());
-                                    cmdTN.Parameters.AddWithValue("@MOIQUANHE", string.IsNullOrEmpty(txtMOIQUANHE.Text) ? (object)DBNull.Value : txtMOIQUANHE.Text.Trim());
+                                    cmdTN.Parameters.AddWithValue("@MOIQUANHE", string.IsNullOrEmpty(comMOIQUANHE.Text) ? (object)DBNull.Value : comMOIQUANHE.Text);
                                     cmdTN.Parameters.AddWithValue("@DIACHI", string.IsNullOrEmpty(txtDIACHI.Text) ? (object)DBNull.Value : txtDIACHI.Text.Trim());
                                     cmdTN.ExecuteNonQuery();
                                 }
@@ -345,7 +400,5 @@ namespace QuanLyKiTucXa.Formadd.HSSV
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
-
-        
     }
 }
