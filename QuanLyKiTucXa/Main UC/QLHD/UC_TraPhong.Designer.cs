@@ -37,10 +37,10 @@
             this.btn_Traphong = new Guna.UI2.WinForms.Guna2CircleButton();
             this.comfillter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnfillter_TraPhong = new Guna.UI2.WinForms.Guna2CircleButton();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblSinhVien = new System.Windows.Forms.Label();
             this.dgvTraPhong = new System.Windows.Forms.DataGridView();
-            this.btnfillter_TraPhong = new Guna.UI2.WinForms.Guna2CircleButton();
             this.MAHD_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENHD_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MASV_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +74,7 @@
             this.btndelete_Traphong.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btndelete_Traphong.Size = new System.Drawing.Size(35, 34);
             this.btndelete_Traphong.TabIndex = 13;
+            this.btndelete_Traphong.Click += new System.EventHandler(this.btndelete_Traphong_Click);
             // 
             // btnedit_Traphong
             // 
@@ -91,6 +92,7 @@
             this.btnedit_Traphong.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnedit_Traphong.Size = new System.Drawing.Size(40, 34);
             this.btnedit_Traphong.TabIndex = 12;
+            this.btnedit_Traphong.Click += new System.EventHandler(this.btnedit_Traphong_Click);
             // 
             // btn_Traphong
             // 
@@ -147,6 +149,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1555, 58);
             this.panel1.TabIndex = 17;
+            // 
+            // btnfillter_TraPhong
+            // 
+            this.btnfillter_TraPhong.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.filter;
+            this.btnfillter_TraPhong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfillter_TraPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnfillter_TraPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnfillter_TraPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnfillter_TraPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnfillter_TraPhong.FillColor = System.Drawing.Color.Transparent;
+            this.btnfillter_TraPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnfillter_TraPhong.ForeColor = System.Drawing.Color.White;
+            this.btnfillter_TraPhong.Location = new System.Drawing.Point(1329, 6);
+            this.btnfillter_TraPhong.Name = "btnfillter_TraPhong";
+            this.btnfillter_TraPhong.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnfillter_TraPhong.Size = new System.Drawing.Size(35, 40);
+            this.btnfillter_TraPhong.TabIndex = 16;
+            this.btnfillter_TraPhong.Click += new System.EventHandler(this.btnfillter_TraPhong_Click);
             // 
             // txtSearch
             // 
@@ -243,23 +263,6 @@
             this.dgvTraPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvTraPhong.Size = new System.Drawing.Size(1555, 859);
             this.dgvTraPhong.TabIndex = 15;
-            // 
-            // btnfillter_TraPhong
-            // 
-            this.btnfillter_TraPhong.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.filter;
-            this.btnfillter_TraPhong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnfillter_TraPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnfillter_TraPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnfillter_TraPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnfillter_TraPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnfillter_TraPhong.FillColor = System.Drawing.Color.Transparent;
-            this.btnfillter_TraPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnfillter_TraPhong.ForeColor = System.Drawing.Color.White;
-            this.btnfillter_TraPhong.Location = new System.Drawing.Point(1329, 6);
-            this.btnfillter_TraPhong.Name = "btnfillter_TraPhong";
-            this.btnfillter_TraPhong.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnfillter_TraPhong.Size = new System.Drawing.Size(35, 40);
-            this.btnfillter_TraPhong.TabIndex = 16;
             // 
             // MAHD_2
             // 

@@ -76,6 +76,7 @@
             this.btnHuy.Size = new System.Drawing.Size(91, 45);
             this.btnHuy.TabIndex = 52;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
@@ -90,6 +91,7 @@
             this.btnLuu.Size = new System.Drawing.Size(79, 45);
             this.btnLuu.TabIndex = 51;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtGIOITINH
             // 
