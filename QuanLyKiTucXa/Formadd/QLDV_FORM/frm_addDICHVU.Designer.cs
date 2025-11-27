@@ -69,7 +69,6 @@
             this.dtpDENNGAY.Size = new System.Drawing.Size(216, 54);
             this.dtpDENNGAY.TabIndex = 40;
             this.dtpDENNGAY.Value = new System.DateTime(2025, 10, 25, 0, 0, 0, 0);
-//            this.dtpDENNGAY.ValueChanged += new System.EventHandler(this.dtpDENNGAY_ValueChanged);
             // 
             // dtpTUNGAY
             // 
@@ -245,7 +244,6 @@
             this.btnhuy.Size = new System.Drawing.Size(104, 45);
             this.btnhuy.TabIndex = 42;
             this.btnhuy.Text = "Hủy";
-//            this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click);
             // 
             // btnLuu
             // 
@@ -306,7 +304,6 @@
             this.comTENDV.StartIndex = 0;
             this.comTENDV.TabIndex = 43;
             this.comTENDV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-//            this.comTENDV.SelectedIndexChanged += new System.EventHandler(this.comTENDV_SelectedIndexChanged);
             // 
             // panelMenu
             // 
@@ -318,7 +315,7 @@
             this.panelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.panelMenu.MaximumSize = new System.Drawing.Size(1646, 100);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(863, 29);
+            this.panelMenu.Size = new System.Drawing.Size(863, 24);
             this.panelMenu.TabIndex = 61;
             // 
             // label8
@@ -347,10 +344,8 @@
             this.comTEN_NHACC.Location = new System.Drawing.Point(162, 321);
             this.comTEN_NHACC.Name = "comTEN_NHACC";
             this.comTEN_NHACC.Size = new System.Drawing.Size(220, 51);
-            this.comTEN_NHACC.StartIndex = 0;
             this.comTEN_NHACC.TabIndex = 43;
             this.comTEN_NHACC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-//            this.comTEN_NHACC.SelectedIndexChanged += new System.EventHandler(this.comTENDV_SelectedIndexChanged);
             // 
             // frm_addDICHVU
             // 
