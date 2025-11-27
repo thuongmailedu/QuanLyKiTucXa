@@ -30,10 +30,19 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblSinhVien = new System.Windows.Forms.Label();
             this.dgvSCCSVC = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnfillter = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btndelete = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnedit = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnadd = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.comfillter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MA_SCCSVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,13 +54,6 @@
             this.NGAY_HOANTHANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TRANGTHAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHITIET = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnfillter = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btndelete = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnedit = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnadd = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.comfillter = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSCCSVC)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +64,7 @@
             this.lblSinhVien.AutoSize = true;
             this.lblSinhVien.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSinhVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.lblSinhVien.Location = new System.Drawing.Point(643, 12);
+            this.lblSinhVien.Location = new System.Drawing.Point(505, 12);
             this.lblSinhVien.Name = "lblSinhVien";
             this.lblSinhVien.Size = new System.Drawing.Size(483, 46);
             this.lblSinhVien.TabIndex = 16;
@@ -105,101 +107,24 @@
             this.TRANGTHAI,
             this.CHITIET});
             this.dgvSCCSVC.EnableHeadersVisualStyles = false;
-            this.dgvSCCSVC.Location = new System.Drawing.Point(82, 138);
+            this.dgvSCCSVC.Location = new System.Drawing.Point(38, 138);
             this.dgvSCCSVC.Name = "dgvSCCSVC";
             this.dgvSCCSVC.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSCCSVC.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSCCSVC.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvSCCSVC.RowHeadersWidth = 62;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvSCCSVC.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvSCCSVC.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSCCSVC.RowTemplate.Height = 45;
             this.dgvSCCSVC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSCCSVC.Size = new System.Drawing.Size(1482, 646);
             this.dgvSCCSVC.TabIndex = 19;
-            // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 8;
-            this.STT.Name = "STT";
-            // 
-            // MA_SCCSVC
-            // 
-            this.MA_SCCSVC.DataPropertyName = "MA_SCCSVC";
-            this.MA_SCCSVC.HeaderText = "Mã SCCSVC";
-            this.MA_SCCSVC.MinimumWidth = 8;
-            this.MA_SCCSVC.Name = "MA_SCCSVC";
-            // 
-            // MANHA
-            // 
-            this.MANHA.DataPropertyName = "MANHA";
-            this.MANHA.HeaderText = "Mã nhà";
-            this.MANHA.MinimumWidth = 6;
-            this.MANHA.Name = "MANHA";
-            // 
-            // MA_PHONG
-            // 
-            this.MA_PHONG.DataPropertyName = "MA_PHONG";
-            this.MA_PHONG.HeaderText = "Mã phòng";
-            this.MA_PHONG.MinimumWidth = 8;
-            this.MA_PHONG.Name = "MA_PHONG";
-            // 
-            // MA_CSVC
-            // 
-            this.MA_CSVC.DataPropertyName = "MA_CSVC";
-            this.MA_CSVC.HeaderText = "Mã CSVC";
-            this.MA_CSVC.MinimumWidth = 8;
-            this.MA_CSVC.Name = "MA_CSVC";
-            // 
-            // TEN_CSVC
-            // 
-            this.TEN_CSVC.DataPropertyName = "TEN_CSVC";
-            this.TEN_CSVC.HeaderText = "Tên CSVC";
-            this.TEN_CSVC.MinimumWidth = 8;
-            this.TEN_CSVC.Name = "TEN_CSVC";
-            // 
-            // TEN_NHACC
-            // 
-            this.TEN_NHACC.DataPropertyName = "TEN_NHACC";
-            this.TEN_NHACC.HeaderText = "Nhà cung cấp";
-            this.TEN_NHACC.MinimumWidth = 8;
-            this.TEN_NHACC.Name = "TEN_NHACC";
-            // 
-            // NGAY_YEUCAU
-            // 
-            this.NGAY_YEUCAU.DataPropertyName = "NGAY_YEUCAU";
-            this.NGAY_YEUCAU.HeaderText = "Ngày yêu cầu";
-            this.NGAY_YEUCAU.MinimumWidth = 6;
-            this.NGAY_YEUCAU.Name = "NGAY_YEUCAU";
-            // 
-            // NGAY_HOANTHANH
-            // 
-            this.NGAY_HOANTHANH.DataPropertyName = "NGAY_HOANTHANH";
-            this.NGAY_HOANTHANH.HeaderText = "Ngày hoàn thành";
-            this.NGAY_HOANTHANH.MinimumWidth = 6;
-            this.NGAY_HOANTHANH.Name = "NGAY_HOANTHANH";
-            // 
-            // TRANGTHAI
-            // 
-            this.TRANGTHAI.DataPropertyName = "TRANGTHAI";
-            this.TRANGTHAI.HeaderText = "Trạng thái";
-            this.TRANGTHAI.MinimumWidth = 6;
-            this.TRANGTHAI.Name = "TRANGTHAI";
-            // 
-            // CHITIET
-            // 
-            this.CHITIET.DataPropertyName = "CHITIET";
-            this.CHITIET.HeaderText = "Chi tiết";
-            this.CHITIET.MinimumWidth = 6;
-            this.CHITIET.Name = "CHITIET";
             // 
             // panel2
             // 
@@ -210,7 +135,7 @@
             this.panel2.Controls.Add(this.btnadd);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.comfillter);
-            this.panel2.Location = new System.Drawing.Point(82, 61);
+            this.panel2.Location = new System.Drawing.Point(38, 61);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1482, 71);
             this.panel2.TabIndex = 18;
@@ -335,6 +260,90 @@
             this.comfillter.StartIndex = 0;
             this.comfillter.TabIndex = 0;
             this.comfillter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // STT
+            // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 8;
+            this.STT.Name = "STT";
+            this.STT.Width = 60;
+            // 
+            // MA_SCCSVC
+            // 
+            this.MA_SCCSVC.DataPropertyName = "MA_SCCSVC";
+            this.MA_SCCSVC.HeaderText = "Mã SCCSVC";
+            this.MA_SCCSVC.MinimumWidth = 8;
+            this.MA_SCCSVC.Name = "MA_SCCSVC";
+            // 
+            // MANHA
+            // 
+            this.MANHA.DataPropertyName = "MANHA";
+            this.MANHA.HeaderText = "Mã nhà";
+            this.MANHA.MinimumWidth = 6;
+            this.MANHA.Name = "MANHA";
+            // 
+            // MA_PHONG
+            // 
+            this.MA_PHONG.DataPropertyName = "MA_PHONG";
+            this.MA_PHONG.HeaderText = "Mã phòng";
+            this.MA_PHONG.MinimumWidth = 8;
+            this.MA_PHONG.Name = "MA_PHONG";
+            // 
+            // MA_CSVC
+            // 
+            this.MA_CSVC.DataPropertyName = "MA_CSVC";
+            this.MA_CSVC.HeaderText = "Mã CSVC";
+            this.MA_CSVC.MinimumWidth = 8;
+            this.MA_CSVC.Name = "MA_CSVC";
+            // 
+            // TEN_CSVC
+            // 
+            this.TEN_CSVC.DataPropertyName = "TEN_CSVC";
+            this.TEN_CSVC.HeaderText = "Tên CSVC";
+            this.TEN_CSVC.MinimumWidth = 8;
+            this.TEN_CSVC.Name = "TEN_CSVC";
+            // 
+            // TEN_NHACC
+            // 
+            this.TEN_NHACC.DataPropertyName = "TEN_NHACC";
+            this.TEN_NHACC.HeaderText = "Nhà cung cấp";
+            this.TEN_NHACC.MinimumWidth = 8;
+            this.TEN_NHACC.Name = "TEN_NHACC";
+            // 
+            // NGAY_YEUCAU
+            // 
+            this.NGAY_YEUCAU.DataPropertyName = "NGAY_YEUCAU";
+            dataGridViewCellStyle3.NullValue = null;
+            this.NGAY_YEUCAU.DefaultCellStyle = dataGridViewCellStyle3;
+            this.NGAY_YEUCAU.HeaderText = "Ngày yêu cầu";
+            this.NGAY_YEUCAU.MinimumWidth = 6;
+            this.NGAY_YEUCAU.Name = "NGAY_YEUCAU";
+            // 
+            // NGAY_HOANTHANH
+            // 
+            this.NGAY_HOANTHANH.DataPropertyName = "NGAY_HOANTHANH";
+            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle4.NullValue = null;
+            this.NGAY_HOANTHANH.DefaultCellStyle = dataGridViewCellStyle4;
+            this.NGAY_HOANTHANH.HeaderText = "Ngày hoàn thành";
+            this.NGAY_HOANTHANH.MinimumWidth = 6;
+            this.NGAY_HOANTHANH.Name = "NGAY_HOANTHANH";
+            // 
+            // TRANGTHAI
+            // 
+            this.TRANGTHAI.DataPropertyName = "TRANGTHAI";
+            this.TRANGTHAI.HeaderText = "Trạng thái";
+            this.TRANGTHAI.MinimumWidth = 6;
+            this.TRANGTHAI.Name = "TRANGTHAI";
+            // 
+            // CHITIET
+            // 
+            this.CHITIET.DataPropertyName = "CHITIET";
+            this.CHITIET.HeaderText = "Chi tiết";
+            this.CHITIET.MinimumWidth = 6;
+            this.CHITIET.Name = "CHITIET";
             // 
             // UC_SCCSVC
             // 

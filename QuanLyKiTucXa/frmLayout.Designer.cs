@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLayout));
             this.panelTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelBottom = new System.Windows.Forms.Panel();
@@ -42,7 +43,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnHopDong = new Guna.UI2.WinForms.Guna2Button();
             this.btnSinhVien = new Guna.UI2.WinForms.Guna2Button();
-            this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelTop.SuspendLayout();
@@ -59,7 +59,7 @@
             this.panelTop.ForeColor = System.Drawing.Color.White;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1715, 47);
+            this.panelTop.Size = new System.Drawing.Size(1715, 44);
             this.panelTop.TabIndex = 0;
             // 
             // label1
@@ -104,19 +104,19 @@
             this.panelSideBar.Controls.Add(this.pictureBox1);
             this.panelSideBar.Controls.Add(this.btnHopDong);
             this.panelSideBar.Controls.Add(this.btnSinhVien);
-            this.panelSideBar.Controls.Add(this.btnHome);
             this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideBar.ForeColor = System.Drawing.Color.Gray;
-            this.panelSideBar.Location = new System.Drawing.Point(0, 47);
+            this.panelSideBar.Location = new System.Drawing.Point(0, 44);
             this.panelSideBar.Margin = new System.Windows.Forms.Padding(0);
             this.panelSideBar.Name = "panelSideBar";
-            this.panelSideBar.Size = new System.Drawing.Size(304, 878);
+            this.panelSideBar.Size = new System.Drawing.Size(304, 881);
             this.panelSideBar.TabIndex = 2;
             // 
             // btnBaocao
             // 
             this.btnBaocao.AutoRoundedCorners = true;
             this.btnBaocao.BorderRadius = 32;
+            this.btnBaocao.BorderThickness = 1;
             this.btnBaocao.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnBaocao.CheckedState.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnBaocao.CheckedState.ForeColor = System.Drawing.Color.White;
@@ -132,7 +132,7 @@
             this.btnBaocao.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBaocao.ImageOffset = new System.Drawing.Point(60, 0);
             this.btnBaocao.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnBaocao.Location = new System.Drawing.Point(36, 730);
+            this.btnBaocao.Location = new System.Drawing.Point(36, 701);
             this.btnBaocao.Name = "btnBaocao";
             this.btnBaocao.PressedColor = System.Drawing.Color.AliceBlue;
             this.btnBaocao.Size = new System.Drawing.Size(232, 66);
@@ -144,6 +144,7 @@
             // 
             this.btnDanhmuckhac.AutoRoundedCorners = true;
             this.btnDanhmuckhac.BorderRadius = 32;
+            this.btnDanhmuckhac.BorderThickness = 1;
             this.btnDanhmuckhac.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnDanhmuckhac.CheckedState.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnDanhmuckhac.CheckedState.ForeColor = System.Drawing.Color.White;
@@ -159,7 +160,7 @@
             this.btnDanhmuckhac.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDanhmuckhac.ImageOffset = new System.Drawing.Point(60, 0);
             this.btnDanhmuckhac.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDanhmuckhac.Location = new System.Drawing.Point(36, 658);
+            this.btnDanhmuckhac.Location = new System.Drawing.Point(36, 619);
             this.btnDanhmuckhac.Name = "btnDanhmuckhac";
             this.btnDanhmuckhac.PressedColor = System.Drawing.Color.AliceBlue;
             this.btnDanhmuckhac.Size = new System.Drawing.Size(232, 66);
@@ -171,6 +172,7 @@
             // 
             this.btn_qldv.AutoRoundedCorners = true;
             this.btn_qldv.BorderRadius = 32;
+            this.btn_qldv.BorderThickness = 1;
             this.btn_qldv.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btn_qldv.CheckedState.FillColor = System.Drawing.Color.RoyalBlue;
             this.btn_qldv.CheckedState.ForeColor = System.Drawing.Color.White;
@@ -186,7 +188,7 @@
             this.btn_qldv.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_qldv.ImageOffset = new System.Drawing.Point(60, 0);
             this.btn_qldv.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_qldv.Location = new System.Drawing.Point(36, 586);
+            this.btn_qldv.Location = new System.Drawing.Point(36, 538);
             this.btn_qldv.Name = "btn_qldv";
             this.btn_qldv.PressedColor = System.Drawing.Color.AliceBlue;
             this.btn_qldv.Size = new System.Drawing.Size(232, 66);
@@ -198,6 +200,7 @@
             // 
             this.btnPhong.AutoRoundedCorners = true;
             this.btnPhong.BorderRadius = 32;
+            this.btnPhong.BorderThickness = 1;
             this.btnPhong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnPhong.CheckedState.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnPhong.CheckedState.ForeColor = System.Drawing.Color.White;
@@ -213,7 +216,7 @@
             this.btnPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPhong.ImageOffset = new System.Drawing.Point(60, 0);
             this.btnPhong.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnPhong.Location = new System.Drawing.Point(36, 508);
+            this.btnPhong.Location = new System.Drawing.Point(36, 456);
             this.btnPhong.Name = "btnPhong";
             this.btnPhong.PressedColor = System.Drawing.Color.AliceBlue;
             this.btnPhong.Size = new System.Drawing.Size(232, 66);
@@ -227,15 +230,15 @@
             this.line.Dock = System.Windows.Forms.DockStyle.Right;
             this.line.Location = new System.Drawing.Point(303, 0);
             this.line.Name = "line";
-            this.line.Size = new System.Drawing.Size(1, 878);
+            this.line.Size = new System.Drawing.Size(1, 881);
             this.line.TabIndex = 11;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::QuanLyKiTucXa.Properties.Resources.logo_neu_inkythuatso_01_09_10_41_01;
-            this.pictureBox1.Location = new System.Drawing.Point(52, 35);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(51, 31);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.Size = new System.Drawing.Size(206, 200);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -244,6 +247,7 @@
             // 
             this.btnHopDong.AutoRoundedCorners = true;
             this.btnHopDong.BorderRadius = 32;
+            this.btnHopDong.BorderThickness = 1;
             this.btnHopDong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnHopDong.CheckedState.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnHopDong.CheckedState.ForeColor = System.Drawing.Color.White;
@@ -259,7 +263,7 @@
             this.btnHopDong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHopDong.ImageOffset = new System.Drawing.Point(60, 0);
             this.btnHopDong.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnHopDong.Location = new System.Drawing.Point(36, 430);
+            this.btnHopDong.Location = new System.Drawing.Point(36, 372);
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.PressedColor = System.Drawing.Color.AliceBlue;
             this.btnHopDong.Size = new System.Drawing.Size(232, 66);
@@ -271,6 +275,7 @@
             // 
             this.btnSinhVien.AutoRoundedCorners = true;
             this.btnSinhVien.BorderRadius = 32;
+            this.btnSinhVien.BorderThickness = 1;
             this.btnSinhVien.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnSinhVien.CheckedState.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnSinhVien.CheckedState.ForeColor = System.Drawing.Color.White;
@@ -286,7 +291,7 @@
             this.btnSinhVien.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSinhVien.ImageOffset = new System.Drawing.Point(60, 0);
             this.btnSinhVien.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnSinhVien.Location = new System.Drawing.Point(36, 352);
+            this.btnSinhVien.Location = new System.Drawing.Point(36, 289);
             this.btnSinhVien.Name = "btnSinhVien";
             this.btnSinhVien.PressedColor = System.Drawing.Color.AliceBlue;
             this.btnSinhVien.Size = new System.Drawing.Size(232, 66);
@@ -294,40 +299,13 @@
             this.btnSinhVien.Text = "Hồ sơ sinh viên";
             this.btnSinhVien.Click += new System.EventHandler(this.btnSinhVien_Click);
             // 
-            // btnHome
-            // 
-            this.btnHome.AutoRoundedCorners = true;
-            this.btnHome.BorderRadius = 32;
-            this.btnHome.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnHome.CheckedState.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btnHome.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHome.FillColor = System.Drawing.Color.White;
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnHome.HoverState.FillColor = System.Drawing.Color.AliceBlue;
-            this.btnHome.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHome.ImageOffset = new System.Drawing.Point(60, 0);
-            this.btnHome.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnHome.Location = new System.Drawing.Point(36, 274);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.PressedColor = System.Drawing.Color.AliceBlue;
-            this.btnHome.Size = new System.Drawing.Size(232, 66);
-            this.btnHome.TabIndex = 4;
-            this.btnHome.Text = "Trang chủ";
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
             // panelContainer
             // 
             this.panelContainer.BackColor = System.Drawing.SystemColors.Control;
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(304, 47);
+            this.panelContainer.Location = new System.Drawing.Point(304, 44);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1411, 878);
+            this.panelContainer.Size = new System.Drawing.Size(1411, 881);
             this.panelContainer.TabIndex = 3;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
@@ -371,7 +349,6 @@
         private System.Windows.Forms.Panel panelContainer;
         private Guna.UI2.WinForms.Guna2Button btnHopDong;
         private Guna.UI2.WinForms.Guna2Button btnSinhVien;
-        private Guna.UI2.WinForms.Guna2Button btnHome;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button btnPhong;
         private System.Windows.Forms.Timer timer1;

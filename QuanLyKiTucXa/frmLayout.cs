@@ -33,7 +33,7 @@ namespace QuanLyKiTucXa
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnHome.Checked = true;
+            btnSinhVien.Checked = true;
             addUserControl(new UC_TrangChu_Ribbon());
         }
 

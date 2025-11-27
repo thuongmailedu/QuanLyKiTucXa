@@ -21,7 +21,7 @@ namespace QuanLyKiTucXa.Ribbons
         }
         private void UC_QLHD_Ribbon_Load(object sender, EventArgs e)
         {
-            btnThuePhong.Checked = true;
+            btnDATPHONG.Checked = true;
             addUserControl(new UC_ThuePhong());
         }
         private void addUserControl(UserControl userControl)

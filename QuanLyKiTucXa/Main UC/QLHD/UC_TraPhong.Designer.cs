@@ -262,7 +262,7 @@
             this.dgvTraPhong.RowTemplate.Height = 45;
             this.dgvTraPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvTraPhong.Size = new System.Drawing.Size(1555, 859);
-            this.dgvTraPhong.TabIndex = 15;
+            this.dgvTraPhong.TabIndex = 18;
             // 
             // MAHD_2
             // 
@@ -373,9 +373,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dgvTraPhong);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblSinhVien);
-            this.Controls.Add(this.dgvTraPhong);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_TraPhong";
@@ -397,8 +397,8 @@
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private System.Windows.Forms.Label lblSinhVien;
-        private System.Windows.Forms.DataGridView dgvTraPhong;
         private Guna.UI2.WinForms.Guna2CircleButton btnfillter_TraPhong;
+        private System.Windows.Forms.DataGridView dgvTraPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAHD_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENHD_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MASV_2;

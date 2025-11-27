@@ -132,11 +132,8 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
             if (!string.IsNullOrEmpty(maHD) && !string.IsNullOrEmpty(maSV))
             {
                 frm_Traphong form = new frm_Traphong(maHD, maSV);
-
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    LoadData(); // Refresh lại danh sách
-                }
+                form.ShowDialog();
+                LoadData(); // Refresh lại danh sách
             }
         }
 

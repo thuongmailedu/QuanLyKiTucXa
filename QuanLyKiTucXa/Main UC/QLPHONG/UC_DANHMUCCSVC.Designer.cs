@@ -52,13 +52,13 @@
             this.txtSearch_NHA_CSVC = new Guna.UI2.WinForms.Guna2TextBox();
             this.comfillter_NHA_CSVC = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgvDMCSVC = new System.Windows.Forms.DataGridView();
+            this.dgvNHA_CSVC = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MA_CSVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN_CSVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN_NHACC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TRANGTHAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHITIET = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvNHA_CSVC = new System.Windows.Forms.DataGridView();
             this.STT_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MA_CSVC_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,7 +77,7 @@
             this.lblDMCSVC.AutoSize = true;
             this.lblDMCSVC.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDMCSVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.lblDMCSVC.Location = new System.Drawing.Point(576, 19);
+            this.lblDMCSVC.Location = new System.Drawing.Point(519, 17);
             this.lblDMCSVC.Name = "lblDMCSVC";
             this.lblDMCSVC.Size = new System.Drawing.Size(495, 46);
             this.lblDMCSVC.TabIndex = 14;
@@ -92,7 +92,7 @@
             this.panel1.Controls.Add(this.btnadd_DMCSVC);
             this.panel1.Controls.Add(this.txtSearch_DMCSVC);
             this.panel1.Controls.Add(this.comfillter_DMCSVC);
-            this.panel1.Location = new System.Drawing.Point(94, 86);
+            this.panel1.Location = new System.Drawing.Point(37, 84);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(716, 71);
             this.panel1.TabIndex = 15;
@@ -228,7 +228,7 @@
             this.panel2.Controls.Add(this.btnadd_NHA_CSVC);
             this.panel2.Controls.Add(this.txtSearch_NHA_CSVC);
             this.panel2.Controls.Add(this.comfillter_NHA_CSVC);
-            this.panel2.Location = new System.Drawing.Point(836, 86);
+            this.panel2.Location = new System.Drawing.Point(779, 84);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(716, 71);
             this.panel2.TabIndex = 15;
@@ -386,7 +386,7 @@
             this.TRANGTHAI,
             this.CHITIET});
             this.dgvDMCSVC.EnableHeadersVisualStyles = false;
-            this.dgvDMCSVC.Location = new System.Drawing.Point(94, 175);
+            this.dgvDMCSVC.Location = new System.Drawing.Point(37, 173);
             this.dgvDMCSVC.Name = "dgvDMCSVC";
             this.dgvDMCSVC.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -405,12 +405,65 @@
             this.dgvDMCSVC.Size = new System.Drawing.Size(716, 603);
             this.dgvDMCSVC.TabIndex = 16;
             // 
+            // dgvNHA_CSVC
+            // 
+            this.dgvNHA_CSVC.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvNHA_CSVC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvNHA_CSVC.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvNHA_CSVC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNHA_CSVC.BackgroundColor = System.Drawing.Color.White;
+            this.dgvNHA_CSVC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvNHA_CSVC.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvNHA_CSVC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNHA_CSVC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvNHA_CSVC.ColumnHeadersHeight = 45;
+            this.dgvNHA_CSVC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT_2,
+            this.MANHA,
+            this.MA_CSVC_2,
+            this.TEN_CSVC_2,
+            this.SOLUONG,
+            this.NHACC_2});
+            this.dgvNHA_CSVC.EnableHeadersVisualStyles = false;
+            this.dgvNHA_CSVC.Location = new System.Drawing.Point(779, 173);
+            this.dgvNHA_CSVC.Name = "dgvNHA_CSVC";
+            this.dgvNHA_CSVC.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNHA_CSVC.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvNHA_CSVC.RowHeadersWidth = 62;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvNHA_CSVC.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvNHA_CSVC.RowTemplate.Height = 45;
+            this.dgvNHA_CSVC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNHA_CSVC.Size = new System.Drawing.Size(716, 603);
+            this.dgvNHA_CSVC.TabIndex = 16;
+            // 
             // STT
             // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.STT.DataPropertyName = "STT";
             this.STT.HeaderText = "STT";
             this.STT.MinimumWidth = 8;
             this.STT.Name = "STT";
+            this.STT.Width = 60;
             // 
             // MA_CSVC
             // 
@@ -447,63 +500,14 @@
             this.CHITIET.MinimumWidth = 8;
             this.CHITIET.Name = "CHITIET";
             // 
-            // dgvNHA_CSVC
-            // 
-            this.dgvNHA_CSVC.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvNHA_CSVC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvNHA_CSVC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvNHA_CSVC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvNHA_CSVC.BackgroundColor = System.Drawing.Color.White;
-            this.dgvNHA_CSVC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvNHA_CSVC.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvNHA_CSVC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNHA_CSVC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvNHA_CSVC.ColumnHeadersHeight = 45;
-            this.dgvNHA_CSVC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT_2,
-            this.MANHA,
-            this.MA_CSVC_2,
-            this.TEN_CSVC_2,
-            this.SOLUONG,
-            this.NHACC_2});
-            this.dgvNHA_CSVC.EnableHeadersVisualStyles = false;
-            this.dgvNHA_CSVC.Location = new System.Drawing.Point(836, 175);
-            this.dgvNHA_CSVC.Name = "dgvNHA_CSVC";
-            this.dgvNHA_CSVC.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNHA_CSVC.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvNHA_CSVC.RowHeadersWidth = 62;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvNHA_CSVC.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvNHA_CSVC.RowTemplate.Height = 45;
-            this.dgvNHA_CSVC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNHA_CSVC.Size = new System.Drawing.Size(716, 603);
-            this.dgvNHA_CSVC.TabIndex = 16;
-            // 
             // STT_2
             // 
+            this.STT_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.STT_2.DataPropertyName = "STT";
             this.STT_2.HeaderText = "STT";
             this.STT_2.MinimumWidth = 8;
             this.STT_2.Name = "STT_2";
+            this.STT_2.Width = 60;
             // 
             // MANHA
             // 
@@ -582,17 +586,17 @@
         private Guna.UI2.WinForms.Guna2ComboBox comfillter_NHA_CSVC;
         private System.Windows.Forms.DataGridView dgvDMCSVC;
         private System.Windows.Forms.DataGridView dgvNHA_CSVC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MANHA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MA_CSVC_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TEN_CSVC_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NHACC_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA_CSVC;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN_CSVC;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN_NHACC;
         private System.Windows.Forms.DataGridViewTextBoxColumn TRANGTHAI;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHITIET;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MANHA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA_CSVC_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN_CSVC_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NHACC_2;
     }
 }
