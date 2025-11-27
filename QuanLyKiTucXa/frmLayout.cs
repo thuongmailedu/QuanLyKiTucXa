@@ -34,7 +34,7 @@ namespace QuanLyKiTucXa
         private void Form1_Load(object sender, EventArgs e)
         {
             btnSinhVien.Checked = true;
-            addUserControl(new UC_TrangChu_Ribbon());
+            addUserControl(new UC_HOSOSINHVIEN_Ribbon());
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -82,6 +82,11 @@ namespace QuanLyKiTucXa
         private void btnDanhmuckhac_Click(object sender, EventArgs e)
         {
             addUserControl(new UC_DMKHAC_Ribbon());
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -37,7 +37,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDM_KHOA = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDM_LOP = new System.Windows.Forms.DataGridView();
+            this.STT_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MALOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENLOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAKHOA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKHOA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSinhVien = new System.Windows.Forms.Label();
             this.btndelete_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btndelete_LOP = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -45,14 +53,8 @@
             this.btnedit_LOP = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnadd_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnadd_LOP = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STT_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MALOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENLOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAKHOA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKHOA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_KHOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_LOP)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +88,7 @@
             this.MAKHOA,
             this.TENKHOA});
             this.dgvDM_KHOA.EnableHeadersVisualStyles = false;
-            this.dgvDM_KHOA.Location = new System.Drawing.Point(57, 102);
+            this.dgvDM_KHOA.Location = new System.Drawing.Point(38, 112);
             this.dgvDM_KHOA.Name = "dgvDM_KHOA";
             this.dgvDM_KHOA.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -105,6 +107,31 @@
             this.dgvDM_KHOA.Size = new System.Drawing.Size(647, 686);
             this.dgvDM_KHOA.TabIndex = 18;
             this.dgvDM_KHOA.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDMPhong_CellContentClick);
+            // 
+            // STT
+            // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.Width = 60;
+            // 
+            // MAKHOA
+            // 
+            this.MAKHOA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MAKHOA.DataPropertyName = "MAKHOA";
+            this.MAKHOA.HeaderText = "Mã khoa";
+            this.MAKHOA.MinimumWidth = 8;
+            this.MAKHOA.Name = "MAKHOA";
+            this.MAKHOA.Width = 86;
+            // 
+            // TENKHOA
+            // 
+            this.TENKHOA.DataPropertyName = "TENKHOA";
+            this.TENKHOA.HeaderText = "Tên khoa";
+            this.TENKHOA.MinimumWidth = 8;
+            this.TENKHOA.Name = "TENKHOA";
             // 
             // dgvDM_LOP
             // 
@@ -137,7 +164,7 @@
             this.MAKHOA_2,
             this.TENKHOA_2});
             this.dgvDM_LOP.EnableHeadersVisualStyles = false;
-            this.dgvDM_LOP.Location = new System.Drawing.Point(733, 102);
+            this.dgvDM_LOP.Location = new System.Drawing.Point(714, 112);
             this.dgvDM_LOP.Name = "dgvDM_LOP";
             this.dgvDM_LOP.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -156,158 +183,6 @@
             this.dgvDM_LOP.Size = new System.Drawing.Size(850, 686);
             this.dgvDM_LOP.TabIndex = 18;
             this.dgvDM_LOP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // lblSinhVien
-            // 
-            this.lblSinhVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblSinhVien.AutoSize = true;
-            this.lblSinhVien.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSinhVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.lblSinhVien.Location = new System.Drawing.Point(614, 9);
-            this.lblSinhVien.Name = "lblSinhVien";
-            this.lblSinhVien.Size = new System.Drawing.Size(393, 46);
-            this.lblSinhVien.TabIndex = 22;
-            this.lblSinhVien.Text = "DANH MỤC LỚP_KHOA";
-            this.lblSinhVien.Click += new System.EventHandler(this.lblSinhVien_Click);
-            // 
-            // btndelete_KHOA
-            // 
-            this.btndelete_KHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btndelete_KHOA.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
-            this.btndelete_KHOA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btndelete_KHOA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btndelete_KHOA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btndelete_KHOA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btndelete_KHOA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btndelete_KHOA.FillColor = System.Drawing.Color.Transparent;
-            this.btndelete_KHOA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btndelete_KHOA.ForeColor = System.Drawing.Color.White;
-            this.btndelete_KHOA.Location = new System.Drawing.Point(672, 62);
-            this.btndelete_KHOA.Name = "btndelete_KHOA";
-            this.btndelete_KHOA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btndelete_KHOA.Size = new System.Drawing.Size(35, 32);
-            this.btndelete_KHOA.TabIndex = 21;
-            this.btndelete_KHOA.Click += new System.EventHandler(this.btndelete_KHOA_Click);
-            // 
-            // btndelete_LOP
-            // 
-            this.btndelete_LOP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btndelete_LOP.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
-            this.btndelete_LOP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btndelete_LOP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btndelete_LOP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btndelete_LOP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btndelete_LOP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btndelete_LOP.FillColor = System.Drawing.Color.Transparent;
-            this.btndelete_LOP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btndelete_LOP.ForeColor = System.Drawing.Color.White;
-            this.btndelete_LOP.Location = new System.Drawing.Point(1551, 62);
-            this.btndelete_LOP.Name = "btndelete_LOP";
-            this.btndelete_LOP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btndelete_LOP.Size = new System.Drawing.Size(35, 32);
-            this.btndelete_LOP.TabIndex = 21;
-            this.btndelete_LOP.Click += new System.EventHandler(this.btndelete_NHA_Click);
-            // 
-            // btnedit_KHOA
-            // 
-            this.btnedit_KHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnedit_KHOA.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
-            this.btnedit_KHOA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnedit_KHOA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnedit_KHOA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnedit_KHOA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnedit_KHOA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnedit_KHOA.FillColor = System.Drawing.Color.Transparent;
-            this.btnedit_KHOA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnedit_KHOA.ForeColor = System.Drawing.Color.White;
-            this.btnedit_KHOA.Location = new System.Drawing.Point(635, 62);
-            this.btnedit_KHOA.Name = "btnedit_KHOA";
-            this.btnedit_KHOA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnedit_KHOA.Size = new System.Drawing.Size(31, 32);
-            this.btnedit_KHOA.TabIndex = 20;
-            this.btnedit_KHOA.Click += new System.EventHandler(this.btnedit_KHOA_Click);
-            // 
-            // btnedit_LOP
-            // 
-            this.btnedit_LOP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnedit_LOP.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
-            this.btnedit_LOP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnedit_LOP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnedit_LOP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnedit_LOP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnedit_LOP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnedit_LOP.FillColor = System.Drawing.Color.Transparent;
-            this.btnedit_LOP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnedit_LOP.ForeColor = System.Drawing.Color.White;
-            this.btnedit_LOP.Location = new System.Drawing.Point(1514, 62);
-            this.btnedit_LOP.Name = "btnedit_LOP";
-            this.btnedit_LOP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnedit_LOP.Size = new System.Drawing.Size(31, 32);
-            this.btnedit_LOP.TabIndex = 20;
-            this.btnedit_LOP.Click += new System.EventHandler(this.btnedit_NHA_Click);
-            // 
-            // btnadd_KHOA
-            // 
-            this.btnadd_KHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnadd_KHOA.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
-            this.btnadd_KHOA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnadd_KHOA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnadd_KHOA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnadd_KHOA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnadd_KHOA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnadd_KHOA.FillColor = System.Drawing.Color.Transparent;
-            this.btnadd_KHOA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnadd_KHOA.ForeColor = System.Drawing.Color.White;
-            this.btnadd_KHOA.Location = new System.Drawing.Point(590, 62);
-            this.btnadd_KHOA.Name = "btnadd_KHOA";
-            this.btnadd_KHOA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnadd_KHOA.Size = new System.Drawing.Size(30, 32);
-            this.btnadd_KHOA.TabIndex = 19;
-            this.btnadd_KHOA.Click += new System.EventHandler(this.btnadd_KHOA_Click);
-            // 
-            // btnadd_LOP
-            // 
-            this.btnadd_LOP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnadd_LOP.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
-            this.btnadd_LOP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnadd_LOP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnadd_LOP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnadd_LOP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnadd_LOP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnadd_LOP.FillColor = System.Drawing.Color.Transparent;
-            this.btnadd_LOP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnadd_LOP.ForeColor = System.Drawing.Color.White;
-            this.btnadd_LOP.Location = new System.Drawing.Point(1469, 62);
-            this.btnadd_LOP.Name = "btnadd_LOP";
-            this.btnadd_LOP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnadd_LOP.Size = new System.Drawing.Size(30, 32);
-            this.btnadd_LOP.TabIndex = 19;
-            this.btnadd_LOP.Click += new System.EventHandler(this.btnadd_NHA_Click);
-            // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.Width = 60;
-            // 
-            // MAKHOA
-            // 
-            this.MAKHOA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.MAKHOA.DataPropertyName = "MAKHOA";
-            this.MAKHOA.HeaderText = "Mã khoa";
-            this.MAKHOA.MinimumWidth = 8;
-            this.MAKHOA.Name = "MAKHOA";
-            this.MAKHOA.Width = 86;
-            // 
-            // TENKHOA
-            // 
-            this.TENKHOA.DataPropertyName = "TENKHOA";
-            this.TENKHOA.HeaderText = "Tên khoa";
-            this.TENKHOA.MinimumWidth = 8;
-            this.TENKHOA.Name = "TENKHOA";
             // 
             // STT_2
             // 
@@ -341,7 +216,7 @@
             this.MAKHOA_2.MinimumWidth = 8;
             this.MAKHOA_2.Name = "MAKHOA_2";
             this.MAKHOA_2.Visible = false;
-            this.MAKHOA_2.Width = 86;
+            this.MAKHOA_2.Width = 88;
             // 
             // TENKHOA_2
             // 
@@ -351,10 +226,165 @@
             this.TENKHOA_2.Name = "TENKHOA_2";
             this.TENKHOA_2.Width = 88;
             // 
+            // lblSinhVien
+            // 
+            this.lblSinhVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblSinhVien.AutoSize = true;
+            this.lblSinhVien.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSinhVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.lblSinhVien.Location = new System.Drawing.Point(593, 9);
+            this.lblSinhVien.Name = "lblSinhVien";
+            this.lblSinhVien.Size = new System.Drawing.Size(393, 46);
+            this.lblSinhVien.TabIndex = 22;
+            this.lblSinhVien.Text = "DANH MỤC LỚP_KHOA";
+            this.lblSinhVien.Click += new System.EventHandler(this.lblSinhVien_Click);
+            // 
+            // btndelete_KHOA
+            // 
+            this.btndelete_KHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btndelete_KHOA.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
+            this.btndelete_KHOA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btndelete_KHOA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btndelete_KHOA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btndelete_KHOA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btndelete_KHOA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btndelete_KHOA.FillColor = System.Drawing.Color.Transparent;
+            this.btndelete_KHOA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btndelete_KHOA.ForeColor = System.Drawing.Color.White;
+            this.btndelete_KHOA.Location = new System.Drawing.Point(653, 72);
+            this.btndelete_KHOA.Name = "btndelete_KHOA";
+            this.btndelete_KHOA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btndelete_KHOA.Size = new System.Drawing.Size(35, 32);
+            this.btndelete_KHOA.TabIndex = 21;
+            this.btndelete_KHOA.Click += new System.EventHandler(this.btndelete_KHOA_Click);
+            // 
+            // btndelete_LOP
+            // 
+            this.btndelete_LOP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btndelete_LOP.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
+            this.btndelete_LOP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btndelete_LOP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btndelete_LOP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btndelete_LOP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btndelete_LOP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btndelete_LOP.FillColor = System.Drawing.Color.Transparent;
+            this.btndelete_LOP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btndelete_LOP.ForeColor = System.Drawing.Color.White;
+            this.btndelete_LOP.Location = new System.Drawing.Point(1532, 72);
+            this.btndelete_LOP.Name = "btndelete_LOP";
+            this.btndelete_LOP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btndelete_LOP.Size = new System.Drawing.Size(35, 32);
+            this.btndelete_LOP.TabIndex = 21;
+            this.btndelete_LOP.Click += new System.EventHandler(this.btndelete_NHA_Click);
+            // 
+            // btnedit_KHOA
+            // 
+            this.btnedit_KHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnedit_KHOA.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
+            this.btnedit_KHOA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnedit_KHOA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnedit_KHOA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnedit_KHOA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnedit_KHOA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnedit_KHOA.FillColor = System.Drawing.Color.Transparent;
+            this.btnedit_KHOA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnedit_KHOA.ForeColor = System.Drawing.Color.White;
+            this.btnedit_KHOA.Location = new System.Drawing.Point(616, 72);
+            this.btnedit_KHOA.Name = "btnedit_KHOA";
+            this.btnedit_KHOA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnedit_KHOA.Size = new System.Drawing.Size(31, 32);
+            this.btnedit_KHOA.TabIndex = 20;
+            this.btnedit_KHOA.Click += new System.EventHandler(this.btnedit_KHOA_Click);
+            // 
+            // btnedit_LOP
+            // 
+            this.btnedit_LOP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnedit_LOP.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
+            this.btnedit_LOP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnedit_LOP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnedit_LOP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnedit_LOP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnedit_LOP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnedit_LOP.FillColor = System.Drawing.Color.Transparent;
+            this.btnedit_LOP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnedit_LOP.ForeColor = System.Drawing.Color.White;
+            this.btnedit_LOP.Location = new System.Drawing.Point(1495, 72);
+            this.btnedit_LOP.Name = "btnedit_LOP";
+            this.btnedit_LOP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnedit_LOP.Size = new System.Drawing.Size(31, 32);
+            this.btnedit_LOP.TabIndex = 20;
+            this.btnedit_LOP.Click += new System.EventHandler(this.btnedit_NHA_Click);
+            // 
+            // btnadd_KHOA
+            // 
+            this.btnadd_KHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnadd_KHOA.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
+            this.btnadd_KHOA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnadd_KHOA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnadd_KHOA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnadd_KHOA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnadd_KHOA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnadd_KHOA.FillColor = System.Drawing.Color.Transparent;
+            this.btnadd_KHOA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnadd_KHOA.ForeColor = System.Drawing.Color.White;
+            this.btnadd_KHOA.Location = new System.Drawing.Point(571, 72);
+            this.btnadd_KHOA.Name = "btnadd_KHOA";
+            this.btnadd_KHOA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnadd_KHOA.Size = new System.Drawing.Size(30, 32);
+            this.btnadd_KHOA.TabIndex = 19;
+            this.btnadd_KHOA.Click += new System.EventHandler(this.btnadd_KHOA_Click);
+            // 
+            // btnadd_LOP
+            // 
+            this.btnadd_LOP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnadd_LOP.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
+            this.btnadd_LOP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnadd_LOP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnadd_LOP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnadd_LOP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnadd_LOP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnadd_LOP.FillColor = System.Drawing.Color.Transparent;
+            this.btnadd_LOP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnadd_LOP.ForeColor = System.Drawing.Color.White;
+            this.btnadd_LOP.Location = new System.Drawing.Point(1450, 72);
+            this.btnadd_LOP.Name = "btnadd_LOP";
+            this.btnadd_LOP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnadd_LOP.Size = new System.Drawing.Size(30, 32);
+            this.btnadd_LOP.TabIndex = 19;
+            this.btnadd_LOP.Click += new System.EventHandler(this.btnadd_NHA_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.label1.Location = new System.Drawing.Point(33, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 28);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Danh mục khoa";
+            this.label1.Click += new System.EventHandler(this.lblSinhVien_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.label2.Location = new System.Drawing.Point(709, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(145, 28);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Danh mục lớp";
+            this.label2.Click += new System.EventHandler(this.lblSinhVien_Click);
+            // 
             // UC_DM_LOP_KHOA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblSinhVien);
             this.Controls.Add(this.btndelete_KHOA);
             this.Controls.Add(this.btndelete_LOP);
@@ -367,7 +397,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_DM_LOP_KHOA";
-            this.Size = new System.Drawing.Size(1651, 849);
+            this.Size = new System.Drawing.Size(1664, 849);
             this.Load += new System.EventHandler(this.UC_DM_LOP_KHOA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_KHOA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_LOP)).EndInit();
@@ -395,5 +425,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TENLOP;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAKHOA_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENKHOA_2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

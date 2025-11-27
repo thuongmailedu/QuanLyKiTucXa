@@ -153,6 +153,16 @@ namespace QuanLyKiTucXa.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Moonar_NXT_9633_2023_09_29_122032_yfzo {
+            get {
+                object obj = ResourceManager.GetObject("Moonar-NXT_9633_2023-09-29-122032_yfzo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap REMOVE {
             get {
                 object obj = ResourceManager.GetObject("REMOVE", resourceCulture);
@@ -176,6 +186,16 @@ namespace QuanLyKiTucXa.Properties {
         internal static System.Drawing.Bitmap Screenshot_2025_10_25_170148 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot 2025-10-25 170148", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2025_11_27_165942 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2025-11-27 165942", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

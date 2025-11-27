@@ -50,6 +50,7 @@
             this.comNHA = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnTaoHD = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_add_HD_INT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +79,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(565, 87);
+            this.label3.Location = new System.Drawing.Point(585, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 20);
             this.label3.TabIndex = 25;
@@ -291,6 +292,16 @@
             this.btnTaoHD.Text = "Tạo hóa đơn";
             this.btnTaoHD.Click += new System.EventHandler(this.btnTaoHD_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(311, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 20);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Nhà";
+            // 
             // frm_addHD_INT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -303,6 +314,7 @@
             this.Controls.Add(this.dgv_add_HD_INT);
             this.Controls.Add(this.dtpTHOIGIAN);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -336,5 +348,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn THOIGIAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn TINHTRANGTT;
         private Guna.UI2.WinForms.Guna2Button btnTaoHD;
+        private System.Windows.Forms.Label label2;
     }
 }
