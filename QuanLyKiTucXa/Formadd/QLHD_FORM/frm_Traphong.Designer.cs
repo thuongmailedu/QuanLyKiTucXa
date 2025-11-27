@@ -71,7 +71,7 @@
             this.btnHuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(1004, 590);
+            this.btnHuy.Location = new System.Drawing.Point(994, 568);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(91, 45);
             this.btnHuy.TabIndex = 52;
@@ -85,7 +85,7 @@
             this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(1127, 590);
+            this.btnLuu.Location = new System.Drawing.Point(1117, 568);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(79, 45);
             this.btnLuu.TabIndex = 51;
@@ -558,7 +558,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1240, 676);
+            this.ClientSize = new System.Drawing.Size(1240, 656);
             this.Controls.Add(this.dtpTUNGAY);
             this.Controls.Add(this.dtpDENNGAY);
             this.Controls.Add(this.dtpNGAYKTTT);
