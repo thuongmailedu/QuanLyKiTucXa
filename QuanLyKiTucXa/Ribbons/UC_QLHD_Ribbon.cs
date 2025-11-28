@@ -22,7 +22,7 @@ namespace QuanLyKiTucXa.Ribbons
         private void UC_QLHD_Ribbon_Load(object sender, EventArgs e)
         {
             btnDATPHONG.Checked = true;
-            addUserControl(new UC_ThuePhong());
+            addUserControl(new UC_DANHMUCPHONG());
         }
         private void addUserControl(UserControl userControl)
         {

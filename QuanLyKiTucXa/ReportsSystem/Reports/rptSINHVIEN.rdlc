@@ -80,13 +80,13 @@
                   <Width>3.02683cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.19617cm</Width>
+                  <Width>4.99534cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.04283cm</Width>
+                  <Width>7.10249cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.0165cm</Width>
+                  <Width>7.72584cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -103,10 +103,16 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>STT</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -133,10 +139,16 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Nhà</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -163,10 +175,16 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Phòng</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox5</rd:DefaultName>
@@ -193,10 +211,16 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Mã sinh viên</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox7</rd:DefaultName>
@@ -223,10 +247,16 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Tên sinh viên</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox9</rd:DefaultName>
@@ -253,10 +283,16 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Lớp</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox11</rd:DefaultName>
@@ -283,10 +319,16 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Khoa</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -318,10 +360,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>= Rownumber(Nothing)</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox2</rd:DefaultName>
@@ -336,7 +383,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -349,10 +395,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!MANHA.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>MANHA</rd:DefaultName>
@@ -379,10 +430,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!MA_PHONG.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>MA_PHONG</rd:DefaultName>
@@ -409,10 +465,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!MASV.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>MASV</rd:DefaultName>
@@ -439,7 +500,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!TENSV.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -469,7 +533,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!TENLOP.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -499,7 +566,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!TENKHOA.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -534,10 +604,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value />
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -563,8 +638,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Tổng số sinh viên</Value>
-                                  <Style />
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -584,13 +662,149 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <ColSpan>5</ColSpan>
                       </CellContents>
                     </TablixCell>
-                    <TablixCell />
-                    <TablixCell />
-                    <TablixCell />
-                    <TablixCell />
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox14">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox19">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Tổng số sinh viên</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <Color>Red</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox19</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox23">
@@ -601,10 +815,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=  count (Fields!MASV.Value)</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox23</rd:DefaultName>
@@ -650,10 +869,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet_DS_SINHVIEN</DataSetName>
-            <Top>3.71687cm</Top>
-            <Left>1.07103cm</Left>
+            <Top>2.69438cm</Top>
+            <Left>1.10387cm</Left>
             <Height>1.835cm</Height>
-            <Width>21.24183cm</Width>
+            <Width>28.81cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -669,16 +888,20 @@
                   <TextRun>
                     <Value>DANH SÁCH SINH VIÊN </Value>
                     <Style>
+                      <FontFamily>Times New Roman</FontFamily>
                       <FontSize>15pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox15</rd:DefaultName>
-            <Top>0.19667in</Top>
-            <Left>3.29017in</Left>
+            <Top>0.155in</Top>
+            <Left>4.5735in</Left>
             <Height>0.35in</Height>
             <Width>2.47776in</Width>
             <ZIndex>1</ZIndex>
@@ -700,17 +923,20 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Nhà</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox24</rd:DefaultName>
-            <Top>0.705in</Top>
-            <Left>0.42167in</Left>
+            <Top>0.63833in</Top>
+            <Left>7.65119in</Left>
             <Height>0.25in</Height>
-            <Width>0.47776in</Width>
+            <Width>0.34443in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -730,15 +956,18 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=Parameters!prMANHA.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox25</rd:DefaultName>
-            <Top>0.705in</Top>
-            <Left>0.89942in</Left>
+            <Top>0.63833in</Top>
+            <Left>8.07062in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>3</ZIndex>
@@ -760,17 +989,20 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Phòng</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox26</rd:DefaultName>
-            <Top>0.705in</Top>
-            <Left>2.76611in</Left>
+            <Top>0.63833in</Top>
+            <Left>9.18638in</Left>
             <Height>0.25in</Height>
-            <Width>1in</Width>
+            <Width>0.46667in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -790,15 +1022,18 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=Parameters!prMA_PHONG.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>0.705in</Top>
-            <Left>3.82167in</Left>
+            <Top>0.63833in</Top>
+            <Left>9.63828in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>5</ZIndex>
@@ -820,48 +1055,21 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=Parameters!prTHANG.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox28</rd:DefaultName>
-            <Top>0.705in</Top>
-            <Left>6.85126in</Left>
+            <Top>0.63833in</Top>
+            <Left>10.77711in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>6</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox29">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Tháng</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>0.705in</Top>
-            <Left>5.80959in</Left>
-            <Height>0.25in</Height>
-            <Width>1in</Width>
-            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -880,18 +1088,21 @@
                 <TextRuns>
                   <TextRun>
                     <Value>="Bắc Ninh, ngày " &amp;today.Day &amp; " tháng " &amp;today.Month &amp; " năm " &amp;today.Year</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>2.58833in</Top>
-            <Left>6.55959in</Left>
+            <Top>1.93578in</Top>
+            <Left>8.71419in</Left>
             <Height>0.25in</Height>
-            <Width>2.18333in</Width>
-            <ZIndex>8</ZIndex>
+            <Width>2.54251in</Width>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -910,18 +1121,21 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Người tạo báo cáo</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox6</rd:DefaultName>
-            <Top>3.055in</Top>
-            <Left>6.99752in</Left>
+            <Top>2.21355in</Top>
+            <Left>9.46878in</Left>
             <Height>0.25in</Height>
             <Width>1.35833in</Width>
-            <ZIndex>9</ZIndex>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -940,18 +1154,21 @@
                 <TextRuns>
                   <TextRun>
                     <Value>= Parameters!prTENNV.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
-            <Top>3.755in</Top>
-            <Left>6.80959in</Left>
+            <Top>2.71078in</Top>
+            <Left>9.30126in</Left>
             <Height>0.25in</Height>
             <Width>1.80833in</Width>
-            <ZIndex>10</ZIndex>
+            <ZIndex>9</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -963,13 +1180,13 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>4.19167in</Height>
+        <Height>3.125in</Height>
         <Style />
       </Body>
-      <Width>9.55833in</Width>
+      <Width>11.94378in</Width>
       <Page>
         <PageHeader>
-          <Height>1in</Height>
+          <Height>0.79167in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -980,10 +1197,12 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Trường Đại học
+                      <Value>Ký túc xá Trường Đại học
 CÔNG NGHỆ ĐÔNG Á</Value>
                       <Style>
+                        <FontFamily>Times New Roman</FontFamily>
                         <FontSize>15pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -993,8 +1212,8 @@ CÔNG NGHỆ ĐÔNG Á</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox16</rd:DefaultName>
-              <Top>0.21333in</Top>
-              <Left>3.14017in</Left>
+              <Top>0.18055in</Top>
+              <Left>4.39017in</Left>
               <Height>0.54167in</Height>
               <Width>2.92126in</Width>
               <Style>
@@ -1015,7 +1234,7 @@ CÔNG NGHỆ ĐÔNG Á</Value>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.89167in</Height>
+          <Height>0.86667in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1027,7 +1246,10 @@ CÔNG NGHỆ ĐÔNG Á</Value>
                   <TextRuns>
                     <TextRun>
                       <Value>Trang</Value>
-                      <Style />
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
@@ -1035,7 +1257,7 @@ CÔNG NGHỆ ĐÔNG Á</Value>
               </Paragraphs>
               <rd:DefaultName>Textbox30</rd:DefaultName>
               <Top>0.29666in</Top>
-              <Left>6.96333in</Left>
+              <Left>9.22892in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <Style>
@@ -1056,7 +1278,10 @@ CÔNG NGHỆ ĐÔNG Á</Value>
                   <TextRuns>
                     <TextRun>
                       <Value>=Globals!PageNumber</Value>
-                      <Style />
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
@@ -1064,7 +1289,7 @@ CÔNG NGHỆ ĐÔNG Á</Value>
               </Paragraphs>
               <rd:DefaultName>Textbox31</rd:DefaultName>
               <Top>0.29666in</Top>
-              <Left>7.99111in</Left>
+              <Left>10.2567in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>1</ZIndex>

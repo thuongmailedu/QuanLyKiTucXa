@@ -90,6 +90,7 @@
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Navy;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(53, 246);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(107, 22);
@@ -100,6 +101,7 @@
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Navy;
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(53, 345);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(69, 22);
@@ -141,9 +143,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyKiTucXa.Properties.Resources.Screenshot_2025_11_27_165942;
-            this.pictureBox1.Location = new System.Drawing.Point(118, 33);
+            this.pictureBox1.Location = new System.Drawing.Point(105, 22);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(167, 167);
+            this.pictureBox1.Size = new System.Drawing.Size(217, 207);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;

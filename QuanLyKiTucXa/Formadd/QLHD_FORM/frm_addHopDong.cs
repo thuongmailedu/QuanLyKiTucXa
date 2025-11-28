@@ -33,7 +33,7 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                 }
 
                 // Tự động điền tên hợp đồng
-                txtTENHD.Text = "HỢP ĐỒNG ĐĂNG KÝ PHÒNG KTX";
+                txtTENHD.Text = "Hợp đồng đăng ký phòng";
 
                 // Load thông tin nhân viên
                 LoadThongTinNhanVien();
