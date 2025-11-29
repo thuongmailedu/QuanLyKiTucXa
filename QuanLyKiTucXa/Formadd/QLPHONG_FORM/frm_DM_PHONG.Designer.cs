@@ -61,6 +61,7 @@
             // txtTOIDA
             // 
             this.txtTOIDA.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTOIDA.BorderRadius = 5;
             this.txtTOIDA.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTOIDA.DefaultText = "";
             this.txtTOIDA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -76,14 +77,14 @@
             this.txtTOIDA.Name = "txtTOIDA";
             this.txtTOIDA.PlaceholderText = "";
             this.txtTOIDA.SelectedText = "";
-            this.txtTOIDA.Size = new System.Drawing.Size(158, 45);
+            this.txtTOIDA.Size = new System.Drawing.Size(177, 45);
             this.txtTOIDA.TabIndex = 65;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(358, 169);
+            this.label8.Location = new System.Drawing.Point(382, 169);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 20);
             this.label8.TabIndex = 59;
@@ -92,6 +93,7 @@
             // txtMA_PHONG
             // 
             this.txtMA_PHONG.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtMA_PHONG.BorderRadius = 5;
             this.txtMA_PHONG.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMA_PHONG.DefaultText = "";
             this.txtMA_PHONG.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -107,7 +109,7 @@
             this.txtMA_PHONG.Name = "txtMA_PHONG";
             this.txtMA_PHONG.PlaceholderText = "";
             this.txtMA_PHONG.SelectedText = "";
-            this.txtMA_PHONG.Size = new System.Drawing.Size(158, 45);
+            this.txtMA_PHONG.Size = new System.Drawing.Size(172, 45);
             this.txtMA_PHONG.TabIndex = 64;
             // 
             // label7
@@ -123,6 +125,7 @@
             // txtLOAIPHONG
             // 
             this.txtLOAIPHONG.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtLOAIPHONG.BorderRadius = 5;
             this.txtLOAIPHONG.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLOAIPHONG.DefaultText = "";
             this.txtLOAIPHONG.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -138,14 +141,14 @@
             this.txtLOAIPHONG.Name = "txtLOAIPHONG";
             this.txtLOAIPHONG.PlaceholderText = "";
             this.txtLOAIPHONG.SelectedText = "";
-            this.txtLOAIPHONG.Size = new System.Drawing.Size(158, 45);
+            this.txtLOAIPHONG.Size = new System.Drawing.Size(186, 45);
             this.txtLOAIPHONG.TabIndex = 63;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(688, 84);
+            this.label6.Location = new System.Drawing.Point(697, 84);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 20);
             this.label6.TabIndex = 57;
@@ -154,6 +157,7 @@
             // txtGIOITINH
             // 
             this.txtGIOITINH.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtGIOITINH.BorderRadius = 5;
             this.txtGIOITINH.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtGIOITINH.DefaultText = "";
             this.txtGIOITINH.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -169,14 +173,14 @@
             this.txtGIOITINH.Name = "txtGIOITINH";
             this.txtGIOITINH.PlaceholderText = "";
             this.txtGIOITINH.SelectedText = "";
-            this.txtGIOITINH.Size = new System.Drawing.Size(158, 45);
+            this.txtGIOITINH.Size = new System.Drawing.Size(177, 45);
             this.txtGIOITINH.TabIndex = 62;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(358, 84);
+            this.label5.Location = new System.Drawing.Point(382, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 20);
             this.label5.TabIndex = 56;
@@ -198,11 +202,12 @@
             this.btnHuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHuy.FillColor = System.Drawing.Color.Navy;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(808, 247);
+            this.btnHuy.Location = new System.Drawing.Point(811, 247);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(65, 45);
+            this.btnHuy.Size = new System.Drawing.Size(81, 45);
             this.btnHuy.TabIndex = 68;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -213,11 +218,12 @@
             this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLuu.FillColor = System.Drawing.Color.Navy;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(893, 247);
+            this.btnLuu.Location = new System.Drawing.Point(912, 247);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(73, 45);
+            this.btnLuu.Size = new System.Drawing.Size(82, 45);
             this.btnLuu.TabIndex = 67;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -239,15 +245,15 @@
             "Nữ"});
             this.comMANHA.Location = new System.Drawing.Point(157, 66);
             this.comMANHA.Name = "comMANHA";
-            this.comMANHA.Size = new System.Drawing.Size(157, 51);
+            this.comMANHA.Size = new System.Drawing.Size(171, 51);
             this.comMANHA.TabIndex = 82;
             this.comMANHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.comMANHA.SelectedIndexChanged += new System.EventHandler(this.comMANHA_SelectedIndexChanged);
-//            this.comMANHA.SelectedValueChanged += new System.EventHandler(this.comMANHA_SelectedValueChanged);
             // 
             // txtGIAPHONG
             // 
             this.txtGIAPHONG.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtGIAPHONG.BorderRadius = 5;
             this.txtGIAPHONG.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtGIAPHONG.DefaultText = "";
             this.txtGIAPHONG.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -263,16 +269,16 @@
             this.txtGIAPHONG.Name = "txtGIAPHONG";
             this.txtGIAPHONG.PlaceholderText = "";
             this.txtGIAPHONG.SelectedText = "";
-            this.txtGIAPHONG.Size = new System.Drawing.Size(158, 45);
+            this.txtGIAPHONG.Size = new System.Drawing.Size(186, 45);
             this.txtGIAPHONG.TabIndex = 63;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(688, 169);
+            this.label1.Location = new System.Drawing.Point(697, 169);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 25);
+            this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 57;
             this.label1.Text = "Giá phòng";
             // 
@@ -300,7 +306,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_DM_PHONG";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm mới phòng";
+            this.Text = "Thông tin phòng";
             this.Load += new System.EventHandler(this.frm_DM_PHONG_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

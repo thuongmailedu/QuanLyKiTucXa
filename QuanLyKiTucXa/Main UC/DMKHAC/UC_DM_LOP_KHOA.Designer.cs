@@ -88,7 +88,7 @@
             this.MAKHOA,
             this.TENKHOA});
             this.dgvDM_KHOA.EnableHeadersVisualStyles = false;
-            this.dgvDM_KHOA.Location = new System.Drawing.Point(38, 112);
+            this.dgvDM_KHOA.Location = new System.Drawing.Point(38, 110);
             this.dgvDM_KHOA.Name = "dgvDM_KHOA";
             this.dgvDM_KHOA.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -104,7 +104,7 @@
             this.dgvDM_KHOA.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDM_KHOA.RowTemplate.Height = 45;
             this.dgvDM_KHOA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDM_KHOA.Size = new System.Drawing.Size(647, 686);
+            this.dgvDM_KHOA.Size = new System.Drawing.Size(609, 701);
             this.dgvDM_KHOA.TabIndex = 18;
             this.dgvDM_KHOA.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDMPhong_CellContentClick);
             // 
@@ -164,7 +164,7 @@
             this.MAKHOA_2,
             this.TENKHOA_2});
             this.dgvDM_LOP.EnableHeadersVisualStyles = false;
-            this.dgvDM_LOP.Location = new System.Drawing.Point(714, 112);
+            this.dgvDM_LOP.Location = new System.Drawing.Point(667, 108);
             this.dgvDM_LOP.Name = "dgvDM_LOP";
             this.dgvDM_LOP.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -180,7 +180,7 @@
             this.dgvDM_LOP.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDM_LOP.RowTemplate.Height = 45;
             this.dgvDM_LOP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDM_LOP.Size = new System.Drawing.Size(850, 686);
+            this.dgvDM_LOP.Size = new System.Drawing.Size(955, 703);
             this.dgvDM_LOP.TabIndex = 18;
             this.dgvDM_LOP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -251,7 +251,7 @@
             this.btndelete_KHOA.FillColor = System.Drawing.Color.Transparent;
             this.btndelete_KHOA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btndelete_KHOA.ForeColor = System.Drawing.Color.White;
-            this.btndelete_KHOA.Location = new System.Drawing.Point(653, 72);
+            this.btndelete_KHOA.Location = new System.Drawing.Point(609, 72);
             this.btndelete_KHOA.Name = "btndelete_KHOA";
             this.btndelete_KHOA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btndelete_KHOA.Size = new System.Drawing.Size(35, 32);
@@ -270,7 +270,7 @@
             this.btndelete_LOP.FillColor = System.Drawing.Color.Transparent;
             this.btndelete_LOP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btndelete_LOP.ForeColor = System.Drawing.Color.White;
-            this.btndelete_LOP.Location = new System.Drawing.Point(1532, 72);
+            this.btndelete_LOP.Location = new System.Drawing.Point(1579, 72);
             this.btndelete_LOP.Name = "btndelete_LOP";
             this.btndelete_LOP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btndelete_LOP.Size = new System.Drawing.Size(35, 32);
@@ -289,7 +289,7 @@
             this.btnedit_KHOA.FillColor = System.Drawing.Color.Transparent;
             this.btnedit_KHOA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnedit_KHOA.ForeColor = System.Drawing.Color.White;
-            this.btnedit_KHOA.Location = new System.Drawing.Point(616, 72);
+            this.btnedit_KHOA.Location = new System.Drawing.Point(572, 72);
             this.btnedit_KHOA.Name = "btnedit_KHOA";
             this.btnedit_KHOA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnedit_KHOA.Size = new System.Drawing.Size(31, 32);
@@ -308,7 +308,7 @@
             this.btnedit_LOP.FillColor = System.Drawing.Color.Transparent;
             this.btnedit_LOP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnedit_LOP.ForeColor = System.Drawing.Color.White;
-            this.btnedit_LOP.Location = new System.Drawing.Point(1495, 72);
+            this.btnedit_LOP.Location = new System.Drawing.Point(1542, 72);
             this.btnedit_LOP.Name = "btnedit_LOP";
             this.btnedit_LOP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnedit_LOP.Size = new System.Drawing.Size(31, 32);
@@ -327,7 +327,7 @@
             this.btnadd_KHOA.FillColor = System.Drawing.Color.Transparent;
             this.btnadd_KHOA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnadd_KHOA.ForeColor = System.Drawing.Color.White;
-            this.btnadd_KHOA.Location = new System.Drawing.Point(571, 72);
+            this.btnadd_KHOA.Location = new System.Drawing.Point(527, 72);
             this.btnadd_KHOA.Name = "btnadd_KHOA";
             this.btnadd_KHOA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnadd_KHOA.Size = new System.Drawing.Size(30, 32);
@@ -346,7 +346,7 @@
             this.btnadd_LOP.FillColor = System.Drawing.Color.Transparent;
             this.btnadd_LOP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnadd_LOP.ForeColor = System.Drawing.Color.White;
-            this.btnadd_LOP.Location = new System.Drawing.Point(1450, 72);
+            this.btnadd_LOP.Location = new System.Drawing.Point(1497, 72);
             this.btnadd_LOP.Name = "btnadd_LOP";
             this.btnadd_LOP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnadd_LOP.Size = new System.Drawing.Size(30, 32);

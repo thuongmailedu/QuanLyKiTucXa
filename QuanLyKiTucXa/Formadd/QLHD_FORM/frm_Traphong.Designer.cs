@@ -65,11 +65,13 @@
             // 
             // btnHuy
             // 
+            this.btnHuy.BorderRadius = 5;
             this.btnHuy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHuy.FillColor = System.Drawing.Color.Navy;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
             this.btnHuy.Location = new System.Drawing.Point(994, 568);
             this.btnHuy.Name = "btnHuy";
@@ -80,15 +82,17 @@
             // 
             // btnLuu
             // 
+            this.btnLuu.BorderRadius = 5;
             this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLuu.FillColor = System.Drawing.Color.Navy;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(1117, 568);
+            this.btnLuu.Location = new System.Drawing.Point(1105, 568);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(79, 45);
+            this.btnLuu.Size = new System.Drawing.Size(91, 45);
             this.btnLuu.TabIndex = 51;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -96,6 +100,7 @@
             // txtGIOITINH
             // 
             this.txtGIOITINH.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtGIOITINH.BorderRadius = 5;
             this.txtGIOITINH.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtGIOITINH.DefaultText = "";
             this.txtGIOITINH.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -127,6 +132,7 @@
             // txtTENSV
             // 
             this.txtTENSV.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTENSV.BorderRadius = 5;
             this.txtTENSV.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTENSV.DefaultText = "";
             this.txtTENSV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -198,6 +204,7 @@
             // txtTENNV
             // 
             this.txtTENNV.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTENNV.BorderRadius = 5;
             this.txtTENNV.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTENNV.DefaultText = "";
             this.txtTENNV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -229,6 +236,7 @@
             // txtLOAIPHONG
             // 
             this.txtLOAIPHONG.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtLOAIPHONG.BorderRadius = 5;
             this.txtLOAIPHONG.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLOAIPHONG.DefaultText = "";
             this.txtLOAIPHONG.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -260,6 +268,7 @@
             // txtMANHA
             // 
             this.txtMANHA.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtMANHA.BorderRadius = 5;
             this.txtMANHA.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMANHA.DefaultText = "";
             this.txtMANHA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -291,6 +300,7 @@
             // txtTENHD
             // 
             this.txtTENHD.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTENHD.BorderRadius = 5;
             this.txtTENHD.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTENHD.DefaultText = "";
             this.txtTENHD.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -332,6 +342,7 @@
             // txtMA_PHONG
             // 
             this.txtMA_PHONG.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtMA_PHONG.BorderRadius = 5;
             this.txtMA_PHONG.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMA_PHONG.DefaultText = "";
             this.txtMA_PHONG.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -363,6 +374,7 @@
             // txtMAHD
             // 
             this.txtMAHD.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtMAHD.BorderRadius = 5;
             this.txtMAHD.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMAHD.DefaultText = "";
             this.txtMAHD.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -394,6 +406,7 @@
             // txtMASV
             // 
             this.txtMASV.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtMASV.BorderRadius = 5;
             this.txtMASV.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMASV.DefaultText = "";
             this.txtMASV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -455,6 +468,7 @@
             // 
             this.dtpNGAYKY.BackColor = System.Drawing.Color.White;
             this.dtpNGAYKY.BorderColor = System.Drawing.Color.Silver;
+            this.dtpNGAYKY.BorderRadius = 5;
             this.dtpNGAYKY.BorderThickness = 1;
             this.dtpNGAYKY.Checked = true;
             this.dtpNGAYKY.CheckedState.FillColor = System.Drawing.Color.White;
@@ -476,6 +490,7 @@
             // 
             this.dtpTUNGAY.BackColor = System.Drawing.Color.White;
             this.dtpTUNGAY.BorderColor = System.Drawing.Color.Silver;
+            this.dtpTUNGAY.BorderRadius = 5;
             this.dtpTUNGAY.BorderThickness = 1;
             this.dtpTUNGAY.Checked = true;
             this.dtpTUNGAY.CheckedState.FillColor = System.Drawing.Color.White;
@@ -497,6 +512,7 @@
             // 
             this.dtpDENNGAY.BackColor = System.Drawing.Color.White;
             this.dtpDENNGAY.BorderColor = System.Drawing.Color.Silver;
+            this.dtpDENNGAY.BorderRadius = 5;
             this.dtpDENNGAY.BorderThickness = 1;
             this.dtpDENNGAY.Checked = true;
             this.dtpDENNGAY.CheckedState.FillColor = System.Drawing.Color.White;
@@ -518,6 +534,7 @@
             // 
             this.dtpNGAYKTTT.BackColor = System.Drawing.Color.White;
             this.dtpNGAYKTTT.BorderColor = System.Drawing.Color.Silver;
+            this.dtpNGAYKTTT.BorderRadius = 5;
             this.dtpNGAYKTTT.BorderThickness = 1;
             this.dtpNGAYKTTT.Checked = true;
             this.dtpNGAYKTTT.CheckedState.FillColor = System.Drawing.Color.White;
@@ -538,6 +555,7 @@
             // txtGIAPHONG
             // 
             this.txtGIAPHONG.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtGIAPHONG.BorderRadius = 5;
             this.txtGIAPHONG.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtGIAPHONG.DefaultText = "";
             this.txtGIAPHONG.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

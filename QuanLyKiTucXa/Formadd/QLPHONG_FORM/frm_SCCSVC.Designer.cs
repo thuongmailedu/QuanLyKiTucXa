@@ -65,7 +65,8 @@
             this.btnHuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHuy.FillColor = System.Drawing.Color.Navy;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
             this.btnHuy.Location = new System.Drawing.Point(995, 571);
             this.btnHuy.Name = "btnHuy";
@@ -80,11 +81,12 @@
             this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLuu.FillColor = System.Drawing.Color.Navy;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(1118, 571);
+            this.btnLuu.Location = new System.Drawing.Point(1111, 571);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(79, 45);
+            this.btnLuu.Size = new System.Drawing.Size(86, 45);
             this.btnLuu.TabIndex = 76;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -92,6 +94,7 @@
             // txtCHITIET
             // 
             this.txtCHITIET.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtCHITIET.BorderRadius = 5;
             this.txtCHITIET.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCHITIET.DefaultText = "";
             this.txtCHITIET.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -107,7 +110,7 @@
             this.txtCHITIET.Name = "txtCHITIET";
             this.txtCHITIET.PlaceholderText = "";
             this.txtCHITIET.SelectedText = "";
-            this.txtCHITIET.Size = new System.Drawing.Size(590, 51);
+            this.txtCHITIET.Size = new System.Drawing.Size(590, 74);
             this.txtCHITIET.TabIndex = 70;
             // 
             // label14
@@ -226,6 +229,7 @@
             // 
             this.dtpNGAY_HOANTHANH.BackColor = System.Drawing.Color.White;
             this.dtpNGAY_HOANTHANH.BorderColor = System.Drawing.Color.Silver;
+            this.dtpNGAY_HOANTHANH.BorderRadius = 5;
             this.dtpNGAY_HOANTHANH.BorderThickness = 1;
             this.dtpNGAY_HOANTHANH.Checked = true;
             this.dtpNGAY_HOANTHANH.CheckedState.FillColor = System.Drawing.Color.White;
@@ -284,6 +288,7 @@
             // 
             this.dtpNGAY_YEUCAU.BackColor = System.Drawing.Color.White;
             this.dtpNGAY_YEUCAU.BorderColor = System.Drawing.Color.Silver;
+            this.dtpNGAY_YEUCAU.BorderRadius = 5;
             this.dtpNGAY_YEUCAU.BorderThickness = 1;
             this.dtpNGAY_YEUCAU.Checked = true;
             this.dtpNGAY_YEUCAU.CheckedState.FillColor = System.Drawing.Color.White;
@@ -432,7 +437,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_SCCSVC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm mới thông tin sửa chữa ";
+            this.Text = "T hông tin sửa chữa ";
             this.Load += new System.EventHandler(this.frm_SCCSVC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_CSVC)).EndInit();
             this.ResumeLayout(false);

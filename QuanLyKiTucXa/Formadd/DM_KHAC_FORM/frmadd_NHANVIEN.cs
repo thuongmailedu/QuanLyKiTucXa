@@ -194,7 +194,8 @@ namespace QuanLyKiTucXa.Formadd.DM_KHAC_FORM
                             {
                                 cmd.Parameters.AddWithValue("@MANV", txtMANV.Text.Trim());
                                 cmd.Parameters.AddWithValue("@TENNV", txtTENNV.Text.Trim());
-                                cmd.Parameters.AddWithValue("@MANHA", comMANHA.SelectedValue.ToString());
+                              //  cmd.Parameters.AddWithValue("@MANHA", comMANHA.SelectedValue.ToString());
+                                cmd.Parameters.AddWithValue("@MANHA", string.IsNullOrEmpty(comMANHA.Text) ? (object)DBNull.Value : comMANHA.Text);
                                 cmd.ExecuteNonQuery();
                             }
 

@@ -45,30 +45,34 @@
             // 
             // btnHuy
             // 
+            this.btnHuy.BorderRadius = 3;
             this.btnHuy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHuy.FillColor = System.Drawing.Color.Navy;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(810, 304);
+            this.btnHuy.Location = new System.Drawing.Point(741, 289);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(65, 45);
+            this.btnHuy.Size = new System.Drawing.Size(105, 45);
             this.btnHuy.TabIndex = 80;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
+            this.btnLuu.BorderRadius = 3;
             this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLuu.FillColor = System.Drawing.Color.Navy;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(895, 304);
+            this.btnLuu.Location = new System.Drawing.Point(870, 289);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(73, 45);
+            this.btnLuu.Size = new System.Drawing.Size(98, 45);
             this.btnLuu.TabIndex = 79;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -96,6 +100,7 @@
             // txtCHITIET
             // 
             this.txtCHITIET.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtCHITIET.BorderRadius = 5;
             this.txtCHITIET.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCHITIET.DefaultText = "";
             this.txtCHITIET.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -118,7 +123,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(49, 247);
+            this.label6.Location = new System.Drawing.Point(30, 249);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 20);
             this.label6.TabIndex = 71;
@@ -137,6 +142,7 @@
             // txtMA_CSVC
             // 
             this.txtMA_CSVC.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtMA_CSVC.BorderRadius = 5;
             this.txtMA_CSVC.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMA_CSVC.DefaultText = "";
             this.txtMA_CSVC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -154,7 +160,6 @@
             this.txtMA_CSVC.SelectedText = "";
             this.txtMA_CSVC.Size = new System.Drawing.Size(280, 45);
             this.txtMA_CSVC.TabIndex = 74;
-//            this.txtMA_CSVC.TextChanged += new System.EventHandler(this.txtMA_CSVC_TextChanged);
             // 
             // label4
             // 
@@ -176,7 +181,7 @@
             this.panelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.panelMenu.MaximumSize = new System.Drawing.Size(1646, 125);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1024, 29);
+            this.panelMenu.Size = new System.Drawing.Size(1006, 29);
             this.panelMenu.TabIndex = 81;
             // 
             // comTRANGTHAI
@@ -190,13 +195,13 @@
             this.comTRANGTHAI.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comTRANGTHAI.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comTRANGTHAI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comTRANGTHAI.ItemHeight = 40;
+            this.comTRANGTHAI.ItemHeight = 45;
             this.comTRANGTHAI.Items.AddRange(new object[] {
             "Áp dụng",
             "Ngừng áp dụng"});
             this.comTRANGTHAI.Location = new System.Drawing.Point(672, 144);
             this.comTRANGTHAI.Name = "comTRANGTHAI";
-            this.comTRANGTHAI.Size = new System.Drawing.Size(296, 46);
+            this.comTRANGTHAI.Size = new System.Drawing.Size(296, 51);
             this.comTRANGTHAI.StartIndex = 0;
             this.comTRANGTHAI.TabIndex = 82;
             this.comTRANGTHAI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -204,6 +209,7 @@
             // txtTEN_CSVC
             // 
             this.txtTEN_CSVC.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTEN_CSVC.BorderRadius = 5;
             this.txtTEN_CSVC.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTEN_CSVC.DefaultText = "";
             this.txtTEN_CSVC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -233,10 +239,10 @@
             this.comNHACC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comNHACC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comNHACC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comNHACC.ItemHeight = 40;
+            this.comNHACC.ItemHeight = 45;
             this.comNHACC.Location = new System.Drawing.Point(150, 144);
             this.comNHACC.Name = "comNHACC";
-            this.comNHACC.Size = new System.Drawing.Size(280, 46);
+            this.comNHACC.Size = new System.Drawing.Size(280, 51);
             this.comNHACC.TabIndex = 82;
             this.comNHACC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -244,7 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 384);
+            this.ClientSize = new System.Drawing.Size(1006, 357);
             this.Controls.Add(this.comNHACC);
             this.Controls.Add(this.comTRANGTHAI);
             this.Controls.Add(this.panelMenu);

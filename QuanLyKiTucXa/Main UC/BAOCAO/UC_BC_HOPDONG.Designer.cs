@@ -63,6 +63,7 @@
             // 
             this.dtpTU.BackColor = System.Drawing.Color.White;
             this.dtpTU.BorderColor = System.Drawing.Color.Silver;
+            this.dtpTU.BorderRadius = 5;
             this.dtpTU.BorderThickness = 1;
             this.dtpTU.Checked = true;
             this.dtpTU.CheckedState.FillColor = System.Drawing.Color.White;
@@ -141,6 +142,7 @@
             // 
             this.dtpDEN.BackColor = System.Drawing.Color.White;
             this.dtpDEN.BorderColor = System.Drawing.Color.Silver;
+            this.dtpDEN.BorderRadius = 5;
             this.dtpDEN.BorderThickness = 1;
             this.dtpDEN.Checked = true;
             this.dtpDEN.CheckedState.FillColor = System.Drawing.Color.White;

@@ -44,7 +44,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Navy;
-            this.label8.Location = new System.Drawing.Point(509, 16);
+            this.label8.Location = new System.Drawing.Point(551, 16);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(498, 41);
@@ -82,6 +82,7 @@
             // 
             this.dtpTHANG.BackColor = System.Drawing.Color.White;
             this.dtpTHANG.BorderColor = System.Drawing.Color.Silver;
+            this.dtpTHANG.BorderRadius = 5;
             this.dtpTHANG.BorderThickness = 1;
             this.dtpTHANG.Checked = true;
             this.dtpTHANG.CheckedState.FillColor = System.Drawing.Color.White;

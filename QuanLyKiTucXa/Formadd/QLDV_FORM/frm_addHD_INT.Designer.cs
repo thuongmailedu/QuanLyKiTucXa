@@ -78,10 +78,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Navy;
             this.label3.Location = new System.Drawing.Point(585, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 20);
+            this.label3.Size = new System.Drawing.Size(108, 29);
             this.label3.TabIndex = 25;
             this.label3.Text = "Thời gian";
             // 
@@ -222,11 +223,13 @@
             // 
             // btn_Lưu
             // 
+            this.btn_Lưu.BorderRadius = 3;
             this.btn_Lưu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_Lưu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_Lưu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_Lưu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Lưu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_Lưu.FillColor = System.Drawing.Color.Navy;
+            this.btn_Lưu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Lưu.ForeColor = System.Drawing.Color.White;
             this.btn_Lưu.Location = new System.Drawing.Point(939, 710);
             this.btn_Lưu.Name = "btn_Lưu";
@@ -236,11 +239,13 @@
             // 
             // btn_Huy
             // 
+            this.btn_Huy.BorderRadius = 3;
             this.btn_Huy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_Huy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_Huy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_Huy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Huy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_Huy.FillColor = System.Drawing.Color.Navy;
+            this.btn_Huy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Huy.ForeColor = System.Drawing.Color.White;
             this.btn_Huy.Location = new System.Drawing.Point(778, 710);
             this.btn_Huy.Name = "btn_Huy";
@@ -271,6 +276,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Navy;
             this.label1.Location = new System.Drawing.Point(39, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(383, 38);
@@ -279,11 +285,13 @@
             // 
             // btnTaoHD
             // 
+            this.btnTaoHD.BorderRadius = 3;
             this.btnTaoHD.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnTaoHD.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnTaoHD.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnTaoHD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTaoHD.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnTaoHD.FillColor = System.Drawing.Color.Navy;
+            this.btnTaoHD.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaoHD.ForeColor = System.Drawing.Color.White;
             this.btnTaoHD.Location = new System.Drawing.Point(936, 77);
             this.btnTaoHD.Name = "btnTaoHD";
@@ -295,10 +303,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Navy;
             this.label2.Location = new System.Drawing.Point(311, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 20);
+            this.label2.Size = new System.Drawing.Size(53, 29);
             this.label2.TabIndex = 25;
             this.label2.Text = "Nhà";
             // 

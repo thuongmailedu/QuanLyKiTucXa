@@ -60,13 +60,15 @@
             // 
             // btnHuy
             // 
+            this.btnHuy.BorderRadius = 5;
             this.btnHuy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHuy.FillColor = System.Drawing.Color.Navy;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(755, 354);
+            this.btnHuy.Location = new System.Drawing.Point(755, 332);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(77, 45);
             this.btnHuy.TabIndex = 80;
@@ -75,13 +77,15 @@
             // 
             // btnLuu
             // 
+            this.btnLuu.BorderRadius = 5;
             this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLuu.FillColor = System.Drawing.Color.Navy;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(853, 354);
+            this.btnLuu.Location = new System.Drawing.Point(853, 332);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(73, 45);
             this.btnLuu.TabIndex = 79;
@@ -92,7 +96,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(559, 138);
+            this.label8.Location = new System.Drawing.Point(520, 138);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 20);
             this.label8.TabIndex = 73;
@@ -111,6 +115,7 @@
             // txtTEN_NHACC
             // 
             this.txtTEN_NHACC.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTEN_NHACC.BorderRadius = 5;
             this.txtTEN_NHACC.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTEN_NHACC.DefaultText = "";
             this.txtTEN_NHACC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -121,7 +126,7 @@
             this.txtTEN_NHACC.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTEN_NHACC.ForeColor = System.Drawing.Color.Black;
             this.txtTEN_NHACC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTEN_NHACC.Location = new System.Drawing.Point(679, 224);
+            this.txtTEN_NHACC.Location = new System.Drawing.Point(640, 204);
             this.txtTEN_NHACC.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTEN_NHACC.Name = "txtTEN_NHACC";
             this.txtTEN_NHACC.PlaceholderText = "";
@@ -133,7 +138,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(559, 236);
+            this.label6.Location = new System.Drawing.Point(520, 216);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 20);
             this.label6.TabIndex = 71;
@@ -142,6 +147,7 @@
             // txtSOLUONG
             // 
             this.txtSOLUONG.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtSOLUONG.BorderRadius = 5;
             this.txtSOLUONG.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSOLUONG.DefaultText = "";
             this.txtSOLUONG.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -152,7 +158,7 @@
             this.txtSOLUONG.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSOLUONG.ForeColor = System.Drawing.Color.Black;
             this.txtSOLUONG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSOLUONG.Location = new System.Drawing.Point(151, 224);
+            this.txtSOLUONG.Location = new System.Drawing.Point(151, 204);
             this.txtSOLUONG.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtSOLUONG.Name = "txtSOLUONG";
             this.txtSOLUONG.PlaceholderText = "";
@@ -165,7 +171,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 236);
+            this.label5.Location = new System.Drawing.Point(31, 216);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 20);
             this.label5.TabIndex = 70;
@@ -202,6 +208,7 @@
             // txtCHITIET
             // 
             this.txtCHITIET.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtCHITIET.BorderRadius = 5;
             this.txtCHITIET.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCHITIET.DefaultText = "";
             this.txtCHITIET.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -212,12 +219,12 @@
             this.txtCHITIET.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCHITIET.ForeColor = System.Drawing.Color.Black;
             this.txtCHITIET.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCHITIET.Location = new System.Drawing.Point(151, 300);
+            this.txtCHITIET.Location = new System.Drawing.Point(151, 278);
             this.txtCHITIET.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtCHITIET.Name = "txtCHITIET";
             this.txtCHITIET.PlaceholderText = "";
             this.txtCHITIET.SelectedText = "";
-            this.txtCHITIET.Size = new System.Drawing.Size(384, 99);
+            this.txtCHITIET.Size = new System.Drawing.Size(490, 99);
             this.txtCHITIET.TabIndex = 75;
             this.txtCHITIET.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSOLUONG_KeyPress);
             // 
@@ -225,7 +232,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 314);
+            this.label1.Location = new System.Drawing.Point(34, 292);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 70;
@@ -253,6 +260,7 @@
             // txtTEN_CSVC
             // 
             this.txtTEN_CSVC.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTEN_CSVC.BorderRadius = 5;
             this.txtTEN_CSVC.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTEN_CSVC.DefaultText = "";
             this.txtTEN_CSVC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -263,7 +271,7 @@
             this.txtTEN_CSVC.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTEN_CSVC.ForeColor = System.Drawing.Color.Black;
             this.txtTEN_CSVC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTEN_CSVC.Location = new System.Drawing.Point(679, 125);
+            this.txtTEN_CSVC.Location = new System.Drawing.Point(640, 125);
             this.txtTEN_CSVC.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTEN_CSVC.Name = "txtTEN_CSVC";
             this.txtTEN_CSVC.PlaceholderText = "";

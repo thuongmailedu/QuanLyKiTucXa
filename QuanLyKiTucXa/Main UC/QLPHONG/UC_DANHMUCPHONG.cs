@@ -240,25 +240,25 @@ private void dgvTinhTrangPhong_CellFormatting(object sender, DataGridViewCellFor
     }
     private void ThemChuGiaiMau()
         {
-            // Tạo panel chú giải
-            Panel legendPanel = new Panel
-            {
-                Height = 30,
-                Dock = DockStyle.Bottom,
-                BorderStyle = BorderStyle.FixedSingle
-            };
+            //// Tạo panel chú giải
+            //Panel legendPanel = new Panel
+            //{
+            //    Height = 30,
+            //    Dock = DockStyle.Bottom,
+            //    BorderStyle = BorderStyle.FixedSingle
+            //};
 
-            // Xám - Đã qua
-            Label lblGray = new Label { Text = "■ Đã qua", ForeColor = Color.Gray, AutoSize = true, Location = new Point(10, 7) };
+            //// Xám - Đã qua
+            //Label lblGray = new Label { Text = "■ Đã qua", ForeColor = Color.Gray, AutoSize = true, Location = new Point(602, 92) };
 
-            // Đỏ - Full
-            Label lblRed = new Label { Text = "■ Đầy", ForeColor = Color.Red, AutoSize = true, Location = new Point(100, 7) };
+            //// Đỏ - Full
+            //Label lblRed = new Label { Text = "■ Đầy", ForeColor = Color.Red, AutoSize = true, Location = new Point(747, 92) };
 
-            // Xanh - Còn chỗ
-            Label lblGreen = new Label { Text = "■ Còn chỗ", ForeColor = Color.Green, AutoSize = true, Location = new Point(180, 7) };
+            //// Xanh - Còn chỗ
+            //Label lblGreen = new Label { Text = "■ Còn chỗ", ForeColor = Color.Green, AutoSize = true, Location = new Point(880, 92) };
 
-            legendPanel.Controls.AddRange(new Control[] { lblGray, lblRed, lblGreen });
-            this.Controls.Add(legendPanel);
+            //legendPanel.Controls.AddRange(new Control[] { lblGray, lblRed, lblGreen });
+            //this.Controls.Add(legendPanel);
         }
 
         private void btn_addHD_Click(object sender, EventArgs e)

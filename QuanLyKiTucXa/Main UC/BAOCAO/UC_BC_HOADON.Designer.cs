@@ -63,6 +63,7 @@
             // 
             this.dtpTHANG.BackColor = System.Drawing.Color.White;
             this.dtpTHANG.BorderColor = System.Drawing.Color.Silver;
+            this.dtpTHANG.BorderRadius = 5;
             this.dtpTHANG.BorderThickness = 1;
             this.dtpTHANG.Checked = true;
             this.dtpTHANG.CheckedState.FillColor = System.Drawing.Color.White;

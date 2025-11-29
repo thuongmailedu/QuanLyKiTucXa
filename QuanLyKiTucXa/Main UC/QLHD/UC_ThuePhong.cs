@@ -36,7 +36,7 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
             conn.ConnectionString = constr;
             conn.Open();
             
-            //sql = "Select MAHD, TENHD, sv.MASV,TENSV, NGAYKY, nv. MANV, nv. TENNV, NGAYKTTT, sv. GIOITINH, " +
+            //sql = "Select MAHD, TENHD, sv.MASV,TENSV, NGAYKY,nv.MANV, nv. TENNV, NGAYKTTT, sv. GIOITINH, " +
             //    "hd. MA_PHONG, n. MANHA, LOAIPHONG, hd. DONGIA, TONGTIEN, TUNGAY, DENNGAY, THOIHAN " +
             //    " from SINHVIEN sv " +
             //    " LEFT JOIN HOPDONG hd ON sv.MASV = hd. MASV" +
@@ -50,6 +50,8 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
             //dgvThuePhong.DataSource = dt;
             //dgvThuePhong.Refresh();
             LoadData();
+          
+
         }
 
         private void btn_AddHopDong_Click(object sender, EventArgs e)
@@ -75,8 +77,8 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
         {
             try
             {
-                sql = "Select MAHD, TENHD, sv.MASV,TENSV, NGAYKY, nv.MANV, nv.TENNV, NGAYKTTT, sv.GIOITINH, " +
-                    "hd.MA_PHONG, n.MANHA, LOAIPHONG, hd.DONGIA, TONGTIEN, TUNGAY, DENNGAY, THOIHAN " +
+                sql = 
+                    "Select MAHD ,TENHD,sv.MASV,TENSV, sv.GIOITINH , n.MANHA, hd.MA_PHONG , n.LOAIPHONG, hd.TUNGAY , hd.DENNGAY , hd.NGAYKTTT, hd.THOIHAN , hd. DONGIA, hd. TONGTIEN, hd.MANV, nv.TENNV, hd.NGAYKY"+
                     " from SINHVIEN sv " +
                     " LEFT JOIN HOPDONG hd ON sv.MASV = hd.MASV" +
                     " JOIN PHONG p on hd.MA_PHONG = p.MA_PHONG" +

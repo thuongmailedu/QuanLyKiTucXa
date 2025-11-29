@@ -202,9 +202,9 @@
             this.lblSinhVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             this.lblSinhVien.Location = new System.Drawing.Point(636, 21);
             this.lblSinhVien.Name = "lblSinhVien";
-            this.lblSinhVien.Size = new System.Drawing.Size(375, 46);
+            this.lblSinhVien.Size = new System.Drawing.Size(381, 46);
             this.lblSinhVien.TabIndex = 16;
-            this.lblSinhVien.Text = "QUẢN LÝ TRẢ PHÒNG";
+            this.lblSinhVien.Text = "THANH LÝ HỢP ĐỒNG";
             // 
             // dgvTraPhong
             // 
@@ -219,7 +219,6 @@
             this.dgvTraPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvTraPhong.BackgroundColor = System.Drawing.Color.White;
             this.dgvTraPhong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvTraPhong.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvTraPhong.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));

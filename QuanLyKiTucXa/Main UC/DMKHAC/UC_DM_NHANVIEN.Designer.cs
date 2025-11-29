@@ -74,7 +74,7 @@
             this.MANV,
             this.TENNV});
             this.dgvDM_NHANVIEN.EnableHeadersVisualStyles = false;
-            this.dgvDM_NHANVIEN.Location = new System.Drawing.Point(65, 127);
+            this.dgvDM_NHANVIEN.Location = new System.Drawing.Point(65, 111);
             this.dgvDM_NHANVIEN.Name = "dgvDM_NHANVIEN";
             this.dgvDM_NHANVIEN.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -133,7 +133,7 @@
             this.lblSinhVien.AutoSize = true;
             this.lblSinhVien.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSinhVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.lblSinhVien.Location = new System.Drawing.Point(466, 23);
+            this.lblSinhVien.Location = new System.Drawing.Point(466, 19);
             this.lblSinhVien.Name = "lblSinhVien";
             this.lblSinhVien.Size = new System.Drawing.Size(620, 46);
             this.lblSinhVien.TabIndex = 19;

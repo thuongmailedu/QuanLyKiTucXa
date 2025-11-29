@@ -53,6 +53,7 @@
             // 
             this.dtpDENNGAY.BackColor = System.Drawing.Color.White;
             this.dtpDENNGAY.BorderColor = System.Drawing.Color.Silver;
+            this.dtpDENNGAY.BorderRadius = 5;
             this.dtpDENNGAY.BorderThickness = 1;
             this.dtpDENNGAY.Checked = true;
             this.dtpDENNGAY.CheckedState.FillColor = System.Drawing.Color.White;
@@ -74,6 +75,7 @@
             // 
             this.dtpTUNGAY.BackColor = System.Drawing.Color.White;
             this.dtpTUNGAY.BorderColor = System.Drawing.Color.Silver;
+            this.dtpTUNGAY.BorderRadius = 5;
             this.dtpTUNGAY.BorderThickness = 1;
             this.dtpTUNGAY.Checked = true;
             this.dtpTUNGAY.CheckedState.FillColor = System.Drawing.Color.White;
@@ -171,6 +173,7 @@
             // txtDONVI
             // 
             this.txtDONVI.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtDONVI.BorderRadius = 5;
             this.txtDONVI.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDONVI.DefaultText = "";
             this.txtDONVI.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -192,6 +195,7 @@
             // txtDONGIA
             // 
             this.txtDONGIA.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtDONGIA.BorderRadius = 5;
             this.txtDONGIA.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDONGIA.DefaultText = "";
             this.txtDONGIA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -213,6 +217,7 @@
             // txtMADV
             // 
             this.txtMADV.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtMADV.BorderRadius = 5;
             this.txtMADV.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMADV.DefaultText = "";
             this.txtMADV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -233,11 +238,13 @@
             // 
             // btnhuy
             // 
+            this.btnhuy.BorderRadius = 3;
             this.btnhuy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnhuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnhuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnhuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnhuy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnhuy.FillColor = System.Drawing.Color.Navy;
+            this.btnhuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnhuy.ForeColor = System.Drawing.Color.White;
             this.btnhuy.Location = new System.Drawing.Point(591, 427);
             this.btnhuy.Name = "btnhuy";
@@ -247,11 +254,13 @@
             // 
             // btnLuu
             // 
+            this.btnLuu.BorderRadius = 3;
             this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLuu.FillColor = System.Drawing.Color.Navy;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Location = new System.Drawing.Point(718, 427);
             this.btnLuu.Name = "btnLuu";

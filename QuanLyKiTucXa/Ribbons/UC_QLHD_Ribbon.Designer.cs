@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panelMenu = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnDATPHONG = new Guna.UI2.WinForms.Guna2Button();
             this.btnThuePhong = new Guna.UI2.WinForms.Guna2Button();
             this.btnTraPhong = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnDATPHONG = new Guna.UI2.WinForms.Guna2Button();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +50,29 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(1646, 80);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnDATPHONG
+            // 
+            this.btnDATPHONG.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDATPHONG.CheckedState.CustomBorderColor = System.Drawing.Color.Green;
+            this.btnDATPHONG.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnDATPHONG.CheckedState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDATPHONG.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnDATPHONG.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnDATPHONG.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.btnDATPHONG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDATPHONG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDATPHONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDATPHONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDATPHONG.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnDATPHONG.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDATPHONG.ForeColor = System.Drawing.Color.White;
+            this.btnDATPHONG.Location = new System.Drawing.Point(0, 0);
+            this.btnDATPHONG.Name = "btnDATPHONG";
+            this.btnDATPHONG.Size = new System.Drawing.Size(273, 80);
+            this.btnDATPHONG.TabIndex = 3;
+            this.btnDATPHONG.Text = "ĐẶT PHÒNG";
+            this.btnDATPHONG.Click += new System.EventHandler(this.btnDATPHONG_Click);
             // 
             // btnThuePhong
             // 
@@ -94,7 +117,7 @@
             this.btnTraPhong.Name = "btnTraPhong";
             this.btnTraPhong.Size = new System.Drawing.Size(273, 80);
             this.btnTraPhong.TabIndex = 2;
-            this.btnTraPhong.Text = "HỢP ĐỒNG TRẢ PHÒNG";
+            this.btnTraPhong.Text = "THANH LÝ HỢP ĐỒNG";
             this.btnTraPhong.Click += new System.EventHandler(this.btnTraPhong_Click);
             // 
             // panelContainer
@@ -104,29 +127,6 @@
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1646, 1062);
             this.panelContainer.TabIndex = 1;
-            // 
-            // btnDATPHONG
-            // 
-            this.btnDATPHONG.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnDATPHONG.CheckedState.CustomBorderColor = System.Drawing.Color.Green;
-            this.btnDATPHONG.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnDATPHONG.CheckedState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDATPHONG.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.btnDATPHONG.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnDATPHONG.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.btnDATPHONG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDATPHONG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDATPHONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDATPHONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDATPHONG.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnDATPHONG.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDATPHONG.ForeColor = System.Drawing.Color.White;
-            this.btnDATPHONG.Location = new System.Drawing.Point(0, 0);
-            this.btnDATPHONG.Name = "btnDATPHONG";
-            this.btnDATPHONG.Size = new System.Drawing.Size(273, 80);
-            this.btnDATPHONG.TabIndex = 3;
-            this.btnDATPHONG.Text = "ĐẶT PHÒNG";
-            this.btnDATPHONG.Click += new System.EventHandler(this.btnDATPHONG_Click);
             // 
             // UC_QLHD_Ribbon
             // 
