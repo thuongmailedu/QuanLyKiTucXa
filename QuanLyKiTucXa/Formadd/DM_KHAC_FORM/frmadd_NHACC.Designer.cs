@@ -28,15 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.btndeletetemp_NHACC = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnedittemp_NHACC = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnaddtemp_NHACC = new Guna.UI2.WinForms.Guna2CircleButton();
             this.dgvadd_NHACC = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MA_NHACC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN_NHACC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GHICHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.d = new System.Windows.Forms.Label();
@@ -49,12 +55,6 @@
             this.txtMA_NHACC = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtGHICHU = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MA_NHACC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN_NHACC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GHICHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvadd_NHACC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,25 +128,25 @@
             // dgvadd_NHACC
             // 
             this.dgvadd_NHACC.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvadd_NHACC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvadd_NHACC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvadd_NHACC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvadd_NHACC.BackgroundColor = System.Drawing.Color.White;
             this.dgvadd_NHACC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvadd_NHACC.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvadd_NHACC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvadd_NHACC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvadd_NHACC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvadd_NHACC.ColumnHeadersHeight = 45;
             this.dgvadd_NHACC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -159,22 +159,66 @@
             this.dgvadd_NHACC.Location = new System.Drawing.Point(186, 366);
             this.dgvadd_NHACC.Name = "dgvadd_NHACC";
             this.dgvadd_NHACC.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvadd_NHACC.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvadd_NHACC.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvadd_NHACC.RowHeadersWidth = 62;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvadd_NHACC.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvadd_NHACC.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvadd_NHACC.RowTemplate.Height = 45;
             this.dgvadd_NHACC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvadd_NHACC.Size = new System.Drawing.Size(906, 334);
             this.dgvadd_NHACC.TabIndex = 98;
             this.dgvadd_NHACC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvadd_NHACC_CellClick);
+            // 
+            // STT
+            // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.Width = 60;
+            // 
+            // MA_NHACC
+            // 
+            this.MA_NHACC.DataPropertyName = "MA_NHACC";
+            this.MA_NHACC.HeaderText = "Mã nhà cung cấp";
+            this.MA_NHACC.MinimumWidth = 6;
+            this.MA_NHACC.Name = "MA_NHACC";
+            // 
+            // TEN_NHACC
+            // 
+            this.TEN_NHACC.DataPropertyName = "TEN_NHACC";
+            this.TEN_NHACC.HeaderText = "Tên nhà cung cấp";
+            this.TEN_NHACC.MinimumWidth = 6;
+            this.TEN_NHACC.Name = "TEN_NHACC";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.MinimumWidth = 8;
+            this.SDT.Name = "SDT";
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa chỉ";
+            this.DIACHI.MinimumWidth = 8;
+            this.DIACHI.Name = "DIACHI";
+            // 
+            // GHICHU
+            // 
+            this.GHICHU.DataPropertyName = "GHICHU";
+            this.GHICHU.HeaderText = "Ghi chú";
+            this.GHICHU.MinimumWidth = 6;
+            this.GHICHU.Name = "GHICHU";
             // 
             // btnLuu
             // 
@@ -224,7 +268,7 @@
             this.label1.Location = new System.Drawing.Point(44, 152);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 25);
+            this.label1.Size = new System.Drawing.Size(100, 20);
             this.label1.TabIndex = 93;
             this.label1.Text = "Số điện thoại";
             // 
@@ -366,50 +410,6 @@
             this.label3.TabIndex = 93;
             this.label3.Text = "Ghi chú";
             // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.Width = 60;
-            // 
-            // MA_NHACC
-            // 
-            this.MA_NHACC.DataPropertyName = "MA_NHACC";
-            this.MA_NHACC.HeaderText = "Mã nhà cung cấp";
-            this.MA_NHACC.MinimumWidth = 6;
-            this.MA_NHACC.Name = "MA_NHACC";
-            // 
-            // TEN_NHACC
-            // 
-            this.TEN_NHACC.DataPropertyName = "TEN_NHACC";
-            this.TEN_NHACC.HeaderText = "Tên nhà cung cấp";
-            this.TEN_NHACC.MinimumWidth = 6;
-            this.TEN_NHACC.Name = "TEN_NHACC";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "Số điện thoại";
-            this.SDT.MinimumWidth = 8;
-            this.SDT.Name = "SDT";
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa chỉ";
-            this.DIACHI.MinimumWidth = 8;
-            this.DIACHI.Name = "DIACHI";
-            // 
-            // GHICHU
-            // 
-            this.GHICHU.DataPropertyName = "GHICHU";
-            this.GHICHU.HeaderText = "Ghi chú";
-            this.GHICHU.MinimumWidth = 6;
-            this.GHICHU.Name = "GHICHU";
-            // 
             // frmadd_NHACC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -436,7 +436,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmadd_NHACC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmadd_NHACC";
+            this.Text = "Thông tin nhà cung cấp";
             this.Load += new System.EventHandler(this.frmadd_NHACC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvadd_NHACC)).EndInit();
             this.ResumeLayout(false);

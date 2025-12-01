@@ -180,6 +180,7 @@
             this.txtDONVI.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtDONVI.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtDONVI.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDONVI.Enabled = false;
             this.txtDONVI.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDONVI.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDONVI.ForeColor = System.Drawing.Color.Black;
@@ -188,6 +189,7 @@
             this.txtDONVI.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
             this.txtDONVI.Name = "txtDONVI";
             this.txtDONVI.PlaceholderText = "";
+            this.txtDONVI.ReadOnly = true;
             this.txtDONVI.SelectedText = "";
             this.txtDONVI.Size = new System.Drawing.Size(216, 49);
             this.txtDONVI.TabIndex = 29;
@@ -232,6 +234,7 @@
             this.txtMADV.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
             this.txtMADV.Name = "txtMADV";
             this.txtMADV.PlaceholderText = "";
+            this.txtMADV.ReadOnly = true;
             this.txtMADV.SelectedText = "";
             this.txtMADV.Size = new System.Drawing.Size(216, 51);
             this.txtMADV.TabIndex = 32;
@@ -384,7 +387,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_addDICHVU";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_addDICHVU";
+            this.Text = "Thông tin dịch vụ";
             this.Load += new System.EventHandler(this.frm_addDICHVU_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

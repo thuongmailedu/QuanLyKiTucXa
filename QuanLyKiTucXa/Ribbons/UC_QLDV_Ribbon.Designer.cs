@@ -178,7 +178,7 @@
             this.btnHDDV.Name = "btnHDDV";
             this.btnHDDV.Size = new System.Drawing.Size(273, 80);
             this.btnHDDV.TabIndex = 2;
-            this.btnHDDV.Text = "HÓA ĐƠN DỊCH VỤ";
+            this.btnHDDV.Text = "HÓA ĐƠN TỔNG HỢP";
             this.btnHDDV.Click += new System.EventHandler(this.btnHDDV_Click);
             // 
             // panelContainer

@@ -42,7 +42,7 @@ namespace QuanLyKiTucXa
             comTRANGTHAI.DropDownStyle = ComboBoxStyle.DropDownList;
 
             // Thiết lập DataGridView TRƯỚC
-            SetupDataGridView();
+             SetupDataGridView();
 
             // Load ComboBox
             LoadComboBoxTrangThai();
@@ -56,7 +56,7 @@ namespace QuanLyKiTucXa
             LoadDataGridView();
         }
 
-        private void SetupDataGridView()
+       private void SetupDataGridView()
         {
             dgv_HD_TONGHOP.AutoGenerateColumns = false;
             dgv_HD_TONGHOP.AllowUserToAddRows = false;
@@ -91,6 +91,14 @@ namespace QuanLyKiTucXa
                 Name = "MA_PHONG",
                 Width = 100
             });
+            
+            dgv_HD_TONGHOP.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "TENHD",
+                HeaderText = "Tên Hóa Đơn",
+                Name = "TENHD",
+                //   Width = 150
+            });
             dgv_HD_TONGHOP.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "THOIGIAN",
@@ -98,14 +106,6 @@ namespace QuanLyKiTucXa
                 Name = "THOIGIAN",
                 Width = 100
             });
-            dgv_HD_TONGHOP.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "TENHD",
-                HeaderText = "Tên Hóa Đơn",
-                Name = "TENHD",
-                Width = 150
-            });
-
             dgv_HD_TONGHOP.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "MAHD_DIEN",
@@ -163,13 +163,13 @@ namespace QuanLyKiTucXa
                 HeaderText = "Tổng Tiền",
                 Name = "TONGTIEN",
                 Width = 120,
-                DefaultCellStyle = new DataGridViewCellStyle
-                {
-                    Format = "N0",
-                    Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold),
-                    ForeColor = System.Drawing.Color.Red,
-                    Alignment = DataGridViewContentAlignment.MiddleRight
-                }
+                //DefaultCellStyle = new DataGridViewCellStyle
+                //{
+                //    Format = "N0",
+                //    Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold),
+                //    ForeColor = System.Drawing.Color.Red,
+                //    Alignment = DataGridViewContentAlignment.MiddleRight
+                //}
             });
 
             dgv_HD_TONGHOP.Columns.Add(new DataGridViewTextBoxColumn

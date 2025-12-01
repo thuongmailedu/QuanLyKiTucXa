@@ -759,7 +759,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_addHD_NUOC";
-            this.Text = "frm_addHD_NUOC";
+            this.Text = "Thông tin hóa đơn nước";
             this.Load += new System.EventHandler(this.frm_addHD_NUOC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_addHD_DIEN)).EndInit();
             this.ResumeLayout(false);

@@ -315,6 +315,7 @@
             // NGAY_YEUCAU
             // 
             this.NGAY_YEUCAU.DataPropertyName = "NGAY_YEUCAU";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
             dataGridViewCellStyle3.NullValue = null;
             this.NGAY_YEUCAU.DefaultCellStyle = dataGridViewCellStyle3;
             this.NGAY_YEUCAU.HeaderText = "Ngày yêu cầu";

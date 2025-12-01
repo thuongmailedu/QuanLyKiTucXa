@@ -379,7 +379,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmadd_LOP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmadd_LOP";
+            this.Text = "Thông tin lớp";
             this.Load += new System.EventHandler(this.frmadd_LOP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvadd_LOP)).EndInit();
             this.ResumeLayout(false);

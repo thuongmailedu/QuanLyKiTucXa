@@ -764,7 +764,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_addHD_DIEN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_addHD_DIEN";
+            this.Text = "Thông tin hóa đơn điện";
             this.Load += new System.EventHandler(this.frm_addHD_DIEN_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_addHD_DIEN)).EndInit();
             this.ResumeLayout(false);

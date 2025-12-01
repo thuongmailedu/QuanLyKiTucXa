@@ -30,8 +30,8 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
 
             // Gắn sự kiện
             btnedit.Click += btnedit_Click;
-            btnupdate.Click += btnupdate_Click;
-            btncancel.Click += btncancel_Click;
+            //btnupdate.Click += btnupdate_Click;
+           // btncancel.Click += btncancel_Click;
         }
 
         private void LoadData()

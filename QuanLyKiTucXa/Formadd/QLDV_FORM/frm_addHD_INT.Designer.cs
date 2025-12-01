@@ -82,7 +82,7 @@
             this.label3.ForeColor = System.Drawing.Color.Navy;
             this.label3.Location = new System.Drawing.Point(585, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 29);
+            this.label3.Size = new System.Drawing.Size(86, 23);
             this.label3.TabIndex = 25;
             this.label3.Text = "Thời gian";
             // 
@@ -307,7 +307,7 @@
             this.label2.ForeColor = System.Drawing.Color.Navy;
             this.label2.Location = new System.Drawing.Point(311, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 29);
+            this.label2.Size = new System.Drawing.Size(42, 23);
             this.label2.TabIndex = 25;
             this.label2.Text = "Nhà";
             // 
@@ -329,7 +329,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_addHD_INT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_addHD_INT";
+            this.Text = "Thông tin hóa đơn internet";
             this.Load += new System.EventHandler(this.frm_addHD_INT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_add_HD_INT)).EndInit();
             this.ResumeLayout(false);

@@ -625,7 +625,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_addHSSV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_addHSSV";
+            this.Text = "Thông tin sinh viên";
             this.Load += new System.EventHandler(this.frm_addHSSV_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

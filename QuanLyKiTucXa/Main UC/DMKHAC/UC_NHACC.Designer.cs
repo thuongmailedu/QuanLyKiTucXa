@@ -58,7 +58,6 @@
             this.dgvDM_NHACC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDM_NHACC.BackgroundColor = System.Drawing.Color.White;
             this.dgvDM_NHACC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvDM_NHACC.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvDM_NHACC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));

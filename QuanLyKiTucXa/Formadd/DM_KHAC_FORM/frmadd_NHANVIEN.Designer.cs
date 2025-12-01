@@ -299,7 +299,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmadd_NHANVIEN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmadd_NHANVIEN";
+            this.Text = "Thông tin nhân viên";
             this.Load += new System.EventHandler(this.frmadd_NHANVIEN_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

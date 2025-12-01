@@ -50,7 +50,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_HD_TONGHOP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_HD_TONGHOP";
+            this.Text = "Thông tin hóa đơn tổng hợp";
             this.Load += new System.EventHandler(this.frm_HD_TONGHOP_Load);
             this.ResumeLayout(false);
 

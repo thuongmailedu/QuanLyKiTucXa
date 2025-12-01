@@ -640,6 +640,7 @@
   <ItemGroup>
     <None Include="Resources\Screenshot 2025-11-27 165942.png" />
     <None Include="Resources\Moonar-NXT_9633_2023-09-29-122032_yfzo.jpg" />
+    <None Include="Resources\Button - Hủy xác nhận2.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

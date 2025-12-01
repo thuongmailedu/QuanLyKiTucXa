@@ -40,12 +40,12 @@
             this.txtTENKHOA = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMAKHOA = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvadd_KHOA = new System.Windows.Forms.DataGridView();
-            this.btnaddtemp_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btndeletetemp_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnedittemp_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnaddtemp_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btndeletetemp_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnedittemp_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvadd_KHOA)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,6 +211,27 @@
             this.dgvadd_KHOA.TabIndex = 74;
             this.dgvadd_KHOA.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvadd_KHOA_CellClick);
             // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            // 
+            // MAKHOA
+            // 
+            this.MAKHOA.DataPropertyName = "MAKHOA";
+            this.MAKHOA.HeaderText = "Mã khoa";
+            this.MAKHOA.MinimumWidth = 8;
+            this.MAKHOA.Name = "MAKHOA";
+            // 
+            // TENKHOA
+            // 
+            this.TENKHOA.DataPropertyName = "TENKHOA";
+            this.TENKHOA.HeaderText = "Tên khoa";
+            this.TENKHOA.MinimumWidth = 8;
+            this.TENKHOA.Name = "TENKHOA";
+            // 
             // btnaddtemp_KHOA
             // 
             this.btnaddtemp_KHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -268,27 +289,6 @@
             this.btnedittemp_KHOA.TabIndex = 76;
             this.btnedittemp_KHOA.Click += new System.EventHandler(this.btnedittemp_KHOA_Click);
             // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            // 
-            // MAKHOA
-            // 
-            this.MAKHOA.DataPropertyName = "MAKHOA";
-            this.MAKHOA.HeaderText = "Mã khoa";
-            this.MAKHOA.MinimumWidth = 8;
-            this.MAKHOA.Name = "MAKHOA";
-            // 
-            // TENKHOA
-            // 
-            this.TENKHOA.DataPropertyName = "TENKHOA";
-            this.TENKHOA.HeaderText = "Tên khoa";
-            this.TENKHOA.MinimumWidth = 8;
-            this.TENKHOA.Name = "TENKHOA";
-            // 
             // frmadd_KHOA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -309,7 +309,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmadd_KHOA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmadd_KHOA";
+            this.Text = "Thông tin khoa";
             this.Load += new System.EventHandler(this.frmadd_KHOA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvadd_KHOA)).EndInit();
             this.ResumeLayout(false);

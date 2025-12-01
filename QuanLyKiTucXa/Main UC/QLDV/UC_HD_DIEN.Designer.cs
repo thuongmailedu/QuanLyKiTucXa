@@ -52,8 +52,10 @@
             this.comPHONG = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comNHA = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comTRANGTHAI = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btncancel = new Guna.UI2.WinForms.Guna2Button();
-            this.btnupdate = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnfillter = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnDelete = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnedit = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -65,6 +67,7 @@
             // 
             this.dtpTHOIGIAN.BackColor = System.Drawing.Color.White;
             this.dtpTHOIGIAN.BorderColor = System.Drawing.Color.Silver;
+            this.dtpTHOIGIAN.BorderRadius = 5;
             this.dtpTHOIGIAN.BorderThickness = 1;
             this.dtpTHOIGIAN.Checked = true;
             this.dtpTHOIGIAN.CheckedState.FillColor = System.Drawing.Color.White;
@@ -73,7 +76,7 @@
             this.dtpTHOIGIAN.FocusedColor = System.Drawing.Color.White;
             this.dtpTHOIGIAN.Font = new System.Drawing.Font("Segoe UI", 9.857143F);
             this.dtpTHOIGIAN.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTHOIGIAN.Location = new System.Drawing.Point(1012, 91);
+            this.dtpTHOIGIAN.Location = new System.Drawing.Point(1152, 98);
             this.dtpTHOIGIAN.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpTHOIGIAN.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpTHOIGIAN.Name = "dtpTHOIGIAN";
@@ -86,6 +89,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Navy;
             this.label8.Location = new System.Drawing.Point(615, 26);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
@@ -102,10 +106,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgv_HD_DIEN.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_HD_DIEN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgv_HD_DIEN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_HD_DIEN.BackgroundColor = System.Drawing.Color.White;
             this.dgv_HD_DIEN.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgv_HD_DIEN.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgv_HD_DIEN.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
@@ -276,7 +279,7 @@
             this.comPHONG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comPHONG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comPHONG.ItemHeight = 45;
-            this.comPHONG.Location = new System.Drawing.Point(559, 91);
+            this.comPHONG.Location = new System.Drawing.Point(552, 94);
             this.comPHONG.Name = "comPHONG";
             this.comPHONG.Size = new System.Drawing.Size(157, 51);
             this.comPHONG.TabIndex = 30;
@@ -294,7 +297,7 @@
             this.comNHA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comNHA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comNHA.ItemHeight = 45;
-            this.comNHA.Location = new System.Drawing.Point(356, 91);
+            this.comNHA.Location = new System.Drawing.Point(284, 92);
             this.comNHA.Name = "comNHA";
             this.comNHA.Size = new System.Drawing.Size(157, 51);
             this.comNHA.TabIndex = 31;
@@ -312,43 +315,59 @@
             this.comTRANGTHAI.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comTRANGTHAI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comTRANGTHAI.ItemHeight = 45;
-            this.comTRANGTHAI.Location = new System.Drawing.Point(793, 91);
+            this.comTRANGTHAI.Location = new System.Drawing.Point(853, 94);
             this.comTRANGTHAI.Name = "comTRANGTHAI";
             this.comTRANGTHAI.Size = new System.Drawing.Size(157, 51);
             this.comTRANGTHAI.TabIndex = 30;
             this.comTRANGTHAI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btncancel
+            // label2
             // 
-            this.btncancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btncancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btncancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btncancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btncancel.FillColor = System.Drawing.Color.White;
-            this.btncancel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btncancel.ForeColor = System.Drawing.Color.White;
-            this.btncancel.Image = global::QuanLyKiTucXa.Properties.Resources.cancel;
-            this.btncancel.Location = new System.Drawing.Point(1427, 100);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(46, 40);
-            this.btncancel.TabIndex = 40;
-            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Navy;
+            this.label2.Location = new System.Drawing.Point(226, 107);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 28);
+            this.label2.TabIndex = 67;
+            this.label2.Text = "Nhà";
             // 
-            // btnupdate
+            // label1
             // 
-            this.btnupdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnupdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnupdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnupdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnupdate.FillColor = System.Drawing.Color.White;
-            this.btnupdate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnupdate.ForeColor = System.Drawing.Color.White;
-            this.btnupdate.Image = global::QuanLyKiTucXa.Properties.Resources.circle_ok;
-            this.btnupdate.Location = new System.Drawing.Point(1490, 104);
-            this.btnupdate.Name = "btnupdate";
-            this.btnupdate.Size = new System.Drawing.Size(40, 36);
-            this.btnupdate.TabIndex = 39;
-            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.Location = new System.Drawing.Point(473, 107);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 28);
+            this.label1.TabIndex = 67;
+            this.label1.Text = "Phòng";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Navy;
+            this.label3.Location = new System.Drawing.Point(738, 107);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 28);
+            this.label3.TabIndex = 67;
+            this.label3.Text = "Trạng thái";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Navy;
+            this.label4.Location = new System.Drawing.Point(1043, 107);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 28);
+            this.label4.TabIndex = 67;
+            this.label4.Text = "Thời gian";
             // 
             // btnfillter
             // 
@@ -361,7 +380,7 @@
             this.btnfillter.FillColor = System.Drawing.Color.Transparent;
             this.btnfillter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnfillter.ForeColor = System.Drawing.Color.White;
-            this.btnfillter.Location = new System.Drawing.Point(1244, 96);
+            this.btnfillter.Location = new System.Drawing.Point(1376, 99);
             this.btnfillter.Name = "btnfillter";
             this.btnfillter.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnfillter.Size = new System.Drawing.Size(35, 40);
@@ -379,7 +398,7 @@
             this.btnDelete.FillColor = System.Drawing.Color.Transparent;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(1377, 104);
+            this.btnDelete.Location = new System.Drawing.Point(1428, 103);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnDelete.Size = new System.Drawing.Size(35, 32);
@@ -396,7 +415,7 @@
             this.btnedit.FillColor = System.Drawing.Color.Transparent;
             this.btnedit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnedit.ForeColor = System.Drawing.Color.White;
-            this.btnedit.Location = new System.Drawing.Point(1340, 104);
+            this.btnedit.Location = new System.Drawing.Point(1472, 103);
             this.btnedit.Name = "btnedit";
             this.btnedit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnedit.Size = new System.Drawing.Size(31, 32);
@@ -414,7 +433,7 @@
             this.btnadd.FillColor = System.Drawing.Color.Transparent;
             this.btnadd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnadd.ForeColor = System.Drawing.Color.White;
-            this.btnadd.Location = new System.Drawing.Point(1295, 104);
+            this.btnadd.Location = new System.Drawing.Point(1514, 103);
             this.btnadd.Name = "btnadd";
             this.btnadd.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnadd.Size = new System.Drawing.Size(30, 32);
@@ -425,8 +444,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btncancel);
-            this.Controls.Add(this.btnupdate);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpTHOIGIAN);
             this.Controls.Add(this.btnfillter);
             this.Controls.Add(this.btnDelete);
@@ -474,7 +495,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn THOIGIAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYGHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn TINHTRANGTT;
-        private Guna.UI2.WinForms.Guna2Button btnupdate;
-        private Guna.UI2.WinForms.Guna2Button btncancel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
