@@ -12,6 +12,7 @@ namespace QuanLyKiTucXa.Formadd.HSSV
         private string editingMASV = "";
         private string editingMAKHOA = "";
         private string editingMALOP = "";
+        private bool isLoadingData = false; // THÊM FLAG MỚI
 
         public frm_addHSSV()
         {
@@ -93,6 +94,9 @@ namespace QuanLyKiTucXa.Formadd.HSSV
 
         private void comTENKHOA_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // THÊM KIỂM TRA FLAG - Không xử lý nếu đang load dữ liệu
+            if (isLoadingData) return;
+
             if (comTENKHOA.SelectedIndex != -1 && comTENKHOA.SelectedValue != null)
             {
                 string maKhoa = comTENKHOA.SelectedValue.ToString();
@@ -129,7 +133,7 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                         if (isEditMode && !string.IsNullOrEmpty(editingMALOP))
                         {
                             comTENLOP.SelectedValue = editingMALOP;
-                            editingMALOP = ""; // Reset để không bị set lại
+                            // XÓA DÒNG RESET editingMALOP Ở ĐÂY
                         }
                         else
                         {
@@ -149,17 +153,20 @@ namespace QuanLyKiTucXa.Formadd.HSSV
         {
             try
             {
+                // BẬT FLAG TRƯỚC KHI BẮT ĐẦU LOAD
+                isLoadingData = true;
+
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = @"SELECT SV.MASV, SV.TENSV, SV.NGAYSINH, SV.GIOITINH, 
+                    string query = @"SELECT SV.MASV, SV.TENSV, SV.NGAYSINH, SV. GIOITINH, 
                                           SV.CCCD, SV.SDT, SV.MALOP, L.MAKHOA,
                                           TN.TEN_THANNHAN, TN.SDT AS SDT_THANNHAN, 
-                                          TN.MOIQUANHE, TN.DIACHI
+                                          TN. MOIQUANHE, TN.DIACHI
                                    FROM SINHVIEN SV
                                    INNER JOIN LOP L ON SV.MALOP = L.MALOP
-                                   LEFT JOIN THANNHAN TN ON SV.MASV = TN.MASV
-                                   WHERE SV.MASV = @MASV";
+                                   LEFT JOIN THANNHAN TN ON SV. MASV = TN.MASV
+                                   WHERE SV. MASV = @MASV";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -185,17 +192,17 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                                 editingMAKHOA = reader["MAKHOA"].ToString();
                                 editingMALOP = reader["MALOP"].ToString();
 
-                                // Tạm thời bỏ đăng ký event để tránh trigger nhiều lần
-                                comTENKHOA.SelectedIndexChanged -= comTENKHOA_SelectedIndexChanged;
-
-                                // Set khoa - điều này sẽ trigger LoadComboBoxLop
+                                // Set khoa (event sẽ không chạy vì flag đang bật)
                                 comTENKHOA.SelectedValue = editingMAKHOA;
 
-                                // Đăng ký lại event
-                                comTENKHOA.SelectedIndexChanged += comTENKHOA_SelectedIndexChanged;
+                                // TẮT FLAG TRƯỚC KHI LOAD LỚP (để có thể set đúng giá trị lớp)
+                                isLoadingData = false;
 
-                                // Trigger load lớp thủ công
+                                // Load lớp thủ công
                                 LoadComboBoxLop(editingMAKHOA);
+
+                                // RESET editingMALOP SAU KHI ĐÃ LOAD XONG
+                                editingMALOP = "";
 
                                 // Thông tin thân nhân
                                 txtTEN_THANNHAN.Text = reader["TEN_THANNHAN"] != DBNull.Value ? reader["TEN_THANNHAN"].ToString() : "";
@@ -211,6 +218,11 @@ namespace QuanLyKiTucXa.Formadd.HSSV
             {
                 MessageBox.Show("Lỗi khi load thông tin sinh viên: " + ex.Message, "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // ĐẢM BẢO TẮT FLAG SAU KHI LOAD XONG
+                isLoadingData = false;
             }
         }
 
@@ -252,7 +264,7 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                     {
                         if (isEditMode)
                         {
-                            // Cập nhật sinh viên (không có DKTOTNGHIEP)
+                            // Cập nhật sinh viên
                             string queryUpdateSV = @"UPDATE SINHVIEN 
                                                    SET TENSV = @TENSV,
                                                        NGAYSINH = @NGAYSINH,
@@ -340,7 +352,7 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                                 }
                             }
 
-                            // Thêm mới sinh viên (không có DKTOTNGHIEP)
+                            // Thêm mới sinh viên
                             string queryInsertSV = @"INSERT INTO SINHVIEN (MASV, TENSV, NGAYSINH, GIOITINH, CCCD, SDT, MALOP)
                                                    VALUES (@MASV, @TENSV, @NGAYSINH, @GIOITINH, @CCCD, @SDT, @MALOP)";
 

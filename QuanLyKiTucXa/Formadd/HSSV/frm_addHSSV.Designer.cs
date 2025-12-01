@@ -520,6 +520,7 @@
             this.comTENKHOA.Name = "comTENKHOA";
             this.comTENKHOA.Size = new System.Drawing.Size(313, 51);
             this.comTENKHOA.TabIndex = 45;
+            this.comTENKHOA.SelectedIndexChanged += new System.EventHandler(this.comTENKHOA_SelectedIndexChanged);
             this.comTENKHOA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // comTENLOP
