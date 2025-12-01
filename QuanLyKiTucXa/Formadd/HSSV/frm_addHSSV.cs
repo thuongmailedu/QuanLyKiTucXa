@@ -48,16 +48,12 @@ namespace QuanLyKiTucXa.Formadd.HSSV
             // Load combo Khoa trước
             LoadComboBoxKhoa();
 
-            // Đăng ký sự kiện cho comTENKHOA SAU KHI đã load xong
-            comTENKHOA.SelectedIndexChanged += comTENKHOA_SelectedIndexChanged;
-
             if (!isEditMode)
             {
                 txtTINHTRANG_CUTRU.Text = "Chưa có hợp đồng";
             }
             else
             {
-                // Load dữ liệu sinh viên SAU KHI đã load combo và đăng ký event
                 LoadSinhVien(editingMASV);
             }
         }
@@ -185,16 +181,10 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                                 editingMAKHOA = reader["MAKHOA"].ToString();
                                 editingMALOP = reader["MALOP"].ToString();
 
-                                // Tạm thời bỏ đăng ký event để tránh trigger nhiều lần
-                                comTENKHOA.SelectedIndexChanged -= comTENKHOA_SelectedIndexChanged;
-
-                                // Set khoa - điều này sẽ trigger LoadComboBoxLop
+                                // Set khoa
                                 comTENKHOA.SelectedValue = editingMAKHOA;
-
-                                // Đăng ký lại event
-                                comTENKHOA.SelectedIndexChanged += comTENKHOA_SelectedIndexChanged;
-
-                                // Trigger load lớp thủ công
+                                
+                                // Gọi thủ công để đảm bảo lớp được chọn đúng
                                 LoadComboBoxLop(editingMAKHOA);
 
                                 // Thông tin thân nhân
