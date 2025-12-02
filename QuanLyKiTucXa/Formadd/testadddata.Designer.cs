@@ -138,7 +138,7 @@
             this.btnLuu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(918, 396);
+            this.btnLuu.Location = new System.Drawing.Point(844, 390);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(169, 45);
             this.btnLuu.TabIndex = 1;
@@ -148,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1218, 482);
+            this.ClientSize = new System.Drawing.Size(1093, 482);
             this.Controls.Add(this.grbThongTinSinhVien);
             this.Controls.Add(this.btnLuu);
             this.Name = "testadddata";

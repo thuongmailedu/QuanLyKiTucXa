@@ -22,7 +22,7 @@ namespace QuanLyKiTucXa
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new testadddata());
+            Application.Run(new frm_Login());
         }
         [DllImport("user32.dll")]
         private static extern void SetProcessDPIAware();

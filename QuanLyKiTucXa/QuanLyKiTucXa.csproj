@@ -501,6 +501,7 @@
     <EmbeddedResource Include="ReportsSystem\Reports\rptHOPDONG.rdlc" />
     <EmbeddedResource Include="ReportsSystem\Reports\rptSINHVIEN.rdlc" />
     <EmbeddedResource Include="ReportsSystem\Reports\rpt_HD_CHITIET.rdlc" />
+    <EmbeddedResource Include="ReportsSystem\Reports\rpt_IN_HOPDONG.rdlc" />
     <EmbeddedResource Include="ReportsSystem\Reports\rpt_TT_PHONG.rdlc" />
     <EmbeddedResource Include="Ribbons\UC_BAOCAO_Ribbon.resx">
       <DependentUpon>UC_BAOCAO_Ribbon.cs</DependentUpon>
