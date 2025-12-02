@@ -1,4 +1,5 @@
 ﻿using System;
+using QuanLyKiTucXa.Formadd;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -21,7 +22,7 @@ namespace QuanLyKiTucXa
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Login());
+            Application.Run(new testadddata());
         }
         [DllImport("user32.dll")]
         private static extern void SetProcessDPIAware();
