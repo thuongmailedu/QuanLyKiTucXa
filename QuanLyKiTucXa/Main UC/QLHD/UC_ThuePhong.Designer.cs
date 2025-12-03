@@ -126,6 +126,7 @@
             this.dgvThuePhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvThuePhong.Size = new System.Drawing.Size(1555, 624);
             this.dgvThuePhong.TabIndex = 12;
+            this.dgvThuePhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThuePhong_CellContentClick);
             this.dgvThuePhong.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvThuePhong_RowPostPaint);
             // 
             // STT
@@ -361,6 +362,7 @@
             this.btnIN_HOPDONG.Size = new System.Drawing.Size(65, 45);
             this.btnIN_HOPDONG.TabIndex = 15;
             this.btnIN_HOPDONG.Text = "IN";
+            this.btnIN_HOPDONG.Click += new System.EventHandler(this.btnIN_HOPDONG_Click);
             // 
             // btnfillter_SINHVIEN
             // 
