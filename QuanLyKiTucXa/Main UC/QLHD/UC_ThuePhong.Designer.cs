@@ -53,12 +53,13 @@
             this.NGAYKY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSinhVien = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.comfillter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnIN_HOPDONG = new Guna.UI2.WinForms.Guna2Button();
             this.btnfillter_SINHVIEN = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btndelete_HOPDONG = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnedit_HOPDONG = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btn_AddHopDong = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.comfillter = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuePhong)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -286,6 +287,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Controls.Add(this.btnIN_HOPDONG);
             this.panel1.Controls.Add(this.btnfillter_SINHVIEN);
             this.panel1.Controls.Add(this.btndelete_HOPDONG);
             this.panel1.Controls.Add(this.btnedit_HOPDONG);
@@ -296,75 +298,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1555, 58);
             this.panel1.TabIndex = 14;
-            // 
-            // btnfillter_SINHVIEN
-            // 
-            this.btnfillter_SINHVIEN.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.filter;
-            this.btnfillter_SINHVIEN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnfillter_SINHVIEN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnfillter_SINHVIEN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnfillter_SINHVIEN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnfillter_SINHVIEN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnfillter_SINHVIEN.FillColor = System.Drawing.Color.Transparent;
-            this.btnfillter_SINHVIEN.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnfillter_SINHVIEN.ForeColor = System.Drawing.Color.White;
-            this.btnfillter_SINHVIEN.Location = new System.Drawing.Point(1342, 6);
-            this.btnfillter_SINHVIEN.Name = "btnfillter_SINHVIEN";
-            this.btnfillter_SINHVIEN.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnfillter_SINHVIEN.Size = new System.Drawing.Size(35, 40);
-            this.btnfillter_SINHVIEN.TabIndex = 16;
-            // 
-            // btndelete_HOPDONG
-            // 
-            this.btndelete_HOPDONG.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
-            this.btndelete_HOPDONG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btndelete_HOPDONG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btndelete_HOPDONG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btndelete_HOPDONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btndelete_HOPDONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btndelete_HOPDONG.FillColor = System.Drawing.Color.Transparent;
-            this.btndelete_HOPDONG.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btndelete_HOPDONG.ForeColor = System.Drawing.Color.White;
-            this.btndelete_HOPDONG.Location = new System.Drawing.Point(1506, 12);
-            this.btndelete_HOPDONG.Name = "btndelete_HOPDONG";
-            this.btndelete_HOPDONG.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btndelete_HOPDONG.Size = new System.Drawing.Size(35, 34);
-            this.btndelete_HOPDONG.TabIndex = 13;
-            // 
-            // btnedit_HOPDONG
-            // 
-            this.btnedit_HOPDONG.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
-            this.btnedit_HOPDONG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnedit_HOPDONG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnedit_HOPDONG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnedit_HOPDONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnedit_HOPDONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnedit_HOPDONG.FillColor = System.Drawing.Color.Transparent;
-            this.btnedit_HOPDONG.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnedit_HOPDONG.ForeColor = System.Drawing.Color.White;
-            this.btnedit_HOPDONG.Location = new System.Drawing.Point(1451, 12);
-            this.btnedit_HOPDONG.Name = "btnedit_HOPDONG";
-            this.btnedit_HOPDONG.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnedit_HOPDONG.Size = new System.Drawing.Size(40, 34);
-            this.btnedit_HOPDONG.TabIndex = 12;
-            // 
-            // btn_AddHopDong
-            // 
-            this.btn_AddHopDong.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
-            this.btn_AddHopDong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_AddHopDong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_AddHopDong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_AddHopDong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_AddHopDong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_AddHopDong.FillColor = System.Drawing.Color.Transparent;
-            this.btn_AddHopDong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_AddHopDong.ForeColor = System.Drawing.Color.White;
-            this.btn_AddHopDong.Location = new System.Drawing.Point(1396, 12);
-            this.btn_AddHopDong.Name = "btn_AddHopDong";
-            this.btn_AddHopDong.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btn_AddHopDong.Size = new System.Drawing.Size(31, 34);
-            this.btn_AddHopDong.TabIndex = 11;
-            this.btn_AddHopDong.Click += new System.EventHandler(this.btn_AddHopDong_Click);
             // 
             // txtSearch
             // 
@@ -414,6 +347,90 @@
             this.comfillter.StartIndex = 0;
             this.comfillter.TabIndex = 0;
             this.comfillter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnIN_HOPDONG
+            // 
+            this.btnIN_HOPDONG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnIN_HOPDONG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnIN_HOPDONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnIN_HOPDONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnIN_HOPDONG.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnIN_HOPDONG.ForeColor = System.Drawing.Color.White;
+            this.btnIN_HOPDONG.Location = new System.Drawing.Point(1475, 6);
+            this.btnIN_HOPDONG.Name = "btnIN_HOPDONG";
+            this.btnIN_HOPDONG.Size = new System.Drawing.Size(65, 45);
+            this.btnIN_HOPDONG.TabIndex = 15;
+            this.btnIN_HOPDONG.Text = "IN";
+            // 
+            // btnfillter_SINHVIEN
+            // 
+            this.btnfillter_SINHVIEN.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.filter;
+            this.btnfillter_SINHVIEN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfillter_SINHVIEN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnfillter_SINHVIEN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnfillter_SINHVIEN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnfillter_SINHVIEN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnfillter_SINHVIEN.FillColor = System.Drawing.Color.Transparent;
+            this.btnfillter_SINHVIEN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnfillter_SINHVIEN.ForeColor = System.Drawing.Color.White;
+            this.btnfillter_SINHVIEN.Location = new System.Drawing.Point(1226, 6);
+            this.btnfillter_SINHVIEN.Name = "btnfillter_SINHVIEN";
+            this.btnfillter_SINHVIEN.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnfillter_SINHVIEN.Size = new System.Drawing.Size(35, 40);
+            this.btnfillter_SINHVIEN.TabIndex = 16;
+            // 
+            // btndelete_HOPDONG
+            // 
+            this.btndelete_HOPDONG.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
+            this.btndelete_HOPDONG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btndelete_HOPDONG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btndelete_HOPDONG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btndelete_HOPDONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btndelete_HOPDONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btndelete_HOPDONG.FillColor = System.Drawing.Color.Transparent;
+            this.btndelete_HOPDONG.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btndelete_HOPDONG.ForeColor = System.Drawing.Color.White;
+            this.btndelete_HOPDONG.Location = new System.Drawing.Point(1390, 12);
+            this.btndelete_HOPDONG.Name = "btndelete_HOPDONG";
+            this.btndelete_HOPDONG.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btndelete_HOPDONG.Size = new System.Drawing.Size(35, 34);
+            this.btndelete_HOPDONG.TabIndex = 13;
+            // 
+            // btnedit_HOPDONG
+            // 
+            this.btnedit_HOPDONG.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
+            this.btnedit_HOPDONG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnedit_HOPDONG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnedit_HOPDONG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnedit_HOPDONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnedit_HOPDONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnedit_HOPDONG.FillColor = System.Drawing.Color.Transparent;
+            this.btnedit_HOPDONG.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnedit_HOPDONG.ForeColor = System.Drawing.Color.White;
+            this.btnedit_HOPDONG.Location = new System.Drawing.Point(1335, 12);
+            this.btnedit_HOPDONG.Name = "btnedit_HOPDONG";
+            this.btnedit_HOPDONG.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnedit_HOPDONG.Size = new System.Drawing.Size(40, 34);
+            this.btnedit_HOPDONG.TabIndex = 12;
+            this.btnedit_HOPDONG.Click += new System.EventHandler(this.btnedit_HOPDONG_Click);
+            // 
+            // btn_AddHopDong
+            // 
+            this.btn_AddHopDong.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
+            this.btn_AddHopDong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_AddHopDong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_AddHopDong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_AddHopDong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_AddHopDong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_AddHopDong.FillColor = System.Drawing.Color.Transparent;
+            this.btn_AddHopDong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_AddHopDong.ForeColor = System.Drawing.Color.White;
+            this.btn_AddHopDong.Location = new System.Drawing.Point(1280, 12);
+            this.btn_AddHopDong.Name = "btn_AddHopDong";
+            this.btn_AddHopDong.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btn_AddHopDong.Size = new System.Drawing.Size(31, 34);
+            this.btn_AddHopDong.TabIndex = 11;
+            this.btn_AddHopDong.Click += new System.EventHandler(this.btn_AddHopDong_Click);
             // 
             // UC_ThuePhong
             // 
@@ -471,5 +488,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MANV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKY;
+        private Guna.UI2.WinForms.Guna2Button btnIN_HOPDONG;
     }
 }

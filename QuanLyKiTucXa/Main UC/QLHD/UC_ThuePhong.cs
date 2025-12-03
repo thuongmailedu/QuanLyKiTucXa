@@ -73,6 +73,11 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
             dgvThuePhong.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
 
+        private void btnedit_HOPDONG_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void LoadData()
         {
             try

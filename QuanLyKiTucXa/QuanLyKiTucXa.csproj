@@ -130,11 +130,23 @@
     <Compile Include="Formadd\QLDV_FORM\frm_HD_TONGHOP.Designer.cs">
       <DependentUpon>frm_HD_TONGHOP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formadd\QLDV_FORM\frm_TTHOADON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\QLDV_FORM\frm_TTHOADON.Designer.cs">
+      <DependentUpon>frm_TTHOADON.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formadd\QLHD_FORM\frm_addHopDong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formadd\QLHD_FORM\frm_addHopDong.Designer.cs">
       <DependentUpon>frm_addHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formadd\QLHD_FORM\frm_IN_HOPDONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formadd\QLHD_FORM\frm_IN_HOPDONG.Designer.cs">
+      <DependentUpon>frm_IN_HOPDONG.cs</DependentUpon>
     </Compile>
     <Compile Include="Formadd\QLHD_FORM\frm_Traphong.cs">
       <SubType>Form</SubType>
@@ -408,8 +420,14 @@
     <EmbeddedResource Include="Formadd\QLDV_FORM\frm_HD_TONGHOP.resx">
       <DependentUpon>frm_HD_TONGHOP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\QLDV_FORM\frm_TTHOADON.resx">
+      <DependentUpon>frm_TTHOADON.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formadd\QLHD_FORM\frm_addHopDong.resx">
       <DependentUpon>frm_addHopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formadd\QLHD_FORM\frm_IN_HOPDONG.resx">
+      <DependentUpon>frm_IN_HOPDONG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formadd\QLHD_FORM\frm_Traphong.resx">
       <DependentUpon>frm_Traphong.cs</DependentUpon>
