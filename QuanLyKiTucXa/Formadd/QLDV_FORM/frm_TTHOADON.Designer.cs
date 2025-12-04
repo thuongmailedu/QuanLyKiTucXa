@@ -28,11 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgv_CHITIET_HD = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgvCHITIET_HD = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAHD_DIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHISOCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHISOMOI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SODIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONVI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TONGTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THOIGIAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYGHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpTHOIGIAN = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.lblformtype = new System.Windows.Forms.Label();
@@ -50,50 +61,39 @@
             this.txtMANV = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAHD_DIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHISOCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHISOMOI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SODIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONVI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TONGTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.THOIGIAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYGHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTENNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtTONGTHANHTOAN = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.comHINHTHUC_TT = new Guna.UI2.WinForms.Guna2ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_CHITIET_HD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCHITIET_HD)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgv_CHITIET_HD
+            // dgvCHITIET_HD
             // 
-            this.dgv_CHITIET_HD.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgv_CHITIET_HD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_CHITIET_HD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgv_CHITIET_HD.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_CHITIET_HD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgv_CHITIET_HD.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgv_CHITIET_HD.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_CHITIET_HD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_CHITIET_HD.ColumnHeadersHeight = 45;
-            this.dgv_CHITIET_HD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCHITIET_HD.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvCHITIET_HD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvCHITIET_HD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvCHITIET_HD.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCHITIET_HD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvCHITIET_HD.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvCHITIET_HD.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCHITIET_HD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvCHITIET_HD.ColumnHeadersHeight = 45;
+            this.dgvCHITIET_HD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
             this.MAHD_DIEN,
             this.TENHD,
@@ -105,26 +105,114 @@
             this.TONGTIEN,
             this.THOIGIAN,
             this.NGAYGHI});
-            this.dgv_CHITIET_HD.EnableHeadersVisualStyles = false;
-            this.dgv_CHITIET_HD.Location = new System.Drawing.Point(37, 137);
-            this.dgv_CHITIET_HD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgv_CHITIET_HD.Name = "dgv_CHITIET_HD";
-            this.dgv_CHITIET_HD.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_CHITIET_HD.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_CHITIET_HD.RowHeadersWidth = 62;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_CHITIET_HD.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv_CHITIET_HD.RowTemplate.Height = 45;
-            this.dgv_CHITIET_HD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_CHITIET_HD.Size = new System.Drawing.Size(1098, 233);
-            this.dgv_CHITIET_HD.TabIndex = 41;
+            this.dgvCHITIET_HD.EnableHeadersVisualStyles = false;
+            this.dgvCHITIET_HD.Location = new System.Drawing.Point(37, 137);
+            this.dgvCHITIET_HD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvCHITIET_HD.Name = "dgvCHITIET_HD";
+            this.dgvCHITIET_HD.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCHITIET_HD.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvCHITIET_HD.RowHeadersWidth = 62;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvCHITIET_HD.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvCHITIET_HD.RowTemplate.Height = 45;
+            this.dgvCHITIET_HD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCHITIET_HD.Size = new System.Drawing.Size(1098, 233);
+            this.dgvCHITIET_HD.TabIndex = 41;
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 8;
+            this.STT.Name = "STT";
+            this.STT.Width = 60;
+            // 
+            // MAHD_DIEN
+            // 
+            this.MAHD_DIEN.DataPropertyName = "MAHD_DIEN";
+            this.MAHD_DIEN.HeaderText = "Mã hóa đơn";
+            this.MAHD_DIEN.MinimumWidth = 8;
+            this.MAHD_DIEN.Name = "MAHD_DIEN";
+            this.MAHD_DIEN.Width = 107;
+            // 
+            // TENHD
+            // 
+            this.TENHD.DataPropertyName = "TENHD";
+            this.TENHD.HeaderText = "Tên hóa đơn";
+            this.TENHD.MinimumWidth = 8;
+            this.TENHD.Name = "TENHD";
+            this.TENHD.Width = 108;
+            // 
+            // CHISOCU
+            // 
+            this.CHISOCU.DataPropertyName = "CHISOCU";
+            this.CHISOCU.HeaderText = "Chỉ số cũ";
+            this.CHISOCU.MinimumWidth = 6;
+            this.CHISOCU.Name = "CHISOCU";
+            this.CHISOCU.Width = 74;
+            // 
+            // CHISOMOI
+            // 
+            this.CHISOMOI.DataPropertyName = "CHISOMOI";
+            this.CHISOMOI.HeaderText = "Chỉ số mới";
+            this.CHISOMOI.MinimumWidth = 6;
+            this.CHISOMOI.Name = "CHISOMOI";
+            this.CHISOMOI.Width = 98;
+            // 
+            // SODIEN
+            // 
+            this.SODIEN.DataPropertyName = "SODIEN";
+            this.SODIEN.HeaderText = "Lượng tiêu thụ";
+            this.SODIEN.MinimumWidth = 6;
+            this.SODIEN.Name = "SODIEN";
+            this.SODIEN.Width = 102;
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            this.DONGIA.HeaderText = "Đơn giá";
+            this.DONGIA.MinimumWidth = 8;
+            this.DONGIA.Name = "DONGIA";
+            this.DONGIA.Width = 82;
+            // 
+            // DONVI
+            // 
+            this.DONVI.DataPropertyName = "DONVI";
+            this.DONVI.HeaderText = "Đơn vị";
+            this.DONVI.MinimumWidth = 6;
+            this.DONVI.Name = "DONVI";
+            this.DONVI.Width = 73;
+            // 
+            // TONGTIEN
+            // 
+            this.TONGTIEN.DataPropertyName = "TONGTIEN";
+            this.TONGTIEN.HeaderText = "Tổng tiền";
+            this.TONGTIEN.MinimumWidth = 6;
+            this.TONGTIEN.Name = "TONGTIEN";
+            this.TONGTIEN.Width = 91;
+            // 
+            // THOIGIAN
+            // 
+            this.THOIGIAN.DataPropertyName = "THOIGIAN";
+            this.THOIGIAN.HeaderText = "Thời gian";
+            this.THOIGIAN.MinimumWidth = 8;
+            this.THOIGIAN.Name = "THOIGIAN";
+            this.THOIGIAN.Width = 90;
+            // 
+            // NGAYGHI
+            // 
+            this.NGAYGHI.DataPropertyName = "NGAYGHI";
+            this.NGAYGHI.HeaderText = "Ngày ghi";
+            this.NGAYGHI.MinimumWidth = 6;
+            this.NGAYGHI.Name = "NGAYGHI";
+            this.NGAYGHI.Width = 89;
             // 
             // dtpTHOIGIAN
             // 
@@ -376,6 +464,7 @@
             this.btnLuu.Size = new System.Drawing.Size(104, 45);
             this.btnLuu.TabIndex = 46;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
@@ -392,94 +481,7 @@
             this.btnHuy.Size = new System.Drawing.Size(104, 45);
             this.btnHuy.TabIndex = 47;
             this.btnHuy.Text = "Hủy";
-            // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 8;
-            this.STT.Name = "STT";
-            this.STT.Width = 60;
-            // 
-            // MAHD_DIEN
-            // 
-            this.MAHD_DIEN.DataPropertyName = "MAHD_DIEN";
-            this.MAHD_DIEN.HeaderText = "Mã hóa đơn";
-            this.MAHD_DIEN.MinimumWidth = 8;
-            this.MAHD_DIEN.Name = "MAHD_DIEN";
-            this.MAHD_DIEN.Width = 107;
-            // 
-            // TENHD
-            // 
-            this.TENHD.DataPropertyName = "TENHD";
-            this.TENHD.HeaderText = "Tên hóa đơn";
-            this.TENHD.MinimumWidth = 8;
-            this.TENHD.Name = "TENHD";
-            this.TENHD.Width = 108;
-            // 
-            // CHISOCU
-            // 
-            this.CHISOCU.DataPropertyName = "CHISOCU";
-            this.CHISOCU.HeaderText = "Chỉ số cũ";
-            this.CHISOCU.MinimumWidth = 6;
-            this.CHISOCU.Name = "CHISOCU";
-            this.CHISOCU.Width = 74;
-            // 
-            // CHISOMOI
-            // 
-            this.CHISOMOI.DataPropertyName = "CHISOMOI";
-            this.CHISOMOI.HeaderText = "Chỉ số mới";
-            this.CHISOMOI.MinimumWidth = 6;
-            this.CHISOMOI.Name = "CHISOMOI";
-            this.CHISOMOI.Width = 98;
-            // 
-            // SODIEN
-            // 
-            this.SODIEN.DataPropertyName = "SODIEN";
-            this.SODIEN.HeaderText = "Lượng tiêu thụ";
-            this.SODIEN.MinimumWidth = 6;
-            this.SODIEN.Name = "SODIEN";
-            this.SODIEN.Width = 102;
-            // 
-            // DONGIA
-            // 
-            this.DONGIA.DataPropertyName = "DONGIA";
-            this.DONGIA.HeaderText = "Đơn giá";
-            this.DONGIA.MinimumWidth = 8;
-            this.DONGIA.Name = "DONGIA";
-            this.DONGIA.Width = 82;
-            // 
-            // DONVI
-            // 
-            this.DONVI.DataPropertyName = "DONVI";
-            this.DONVI.HeaderText = "Đơn vị";
-            this.DONVI.MinimumWidth = 6;
-            this.DONVI.Name = "DONVI";
-            this.DONVI.Width = 73;
-            // 
-            // TONGTIEN
-            // 
-            this.TONGTIEN.DataPropertyName = "TONGTIEN";
-            this.TONGTIEN.HeaderText = "Tổng tiền";
-            this.TONGTIEN.MinimumWidth = 6;
-            this.TONGTIEN.Name = "TONGTIEN";
-            this.TONGTIEN.Width = 91;
-            // 
-            // THOIGIAN
-            // 
-            this.THOIGIAN.DataPropertyName = "THOIGIAN";
-            this.THOIGIAN.HeaderText = "Thời gian";
-            this.THOIGIAN.MinimumWidth = 8;
-            this.THOIGIAN.Name = "THOIGIAN";
-            this.THOIGIAN.Width = 90;
-            // 
-            // NGAYGHI
-            // 
-            this.NGAYGHI.DataPropertyName = "NGAYGHI";
-            this.NGAYGHI.HeaderText = "Ngày ghi";
-            this.NGAYGHI.MinimumWidth = 6;
-            this.NGAYGHI.Name = "NGAYGHI";
-            this.NGAYGHI.Width = 89;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // label7
             // 
@@ -604,11 +606,12 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dtpNGAYTHANHTOAN);
             this.Controls.Add(this.dtpTHOIGIAN);
-            this.Controls.Add(this.dgv_CHITIET_HD);
+            this.Controls.Add(this.dgvCHITIET_HD);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_TTHOADON";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_CHITIET_HD)).EndInit();
+            this.Load += new System.EventHandler(this.frm_TTHOADON_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCHITIET_HD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -616,7 +619,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgv_CHITIET_HD;
+        private System.Windows.Forms.DataGridView dgvCHITIET_HD;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTHOIGIAN;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblformtype;

@@ -324,14 +324,128 @@ namespace QuanLyKiTucXa
             LoadDataGridView();
         }
 
-        private void btnupdate_Click(object sender, EventArgs e)
+        // Thêm vào class UC_HOADON_DV
+
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            CapNhatTrangThai("Đã thanh toán");
+            try
+            {
+                if (dgv_HD_TONGHOP.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn hóa đơn cần xử lý!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DataGridViewRow row = dgv_HD_TONGHOP.SelectedRows[0];
+
+                string maPhong = row.Cells["MA_PHONG"].ToString();
+                string maNha = row.Cells["MANHA"].ToString();
+                DateTime thoiGian = Convert.ToDateTime(row.Cells["THOIGIAN"].Value);
+                decimal tongTien = Convert.ToDecimal(row.Cells["TONGTIEN"].Value);
+                string tinhTrang = row.Cells["TINHTRANGTT"].ToString();
+
+                // Mở form thanh toán
+                frm_TTHOADON frm = new frm_TTHOADON();
+                frm.MaNha = maNha;
+                frm.MaPhong = maPhong;
+                frm.ThoiGian = thoiGian;
+                frm.TongTien = tongTien;
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    // Refresh lại danh sách
+                    LoadDataGridView();
+                    MessageBox.Show("Cập nhật thành công!",
+                        "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}",
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void btncancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            CapNhatTrangThai("Chưa thanh toán");
+            try
+            {
+                if (dgv_HD_TONGHOP.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn hóa đơn cần hủy!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DataGridViewRow row = dgv_HD_TONGHOP.SelectedRows[0];
+
+                string maPhong = row.Cells["MA_PHONG"].ToString();
+                DateTime thoiGian = Convert.ToDateTime(row.Cells["THOIGIAN"].Value);
+                string tinhTrang = row.Cells["TINHTRANGTT"].ToString();
+
+                // Kiểm tra đã thanh toán chưa
+                if (tinhTrang != "Đã thanh toán")
+                {
+                    MessageBox.Show("Hóa đơn này chưa thanh toán, không thể hủy!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Confirm
+                DialogResult confirm = MessageBox.Show(
+                    $"Xác nhận HỦY thanh toán:\n\n" +
+                    $"Phòng: {maPhong}\n" +
+                    $"Tháng: {thoiGian:MM/yyyy}\n\n" +
+                    $"Hành động này sẽ xóa thông tin thanh toán và đặt lại trạng thái hóa đơn! ",
+                    "Xác nhận hủy",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (confirm == DialogResult.No) return;
+
+                // Hủy thanh toán
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_CapNhatTrangThaiHoaDon", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@MA_PHONG", maPhong);
+                    cmd.Parameters.AddWithValue("@THANG", thoiGian.Month);
+                    cmd.Parameters.AddWithValue("@NAM", thoiGian.Year);
+                    cmd.Parameters.AddWithValue("@TINHTRANGTT", "Chưa thanh toán");
+                    cmd.Parameters.AddWithValue("@MASV", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@MANV", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@NGAYTHANHTOAN", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@HINHTHUC_TT", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@GHICHU", DBNull.Value);
+
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        int success = Convert.ToInt32(reader["Success"]);
+                        if (success == 1)
+                        {
+                            MessageBox.Show("Hủy thanh toán thành công!",
+                                "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadDataGridView(); // Refresh
+                        }
+                        else
+                        {
+                            string errorMsg = reader["ErrorMessage"].ToString();
+                            MessageBox.Show($"Lỗi: {errorMsg}",
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi hủy thanh toán: {ex.Message}",
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CapNhatTrangThai(string trangThai)
