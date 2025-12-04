@@ -66,7 +66,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtTONGTHANHTOAN = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.dtpHINHTHUC_TT = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comHINHTHUC_TT = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CHITIET_HD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -555,33 +555,33 @@
             this.label10.TabIndex = 43;
             this.label10.Text = "Hình thức thanh toán";
             // 
-            // dtpHINHTHUC_TT
+            // comHINHTHUC_TT
             // 
-            this.dtpHINHTHUC_TT.BackColor = System.Drawing.Color.Transparent;
-            this.dtpHINHTHUC_TT.BorderColor = System.Drawing.Color.Gray;
-            this.dtpHINHTHUC_TT.BorderRadius = 12;
-            this.dtpHINHTHUC_TT.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.dtpHINHTHUC_TT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dtpHINHTHUC_TT.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.dtpHINHTHUC_TT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.dtpHINHTHUC_TT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpHINHTHUC_TT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.dtpHINHTHUC_TT.ItemHeight = 45;
-            this.dtpHINHTHUC_TT.Items.AddRange(new object[] {
+            this.comHINHTHUC_TT.BackColor = System.Drawing.Color.Transparent;
+            this.comHINHTHUC_TT.BorderColor = System.Drawing.Color.Gray;
+            this.comHINHTHUC_TT.BorderRadius = 12;
+            this.comHINHTHUC_TT.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comHINHTHUC_TT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comHINHTHUC_TT.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comHINHTHUC_TT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comHINHTHUC_TT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comHINHTHUC_TT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comHINHTHUC_TT.ItemHeight = 45;
+            this.comHINHTHUC_TT.Items.AddRange(new object[] {
             "Tiền mặt",
             "Chuyển khoản ngân hàng"});
-            this.dtpHINHTHUC_TT.Location = new System.Drawing.Point(233, 627);
-            this.dtpHINHTHUC_TT.Name = "dtpHINHTHUC_TT";
-            this.dtpHINHTHUC_TT.Size = new System.Drawing.Size(268, 51);
-            this.dtpHINHTHUC_TT.TabIndex = 54;
-            this.dtpHINHTHUC_TT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.comHINHTHUC_TT.Location = new System.Drawing.Point(233, 627);
+            this.comHINHTHUC_TT.Name = "comHINHTHUC_TT";
+            this.comHINHTHUC_TT.Size = new System.Drawing.Size(268, 51);
+            this.comHINHTHUC_TT.TabIndex = 54;
+            this.comHINHTHUC_TT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frm_TTHOADON
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 769);
-            this.Controls.Add(this.dtpHINHTHUC_TT);
+            this.Controls.Add(this.comHINHTHUC_TT);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.txtMA_PHONG);
@@ -650,6 +650,6 @@
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2TextBox txtTONGTHANHTOAN;
         private System.Windows.Forms.Label label10;
-        private Guna.UI2.WinForms.Guna2ComboBox dtpHINHTHUC_TT;
+        private Guna.UI2.WinForms.Guna2ComboBox comHINHTHUC_TT;
     }
 }
