@@ -29,6 +29,8 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
         {
             try
             {
+                reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyKiTucXa.ReportsSystem.Reports.rpt_IN_HOPDONG.rdlc";
+
                 // Set parameters vào report
                 if (reportParameters != null)
                 {
