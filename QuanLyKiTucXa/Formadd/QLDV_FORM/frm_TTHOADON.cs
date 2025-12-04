@@ -1,4 +1,5 @@
 ﻿using System;
+using QuanLyKiTucXa.Main_UC.QLDV;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -14,8 +15,9 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
         public decimal TongTien { get; set; }
         public bool IsViewOnly { get; set; } = false; // Chế độ xem (đã thanh toán)
 
-        private string connectionString = "your_connection_string_here"; // Thay bằng connection string của bạn
-
+        private string connectionString = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True"; // Thay bằng connection string của bạn
+                                                                                                                                       // Properties nhận từ form gọi
+        
         public frm_TTHOADON()
         {
             InitializeComponent();
@@ -31,9 +33,9 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
                 dtpTHOIGIAN.Value = ThoiGian;
                 txtTONGTHANHTOAN.Text = TongTien.ToString("N0") + " VNĐ";
 
-                // Lấy thông tin nhân viên từ UserSession
-                txtMANV.Text = UserSession.MANV;
-                LayThongTinNhanVien(UserSession.MANV);
+                // ✅ Lấy thông tin nhân viên từ UserSession (ĐÚNG CẤU TRÚC CỦA BẠN)
+                txtMANV.Text = UserSession.TenDangNhap;  // TenDangNhap chính là MANV
+                LayThongTinNhanVien(UserSession.TenDangNhap);
 
                 // Load chi tiết hóa đơn
                 LoadChiTietHoaDon();
@@ -82,36 +84,36 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
                     // Format columns
                     //if (dgvCHITIET_HD.Columns.Contains("LOAI_HOADON"))
                     //    dgvCHITIET_HD.Columns["LOAI_HOADON"].HeaderText = "Loại HĐ";
-                    if (dgvCHITIET_HD.Columns.Contains("TENHD"))
-                        dgvCHITIET_HD.Columns["TENHD"].HeaderText = "Tên hóa đơn";
-                    if (dgvCHITIET_HD.Columns.Contains("CHISOCU"))
-                        dgvCHITIET_HD.Columns["CHISOCU"].HeaderText = "Chỉ số cũ";
-                    if (dgvCHITIET_HD.Columns.Contains("CHISOMOI"))
-                        dgvCHITIET_HD.Columns["CHISOMOI"].HeaderText = "Chỉ số mới";
-                    if (dgvCHITIET_HD.Columns.Contains("SOLUONG_TIEUDUNG"))
-                        dgvCHITIET_HD.Columns["SOLUONG_TIEUDUNG"].HeaderText = "Số lượng";
-                    if (dgvCHITIET_HD.Columns.Contains("DONGIA"))
-                    {
-                        dgvCHITIET_HD.Columns["DONGIA"].HeaderText = "Đơn giá";
-                        dgvCHITIET_HD.Columns["DONGIA"].DefaultCellStyle.Format = "N0";
-                    }
-                    if (dgvCHITIET_HD.Columns.Contains("DONVI"))
-                        dgvCHITIET_HD.Columns["DONVI"].HeaderText = "Đơn vị";
-                    if (dgvCHITIET_HD.Columns.Contains("TONGTIEN"))
-                    {
-                        dgvCHITIET_HD.Columns["TONGTIEN"].HeaderText = "Thành tiền";
-                        dgvCHITIET_HD.Columns["TONGTIEN"].DefaultCellStyle.Format = "N0";
-                    }
-                    if (dgvCHITIET_HD.Columns.Contains("TINHTRANGTT"))
-                        dgvCHITIET_HD.Columns["TINHTRANGTT"].HeaderText = "Trạng thái";
-
-                    //// Ẩn các cột không cần thiết
-                    //string[] hiddenColumns = { "MA_HOADON", "MA_PHONG", "MADV", "THOIGIAN", "NGAYGHI" };
-                    //foreach (string col in hiddenColumns)
+                    //if (dgvCHITIET_HD.Columns.Contains("TENHD"))
+                    //    dgvCHITIET_HD.Columns["TENHD"].HeaderText = "Tên hóa đơn";
+                    //if (dgvCHITIET_HD.Columns.Contains("CHISOCU"))
+                    //    dgvCHITIET_HD.Columns["CHISOCU"].HeaderText = "Chỉ số cũ";
+                    //if (dgvCHITIET_HD.Columns.Contains("CHISOMOI"))
+                    //    dgvCHITIET_HD.Columns["CHISOMOI"].HeaderText = "Chỉ số mới";
+                    //if (dgvCHITIET_HD.Columns.Contains("SOLUONG_TIEUDUNG"))
+                    //    dgvCHITIET_HD.Columns["SOLUONG_TIEUDUNG"].HeaderText = "Số lượng";
+                    //if (dgvCHITIET_HD.Columns.Contains("DONGIA"))
                     //{
-                    //    if (dgvCHITIET_HD.Columns.Contains(col))
-                    //        dgvCHITIET_HD.Columns[col].Visible = false;
+                    //    dgvCHITIET_HD.Columns["DONGIA"].HeaderText = "Đơn giá";
+                    //    dgvCHITIET_HD.Columns["DONGIA"].DefaultCellStyle.Format = "N0";
                     //}
+                    //if (dgvCHITIET_HD.Columns.Contains("DONVI"))
+                    //    dgvCHITIET_HD.Columns["DONVI"].HeaderText = "Đơn vị";
+                    //if (dgvCHITIET_HD.Columns.Contains("TONGTIEN"))
+                    //{
+                    //    dgvCHITIET_HD.Columns["TONGTIEN"].HeaderText = "Thành tiền";
+                    //    dgvCHITIET_HD.Columns["TONGTIEN"].DefaultCellStyle.Format = "N0";
+                    //}
+                    //if (dgvCHITIET_HD.Columns.Contains("TINHTRANGTT"))
+                    //    dgvCHITIET_HD.Columns["TINHTRANGTT"].HeaderText = "Trạng thái";
+
+                    // Ẩn các cột không cần thiết
+                    string[] hiddenColumns = { "LOAI_HOADON", "MA_PHONG", "MADV", "THOIGIAN", "TINHTRANGTT" };
+                    foreach (string col in hiddenColumns)
+                    {
+                        if (dgvCHITIET_HD.Columns.Contains(col))
+                            dgvCHITIET_HD.Columns[col].Visible = false;
+                    }
                 }
             }
             catch (Exception ex)
@@ -356,10 +358,10 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
     }
 
     // Class UserSession(nếu chưa có)
-    public static class UserSession
-    {
-        public static string MANV { get; set; }
-        public static string TENNV { get; set; }
-        public static string QUYEN { get; set; }
-    }
+    //public static class UserSession
+    //{
+    //    public static string MANV { get; set; }
+    //    public static string TENNV { get; set; }
+    //    public static string QUYEN { get; set; }
+    //}
 }

@@ -326,6 +326,11 @@ namespace QuanLyKiTucXa
 
         // Thêm vào class UC_HOADON_DV
 
+        // Trong UC_HOADON_DV.cs
+
+        // ✅ Connection string của bạn
+      //  private string connectionString = "Data Source=LAPTOP-MGOO2M8J\\SQLEXPRESS07;Initial Catalog=KL_KTX;Integrated Security=True";
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             try
@@ -339,11 +344,11 @@ namespace QuanLyKiTucXa
 
                 DataGridViewRow row = dgv_HD_TONGHOP.SelectedRows[0];
 
-                string maPhong = row.Cells["MA_PHONG"].ToString();
-                string maNha = row.Cells["MANHA"].ToString();
+                string maPhong = row.Cells["MA_PHONG"].Value.ToString();
+                string maNha = row.Cells["MANHA"].Value.ToString();
                 DateTime thoiGian = Convert.ToDateTime(row.Cells["THOIGIAN"].Value);
                 decimal tongTien = Convert.ToDecimal(row.Cells["TONGTIEN"].Value);
-                string tinhTrang = row.Cells["TINHTRANGTT"].ToString();
+                string tinhTrang = row.Cells["TINHTRANGTT"].Value.ToString();
 
                 // Mở form thanh toán
                 frm_TTHOADON frm = new frm_TTHOADON();
@@ -355,7 +360,7 @@ namespace QuanLyKiTucXa
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     // Refresh lại danh sách
-                    LoadDataGridView();
+                    LoadDataGridView(); // Gọi method load dữ liệu của bạn
                     MessageBox.Show("Cập nhật thành công!",
                         "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -380,9 +385,9 @@ namespace QuanLyKiTucXa
 
                 DataGridViewRow row = dgv_HD_TONGHOP.SelectedRows[0];
 
-                string maPhong = row.Cells["MA_PHONG"].ToString();
+                string maPhong = row.Cells["MA_PHONG"].Value.ToString();
                 DateTime thoiGian = Convert.ToDateTime(row.Cells["THOIGIAN"].Value);
-                string tinhTrang = row.Cells["TINHTRANGTT"].ToString();
+                string tinhTrang = row.Cells["TINHTRANGTT"].Value.ToString();
 
                 // Kiểm tra đã thanh toán chưa
                 if (tinhTrang != "Đã thanh toán")
