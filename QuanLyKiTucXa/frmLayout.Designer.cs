@@ -34,6 +34,8 @@
             this.panelBottom = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
             this.panelSideBar = new System.Windows.Forms.Panel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBaocao = new Guna.UI2.WinForms.Guna2Button();
             this.btnDanhmuckhac = new Guna.UI2.WinForms.Guna2Button();
@@ -44,8 +46,6 @@
             this.btnSinhVien = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelTop.SuspendLayout();
             this.panelBottom.SuspendLayout();
             this.panelSideBar.SuspendLayout();
@@ -116,12 +116,34 @@
             this.panelSideBar.Size = new System.Drawing.Size(304, 890);
             this.panelSideBar.TabIndex = 2;
             // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Navy;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(24, 265);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(253, 40);
+            this.guna2HtmlLabel2.TabIndex = 13;
+            this.guna2HtmlLabel2.Text = "Công nghệ Đông Á";
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Navy;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(32, 229);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(245, 30);
+            this.guna2HtmlLabel1.TabIndex = 13;
+            this.guna2HtmlLabel1.Text = "Ký túc xá Trường Đại học";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyKiTucXa.Properties.Resources.Screenshot_2025_11_27_165942;
-            this.pictureBox1.Location = new System.Drawing.Point(32, 16);
+            this.pictureBox1.Location = new System.Drawing.Point(51, 22);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(236, 227);
+            this.pictureBox1.Size = new System.Drawing.Size(199, 194);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
@@ -146,7 +168,7 @@
             this.btnBaocao.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBaocao.ImageOffset = new System.Drawing.Point(60, 0);
             this.btnBaocao.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnBaocao.Location = new System.Drawing.Point(35, 762);
+            this.btnBaocao.Location = new System.Drawing.Point(35, 742);
             this.btnBaocao.Name = "btnBaocao";
             this.btnBaocao.PressedColor = System.Drawing.Color.AliceBlue;
             this.btnBaocao.Size = new System.Drawing.Size(232, 66);
@@ -174,7 +196,7 @@
             this.btnDanhmuckhac.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDanhmuckhac.ImageOffset = new System.Drawing.Point(60, 0);
             this.btnDanhmuckhac.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDanhmuckhac.Location = new System.Drawing.Point(35, 680);
+            this.btnDanhmuckhac.Location = new System.Drawing.Point(35, 660);
             this.btnDanhmuckhac.Name = "btnDanhmuckhac";
             this.btnDanhmuckhac.PressedColor = System.Drawing.Color.AliceBlue;
             this.btnDanhmuckhac.Size = new System.Drawing.Size(232, 66);
@@ -202,7 +224,7 @@
             this.btn_qldv.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_qldv.ImageOffset = new System.Drawing.Point(60, 0);
             this.btn_qldv.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_qldv.Location = new System.Drawing.Point(35, 599);
+            this.btn_qldv.Location = new System.Drawing.Point(35, 579);
             this.btn_qldv.Name = "btn_qldv";
             this.btn_qldv.PressedColor = System.Drawing.Color.AliceBlue;
             this.btn_qldv.Size = new System.Drawing.Size(232, 66);
@@ -230,7 +252,7 @@
             this.btnPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPhong.ImageOffset = new System.Drawing.Point(60, 0);
             this.btnPhong.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnPhong.Location = new System.Drawing.Point(35, 517);
+            this.btnPhong.Location = new System.Drawing.Point(35, 497);
             this.btnPhong.Name = "btnPhong";
             this.btnPhong.PressedColor = System.Drawing.Color.AliceBlue;
             this.btnPhong.Size = new System.Drawing.Size(232, 66);
@@ -267,7 +289,7 @@
             this.btnHopDong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHopDong.ImageOffset = new System.Drawing.Point(60, 0);
             this.btnHopDong.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnHopDong.Location = new System.Drawing.Point(35, 433);
+            this.btnHopDong.Location = new System.Drawing.Point(35, 413);
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.PressedColor = System.Drawing.Color.AliceBlue;
             this.btnHopDong.Size = new System.Drawing.Size(232, 66);
@@ -295,7 +317,7 @@
             this.btnSinhVien.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSinhVien.ImageOffset = new System.Drawing.Point(60, 0);
             this.btnSinhVien.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnSinhVien.Location = new System.Drawing.Point(35, 350);
+            this.btnSinhVien.Location = new System.Drawing.Point(35, 330);
             this.btnSinhVien.Name = "btnSinhVien";
             this.btnSinhVien.PressedColor = System.Drawing.Color.AliceBlue;
             this.btnSinhVien.Size = new System.Drawing.Size(232, 66);
@@ -318,28 +340,6 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Navy;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(32, 249);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(245, 30);
-            this.guna2HtmlLabel1.TabIndex = 13;
-            this.guna2HtmlLabel1.Text = "Ký túc xá Trường Đại học";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Navy;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(24, 285);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(253, 40);
-            this.guna2HtmlLabel2.TabIndex = 13;
-            this.guna2HtmlLabel2.Text = "Công nghệ Đông Á";
             // 
             // frmLayout
             // 

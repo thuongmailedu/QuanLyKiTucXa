@@ -61,6 +61,8 @@
             this.dtpDENNGAY = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpNGAYKTTT = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtGIAPHONG = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtMANV_TL = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // btnHuy
@@ -73,7 +75,7 @@
             this.btnHuy.FillColor = System.Drawing.Color.Navy;
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(994, 568);
+            this.btnHuy.Location = new System.Drawing.Point(997, 554);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(91, 45);
             this.btnHuy.TabIndex = 52;
@@ -90,7 +92,7 @@
             this.btnLuu.FillColor = System.Drawing.Color.Navy;
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(1105, 568);
+            this.btnLuu.Location = new System.Drawing.Point(1108, 554);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(91, 45);
             this.btnLuu.TabIndex = 51;
@@ -165,7 +167,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(453, 499);
+            this.label14.Location = new System.Drawing.Point(881, 486);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(66, 20);
             this.label14.TabIndex = 35;
@@ -215,7 +217,7 @@
             this.txtTENNV.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTENNV.ForeColor = System.Drawing.Color.Black;
             this.txtTENNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTENNV.Location = new System.Drawing.Point(157, 487);
+            this.txtTENNV.Location = new System.Drawing.Point(566, 474);
             this.txtTENNV.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTENNV.Name = "txtTENNV";
             this.txtTENNV.PlaceholderText = "";
@@ -227,11 +229,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(42, 499);
+            this.label10.Location = new System.Drawing.Point(446, 486);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 20);
+            this.label10.Size = new System.Drawing.Size(99, 20);
             this.label10.TabIndex = 32;
-            this.label10.Text = "Người ký";
+            this.label10.Text = "Tên người ký";
             // 
             // txtLOAIPHONG
             // 
@@ -461,7 +463,7 @@
             this.panelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.panelMenu.MaximumSize = new System.Drawing.Size(1646, 100);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1240, 29);
+            this.panelMenu.Size = new System.Drawing.Size(1240, 24);
             this.panelMenu.TabIndex = 53;
             // 
             // dtpNGAYKY
@@ -477,12 +479,12 @@
             this.dtpNGAYKY.FocusedColor = System.Drawing.Color.White;
             this.dtpNGAYKY.Font = new System.Drawing.Font("Segoe UI", 9.857143F);
             this.dtpNGAYKY.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNGAYKY.Location = new System.Drawing.Point(566, 487);
+            this.dtpNGAYKY.Location = new System.Drawing.Point(997, 474);
             this.dtpNGAYKY.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNGAYKY.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNGAYKY.Name = "dtpNGAYKY";
             this.dtpNGAYKY.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpNGAYKY.Size = new System.Drawing.Size(210, 45);
+            this.dtpNGAYKY.Size = new System.Drawing.Size(202, 45);
             this.dtpNGAYKY.TabIndex = 54;
             this.dtpNGAYKY.Value = new System.DateTime(2025, 10, 25, 0, 0, 0, 0);
             // 
@@ -574,11 +576,43 @@
             this.txtGIAPHONG.Size = new System.Drawing.Size(200, 45);
             this.txtGIAPHONG.TabIndex = 47;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(42, 486);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(120, 25);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Mã người ký";
+            // 
+            // txtMANV_TL
+            // 
+            this.txtMANV_TL.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtMANV_TL.BorderRadius = 5;
+            this.txtMANV_TL.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMANV_TL.DefaultText = "";
+            this.txtMANV_TL.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMANV_TL.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMANV_TL.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMANV_TL.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMANV_TL.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMANV_TL.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMANV_TL.ForeColor = System.Drawing.Color.Black;
+            this.txtMANV_TL.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMANV_TL.Location = new System.Drawing.Point(157, 474);
+            this.txtMANV_TL.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtMANV_TL.Name = "txtMANV_TL";
+            this.txtMANV_TL.PlaceholderText = "";
+            this.txtMANV_TL.SelectedText = "";
+            this.txtMANV_TL.Size = new System.Drawing.Size(210, 45);
+            this.txtMANV_TL.TabIndex = 49;
+            // 
             // frm_Traphong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1240, 656);
+            this.ClientSize = new System.Drawing.Size(1240, 636);
             this.Controls.Add(this.dtpTUNGAY);
             this.Controls.Add(this.dtpDENNGAY);
             this.Controls.Add(this.dtpNGAYKTTT);
@@ -594,6 +628,8 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtMANV_TL);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.txtTENNV);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtGIAPHONG);
@@ -658,5 +694,7 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDENNGAY;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpNGAYKTTT;
         private Guna.UI2.WinForms.Guna2TextBox txtGIAPHONG;
+        private System.Windows.Forms.Label label15;
+        private Guna.UI2.WinForms.Guna2TextBox txtMANV_TL;
     }
 }

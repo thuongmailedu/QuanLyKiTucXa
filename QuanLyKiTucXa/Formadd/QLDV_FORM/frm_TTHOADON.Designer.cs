@@ -34,6 +34,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCHITIET_HD = new System.Windows.Forms.DataGridView();
+            this.MA_HOADON = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHISOCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHISOMOI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOLUONG_TIEUDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONVI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TONGTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THOIGIAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYGHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpTHOIGIAN = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.lblformtype = new System.Windows.Forms.Label();
@@ -57,16 +67,6 @@
             this.txtTONGTHANHTOAN = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.comHINHTHUC_TT = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.MA_HOADON = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHISOCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHISOMOI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOLUONG_TIEUDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONVI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TONGTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.THOIGIAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYGHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCHITIET_HD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,8 +121,91 @@
             this.dgvCHITIET_HD.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCHITIET_HD.RowTemplate.Height = 45;
             this.dgvCHITIET_HD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCHITIET_HD.Size = new System.Drawing.Size(1098, 233);
+            this.dgvCHITIET_HD.Size = new System.Drawing.Size(1098, 248);
             this.dgvCHITIET_HD.TabIndex = 41;
+            // 
+            // MA_HOADON
+            // 
+            this.MA_HOADON.DataPropertyName = "MA_HOADON";
+            this.MA_HOADON.HeaderText = "Mã hóa đơn";
+            this.MA_HOADON.MinimumWidth = 8;
+            this.MA_HOADON.Name = "MA_HOADON";
+            this.MA_HOADON.Width = 150;
+            // 
+            // TENHD
+            // 
+            this.TENHD.DataPropertyName = "TENHD";
+            this.TENHD.HeaderText = "Tên hóa đơn";
+            this.TENHD.MinimumWidth = 8;
+            this.TENHD.Name = "TENHD";
+            this.TENHD.Width = 180;
+            // 
+            // CHISOCU
+            // 
+            this.CHISOCU.DataPropertyName = "CHISOCU";
+            this.CHISOCU.HeaderText = "Chỉ số cũ";
+            this.CHISOCU.MinimumWidth = 6;
+            this.CHISOCU.Name = "CHISOCU";
+            this.CHISOCU.Width = 150;
+            // 
+            // CHISOMOI
+            // 
+            this.CHISOMOI.DataPropertyName = "CHISOMOI";
+            this.CHISOMOI.HeaderText = "Chỉ số mới";
+            this.CHISOMOI.MinimumWidth = 6;
+            this.CHISOMOI.Name = "CHISOMOI";
+            this.CHISOMOI.Width = 150;
+            // 
+            // SOLUONG_TIEUDUNG
+            // 
+            this.SOLUONG_TIEUDUNG.DataPropertyName = "SOLUONG_TIEUDUNG";
+            this.SOLUONG_TIEUDUNG.HeaderText = "Lượng tiêu thụ";
+            this.SOLUONG_TIEUDUNG.MinimumWidth = 6;
+            this.SOLUONG_TIEUDUNG.Name = "SOLUONG_TIEUDUNG";
+            this.SOLUONG_TIEUDUNG.Width = 150;
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            this.DONGIA.HeaderText = "Đơn giá";
+            this.DONGIA.MinimumWidth = 8;
+            this.DONGIA.Name = "DONGIA";
+            this.DONGIA.Width = 150;
+            // 
+            // DONVI
+            // 
+            this.DONVI.DataPropertyName = "DONVI";
+            this.DONVI.HeaderText = "Đơn vị";
+            this.DONVI.MinimumWidth = 6;
+            this.DONVI.Name = "DONVI";
+            this.DONVI.Width = 104;
+            // 
+            // TONGTIEN
+            // 
+            this.TONGTIEN.DataPropertyName = "TONGTIEN";
+            this.TONGTIEN.HeaderText = "Tổng tiền";
+            this.TONGTIEN.MinimumWidth = 6;
+            this.TONGTIEN.Name = "TONGTIEN";
+            this.TONGTIEN.Width = 150;
+            // 
+            // THOIGIAN
+            // 
+            this.THOIGIAN.DataPropertyName = "THOIGIAN";
+            this.THOIGIAN.HeaderText = "Thời gian";
+            this.THOIGIAN.MinimumWidth = 8;
+            this.THOIGIAN.Name = "THOIGIAN";
+            this.THOIGIAN.Width = 150;
+            // 
+            // NGAYGHI
+            // 
+            this.NGAYGHI.DataPropertyName = "NGAYGHI";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle3.NullValue = null;
+            this.NGAYGHI.DefaultCellStyle = dataGridViewCellStyle3;
+            this.NGAYGHI.HeaderText = "Ngày ghi";
+            this.NGAYGHI.MinimumWidth = 6;
+            this.NGAYGHI.Name = "NGAYGHI";
+            this.NGAYGHI.Width = 103;
             // 
             // dtpTHOIGIAN
             // 
@@ -488,89 +571,6 @@
             this.comHINHTHUC_TT.Size = new System.Drawing.Size(268, 51);
             this.comHINHTHUC_TT.TabIndex = 54;
             this.comHINHTHUC_TT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // MA_HOADON
-            // 
-            this.MA_HOADON.DataPropertyName = "MA_HOADON";
-            this.MA_HOADON.HeaderText = "Mã hóa đơn";
-            this.MA_HOADON.MinimumWidth = 8;
-            this.MA_HOADON.Name = "MA_HOADON";
-            this.MA_HOADON.Width = 150;
-            // 
-            // TENHD
-            // 
-            this.TENHD.DataPropertyName = "TENHD";
-            this.TENHD.HeaderText = "Tên hóa đơn";
-            this.TENHD.MinimumWidth = 8;
-            this.TENHD.Name = "TENHD";
-            this.TENHD.Width = 180;
-            // 
-            // CHISOCU
-            // 
-            this.CHISOCU.DataPropertyName = "CHISOCU";
-            this.CHISOCU.HeaderText = "Chỉ số cũ";
-            this.CHISOCU.MinimumWidth = 6;
-            this.CHISOCU.Name = "CHISOCU";
-            this.CHISOCU.Width = 150;
-            // 
-            // CHISOMOI
-            // 
-            this.CHISOMOI.DataPropertyName = "CHISOMOI";
-            this.CHISOMOI.HeaderText = "Chỉ số mới";
-            this.CHISOMOI.MinimumWidth = 6;
-            this.CHISOMOI.Name = "CHISOMOI";
-            this.CHISOMOI.Width = 150;
-            // 
-            // SOLUONG_TIEUDUNG
-            // 
-            this.SOLUONG_TIEUDUNG.DataPropertyName = "SOLUONG_TIEUDUNG";
-            this.SOLUONG_TIEUDUNG.HeaderText = "Lượng tiêu thụ";
-            this.SOLUONG_TIEUDUNG.MinimumWidth = 6;
-            this.SOLUONG_TIEUDUNG.Name = "SOLUONG_TIEUDUNG";
-            this.SOLUONG_TIEUDUNG.Width = 150;
-            // 
-            // DONGIA
-            // 
-            this.DONGIA.DataPropertyName = "DONGIA";
-            this.DONGIA.HeaderText = "Đơn giá";
-            this.DONGIA.MinimumWidth = 8;
-            this.DONGIA.Name = "DONGIA";
-            this.DONGIA.Width = 150;
-            // 
-            // DONVI
-            // 
-            this.DONVI.DataPropertyName = "DONVI";
-            this.DONVI.HeaderText = "Đơn vị";
-            this.DONVI.MinimumWidth = 6;
-            this.DONVI.Name = "DONVI";
-            this.DONVI.Width = 104;
-            // 
-            // TONGTIEN
-            // 
-            this.TONGTIEN.DataPropertyName = "TONGTIEN";
-            this.TONGTIEN.HeaderText = "Tổng tiền";
-            this.TONGTIEN.MinimumWidth = 6;
-            this.TONGTIEN.Name = "TONGTIEN";
-            this.TONGTIEN.Width = 150;
-            // 
-            // THOIGIAN
-            // 
-            this.THOIGIAN.DataPropertyName = "THOIGIAN";
-            this.THOIGIAN.HeaderText = "Thời gian";
-            this.THOIGIAN.MinimumWidth = 8;
-            this.THOIGIAN.Name = "THOIGIAN";
-            this.THOIGIAN.Width = 150;
-            // 
-            // NGAYGHI
-            // 
-            this.NGAYGHI.DataPropertyName = "NGAYGHI";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle3.NullValue = null;
-            this.NGAYGHI.DefaultCellStyle = dataGridViewCellStyle3;
-            this.NGAYGHI.HeaderText = "Ngày ghi";
-            this.NGAYGHI.MinimumWidth = 6;
-            this.NGAYGHI.Name = "NGAYGHI";
-            this.NGAYGHI.Width = 103;
             // 
             // frm_TTHOADON
             // 
