@@ -56,7 +56,7 @@
             this.X = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelMenu = new Guna.UI2.WinForms.Guna2Panel();
-            this.dtpNGAYKY = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpNGAYKY_TL = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpTUNGAY = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpDENNGAY = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpNGAYKTTT = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -466,27 +466,27 @@
             this.panelMenu.Size = new System.Drawing.Size(1240, 24);
             this.panelMenu.TabIndex = 53;
             // 
-            // dtpNGAYKY
+            // dtpNGAYKY_TL
             // 
-            this.dtpNGAYKY.BackColor = System.Drawing.Color.White;
-            this.dtpNGAYKY.BorderColor = System.Drawing.Color.Silver;
-            this.dtpNGAYKY.BorderRadius = 5;
-            this.dtpNGAYKY.BorderThickness = 1;
-            this.dtpNGAYKY.Checked = true;
-            this.dtpNGAYKY.CheckedState.FillColor = System.Drawing.Color.White;
-            this.dtpNGAYKY.CustomFormat = "dd/MM/yyyy";
-            this.dtpNGAYKY.FillColor = System.Drawing.Color.White;
-            this.dtpNGAYKY.FocusedColor = System.Drawing.Color.White;
-            this.dtpNGAYKY.Font = new System.Drawing.Font("Segoe UI", 9.857143F);
-            this.dtpNGAYKY.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNGAYKY.Location = new System.Drawing.Point(997, 474);
-            this.dtpNGAYKY.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpNGAYKY.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpNGAYKY.Name = "dtpNGAYKY";
-            this.dtpNGAYKY.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpNGAYKY.Size = new System.Drawing.Size(202, 45);
-            this.dtpNGAYKY.TabIndex = 54;
-            this.dtpNGAYKY.Value = new System.DateTime(2025, 10, 25, 0, 0, 0, 0);
+            this.dtpNGAYKY_TL.BackColor = System.Drawing.Color.White;
+            this.dtpNGAYKY_TL.BorderColor = System.Drawing.Color.Silver;
+            this.dtpNGAYKY_TL.BorderRadius = 5;
+            this.dtpNGAYKY_TL.BorderThickness = 1;
+            this.dtpNGAYKY_TL.Checked = true;
+            this.dtpNGAYKY_TL.CheckedState.FillColor = System.Drawing.Color.White;
+            this.dtpNGAYKY_TL.CustomFormat = "dd/MM/yyyy";
+            this.dtpNGAYKY_TL.FillColor = System.Drawing.Color.White;
+            this.dtpNGAYKY_TL.FocusedColor = System.Drawing.Color.White;
+            this.dtpNGAYKY_TL.Font = new System.Drawing.Font("Segoe UI", 9.857143F);
+            this.dtpNGAYKY_TL.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNGAYKY_TL.Location = new System.Drawing.Point(997, 474);
+            this.dtpNGAYKY_TL.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNGAYKY_TL.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNGAYKY_TL.Name = "dtpNGAYKY_TL";
+            this.dtpNGAYKY_TL.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpNGAYKY_TL.Size = new System.Drawing.Size(202, 45);
+            this.dtpNGAYKY_TL.TabIndex = 54;
+            this.dtpNGAYKY_TL.Value = new System.DateTime(2025, 10, 25, 0, 0, 0, 0);
             // 
             // dtpTUNGAY
             // 
@@ -616,7 +616,7 @@
             this.Controls.Add(this.dtpTUNGAY);
             this.Controls.Add(this.dtpDENNGAY);
             this.Controls.Add(this.dtpNGAYKTTT);
-            this.Controls.Add(this.dtpNGAYKY);
+            this.Controls.Add(this.dtpNGAYKY_TL);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
@@ -689,7 +689,7 @@
         private Guna.UI2.WinForms.Guna2Panel X;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel panelMenu;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNGAYKY;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNGAYKY_TL;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTUNGAY;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDENNGAY;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpNGAYKTTT;

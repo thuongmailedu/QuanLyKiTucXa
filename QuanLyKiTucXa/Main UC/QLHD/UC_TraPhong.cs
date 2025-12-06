@@ -24,6 +24,9 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
             // Đổi SelectionMode
             dgvTraPhong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+            // ✅ Tắt tự động chọn dòng đầu tiên
+            dgvTraPhong.ClearSelection();
+
             // Đăng ký events
             btnedit_Traphong.Click += btnedit_Traphong_Click;
             btndelete_Traphong.Click += btndelete_Traphong_Click;
@@ -41,25 +44,26 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
                 {
                     conn.Open();
 
+                    // ✅ Cập nhật query để lấy thông tin người thanh lý (MANV_TL)
                     string sql = @"SELECT 
                                     hd.MAHD, 
                                     hd. TENHD, 
                                     sv.MASV, 
-                                    sv.TENSV, 
-                                    sv. GIOITINH, 
-                                    p.MA_PHONG, 
+                                    sv. TENSV, 
+                                    sv.GIOITINH, 
+                                    p. MA_PHONG, 
                                     n.MANHA, 
-                                    n.LOAIPHONG, 
+                                    n. LOAIPHONG, 
                                     hd.TUNGAY, 
                                     hd.DENNGAY,
-                                    hd. NGAYKTTT, 
+                                    hd.NGAYKTTT, 
                                     hd. NGAYKY,
-                                    nv.TENNV
+                                    nv_tl.TENNV AS TENNV_THANHLUY
                                    FROM SINHVIEN sv 
-                                   INNER JOIN HOPDONG hd ON sv.MASV = hd.MASV
+                                   INNER JOIN HOPDONG hd ON sv. MASV = hd. MASV
                                    INNER JOIN PHONG p ON hd.MA_PHONG = p.MA_PHONG
-                                   INNER JOIN NHA n ON p. MANHA = n.MANHA
-                                   INNER JOIN NHANVIEN nv ON nv.MANV = hd.MANV
+                                   INNER JOIN NHA n ON p.MANHA = n.MANHA
+                                   LEFT JOIN NHANVIEN nv_tl ON nv_tl.MANV = hd.MANV_TL
                                    WHERE hd.NGAYKTTT IS NOT NULL";
 
                     // Thêm điều kiện lọc
@@ -96,6 +100,9 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
                         da.Fill(dt);
 
                         dgvTraPhong.DataSource = dt;
+
+                        // ✅ Tắt tự động chọn dòng đầu tiên sau khi load dữ liệu
+                        dgvTraPhong.ClearSelection();
                     }
                 }
             }
@@ -110,9 +117,13 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
         {
             frm_Traphong form = new frm_Traphong();
 
-            if (form.ShowDialog() == DialogResult.OK)
+            // ✅ Sử dụng using để đảm bảo form được dispose đúng cách
+            using (form)
             {
-                LoadData(); // Refresh lại danh sách
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData(); // Refresh lại danh sách
+                }
             }
         }
 
@@ -131,9 +142,14 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
 
             if (!string.IsNullOrEmpty(maHD) && !string.IsNullOrEmpty(maSV))
             {
-                frm_Traphong form = new frm_Traphong(maHD, maSV);
-                form.ShowDialog();
-                LoadData(); // Refresh lại danh sách
+                // ✅ Sử dụng using để đảm bảo form được dispose đúng cách
+                using (frm_Traphong form = new frm_Traphong(maHD, maSV))
+                {
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        LoadData(); // Refresh lại danh sách
+                    }
+                }
             }
         }
 
@@ -171,7 +187,8 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
                     {
                         conn.Open();
 
-                        string query = "UPDATE HOPDONG SET NGAYKTTT = NULL WHERE MAHD = @MAHD";
+                        // ✅ Xóa cả NGAYKTTT và MANV_TL
+                        string query = "UPDATE HOPDONG SET NGAYKTTT = NULL, MANV_TL = NULL WHERE MAHD = @MAHD";
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {

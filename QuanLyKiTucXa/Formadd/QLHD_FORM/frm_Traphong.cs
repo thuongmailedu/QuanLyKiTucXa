@@ -44,6 +44,7 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             txtLOAIPHONG.ReadOnly = true;
             txtTENNV.ReadOnly = true;
             txtGIAPHONG.ReadOnly = true;
+            txtMANV_TL.ReadOnly = true; // Không cho sửa mã nhân viên thanh lý
 
             txtMAHD.BackColor = System.Drawing.SystemColors.Control;
             txtTENHD.BackColor = System.Drawing.SystemColors.Control;
@@ -54,11 +55,15 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             txtLOAIPHONG.BackColor = System.Drawing.SystemColors.Control;
             txtTENNV.BackColor = System.Drawing.SystemColors.Control;
             txtGIAPHONG.BackColor = System.Drawing.SystemColors.Control;
+            txtMANV_TL.BackColor = System.Drawing.SystemColors.Control;
 
             // Disable các DateTimePicker trừ dtpNGAYKTTT
             dtpTUNGAY.Enabled = false;
             dtpDENNGAY.Enabled = false;
-            dtpNGAYKY.Enabled = false;
+            dtpNGAYKY_TL.Enabled = false;
+
+            // ✅ Load thông tin nhân viên thanh lý từ UserSession ngay khi mở form
+            LoadThongTinNhanVienThanhLy();
 
             if (isEditMode)
             {
@@ -76,6 +81,60 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             }
         }
 
+        // ✅ Load thông tin nhân viên thanh lý từ UserSession
+        private void LoadThongTinNhanVienThanhLy()
+        {
+            try
+            {
+                // Lấy MANV từ UserSession. TenDangNhap
+                string manvTL = UserSession.TenDangNhap;
+
+                if (!string.IsNullOrEmpty(manvTL))
+                {
+                    txtMANV_TL.Text = manvTL;
+
+                    // Lấy tên nhân viên từ database
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        string query = "SELECT TENNV FROM NHANVIEN WHERE MANV = @MANV";
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@MANV", manvTL);
+                            object result = cmd.ExecuteScalar();
+
+                            if (result != null)
+                            {
+                                txtTENNV.Text = result.ToString();
+                            }
+                            else
+                            {
+                                txtTENNV.Text = "";
+                                MessageBox.Show($"Không tìm thấy thông tin nhân viên: {manvTL}",
+                                    "Cảnh báo",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không xác định được thông tin người dùng đăng nhập! ",
+                        "Lỗi",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi load thông tin nhân viên thanh lý: " + ex.Message,
+                    "Lỗi",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
         // Event khi nhấn Enter trong txtMASV (chỉ khi thêm mới)
         private void txtMASV_KeyDown(object sender, KeyEventArgs e)
         {
@@ -86,6 +145,8 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                 {
                     LoadHopDongByMASV(maSV);
                 }
+                e.Handled = true;
+                e.SuppressKeyPress = true;
             }
         }
 
@@ -98,7 +159,7 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                 {
                     conn.Open();
 
-                    // Lấy hợp đồng mới nhất của sinh viên (chưa có NGAYKTTT)
+                    // ✅ Lấy hợp đồng mới nhất của sinh viên (chưa có NGAYKTTT)
                     string query = @"SELECT TOP 1
                                         hd.MAHD, 
                                         hd. TENHD, 
@@ -107,19 +168,18 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                                         sv.GIOITINH, 
                                         p.MA_PHONG, 
                                         n.MANHA, 
-                                        n. LOAIPHONG,
+                                        n.LOAIPHONG,
                                         n.GIAPHONG,
                                         hd.TUNGAY, 
-                                        hd.DENNGAY,
-                                        hd.NGAYKTTT, 
+                                        hd. DENNGAY,
+                                        hd. NGAYKTTT, 
                                         hd. NGAYKY,
-                                        nv. TENNV
+                                        hd. MANV_TL
                                      FROM SINHVIEN sv 
-                                     INNER JOIN HOPDONG hd ON sv. MASV = hd. MASV
+                                     INNER JOIN HOPDONG hd ON sv. MASV = hd.MASV
                                      INNER JOIN PHONG p ON hd.MA_PHONG = p.MA_PHONG
-                                     INNER JOIN NHA n ON p.MANHA = n.MANHA
-                                     INNER JOIN NHANVIEN nv ON nv.MANV = hd.MANV
-                                     WHERE sv. MASV = @MASV AND hd.NGAYKTTT IS NULL
+                                     INNER JOIN NHA n ON p. MANHA = n.MANHA
+                                     WHERE sv.MASV = @MASV AND hd.NGAYKTTT IS NULL
                                      ORDER BY hd. TUNGAY DESC";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -135,7 +195,7 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                             }
                             else
                             {
-                                MessageBox.Show($"Không tìm thấy hợp đồng đang có hiệu lực của sinh viên {maSV}!",
+                                MessageBox.Show($"Không tìm thấy hợp đồng đang có hiệu lực của sinh viên {maSV}! ",
                                     "Thông báo",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Warning);
@@ -161,6 +221,7 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                 {
                     conn.Open();
 
+                    // ✅ Lấy MANV_TL và tên nhân viên thanh lý
                     string query = @"SELECT 
                                         hd. MAHD, 
                                         hd.TENHD, 
@@ -175,13 +236,14 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                                         hd. DENNGAY,
                                         hd.NGAYKTTT, 
                                         hd.NGAYKY,
-                                        nv.TENNV
+                                        hd.MANV_TL,
+                                        nv_tl.TENNV AS TENNV_TL
                                      FROM HOPDONG hd
                                      INNER JOIN SINHVIEN sv ON hd. MASV = sv.MASV
                                      INNER JOIN PHONG p ON hd. MA_PHONG = p. MA_PHONG
                                      INNER JOIN NHA n ON p.MANHA = n. MANHA
-                                     INNER JOIN NHANVIEN nv ON nv.MANV = hd.MANV
-                                     WHERE hd. MAHD = @MAHD";
+                                     LEFT JOIN NHANVIEN nv_tl ON hd.MANV_TL = nv_tl. MANV
+                                     WHERE hd.MAHD = @MAHD";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -192,6 +254,13 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                             if (reader.Read())
                             {
                                 FillFormData(reader);
+
+                                // ✅ Load thông tin người thanh lý nếu đã có
+                                if (reader["MANV_TL"] != DBNull.Value)
+                                {
+                                    txtMANV_TL.Text = reader["MANV_TL"].ToString();
+                                    txtTENNV.Text = reader["TENNV_TL"] != DBNull.Value ? reader["TENNV_TL"].ToString() : "";
+                                }
                             }
                         }
                     }
@@ -216,7 +285,8 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             txtMANHA.Text = reader["MANHA"].ToString();
             txtLOAIPHONG.Text = reader["LOAIPHONG"].ToString();
             txtGIAPHONG.Text = reader["GIAPHONG"] != DBNull.Value ? reader["GIAPHONG"].ToString() : "";
-            txtTENNV.Text = reader["TENNV"] != DBNull.Value ? reader["TENNV"].ToString() : "";
+
+            // ✅ Không load TENNV từ hợp đồng cũ nữa vì đã load từ UserSession
 
             // Lưu ngày bắt đầu và kết thúc để kiểm tra
             tuNgay = Convert.ToDateTime(reader["TUNGAY"]);
@@ -226,7 +296,7 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             dtpDENNGAY.Value = denNgay;
 
             if (reader["NGAYKY"] != DBNull.Value)
-                dtpNGAYKY.Value = Convert.ToDateTime(reader["NGAYKY"]);
+                dtpNGAYKY_TL.Value = Convert.ToDateTime(reader["NGAYKY"]);
 
             if (reader["NGAYKTTT"] != DBNull.Value)
             {
@@ -248,7 +318,7 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             txtMANHA.Clear();
             txtLOAIPHONG.Clear();
             txtGIAPHONG.Clear();
-            txtTENNV.Clear();
+            // Không clear txtTENNV và txtMANV_TL vì đã load từ UserSession
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -257,6 +327,14 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             if (string.IsNullOrWhiteSpace(txtMAHD.Text))
             {
                 MessageBox.Show("Không có thông tin hợp đồng để cập nhật!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra thông tin nhân viên thanh lý
+            if (string.IsNullOrWhiteSpace(txtMANV_TL.Text))
+            {
+                MessageBox.Show("Không xác định được nhân viên thanh lý!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -288,12 +366,14 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                 {
                     conn.Open();
 
-                    string query = "UPDATE HOPDONG SET NGAYKTTT = @NGAYKTTT WHERE MAHD = @MAHD";
+                    // ✅ Cập nhật cả NGAYKTTT và MANV_TL
+                    string query = "UPDATE HOPDONG SET NGAYKTTT = @NGAYKTTT, MANV_TL = @MANV_TL WHERE MAHD = @MAHD";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@MAHD", txtMAHD.Text.Trim());
                         cmd.Parameters.AddWithValue("@NGAYKTTT", ngayKTTT);
+                        cmd.Parameters.AddWithValue("@MANV_TL", txtMANV_TL.Text.Trim());
 
                         int affectedRows = cmd.ExecuteNonQuery();
 
