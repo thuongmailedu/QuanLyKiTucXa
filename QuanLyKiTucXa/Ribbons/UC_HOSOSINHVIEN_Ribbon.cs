@@ -24,6 +24,9 @@ namespace QuanLyKiTucXa.Ribbons
             // Đổi SelectionMode thành FullRowSelect
             grdData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+            // ✅ Tắt tự động chọn dòng đầu tiên
+            grdData.ClearSelection();
+
             // Đăng ký các event
             btnedit_SINHVIEN.Click += btnedit_SINHVIEN_Click;
             btndelete_SINHVIEN.Click += btndelete_SINHVIEN_Click;
@@ -73,7 +76,7 @@ namespace QuanLyKiTucXa.Ribbons
                         }
                         else if (searchType == "Tên SV")
                         {
-                            query += " WHERE SV.TENSV LIKE @SearchText";
+                            query += " WHERE SV. TENSV LIKE @SearchText";
                         }
                     }
 
@@ -91,6 +94,9 @@ namespace QuanLyKiTucXa.Ribbons
                         da.Fill(dt);
 
                         grdData.DataSource = dt;
+
+                        // ✅ Tắt tự động chọn dòng đầu tiên sau khi load dữ liệu
+                        grdData.ClearSelection();
                     }
                 }
             }
@@ -108,11 +114,13 @@ namespace QuanLyKiTucXa.Ribbons
 
         private void btn_addHSSV_Click(object sender, EventArgs e)
         {
-            frm_addHSSV form = new frm_addHSSV();
-
-            if (form.ShowDialog() == DialogResult.OK)
+            // ✅ Sử dụng using để đảm bảo form được dispose đúng cách
+            using (frm_addHSSV form = new frm_addHSSV())
             {
-                LoadDanhSachSinhVien(); // Reload lại sau khi lưu
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadDanhSachSinhVien(); // Reload lại sau khi lưu
+                }
             }
         }
 
@@ -132,11 +140,13 @@ namespace QuanLyKiTucXa.Ribbons
             string maNha = row.Cells["MANHA"].Value?.ToString() ?? "";
             string tinhTrangCuTru = row.Cells["TINHTRANG_CUTRU"].Value?.ToString() ?? "";
 
-            frm_addHSSV form = new frm_addHSSV(maSV, maPhong, maNha, tinhTrangCuTru);
-
-            if (form.ShowDialog() == DialogResult.OK)
+            // ✅ Sử dụng using để đảm bảo form được dispose đúng cách
+            using (frm_addHSSV form = new frm_addHSSV(maSV, maPhong, maNha, tinhTrangCuTru))
             {
-                LoadDanhSachSinhVien(); // Reload lại sau khi lưu
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadDanhSachSinhVien(); // Reload lại sau khi lưu
+                }
             }
         }
 
