@@ -57,10 +57,9 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             txtGIAPHONG.BackColor = System.Drawing.SystemColors.Control;
             txtMANV_TL.BackColor = System.Drawing.SystemColors.Control;
 
-            // Disable các DateTimePicker trừ dtpNGAYKTTT
+            // Disable các DateTimePicker trừ dtpNGAYKTTT và dtpNGAYKY_TL
             dtpTUNGAY.Enabled = false;
             dtpDENNGAY.Enabled = false;
-            dtpNGAYKY_TL.Enabled = false;
 
             // ✅ Load thông tin nhân viên thanh lý từ UserSession ngay khi mở form
             LoadThongTinNhanVienThanhLy();
@@ -75,6 +74,9 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             {
                 // Chế độ thêm mới: Cho phép nhập MASV
                 txtMASV.ReadOnly = false;
+
+                // ✅ Set ngày ký thanh lý mặc định là ngày hiện tại
+                dtpNGAYKY_TL.Value = DateTime.Now;
 
                 // Đăng ký sự kiện KeyDown cho txtMASV
                 txtMASV.KeyDown += txtMASV_KeyDown;
@@ -173,10 +175,10 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                                         hd.TUNGAY, 
                                         hd. DENNGAY,
                                         hd. NGAYKTTT, 
-                                        hd. NGAYKY,
-                                        hd. MANV_TL
+                                        hd. MANV_TL,
+                                        hd. NGAYKY_TL
                                      FROM SINHVIEN sv 
-                                     INNER JOIN HOPDONG hd ON sv. MASV = hd.MASV
+                                     INNER JOIN HOPDONG hd ON sv.MASV = hd.MASV
                                      INNER JOIN PHONG p ON hd.MA_PHONG = p.MA_PHONG
                                      INNER JOIN NHA n ON p. MANHA = n.MANHA
                                      WHERE sv.MASV = @MASV AND hd.NGAYKTTT IS NULL
@@ -221,7 +223,7 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                 {
                     conn.Open();
 
-                    // ✅ Lấy MANV_TL và tên nhân viên thanh lý
+                    // ✅ Lấy MANV_TL, NGAYKY_TL và tên nhân viên thanh lý
                     string query = @"SELECT 
                                         hd. MAHD, 
                                         hd.TENHD, 
@@ -235,13 +237,13 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                                         hd.TUNGAY, 
                                         hd. DENNGAY,
                                         hd.NGAYKTTT, 
-                                        hd.NGAYKY,
                                         hd.MANV_TL,
+                                        hd. NGAYKY_TL,
                                         nv_tl.TENNV AS TENNV_TL
                                      FROM HOPDONG hd
                                      INNER JOIN SINHVIEN sv ON hd. MASV = sv.MASV
                                      INNER JOIN PHONG p ON hd. MA_PHONG = p. MA_PHONG
-                                     INNER JOIN NHA n ON p.MANHA = n. MANHA
+                                     INNER JOIN NHA n ON p.MANHA = n.MANHA
                                      LEFT JOIN NHANVIEN nv_tl ON hd.MANV_TL = nv_tl. MANV
                                      WHERE hd.MAHD = @MAHD";
 
@@ -260,6 +262,12 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                                 {
                                     txtMANV_TL.Text = reader["MANV_TL"].ToString();
                                     txtTENNV.Text = reader["TENNV_TL"] != DBNull.Value ? reader["TENNV_TL"].ToString() : "";
+                                }
+
+                                // ✅ Load ngày ký thanh lý nếu đã có
+                                if (reader["NGAYKY_TL"] != DBNull.Value)
+                                {
+                                    dtpNGAYKY_TL.Value = Convert.ToDateTime(reader["NGAYKY_TL"]);
                                 }
                             }
                         }
@@ -295,9 +303,7 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             dtpTUNGAY.Value = tuNgay;
             dtpDENNGAY.Value = denNgay;
 
-            if (reader["NGAYKY"] != DBNull.Value)
-                dtpNGAYKY_TL.Value = Convert.ToDateTime(reader["NGAYKY"]);
-
+            // ✅ Load ngày thanh lý
             if (reader["NGAYKTTT"] != DBNull.Value)
             {
                 dtpNGAYKTTT.Value = Convert.ToDateTime(reader["NGAYKTTT"]);
@@ -305,6 +311,16 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             else
             {
                 dtpNGAYKTTT.Value = DateTime.Now; // Mặc định là ngày hiện tại
+            }
+
+            // ✅ Load ngày ký thanh lý
+            if (reader["NGAYKY_TL"] != DBNull.Value)
+            {
+                dtpNGAYKY_TL.Value = Convert.ToDateTime(reader["NGAYKY_TL"]);
+            }
+            else
+            {
+                dtpNGAYKY_TL.Value = DateTime.Now; // Mặc định là ngày hiện tại
             }
         }
 
@@ -341,6 +357,7 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
 
             // Kiểm tra ngày thanh lý phải nằm trong khoảng TUNGAY và DENNGAY
             DateTime ngayKTTT = dtpNGAYKTTT.Value.Date;
+            DateTime ngayKyTL = dtpNGAYKY_TL.Value.Date;
 
             if (ngayKTTT < tuNgay.Date)
             {
@@ -360,20 +377,35 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
                 return;
             }
 
+            // ✅ Kiểm tra ngày ký thanh lý phải >= ngày thanh lý
+            if (ngayKyTL < ngayKTTT)
+            {
+                MessageBox.Show($"Ngày ký biên bản thanh lý không thể trước ngày thanh lý ({ngayKTTT:dd/MM/yyyy})!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
 
-                    // ✅ Cập nhật cả NGAYKTTT và MANV_TL
-                    string query = "UPDATE HOPDONG SET NGAYKTTT = @NGAYKTTT, MANV_TL = @MANV_TL WHERE MAHD = @MAHD";
+                    // ✅ Cập nhật NGAYKTTT, MANV_TL và NGAYKY_TL
+                    string query = @"UPDATE HOPDONG 
+                                    SET NGAYKTTT = @NGAYKTTT, 
+                                        MANV_TL = @MANV_TL,
+                                        NGAYKY_TL = @NGAYKY_TL
+                                    WHERE MAHD = @MAHD";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@MAHD", txtMAHD.Text.Trim());
                         cmd.Parameters.AddWithValue("@NGAYKTTT", ngayKTTT);
                         cmd.Parameters.AddWithValue("@MANV_TL", txtMANV_TL.Text.Trim());
+                        cmd.Parameters.AddWithValue("@NGAYKY_TL", ngayKyTL);
 
                         int affectedRows = cmd.ExecuteNonQuery();
 

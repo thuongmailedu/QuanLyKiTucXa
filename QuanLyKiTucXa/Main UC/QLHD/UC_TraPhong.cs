@@ -44,21 +44,21 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
                 {
                     conn.Open();
 
-                    // ✅ Cập nhật query để lấy thông tin người thanh lý (MANV_TL)
+                    // ✅ Cập nhật query để lấy thông tin người thanh lý (MANV_TL) và NGAYKY_TL
                     string sql = @"SELECT 
-                                    hd.MAHD, 
-                                    hd. TENHD, 
-                                    sv.MASV, 
-                                    sv. TENSV, 
+                                    hd. MAHD, 
+                                    hd.TENHD, 
+                                    sv. MASV, 
+                                    sv.TENSV, 
                                     sv.GIOITINH, 
-                                    p. MA_PHONG, 
+                                    p.MA_PHONG, 
                                     n.MANHA, 
-                                    n. LOAIPHONG, 
+                                    n.LOAIPHONG, 
                                     hd.TUNGAY, 
                                     hd.DENNGAY,
                                     hd.NGAYKTTT, 
-                                    hd. NGAYKY,
-                                    nv_tl.TENNV AS TENNV_THANHLUY
+                                    hd. NGAYKY_TL,
+                                    nv_tl.TENNV AS TENNV_THANHLY
                                    FROM SINHVIEN sv 
                                    INNER JOIN HOPDONG hd ON sv. MASV = hd. MASV
                                    INNER JOIN PHONG p ON hd.MA_PHONG = p.MA_PHONG
@@ -78,7 +78,7 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
                                 sql += " AND sv.MASV LIKE @Keyword";
                                 break;
                             case "Tên SV":
-                                sql += " AND sv.TENSV LIKE @Keyword";
+                                sql += " AND sv. TENSV LIKE @Keyword";
                                 break;
                             case "Ngày thanh lý":
                                 sql += " AND CONVERT(VARCHAR, hd.NGAYKTTT, 103) LIKE @Keyword";
@@ -187,8 +187,12 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
                     {
                         conn.Open();
 
-                        // ✅ Xóa cả NGAYKTTT và MANV_TL
-                        string query = "UPDATE HOPDONG SET NGAYKTTT = NULL, MANV_TL = NULL WHERE MAHD = @MAHD";
+                        // ✅ Xóa cả NGAYKTTT, MANV_TL và NGAYKY_TL
+                        string query = @"UPDATE HOPDONG 
+                                        SET NGAYKTTT = NULL, 
+                                            MANV_TL = NULL,
+                                            NGAYKY_TL = NULL 
+                                        WHERE MAHD = @MAHD";
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {

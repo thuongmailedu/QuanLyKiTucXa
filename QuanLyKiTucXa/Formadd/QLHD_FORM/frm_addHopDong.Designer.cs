@@ -456,6 +456,7 @@
             // 
             // btnLuu
             // 
+            this.btnLuu.BorderRadius = 5;
             this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -472,6 +473,7 @@
             // 
             // btnHuy
             // 
+            this.btnHuy.BorderRadius = 5;
             this.btnHuy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -609,7 +611,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1242, 653);
+            this.ClientSize = new System.Drawing.Size(1242, 651);
             this.Controls.Add(this.dateNGAYKY);
             this.Controls.Add(this.dateDENNGAY);
             this.Controls.Add(this.dateTUNGAY);

@@ -52,8 +52,8 @@
             this.TUNGAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DENNGAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYKTTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYKY_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYKY_TL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENNV_THANHLY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTraPhong)).BeginInit();
             this.SuspendLayout();
@@ -241,8 +241,8 @@
             this.TUNGAY,
             this.DENNGAY,
             this.NGAYKTTT,
-            this.NGAYKY_2,
-            this.TENNV});
+            this.NGAYKY_TL,
+            this.TENNV_THANHLY});
             this.dgvTraPhong.EnableHeadersVisualStyles = false;
             this.dgvTraPhong.Location = new System.Drawing.Point(46, 145);
             this.dgvTraPhong.Name = "dgvTraPhong";
@@ -351,21 +351,21 @@
             this.NGAYKTTT.Name = "NGAYKTTT";
             this.NGAYKTTT.Width = 107;
             // 
-            // NGAYKY_2
+            // NGAYKY_TL
             // 
-            this.NGAYKY_2.DataPropertyName = "NGAYKY";
-            this.NGAYKY_2.HeaderText = "Ngày ký";
-            this.NGAYKY_2.MinimumWidth = 8;
-            this.NGAYKY_2.Name = "NGAYKY_2";
-            this.NGAYKY_2.Width = 82;
+            this.NGAYKY_TL.DataPropertyName = "NGAYKY_TL";
+            this.NGAYKY_TL.HeaderText = "Ngày ký";
+            this.NGAYKY_TL.MinimumWidth = 8;
+            this.NGAYKY_TL.Name = "NGAYKY_TL";
+            this.NGAYKY_TL.Width = 82;
             // 
-            // TENNV
+            // TENNV_THANHLY
             // 
-            this.TENNV.DataPropertyName = "TENNV";
-            this.TENNV.HeaderText = "Người ký";
-            this.TENNV.MinimumWidth = 6;
-            this.TENNV.Name = "TENNV";
-            this.TENNV.Width = 89;
+            this.TENNV_THANHLY.DataPropertyName = "TENNV_THANHLY";
+            this.TENNV_THANHLY.HeaderText = "Người ký";
+            this.TENNV_THANHLY.MinimumWidth = 6;
+            this.TENNV_THANHLY.Name = "TENNV_THANHLY";
+            this.TENNV_THANHLY.Width = 89;
             // 
             // UC_TraPhong
             // 
@@ -409,7 +409,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TUNGAY;
         private System.Windows.Forms.DataGridViewTextBoxColumn DENNGAY;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKTTT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKY_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKY_TL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENNV_THANHLY;
     }
 }
