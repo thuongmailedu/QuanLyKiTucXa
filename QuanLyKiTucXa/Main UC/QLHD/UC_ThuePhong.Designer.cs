@@ -33,6 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvThuePhong = new System.Windows.Forms.DataGridView();
+            this.lblSinhVien = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnIN_HOPDONG = new Guna.UI2.WinForms.Guna2Button();
+            this.btnfillter_SINHVIEN = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btndelete_HOPDONG = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnedit_HOPDONG = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btn_AddHopDong = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.comfillter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,15 +60,6 @@
             this.MANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYKY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblSinhVien = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.comfillter = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnIN_HOPDONG = new Guna.UI2.WinForms.Guna2Button();
-            this.btnfillter_SINHVIEN = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btndelete_HOPDONG = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnedit_HOPDONG = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btn_AddHopDong = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuePhong)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +74,6 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvThuePhong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvThuePhong.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvThuePhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvThuePhong.BackgroundColor = System.Drawing.Color.White;
             this.dgvThuePhong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvThuePhong.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -124,154 +123,10 @@
             this.dgvThuePhong.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvThuePhong.RowTemplate.Height = 45;
             this.dgvThuePhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvThuePhong.Size = new System.Drawing.Size(1555, 624);
+            this.dgvThuePhong.Size = new System.Drawing.Size(1555, 660);
             this.dgvThuePhong.TabIndex = 12;
             this.dgvThuePhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThuePhong_CellContentClick);
             this.dgvThuePhong.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvThuePhong_RowPostPaint);
-            // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.Width = 60;
-            // 
-            // MAHD
-            // 
-            this.MAHD.DataPropertyName = "MAHD";
-            this.MAHD.HeaderText = "Mã HD";
-            this.MAHD.MinimumWidth = 6;
-            this.MAHD.Name = "MAHD";
-            this.MAHD.Width = 77;
-            // 
-            // TENHD
-            // 
-            this.TENHD.DataPropertyName = "TENHD";
-            this.TENHD.HeaderText = "Tên hợp đồng";
-            this.TENHD.MinimumWidth = 6;
-            this.TENHD.Name = "TENHD";
-            this.TENHD.Width = 117;
-            // 
-            // MASV
-            // 
-            this.MASV.DataPropertyName = "MASV";
-            this.MASV.HeaderText = "Mã SV";
-            this.MASV.MinimumWidth = 6;
-            this.MASV.Name = "MASV";
-            this.MASV.Width = 57;
-            // 
-            // TENSV
-            // 
-            this.TENSV.DataPropertyName = "TENSV";
-            this.TENSV.HeaderText = "Tên sinh viên";
-            this.TENSV.MinimumWidth = 6;
-            this.TENSV.Name = "TENSV";
-            this.TENSV.Width = 110;
-            // 
-            // GIOITINH
-            // 
-            this.GIOITINH.DataPropertyName = "GIOITINH";
-            this.GIOITINH.HeaderText = "Giới tính";
-            this.GIOITINH.MinimumWidth = 6;
-            this.GIOITINH.Name = "GIOITINH";
-            this.GIOITINH.Width = 63;
-            // 
-            // MANHA
-            // 
-            this.MANHA.DataPropertyName = "MANHA";
-            this.MANHA.HeaderText = "Mã nhà ";
-            this.MANHA.MinimumWidth = 6;
-            this.MANHA.Name = "MANHA";
-            this.MANHA.Width = 60;
-            // 
-            // MA_PHONG
-            // 
-            this.MA_PHONG.DataPropertyName = "MA_PHONG";
-            this.MA_PHONG.HeaderText = "Mã phòng";
-            this.MA_PHONG.MinimumWidth = 6;
-            this.MA_PHONG.Name = "MA_PHONG";
-            this.MA_PHONG.Width = 96;
-            // 
-            // LOAIPHONG
-            // 
-            this.LOAIPHONG.DataPropertyName = "LOAIPHONG";
-            this.LOAIPHONG.HeaderText = "Loại phòng";
-            this.LOAIPHONG.MinimumWidth = 6;
-            this.LOAIPHONG.Name = "LOAIPHONG";
-            this.LOAIPHONG.Width = 102;
-            // 
-            // TUNGAY
-            // 
-            this.TUNGAY.DataPropertyName = "TUNGAY";
-            this.TUNGAY.HeaderText = "Ngày bắt đầu";
-            this.TUNGAY.MinimumWidth = 6;
-            this.TUNGAY.Name = "TUNGAY";
-            this.TUNGAY.Width = 93;
-            // 
-            // DENNGAY
-            // 
-            this.DENNGAY.DataPropertyName = "DENNGAY";
-            this.DENNGAY.HeaderText = "Ngày kết thúc";
-            this.DENNGAY.MinimumWidth = 6;
-            this.DENNGAY.Name = "DENNGAY";
-            this.DENNGAY.Width = 91;
-            // 
-            // NGAYKTTT
-            // 
-            this.NGAYKTTT.DataPropertyName = "NGAYKTTT";
-            this.NGAYKTTT.HeaderText = "Ngày thanh lý";
-            this.NGAYKTTT.MinimumWidth = 6;
-            this.NGAYKTTT.Name = "NGAYKTTT";
-            this.NGAYKTTT.Width = 107;
-            // 
-            // THOIHAN
-            // 
-            this.THOIHAN.DataPropertyName = "THOIHAN";
-            this.THOIHAN.HeaderText = "Thời hạn";
-            this.THOIHAN.MinimumWidth = 6;
-            this.THOIHAN.Name = "THOIHAN";
-            this.THOIHAN.Width = 86;
-            // 
-            // DONGIA
-            // 
-            this.DONGIA.DataPropertyName = "DONGIA";
-            this.DONGIA.HeaderText = "Đơn giá";
-            this.DONGIA.MinimumWidth = 6;
-            this.DONGIA.Name = "DONGIA";
-            this.DONGIA.Width = 82;
-            // 
-            // TONGTIEN
-            // 
-            this.TONGTIEN.DataPropertyName = "TONGTIEN";
-            this.TONGTIEN.HeaderText = "Tổng tiền";
-            this.TONGTIEN.MinimumWidth = 6;
-            this.TONGTIEN.Name = "TONGTIEN";
-            this.TONGTIEN.Width = 91;
-            // 
-            // MANV
-            // 
-            this.MANV.DataPropertyName = "MANV";
-            this.MANV.HeaderText = "Mã người tạo";
-            this.MANV.MinimumWidth = 6;
-            this.MANV.Name = "MANV";
-            this.MANV.Width = 116;
-            // 
-            // TENNV
-            // 
-            this.TENNV.DataPropertyName = "TENNV";
-            this.TENNV.HeaderText = "Người tạo";
-            this.TENNV.MinimumWidth = 6;
-            this.TENNV.Name = "TENNV";
-            this.TENNV.Width = 96;
-            // 
-            // NGAYKY
-            // 
-            this.NGAYKY.DataPropertyName = "NGAYKY";
-            this.NGAYKY.HeaderText = "Ngày ký";
-            this.NGAYKY.MinimumWidth = 6;
-            this.NGAYKY.Name = "NGAYKY";
-            this.NGAYKY.Width = 82;
             // 
             // lblSinhVien
             // 
@@ -300,6 +155,93 @@
             this.panel1.Size = new System.Drawing.Size(1555, 58);
             this.panel1.TabIndex = 14;
             // 
+            // btnIN_HOPDONG
+            // 
+            this.btnIN_HOPDONG.BorderRadius = 5;
+            this.btnIN_HOPDONG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnIN_HOPDONG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnIN_HOPDONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnIN_HOPDONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnIN_HOPDONG.FillColor = System.Drawing.Color.Navy;
+            this.btnIN_HOPDONG.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIN_HOPDONG.ForeColor = System.Drawing.Color.White;
+            this.btnIN_HOPDONG.Location = new System.Drawing.Point(1475, 6);
+            this.btnIN_HOPDONG.Name = "btnIN_HOPDONG";
+            this.btnIN_HOPDONG.Size = new System.Drawing.Size(65, 45);
+            this.btnIN_HOPDONG.TabIndex = 15;
+            this.btnIN_HOPDONG.Text = "IN";
+            this.btnIN_HOPDONG.Click += new System.EventHandler(this.btnIN_HOPDONG_Click);
+            // 
+            // btnfillter_SINHVIEN
+            // 
+            this.btnfillter_SINHVIEN.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.filter;
+            this.btnfillter_SINHVIEN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnfillter_SINHVIEN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnfillter_SINHVIEN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnfillter_SINHVIEN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnfillter_SINHVIEN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnfillter_SINHVIEN.FillColor = System.Drawing.Color.Transparent;
+            this.btnfillter_SINHVIEN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnfillter_SINHVIEN.ForeColor = System.Drawing.Color.White;
+            this.btnfillter_SINHVIEN.Location = new System.Drawing.Point(1262, 12);
+            this.btnfillter_SINHVIEN.Name = "btnfillter_SINHVIEN";
+            this.btnfillter_SINHVIEN.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnfillter_SINHVIEN.Size = new System.Drawing.Size(35, 40);
+            this.btnfillter_SINHVIEN.TabIndex = 16;
+            // 
+            // btndelete_HOPDONG
+            // 
+            this.btndelete_HOPDONG.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
+            this.btndelete_HOPDONG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btndelete_HOPDONG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btndelete_HOPDONG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btndelete_HOPDONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btndelete_HOPDONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btndelete_HOPDONG.FillColor = System.Drawing.Color.Transparent;
+            this.btndelete_HOPDONG.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btndelete_HOPDONG.ForeColor = System.Drawing.Color.White;
+            this.btndelete_HOPDONG.Location = new System.Drawing.Point(1315, 13);
+            this.btndelete_HOPDONG.Name = "btndelete_HOPDONG";
+            this.btndelete_HOPDONG.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btndelete_HOPDONG.Size = new System.Drawing.Size(35, 34);
+            this.btndelete_HOPDONG.TabIndex = 13;
+            // 
+            // btnedit_HOPDONG
+            // 
+            this.btnedit_HOPDONG.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
+            this.btnedit_HOPDONG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnedit_HOPDONG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnedit_HOPDONG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnedit_HOPDONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnedit_HOPDONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnedit_HOPDONG.FillColor = System.Drawing.Color.Transparent;
+            this.btnedit_HOPDONG.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnedit_HOPDONG.ForeColor = System.Drawing.Color.White;
+            this.btnedit_HOPDONG.Location = new System.Drawing.Point(1362, 13);
+            this.btnedit_HOPDONG.Name = "btnedit_HOPDONG";
+            this.btnedit_HOPDONG.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnedit_HOPDONG.Size = new System.Drawing.Size(40, 34);
+            this.btnedit_HOPDONG.TabIndex = 12;
+            this.btnedit_HOPDONG.Click += new System.EventHandler(this.btnedit_HOPDONG_Click);
+            // 
+            // btn_AddHopDong
+            // 
+            this.btn_AddHopDong.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
+            this.btn_AddHopDong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_AddHopDong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_AddHopDong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_AddHopDong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_AddHopDong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_AddHopDong.FillColor = System.Drawing.Color.Transparent;
+            this.btn_AddHopDong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_AddHopDong.ForeColor = System.Drawing.Color.White;
+            this.btn_AddHopDong.Location = new System.Drawing.Point(1419, 14);
+            this.btn_AddHopDong.Name = "btn_AddHopDong";
+            this.btn_AddHopDong.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btn_AddHopDong.Size = new System.Drawing.Size(31, 34);
+            this.btn_AddHopDong.TabIndex = 11;
+            this.btn_AddHopDong.Click += new System.EventHandler(this.btn_AddHopDong_Click);
+            // 
             // txtSearch
             // 
             this.txtSearch.BorderColor = System.Drawing.Color.Gray;
@@ -322,7 +264,7 @@
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtSearch.PlaceholderText = "Nhập để tìm kiếm";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(313, 46);
+            this.txtSearch.Size = new System.Drawing.Size(938, 46);
             this.txtSearch.TabIndex = 10;
             this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -340,7 +282,10 @@
             this.comfillter.ItemHeight = 40;
             this.comfillter.Items.AddRange(new object[] {
             "Mã SV",
-            "Tên SV",
+            "Ngày bắt đầu",
+            "Ngày kết thúc",
+            "Ngày thanh lý",
+            "Mã nhà",
             "Mã NV"});
             this.comfillter.Location = new System.Drawing.Point(3, 6);
             this.comfillter.Name = "comfillter";
@@ -349,90 +294,149 @@
             this.comfillter.TabIndex = 0;
             this.comfillter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnIN_HOPDONG
+            // STT
             // 
-            this.btnIN_HOPDONG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnIN_HOPDONG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnIN_HOPDONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnIN_HOPDONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnIN_HOPDONG.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnIN_HOPDONG.ForeColor = System.Drawing.Color.White;
-            this.btnIN_HOPDONG.Location = new System.Drawing.Point(1475, 6);
-            this.btnIN_HOPDONG.Name = "btnIN_HOPDONG";
-            this.btnIN_HOPDONG.Size = new System.Drawing.Size(65, 45);
-            this.btnIN_HOPDONG.TabIndex = 15;
-            this.btnIN_HOPDONG.Text = "IN";
-            this.btnIN_HOPDONG.Click += new System.EventHandler(this.btnIN_HOPDONG_Click);
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.Width = 60;
             // 
-            // btnfillter_SINHVIEN
+            // MAHD
             // 
-            this.btnfillter_SINHVIEN.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.filter;
-            this.btnfillter_SINHVIEN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnfillter_SINHVIEN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnfillter_SINHVIEN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnfillter_SINHVIEN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnfillter_SINHVIEN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnfillter_SINHVIEN.FillColor = System.Drawing.Color.Transparent;
-            this.btnfillter_SINHVIEN.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnfillter_SINHVIEN.ForeColor = System.Drawing.Color.White;
-            this.btnfillter_SINHVIEN.Location = new System.Drawing.Point(1226, 6);
-            this.btnfillter_SINHVIEN.Name = "btnfillter_SINHVIEN";
-            this.btnfillter_SINHVIEN.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnfillter_SINHVIEN.Size = new System.Drawing.Size(35, 40);
-            this.btnfillter_SINHVIEN.TabIndex = 16;
+            this.MAHD.DataPropertyName = "MAHD";
+            this.MAHD.HeaderText = "Mã HD";
+            this.MAHD.MinimumWidth = 6;
+            this.MAHD.Name = "MAHD";
+            this.MAHD.Width = 120;
             // 
-            // btndelete_HOPDONG
+            // TENHD
             // 
-            this.btndelete_HOPDONG.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
-            this.btndelete_HOPDONG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btndelete_HOPDONG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btndelete_HOPDONG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btndelete_HOPDONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btndelete_HOPDONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btndelete_HOPDONG.FillColor = System.Drawing.Color.Transparent;
-            this.btndelete_HOPDONG.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btndelete_HOPDONG.ForeColor = System.Drawing.Color.White;
-            this.btndelete_HOPDONG.Location = new System.Drawing.Point(1390, 12);
-            this.btndelete_HOPDONG.Name = "btndelete_HOPDONG";
-            this.btndelete_HOPDONG.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btndelete_HOPDONG.Size = new System.Drawing.Size(35, 34);
-            this.btndelete_HOPDONG.TabIndex = 13;
+            this.TENHD.DataPropertyName = "TENHD";
+            this.TENHD.HeaderText = "Tên hợp đồng";
+            this.TENHD.MinimumWidth = 6;
+            this.TENHD.Name = "TENHD";
+            this.TENHD.Width = 200;
             // 
-            // btnedit_HOPDONG
+            // MASV
             // 
-            this.btnedit_HOPDONG.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
-            this.btnedit_HOPDONG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnedit_HOPDONG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnedit_HOPDONG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnedit_HOPDONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnedit_HOPDONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnedit_HOPDONG.FillColor = System.Drawing.Color.Transparent;
-            this.btnedit_HOPDONG.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnedit_HOPDONG.ForeColor = System.Drawing.Color.White;
-            this.btnedit_HOPDONG.Location = new System.Drawing.Point(1335, 12);
-            this.btnedit_HOPDONG.Name = "btnedit_HOPDONG";
-            this.btnedit_HOPDONG.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnedit_HOPDONG.Size = new System.Drawing.Size(40, 34);
-            this.btnedit_HOPDONG.TabIndex = 12;
-            this.btnedit_HOPDONG.Click += new System.EventHandler(this.btnedit_HOPDONG_Click);
+            this.MASV.DataPropertyName = "MASV";
+            this.MASV.HeaderText = "Mã SV";
+            this.MASV.MinimumWidth = 6;
+            this.MASV.Name = "MASV";
+            this.MASV.Width = 120;
             // 
-            // btn_AddHopDong
+            // TENSV
             // 
-            this.btn_AddHopDong.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
-            this.btn_AddHopDong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_AddHopDong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_AddHopDong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_AddHopDong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_AddHopDong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_AddHopDong.FillColor = System.Drawing.Color.Transparent;
-            this.btn_AddHopDong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_AddHopDong.ForeColor = System.Drawing.Color.White;
-            this.btn_AddHopDong.Location = new System.Drawing.Point(1280, 12);
-            this.btn_AddHopDong.Name = "btn_AddHopDong";
-            this.btn_AddHopDong.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btn_AddHopDong.Size = new System.Drawing.Size(31, 34);
-            this.btn_AddHopDong.TabIndex = 11;
-            this.btn_AddHopDong.Click += new System.EventHandler(this.btn_AddHopDong_Click);
+            this.TENSV.DataPropertyName = "TENSV";
+            this.TENSV.HeaderText = "Tên sinh viên";
+            this.TENSV.MinimumWidth = 6;
+            this.TENSV.Name = "TENSV";
+            this.TENSV.Width = 150;
+            // 
+            // GIOITINH
+            // 
+            this.GIOITINH.DataPropertyName = "GIOITINH";
+            this.GIOITINH.HeaderText = "Giới tính";
+            this.GIOITINH.MinimumWidth = 6;
+            this.GIOITINH.Name = "GIOITINH";
+            this.GIOITINH.Width = 120;
+            // 
+            // MANHA
+            // 
+            this.MANHA.DataPropertyName = "MANHA";
+            this.MANHA.HeaderText = "Mã nhà ";
+            this.MANHA.MinimumWidth = 6;
+            this.MANHA.Name = "MANHA";
+            this.MANHA.Width = 120;
+            // 
+            // MA_PHONG
+            // 
+            this.MA_PHONG.DataPropertyName = "MA_PHONG";
+            this.MA_PHONG.HeaderText = "Mã phòng";
+            this.MA_PHONG.MinimumWidth = 6;
+            this.MA_PHONG.Name = "MA_PHONG";
+            this.MA_PHONG.Width = 120;
+            // 
+            // LOAIPHONG
+            // 
+            this.LOAIPHONG.DataPropertyName = "LOAIPHONG";
+            this.LOAIPHONG.HeaderText = "Loại phòng";
+            this.LOAIPHONG.MinimumWidth = 6;
+            this.LOAIPHONG.Name = "LOAIPHONG";
+            this.LOAIPHONG.Width = 120;
+            // 
+            // TUNGAY
+            // 
+            this.TUNGAY.DataPropertyName = "TUNGAY";
+            this.TUNGAY.HeaderText = "Ngày bắt đầu";
+            this.TUNGAY.MinimumWidth = 6;
+            this.TUNGAY.Name = "TUNGAY";
+            this.TUNGAY.Width = 140;
+            // 
+            // DENNGAY
+            // 
+            this.DENNGAY.DataPropertyName = "DENNGAY";
+            this.DENNGAY.HeaderText = "Ngày kết thúc";
+            this.DENNGAY.MinimumWidth = 6;
+            this.DENNGAY.Name = "DENNGAY";
+            this.DENNGAY.Width = 140;
+            // 
+            // NGAYKTTT
+            // 
+            this.NGAYKTTT.DataPropertyName = "NGAYKTTT";
+            this.NGAYKTTT.HeaderText = "Ngày thanh lý";
+            this.NGAYKTTT.MinimumWidth = 6;
+            this.NGAYKTTT.Name = "NGAYKTTT";
+            this.NGAYKTTT.Width = 140;
+            // 
+            // THOIHAN
+            // 
+            this.THOIHAN.DataPropertyName = "THOIHAN";
+            this.THOIHAN.HeaderText = "Thời hạn";
+            this.THOIHAN.MinimumWidth = 6;
+            this.THOIHAN.Name = "THOIHAN";
+            this.THOIHAN.Width = 120;
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            this.DONGIA.HeaderText = "Đơn giá";
+            this.DONGIA.MinimumWidth = 6;
+            this.DONGIA.Name = "DONGIA";
+            this.DONGIA.Width = 120;
+            // 
+            // TONGTIEN
+            // 
+            this.TONGTIEN.DataPropertyName = "TONGTIEN";
+            this.TONGTIEN.HeaderText = "Tổng tiền";
+            this.TONGTIEN.MinimumWidth = 6;
+            this.TONGTIEN.Name = "TONGTIEN";
+            this.TONGTIEN.Width = 120;
+            // 
+            // MANV
+            // 
+            this.MANV.DataPropertyName = "MANV";
+            this.MANV.HeaderText = "Mã người tạo";
+            this.MANV.MinimumWidth = 6;
+            this.MANV.Name = "MANV";
+            this.MANV.Width = 120;
+            // 
+            // TENNV
+            // 
+            this.TENNV.DataPropertyName = "TENNV";
+            this.TENNV.HeaderText = "Người tạo";
+            this.TENNV.MinimumWidth = 6;
+            this.TENNV.Name = "TENNV";
+            this.TENNV.Width = 140;
+            // 
+            // NGAYKY
+            // 
+            this.NGAYKY.DataPropertyName = "NGAYKY";
+            this.NGAYKY.HeaderText = "Ngày ký";
+            this.NGAYKY.MinimumWidth = 6;
+            this.NGAYKY.Name = "NGAYKY";
+            this.NGAYKY.Width = 140;
             // 
             // UC_ThuePhong
             // 
@@ -472,6 +476,7 @@
         //private System.Windows.Forms.DataGridViewTextBoxColumn NgayKy;
         private Guna.UI2.WinForms.Guna2CircleButton btn_AddHopDong;
         private Guna.UI2.WinForms.Guna2CircleButton btnfillter_SINHVIEN;
+        private Guna.UI2.WinForms.Guna2Button btnIN_HOPDONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENHD;
@@ -490,6 +495,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MANV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKY;
-        private Guna.UI2.WinForms.Guna2Button btnIN_HOPDONG;
     }
 }

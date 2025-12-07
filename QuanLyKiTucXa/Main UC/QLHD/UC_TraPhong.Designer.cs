@@ -41,6 +41,7 @@
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblSinhVien = new System.Windows.Forms.Label();
             this.dgvTraPhong = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAHD_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENHD_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MASV_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -216,7 +217,6 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvTraPhong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTraPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dgvTraPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvTraPhong.BackgroundColor = System.Drawing.Color.White;
             this.dgvTraPhong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvTraPhong.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -230,6 +230,7 @@
             this.dgvTraPhong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTraPhong.ColumnHeadersHeight = 45;
             this.dgvTraPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
             this.MAHD_2,
             this.TENHD_2,
             this.MASV_2,
@@ -262,6 +263,15 @@
             this.dgvTraPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvTraPhong.Size = new System.Drawing.Size(1555, 859);
             this.dgvTraPhong.TabIndex = 18;
+            this.dgvTraPhong.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvTraPhong_RowPostPaint);
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.Width = 50;
             // 
             // MAHD_2
             // 
@@ -269,7 +279,7 @@
             this.MAHD_2.HeaderText = "Mã HD";
             this.MAHD_2.MinimumWidth = 8;
             this.MAHD_2.Name = "MAHD_2";
-            this.MAHD_2.Width = 77;
+            this.MAHD_2.Width = 130;
             // 
             // TENHD_2
             // 
@@ -277,7 +287,7 @@
             this.TENHD_2.HeaderText = "Tên hợp đồng";
             this.TENHD_2.MinimumWidth = 8;
             this.TENHD_2.Name = "TENHD_2";
-            this.TENHD_2.Width = 117;
+            this.TENHD_2.Width = 200;
             // 
             // MASV_2
             // 
@@ -285,7 +295,7 @@
             this.MASV_2.HeaderText = "Mã SV";
             this.MASV_2.MinimumWidth = 8;
             this.MASV_2.Name = "MASV_2";
-            this.MASV_2.Width = 57;
+            this.MASV_2.Width = 120;
             // 
             // TENSV_2
             // 
@@ -293,7 +303,7 @@
             this.TENSV_2.HeaderText = "Tên SV";
             this.TENSV_2.MinimumWidth = 8;
             this.TENSV_2.Name = "TENSV_2";
-            this.TENSV_2.Width = 59;
+            this.TENSV_2.Width = 180;
             // 
             // GIOITINH_2
             // 
@@ -301,7 +311,7 @@
             this.GIOITINH_2.HeaderText = "Giới tính";
             this.GIOITINH_2.MinimumWidth = 8;
             this.GIOITINH_2.Name = "GIOITINH_2";
-            this.GIOITINH_2.Width = 63;
+            this.GIOITINH_2.Width = 106;
             // 
             // MA_PHONG
             // 
@@ -309,7 +319,7 @@
             this.MA_PHONG.HeaderText = "Mã Phòng";
             this.MA_PHONG.MinimumWidth = 8;
             this.MA_PHONG.Name = "MA_PHONG";
-            this.MA_PHONG.Width = 95;
+            this.MA_PHONG.Width = 120;
             // 
             // MANHA
             // 
@@ -317,7 +327,7 @@
             this.MANHA.HeaderText = "Nhà";
             this.MANHA.MinimumWidth = 8;
             this.MANHA.Name = "MANHA";
-            this.MANHA.Width = 63;
+            this.MANHA.Width = 110;
             // 
             // LOAIPHONG_2
             // 
@@ -325,7 +335,7 @@
             this.LOAIPHONG_2.HeaderText = "Loại phòng";
             this.LOAIPHONG_2.MinimumWidth = 8;
             this.LOAIPHONG_2.Name = "LOAIPHONG_2";
-            this.LOAIPHONG_2.Width = 102;
+            this.LOAIPHONG_2.Width = 120;
             // 
             // TUNGAY
             // 
@@ -333,7 +343,7 @@
             this.TUNGAY.HeaderText = "Ngày bắt đầu";
             this.TUNGAY.MinimumWidth = 8;
             this.TUNGAY.Name = "TUNGAY";
-            this.TUNGAY.Width = 93;
+            this.TUNGAY.Width = 130;
             // 
             // DENNGAY
             // 
@@ -341,7 +351,7 @@
             this.DENNGAY.HeaderText = "Ngày kết thúc";
             this.DENNGAY.MinimumWidth = 6;
             this.DENNGAY.Name = "DENNGAY";
-            this.DENNGAY.Width = 91;
+            this.DENNGAY.Width = 130;
             // 
             // NGAYKTTT
             // 
@@ -349,7 +359,7 @@
             this.NGAYKTTT.HeaderText = "Ngày thanh lý";
             this.NGAYKTTT.MinimumWidth = 8;
             this.NGAYKTTT.Name = "NGAYKTTT";
-            this.NGAYKTTT.Width = 107;
+            this.NGAYKTTT.Width = 130;
             // 
             // NGAYKY_TL
             // 
@@ -357,7 +367,7 @@
             this.NGAYKY_TL.HeaderText = "Ngày ký";
             this.NGAYKY_TL.MinimumWidth = 8;
             this.NGAYKY_TL.Name = "NGAYKY_TL";
-            this.NGAYKY_TL.Width = 82;
+            this.NGAYKY_TL.Width = 120;
             // 
             // TENNV_THANHLY
             // 
@@ -365,7 +375,7 @@
             this.TENNV_THANHLY.HeaderText = "Người ký";
             this.TENNV_THANHLY.MinimumWidth = 6;
             this.TENNV_THANHLY.Name = "TENNV_THANHLY";
-            this.TENNV_THANHLY.Width = 89;
+            this.TENNV_THANHLY.Width = 140;
             // 
             // UC_TraPhong
             // 
@@ -398,6 +408,7 @@
         private System.Windows.Forms.Label lblSinhVien;
         private Guna.UI2.WinForms.Guna2CircleButton btnfillter_TraPhong;
         private System.Windows.Forms.DataGridView dgvTraPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAHD_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENHD_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MASV_2;

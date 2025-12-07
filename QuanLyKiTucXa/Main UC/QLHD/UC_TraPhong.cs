@@ -28,9 +28,9 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
             dgvTraPhong.ClearSelection();
 
             // Đăng ký events
-            btnedit_Traphong.Click += btnedit_Traphong_Click;
-            btndelete_Traphong.Click += btndelete_Traphong_Click;
-            btnfillter_TraPhong.Click += btnfillter_TraPhong_Click;
+            //btnedit_Traphong.Click += btnedit_Traphong_Click;
+            //btndelete_Traphong.Click += btndelete_Traphong_Click;
+            //btnfillter_TraPhong.Click += btnfillter_TraPhong_Click;
 
             // Load dữ liệu
             LoadData();
@@ -222,6 +222,12 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
             string keyword = txtSearch.Text.Trim();
 
             LoadData(searchType, keyword);
+        }
+
+        private void dgvTraPhong_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            // Vẽ số thứ tự ở cột đầu tiên
+            dgvTraPhong.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
     }
 }

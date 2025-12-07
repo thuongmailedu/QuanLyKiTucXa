@@ -24,13 +24,10 @@ namespace QuanLyKiTucXa.Ribbons
             // Đổi SelectionMode thành FullRowSelect
             grdData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            // ✅ Tắt tự động chọn dòng đầu tiên
-            grdData.ClearSelection();
-
-            // Đăng ký các event
-            btnedit_SINHVIEN.Click += btnedit_SINHVIEN_Click;
-            btndelete_SINHVIEN.Click += btndelete_SINHVIEN_Click;
-            btnfillter_SINHVIEN.Click += btnfillter_SINHVIEN_Click;
+            // ❌ XÓA CÁC DÒNG ĐĂNG KÝ EVENT - Đã có trong Designer rồi
+            // btnedit_SINHVIEN.Click += btnedit_SINHVIEN_Click;
+            // btndelete_SINHVIEN.Click += btndelete_SINHVIEN_Click;
+            // btnfillter_SINHVIEN.Click += btnfillter_SINHVIEN_Click;
 
             LoadDanhSachSinhVien();
         }
@@ -46,13 +43,13 @@ namespace QuanLyKiTucXa.Ribbons
                     string query = @"SELECT 
                                         SV.MASV,
                                         SV.TENSV,
-                                        HD.MA_PHONG,
+                                        HD. MA_PHONG,
                                         P.MANHA,
                                         CASE 
-                                            WHEN HD.NGAYKTTT IS NOT NULL AND GETDATE() > HD.NGAYKTTT THEN N'Đã thanh lý hợp đồng'
+                                            WHEN HD. NGAYKTTT IS NOT NULL AND GETDATE() > HD. NGAYKTTT THEN N'Đã thanh lý hợp đồng'
                                             WHEN HD.NGAYKTTT IS NULL AND GETDATE() > HD.DENNGAY THEN N'Hết hạn hợp đồng'
-                                            WHEN GETDATE() >= HD.TUNGAY AND GETDATE() <= HD.DENNGAY THEN N'Đang cư trú'
-                                            WHEN GETDATE() < HD.TUNGAY THEN N'Chưa nhận phòng'
+                                            WHEN GETDATE() >= HD. TUNGAY AND GETDATE() <= HD.DENNGAY THEN N'Đang cư trú'
+                                            WHEN GETDATE() < HD. TUNGAY THEN N'Chưa nhận phòng'
                                             ELSE N'Chưa có hợp đồng'
                                         END AS TINHTRANG_CUTRU
                                      FROM SINHVIEN SV
@@ -80,7 +77,8 @@ namespace QuanLyKiTucXa.Ribbons
                         }
                     }
 
-                    query += " ORDER BY SV.MASV";
+                    // Sắp xếp theo MASV giảm dần (mới nhất lên đầu)
+                    query += " ORDER BY SV.MASV DESC";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -94,9 +92,6 @@ namespace QuanLyKiTucXa.Ribbons
                         da.Fill(dt);
 
                         grdData.DataSource = dt;
-
-                        // ✅ Tắt tự động chọn dòng đầu tiên sau khi load dữ liệu
-                        grdData.ClearSelection();
                     }
                 }
             }
@@ -114,12 +109,13 @@ namespace QuanLyKiTucXa.Ribbons
 
         private void btn_addHSSV_Click(object sender, EventArgs e)
         {
-            // ✅ Sử dụng using để đảm bảo form được dispose đúng cách
             using (frm_addHSSV form = new frm_addHSSV())
             {
-                if (form.ShowDialog() == DialogResult.OK)
+                DialogResult result = form.ShowDialog();
+
+                if (result == DialogResult.OK)
                 {
-                    LoadDanhSachSinhVien(); // Reload lại sau khi lưu
+                    LoadDanhSachSinhVien();
                 }
             }
         }
@@ -140,12 +136,13 @@ namespace QuanLyKiTucXa.Ribbons
             string maNha = row.Cells["MANHA"].Value?.ToString() ?? "";
             string tinhTrangCuTru = row.Cells["TINHTRANG_CUTRU"].Value?.ToString() ?? "";
 
-            // ✅ Sử dụng using để đảm bảo form được dispose đúng cách
             using (frm_addHSSV form = new frm_addHSSV(maSV, maPhong, maNha, tinhTrangCuTru))
             {
-                if (form.ShowDialog() == DialogResult.OK)
+                DialogResult result = form.ShowDialog();
+
+                if (result == DialogResult.OK)
                 {
-                    LoadDanhSachSinhVien(); // Reload lại sau khi lưu
+                    LoadDanhSachSinhVien();
                 }
             }
         }
@@ -189,7 +186,7 @@ namespace QuanLyKiTucXa.Ribbons
 
                     // Xác nhận xóa
                     DialogResult result = MessageBox.Show(
-                        $"Bạn có chắc chắn muốn xóa sinh viên {maSV}?\nThông tin thân nhân cũng sẽ bị xóa!",
+                        $"Bạn có chắc chắn muốn xóa sinh viên {maSV}?\nThông tin thân nhân cũng sẽ bị xóa! ",
                         "Xác nhận",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question);
@@ -219,7 +216,8 @@ namespace QuanLyKiTucXa.Ribbons
                             transaction.Commit();
                             MessageBox.Show("Xóa sinh viên thành công!", "Thông báo",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LoadDanhSachSinhVien(); // Reload lại
+
+                            LoadDanhSachSinhVien();
                         }
                         catch (Exception ex)
                         {

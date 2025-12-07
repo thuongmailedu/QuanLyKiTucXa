@@ -35,6 +35,17 @@
             this.dtpTHOIGIAN = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.dgv_HD_DIEN = new System.Windows.Forms.DataGridView();
+            this.comTRANGTHAI = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comPHONG = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comNHA = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnfillter = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnedit = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnadd = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MADV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAHD_DIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,17 +60,6 @@
             this.THOIGIAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYGHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TINHTRANGTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comTRANGTHAI = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.comPHONG = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.comNHA = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnfillter = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnedit = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnadd = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HD_DIEN)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +105,6 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgv_HD_DIEN.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_HD_DIEN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_HD_DIEN.BackgroundColor = System.Drawing.Color.White;
             this.dgv_HD_DIEN.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_HD_DIEN.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -153,104 +152,6 @@
             this.dgv_HD_DIEN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_HD_DIEN.Size = new System.Drawing.Size(1490, 602);
             this.dgv_HD_DIEN.TabIndex = 46;
-            // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 8;
-            this.STT.Name = "STT";
-            // 
-            // MADV
-            // 
-            this.MADV.DataPropertyName = "MADV";
-            this.MADV.HeaderText = "Mã dịch vụ";
-            this.MADV.MinimumWidth = 6;
-            this.MADV.Name = "MADV";
-            // 
-            // MAHD_DIEN
-            // 
-            this.MAHD_DIEN.DataPropertyName = "MAHD_DIEN";
-            this.MAHD_DIEN.HeaderText = "Mã hóa đơn";
-            this.MAHD_DIEN.MinimumWidth = 8;
-            this.MAHD_DIEN.Name = "MAHD_DIEN";
-            // 
-            // TENHD
-            // 
-            this.TENHD.DataPropertyName = "TENHD";
-            this.TENHD.HeaderText = "Tên hóa đơn";
-            this.TENHD.MinimumWidth = 8;
-            this.TENHD.Name = "TENHD";
-            // 
-            // MANHA
-            // 
-            this.MANHA.DataPropertyName = "MANHA";
-            this.MANHA.HeaderText = "Mã nhà";
-            this.MANHA.MinimumWidth = 6;
-            this.MANHA.Name = "MANHA";
-            // 
-            // MA_PHONG
-            // 
-            this.MA_PHONG.DataPropertyName = "MA_PHONG";
-            this.MA_PHONG.HeaderText = "Mã phòng";
-            this.MA_PHONG.MinimumWidth = 6;
-            this.MA_PHONG.Name = "MA_PHONG";
-            // 
-            // CHISOCU
-            // 
-            this.CHISOCU.DataPropertyName = "CHISOCU";
-            this.CHISOCU.HeaderText = "Chỉ số cũ";
-            this.CHISOCU.MinimumWidth = 6;
-            this.CHISOCU.Name = "CHISOCU";
-            // 
-            // CHISOMOI
-            // 
-            this.CHISOMOI.DataPropertyName = "CHISOMOI";
-            this.CHISOMOI.HeaderText = "Chỉ số mới";
-            this.CHISOMOI.MinimumWidth = 6;
-            this.CHISOMOI.Name = "CHISOMOI";
-            // 
-            // SONUOC
-            // 
-            this.SONUOC.DataPropertyName = "SONUOC";
-            this.SONUOC.HeaderText = "Số nước tiêu thụ";
-            this.SONUOC.MinimumWidth = 6;
-            this.SONUOC.Name = "SONUOC";
-            // 
-            // DONGIA
-            // 
-            this.DONGIA.DataPropertyName = "DONGIA";
-            this.DONGIA.HeaderText = "Đơn giá";
-            this.DONGIA.MinimumWidth = 8;
-            this.DONGIA.Name = "DONGIA";
-            // 
-            // TONGTIEN
-            // 
-            this.TONGTIEN.DataPropertyName = "TONGTIEN";
-            this.TONGTIEN.HeaderText = "Tổng tiền";
-            this.TONGTIEN.MinimumWidth = 6;
-            this.TONGTIEN.Name = "TONGTIEN";
-            // 
-            // THOIGIAN
-            // 
-            this.THOIGIAN.DataPropertyName = "THOIGIAN";
-            this.THOIGIAN.HeaderText = "Thời gian";
-            this.THOIGIAN.MinimumWidth = 8;
-            this.THOIGIAN.Name = "THOIGIAN";
-            // 
-            // NGAYGHI
-            // 
-            this.NGAYGHI.DataPropertyName = "NGAYGHI";
-            this.NGAYGHI.HeaderText = "Ngày ghi";
-            this.NGAYGHI.MinimumWidth = 6;
-            this.NGAYGHI.Name = "NGAYGHI";
-            // 
-            // TINHTRANGTT
-            // 
-            this.TINHTRANGTT.DataPropertyName = "TINHTRANGTT";
-            this.TINHTRANGTT.HeaderText = "Trạng thái";
-            this.TINHTRANGTT.MinimumWidth = 6;
-            this.TINHTRANGTT.Name = "TINHTRANGTT";
             // 
             // comTRANGTHAI
             // 
@@ -426,6 +327,118 @@
             this.label4.TabIndex = 49;
             this.label4.Text = "Tháng";
             // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 8;
+            this.STT.Name = "STT";
+            this.STT.Width = 50;
+            // 
+            // MADV
+            // 
+            this.MADV.DataPropertyName = "MADV";
+            this.MADV.HeaderText = "Mã dịch vụ";
+            this.MADV.MinimumWidth = 6;
+            this.MADV.Name = "MADV";
+            this.MADV.Width = 102;
+            // 
+            // MAHD_DIEN
+            // 
+            this.MAHD_DIEN.DataPropertyName = "MAHD_DIEN";
+            this.MAHD_DIEN.HeaderText = "Mã hóa đơn";
+            this.MAHD_DIEN.MinimumWidth = 8;
+            this.MAHD_DIEN.Name = "MAHD_DIEN";
+            this.MAHD_DIEN.Width = 150;
+            // 
+            // TENHD
+            // 
+            this.TENHD.DataPropertyName = "TENHD";
+            this.TENHD.HeaderText = "Tên hóa đơn";
+            this.TENHD.MinimumWidth = 8;
+            this.TENHD.Name = "TENHD";
+            this.TENHD.Width = 150;
+            // 
+            // MANHA
+            // 
+            this.MANHA.DataPropertyName = "MANHA";
+            this.MANHA.HeaderText = "Mã nhà";
+            this.MANHA.MinimumWidth = 6;
+            this.MANHA.Name = "MANHA";
+            this.MANHA.Width = 80;
+            // 
+            // MA_PHONG
+            // 
+            this.MA_PHONG.DataPropertyName = "MA_PHONG";
+            this.MA_PHONG.HeaderText = "Mã phòng";
+            this.MA_PHONG.MinimumWidth = 6;
+            this.MA_PHONG.Name = "MA_PHONG";
+            this.MA_PHONG.Width = 110;
+            // 
+            // CHISOCU
+            // 
+            this.CHISOCU.DataPropertyName = "CHISOCU";
+            this.CHISOCU.HeaderText = "Chỉ số cũ";
+            this.CHISOCU.MinimumWidth = 6;
+            this.CHISOCU.Name = "CHISOCU";
+            this.CHISOCU.Width = 110;
+            // 
+            // CHISOMOI
+            // 
+            this.CHISOMOI.DataPropertyName = "CHISOMOI";
+            this.CHISOMOI.HeaderText = "Chỉ số mới";
+            this.CHISOMOI.MinimumWidth = 6;
+            this.CHISOMOI.Name = "CHISOMOI";
+            this.CHISOMOI.Width = 110;
+            // 
+            // SONUOC
+            // 
+            this.SONUOC.DataPropertyName = "SONUOC";
+            this.SONUOC.HeaderText = "Số nước tiêu thụ";
+            this.SONUOC.MinimumWidth = 6;
+            this.SONUOC.Name = "SONUOC";
+            this.SONUOC.Width = 150;
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            this.DONGIA.HeaderText = "Đơn giá";
+            this.DONGIA.MinimumWidth = 8;
+            this.DONGIA.Name = "DONGIA";
+            this.DONGIA.Width = 102;
+            // 
+            // TONGTIEN
+            // 
+            this.TONGTIEN.DataPropertyName = "TONGTIEN";
+            this.TONGTIEN.HeaderText = "Tổng tiền";
+            this.TONGTIEN.MinimumWidth = 6;
+            this.TONGTIEN.Name = "TONGTIEN";
+            this.TONGTIEN.Width = 101;
+            // 
+            // THOIGIAN
+            // 
+            this.THOIGIAN.DataPropertyName = "THOIGIAN";
+            this.THOIGIAN.HeaderText = "Thời gian";
+            this.THOIGIAN.MinimumWidth = 8;
+            this.THOIGIAN.Name = "THOIGIAN";
+            this.THOIGIAN.Width = 102;
+            // 
+            // NGAYGHI
+            // 
+            this.NGAYGHI.DataPropertyName = "NGAYGHI";
+            this.NGAYGHI.HeaderText = "Ngày ghi";
+            this.NGAYGHI.MinimumWidth = 6;
+            this.NGAYGHI.Name = "NGAYGHI";
+            this.NGAYGHI.Width = 102;
+            // 
+            // TINHTRANGTT
+            // 
+            this.TINHTRANGTT.DataPropertyName = "TINHTRANGTT";
+            this.TINHTRANGTT.HeaderText = "Trạng thái";
+            this.TINHTRANGTT.MinimumWidth = 6;
+            this.TINHTRANGTT.Name = "TINHTRANGTT";
+            this.TINHTRANGTT.Width = 130;
+            // 
             // UC_HD_NUOC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -467,6 +480,10 @@
         private Guna.UI2.WinForms.Guna2ComboBox comTRANGTHAI;
         private Guna.UI2.WinForms.Guna2ComboBox comPHONG;
         private Guna.UI2.WinForms.Guna2ComboBox comNHA;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MADV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAHD_DIEN;
@@ -481,9 +498,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn THOIGIAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYGHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn TINHTRANGTT;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
     }
 }

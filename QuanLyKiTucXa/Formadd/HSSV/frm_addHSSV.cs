@@ -50,7 +50,9 @@ namespace QuanLyKiTucXa.Formadd.HSSV
             LoadComboBoxKhoa();
 
             // Đăng ký sự kiện cho comTENKHOA SAU KHI đã load xong
-            comTENKHOA.SelectedIndexChanged += comTENKHOA_SelectedIndexChanged;
+           // comTENKHOA.SelectedIndexChanged += comTENKHOA_SelectedIndexChanged;
+            // ✅ THÊM: Đăng ký sự kiện FormClosing để xử lý khi nhấn nút X
+            this.FormClosing += frm_addHSSV_FormClosing;
 
             if (!isEditMode)
             {
@@ -62,6 +64,17 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                 LoadSinhVien(editingMASV);
             }
         }
+
+      // ✅ THÊM METHOD MỚI: Xử lý khi đóng form
+        private void frm_addHSSV_FormClosing(object sender, FormClosingEventArgs e)
+                {
+                    // Nếu người dùng nhấn nút X (đóng form) mà chưa set DialogResult
+                    // thì tự động set thành Cancel để tránh lỗi
+                    if (this.DialogResult == DialogResult.None)
+                    {
+                        this.DialogResult = DialogResult.Cancel;
+                    }
+                }
 
         private void LoadComboBoxKhoa()
         {
