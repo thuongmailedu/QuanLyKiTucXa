@@ -12,7 +12,7 @@ namespace QuanLyKiTucXa.Formadd.HSSV
         private string editingMASV = "";
         private string editingMAKHOA = "";
         private string editingMALOP = "";
-        private bool isLoadingData = false; // THÊM FLAG MỚI
+        private bool isLoadingData = false;
 
         public frm_addHSSV()
         {
@@ -133,7 +133,6 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                         if (isEditMode && !string.IsNullOrEmpty(editingMALOP))
                         {
                             comTENLOP.SelectedValue = editingMALOP;
-                            // XÓA DÒNG RESET editingMALOP Ở ĐÂY
                         }
                         else
                         {
@@ -159,13 +158,25 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = @"SELECT SV.MASV, SV.TENSV, SV.NGAYSINH, SV. GIOITINH, 
-                                          SV.CCCD, SV.SDT, SV.MALOP, L.MAKHOA,
+
+                    // ✅ LỖI 2: Kiểm tra sinh viên có hợp đồng chưa để quyết định cho sửa mã
+                    string checkHDQuery = "SELECT COUNT(*) FROM HOPDONG WHERE MASV = @MASV";
+                    bool coHopDong = false;
+
+                    using (SqlCommand checkCmd = new SqlCommand(checkHDQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@MASV", maSV);
+                        int countHD = (int)checkCmd.ExecuteScalar();
+                        coHopDong = countHD > 0;
+                    }
+
+                    string query = @"SELECT SV.MASV, SV.TENSV, SV. NGAYSINH, SV.GIOITINH, 
+                                          SV.CCCD, SV.SDT, SV. MALOP, L.MAKHOA,
                                           TN.TEN_THANNHAN, TN.SDT AS SDT_THANNHAN, 
-                                          TN. MOIQUANHE, TN.DIACHI
+                                          TN. MOIQUANHE, TN. DIACHI
                                    FROM SINHVIEN SV
-                                   INNER JOIN LOP L ON SV.MALOP = L.MALOP
-                                   LEFT JOIN THANNHAN TN ON SV. MASV = TN.MASV
+                                   INNER JOIN LOP L ON SV.MALOP = L. MALOP
+                                   LEFT JOIN THANNHAN TN ON SV.MASV = TN.MASV
                                    WHERE SV. MASV = @MASV";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -177,7 +188,18 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                             if (reader.Read())
                             {
                                 txtMASV.Text = reader["MASV"].ToString();
-                                txtMASV.ReadOnly = true; // Không cho sửa mã SV
+
+                                // ✅ LỖI 2: Cho phép sửa MASV nếu chưa có hợp đồng
+                                if (coHopDong)
+                                {
+                                    txtMASV.ReadOnly = true;
+                                    txtMASV.BackColor = System.Drawing.SystemColors.Control;
+                                }
+                                else
+                                {
+                                    txtMASV.ReadOnly = false;
+                                    txtMASV.BackColor = System.Drawing.SystemColors.Window;
+                                }
 
                                 txtTENSV.Text = reader["TENSV"].ToString();
 
@@ -264,67 +286,155 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                     {
                         if (isEditMode)
                         {
-                            // Cập nhật sinh viên
-                            string queryUpdateSV = @"UPDATE SINHVIEN 
-                                                   SET TENSV = @TENSV,
-                                                       NGAYSINH = @NGAYSINH,
-                                                       GIOITINH = @GIOITINH,
-                                                       CCCD = @CCCD,
-                                                       SDT = @SDT,
-                                                       MALOP = @MALOP
-                                                   WHERE MASV = @MASV";
+                            // ✅ LỖI 2: Nếu mã SV thay đổi, cần kiểm tra và cập nhật
+                            string maSVMoi = txtMASV.Text.Trim();
 
-                            using (SqlCommand cmd = new SqlCommand(queryUpdateSV, conn, transaction))
+                            // Kiểm tra nếu mã SV thay đổi
+                            if (maSVMoi != editingMASV)
                             {
-                                cmd.Parameters.AddWithValue("@MASV", txtMASV.Text.Trim());
-                                cmd.Parameters.AddWithValue("@TENSV", txtTENSV.Text.Trim());
-                                cmd.Parameters.AddWithValue("@NGAYSINH", dtpNGAYSINH.Value);
-                                cmd.Parameters.AddWithValue("@GIOITINH", string.IsNullOrEmpty(comGIOITINH.Text) ? (object)DBNull.Value : comGIOITINH.Text);
-                                cmd.Parameters.AddWithValue("@CCCD", string.IsNullOrEmpty(txtCCCD.Text) ? (object)DBNull.Value : txtCCCD.Text.Trim());
-                                cmd.Parameters.AddWithValue("@SDT", string.IsNullOrEmpty(txtSDT.Text) ? (object)DBNull.Value : txtSDT.Text.Trim());
-                                cmd.Parameters.AddWithValue("@MALOP", comTENLOP.SelectedValue.ToString());
-                                cmd.ExecuteNonQuery();
-                            }
-
-                            // Cập nhật hoặc thêm thân nhân
-                            if (!string.IsNullOrWhiteSpace(txtTEN_THANNHAN.Text))
-                            {
-                                string checkTN = "SELECT COUNT(*) FROM THANNHAN WHERE MASV = @MASV";
-                                using (SqlCommand checkCmd = new SqlCommand(checkTN, conn, transaction))
+                                // Kiểm tra mã SV mới có tồn tại chưa
+                                string checkQuery = "SELECT COUNT(*) FROM SINHVIEN WHERE MASV = @MASV";
+                                using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn, transaction))
                                 {
-                                    checkCmd.Parameters.AddWithValue("@MASV", txtMASV.Text.Trim());
-                                    int countTN = (int)checkCmd.ExecuteScalar();
+                                    checkCmd.Parameters.AddWithValue("@MASV", maSVMoi);
+                                    int count = (int)checkCmd.ExecuteScalar();
 
-                                    if (countTN > 0)
+                                    if (count > 0)
                                     {
-                                        string queryUpdateTN = @"UPDATE THANNHAN 
-                                                               SET TEN_THANNHAN = @TEN_THANNHAN,
-                                                                   SDT = @SDT,
-                                                                   MOIQUANHE = @MOIQUANHE,
-                                                                   DIACHI = @DIACHI
-                                                               WHERE MASV = @MASV";
-                                        using (SqlCommand cmdTN = new SqlCommand(queryUpdateTN, conn, transaction))
-                                        {
-                                            cmdTN.Parameters.AddWithValue("@MASV", txtMASV.Text.Trim());
-                                            cmdTN.Parameters.AddWithValue("@TEN_THANNHAN", txtTEN_THANNHAN.Text.Trim());
-                                            cmdTN.Parameters.AddWithValue("@SDT", txtSDT_THANNHAN.Text.Trim());
-                                            cmdTN.Parameters.AddWithValue("@MOIQUANHE", string.IsNullOrEmpty(comMOIQUANHE.Text) ? (object)DBNull.Value : comMOIQUANHE.Text);
-                                            cmdTN.Parameters.AddWithValue("@DIACHI", string.IsNullOrEmpty(txtDIACHI.Text) ? (object)DBNull.Value : txtDIACHI.Text.Trim());
-                                            cmdTN.ExecuteNonQuery();
-                                        }
+                                        transaction.Rollback();
+                                        MessageBox.Show("Mã sinh viên mới đã tồn tại!", "Thông báo",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        return;
                                     }
-                                    else
+                                }
+
+                                // Kiểm tra sinh viên cũ có hợp đồng không
+                                string checkHDQuery = "SELECT COUNT(*) FROM HOPDONG WHERE MASV = @MASV";
+                                using (SqlCommand checkHDCmd = new SqlCommand(checkHDQuery, conn, transaction))
+                                {
+                                    checkHDCmd.Parameters.AddWithValue("@MASV", editingMASV);
+                                    int countHD = (int)checkHDCmd.ExecuteScalar();
+
+                                    if (countHD > 0)
                                     {
-                                        string queryInsertTN = @"INSERT INTO THANNHAN (MASV, TEN_THANNHAN, SDT, MOIQUANHE, DIACHI)
-                                                               VALUES (@MASV, @TEN_THANNHAN, @SDT, @MOIQUANHE, @DIACHI)";
-                                        using (SqlCommand cmdTN = new SqlCommand(queryInsertTN, conn, transaction))
+                                        transaction.Rollback();
+                                        MessageBox.Show("Không thể sửa mã sinh viên vì đã có hợp đồng!", "Thông báo",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        return;
+                                    }
+                                }
+
+                                // Xóa thân nhân cũ (nếu có)
+                                string deleteTNQuery = "DELETE FROM THANNHAN WHERE MASV = @MASV_OLD";
+                                using (SqlCommand deleteTNCmd = new SqlCommand(deleteTNQuery, conn, transaction))
+                                {
+                                    deleteTNCmd.Parameters.AddWithValue("@MASV_OLD", editingMASV);
+                                    deleteTNCmd.ExecuteNonQuery();
+                                }
+
+                                // Xóa sinh viên cũ
+                                string deleteSVQuery = "DELETE FROM SINHVIEN WHERE MASV = @MASV_OLD";
+                                using (SqlCommand deleteSVCmd = new SqlCommand(deleteSVQuery, conn, transaction))
+                                {
+                                    deleteSVCmd.Parameters.AddWithValue("@MASV_OLD", editingMASV);
+                                    deleteSVCmd.ExecuteNonQuery();
+                                }
+
+                                // Thêm sinh viên mới
+                                string insertSVQuery = @"INSERT INTO SINHVIEN (MASV, TENSV, NGAYSINH, GIOITINH, CCCD, SDT, MALOP)
+                                                        VALUES (@MASV, @TENSV, @NGAYSINH, @GIOITINH, @CCCD, @SDT, @MALOP)";
+                                using (SqlCommand insertSVCmd = new SqlCommand(insertSVQuery, conn, transaction))
+                                {
+                                    insertSVCmd.Parameters.AddWithValue("@MASV", maSVMoi);
+                                    insertSVCmd.Parameters.AddWithValue("@TENSV", txtTENSV.Text.Trim());
+                                    insertSVCmd.Parameters.AddWithValue("@NGAYSINH", dtpNGAYSINH.Value);
+                                    insertSVCmd.Parameters.AddWithValue("@GIOITINH", string.IsNullOrEmpty(comGIOITINH.Text) ? (object)DBNull.Value : comGIOITINH.Text);
+                                    insertSVCmd.Parameters.AddWithValue("@CCCD", string.IsNullOrEmpty(txtCCCD.Text) ? (object)DBNull.Value : txtCCCD.Text.Trim());
+                                    insertSVCmd.Parameters.AddWithValue("@SDT", string.IsNullOrEmpty(txtSDT.Text) ? (object)DBNull.Value : txtSDT.Text.Trim());
+                                    insertSVCmd.Parameters.AddWithValue("@MALOP", comTENLOP.SelectedValue.ToString());
+                                    insertSVCmd.ExecuteNonQuery();
+                                }
+
+                                // Thêm thân nhân mới (nếu có)
+                                if (!string.IsNullOrWhiteSpace(txtTEN_THANNHAN.Text))
+                                {
+                                    string insertTNQuery = @"INSERT INTO THANNHAN (MASV, TEN_THANNHAN, SDT, MOIQUANHE, DIACHI)
+                                                            VALUES (@MASV, @TEN_THANNHAN, @SDT, @MOIQUANHE, @DIACHI)";
+                                    using (SqlCommand insertTNCmd = new SqlCommand(insertTNQuery, conn, transaction))
+                                    {
+                                        insertTNCmd.Parameters.AddWithValue("@MASV", maSVMoi);
+                                        insertTNCmd.Parameters.AddWithValue("@TEN_THANNHAN", txtTEN_THANNHAN.Text.Trim());
+                                        insertTNCmd.Parameters.AddWithValue("@SDT", txtSDT_THANNHAN.Text.Trim());
+                                        insertTNCmd.Parameters.AddWithValue("@MOIQUANHE", string.IsNullOrEmpty(comMOIQUANHE.Text) ? (object)DBNull.Value : comMOIQUANHE.Text);
+                                        insertTNCmd.Parameters.AddWithValue("@DIACHI", string.IsNullOrEmpty(txtDIACHI.Text) ? (object)DBNull.Value : txtDIACHI.Text.Trim());
+                                        insertTNCmd.ExecuteNonQuery();
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                // Mã SV không đổi - cập nhật bình thường
+                                string queryUpdateSV = @"UPDATE SINHVIEN 
+                                                       SET TENSV = @TENSV,
+                                                           NGAYSINH = @NGAYSINH,
+                                                           GIOITINH = @GIOITINH,
+                                                           CCCD = @CCCD,
+                                                           SDT = @SDT,
+                                                           MALOP = @MALOP
+                                                       WHERE MASV = @MASV";
+
+                                using (SqlCommand cmd = new SqlCommand(queryUpdateSV, conn, transaction))
+                                {
+                                    cmd.Parameters.AddWithValue("@MASV", txtMASV.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@TENSV", txtTENSV.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@NGAYSINH", dtpNGAYSINH.Value);
+                                    cmd.Parameters.AddWithValue("@GIOITINH", string.IsNullOrEmpty(comGIOITINH.Text) ? (object)DBNull.Value : comGIOITINH.Text);
+                                    cmd.Parameters.AddWithValue("@CCCD", string.IsNullOrEmpty(txtCCCD.Text) ? (object)DBNull.Value : txtCCCD.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@SDT", string.IsNullOrEmpty(txtSDT.Text) ? (object)DBNull.Value : txtSDT.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@MALOP", comTENLOP.SelectedValue.ToString());
+                                    cmd.ExecuteNonQuery();
+                                }
+
+                                // Cập nhật hoặc thêm thân nhân
+                                if (!string.IsNullOrWhiteSpace(txtTEN_THANNHAN.Text))
+                                {
+                                    string checkTN = "SELECT COUNT(*) FROM THANNHAN WHERE MASV = @MASV";
+                                    using (SqlCommand checkCmd = new SqlCommand(checkTN, conn, transaction))
+                                    {
+                                        checkCmd.Parameters.AddWithValue("@MASV", txtMASV.Text.Trim());
+                                        int countTN = (int)checkCmd.ExecuteScalar();
+
+                                        if (countTN > 0)
                                         {
-                                            cmdTN.Parameters.AddWithValue("@MASV", txtMASV.Text.Trim());
-                                            cmdTN.Parameters.AddWithValue("@TEN_THANNHAN", txtTEN_THANNHAN.Text.Trim());
-                                            cmdTN.Parameters.AddWithValue("@SDT", txtSDT_THANNHAN.Text.Trim());
-                                            cmdTN.Parameters.AddWithValue("@MOIQUANHE", string.IsNullOrEmpty(comMOIQUANHE.Text) ? (object)DBNull.Value : comMOIQUANHE.Text);
-                                            cmdTN.Parameters.AddWithValue("@DIACHI", string.IsNullOrEmpty(txtDIACHI.Text) ? (object)DBNull.Value : txtDIACHI.Text.Trim());
-                                            cmdTN.ExecuteNonQuery();
+                                            string queryUpdateTN = @"UPDATE THANNHAN 
+                                                                   SET TEN_THANNHAN = @TEN_THANNHAN,
+                                                                       SDT = @SDT,
+                                                                       MOIQUANHE = @MOIQUANHE,
+                                                                       DIACHI = @DIACHI
+                                                                   WHERE MASV = @MASV";
+                                            using (SqlCommand cmdTN = new SqlCommand(queryUpdateTN, conn, transaction))
+                                            {
+                                                cmdTN.Parameters.AddWithValue("@MASV", txtMASV.Text.Trim());
+                                                cmdTN.Parameters.AddWithValue("@TEN_THANNHAN", txtTEN_THANNHAN.Text.Trim());
+                                                cmdTN.Parameters.AddWithValue("@SDT", txtSDT_THANNHAN.Text.Trim());
+                                                cmdTN.Parameters.AddWithValue("@MOIQUANHE", string.IsNullOrEmpty(comMOIQUANHE.Text) ? (object)DBNull.Value : comMOIQUANHE.Text);
+                                                cmdTN.Parameters.AddWithValue("@DIACHI", string.IsNullOrEmpty(txtDIACHI.Text) ? (object)DBNull.Value : txtDIACHI.Text.Trim());
+                                                cmdTN.ExecuteNonQuery();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            string queryInsertTN = @"INSERT INTO THANNHAN (MASV, TEN_THANNHAN, SDT, MOIQUANHE, DIACHI)
+                                                                   VALUES (@MASV, @TEN_THANNHAN, @SDT, @MOIQUANHE, @DIACHI)";
+                                            using (SqlCommand cmdTN = new SqlCommand(queryInsertTN, conn, transaction))
+                                            {
+                                                cmdTN.Parameters.AddWithValue("@MASV", txtMASV.Text.Trim());
+                                                cmdTN.Parameters.AddWithValue("@TEN_THANNHAN", txtTEN_THANNHAN.Text.Trim());
+                                                cmdTN.Parameters.AddWithValue("@SDT", txtSDT_THANNHAN.Text.Trim());
+                                                cmdTN.Parameters.AddWithValue("@MOIQUANHE", string.IsNullOrEmpty(comMOIQUANHE.Text) ? (object)DBNull.Value : comMOIQUANHE.Text);
+                                                cmdTN.Parameters.AddWithValue("@DIACHI", string.IsNullOrEmpty(txtDIACHI.Text) ? (object)DBNull.Value : txtDIACHI.Text.Trim());
+                                                cmdTN.ExecuteNonQuery();
+                                            }
                                         }
                                     }
                                 }
