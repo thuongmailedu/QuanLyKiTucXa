@@ -89,7 +89,7 @@
             // txtTINHTRANG_CUTRU
             // 
             this.txtTINHTRANG_CUTRU.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtTINHTRANG_CUTRU.BorderRadius = 5;
+            this.txtTINHTRANG_CUTRU.BorderRadius = 8;
             this.txtTINHTRANG_CUTRU.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTINHTRANG_CUTRU.DefaultText = "";
             this.txtTINHTRANG_CUTRU.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -131,7 +131,7 @@
             // txtCCCD
             // 
             this.txtCCCD.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtCCCD.BorderRadius = 5;
+            this.txtCCCD.BorderRadius = 8;
             this.txtCCCD.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCCCD.DefaultText = "";
             this.txtCCCD.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -185,7 +185,7 @@
             // txtSDT
             // 
             this.txtSDT.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtSDT.BorderRadius = 5;
+            this.txtSDT.BorderRadius = 8;
             this.txtSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSDT.DefaultText = "";
             this.txtSDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -237,7 +237,7 @@
             // txtMASV
             // 
             this.txtMASV.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtMASV.BorderRadius = 5;
+            this.txtMASV.BorderRadius = 8;
             this.txtMASV.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMASV.DefaultText = "";
             this.txtMASV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -279,7 +279,7 @@
             // txtTENSV
             // 
             this.txtTENSV.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtTENSV.BorderRadius = 5;
+            this.txtTENSV.BorderRadius = 8;
             this.txtTENSV.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTENSV.DefaultText = "";
             this.txtTENSV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -301,7 +301,7 @@
             // txtTEN_THANNHAN
             // 
             this.txtTEN_THANNHAN.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtTEN_THANNHAN.BorderRadius = 5;
+            this.txtTEN_THANNHAN.BorderRadius = 8;
             this.txtTEN_THANNHAN.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTEN_THANNHAN.DefaultText = "";
             this.txtTEN_THANNHAN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -353,7 +353,7 @@
             // txtMANHA
             // 
             this.txtMANHA.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtMANHA.BorderRadius = 5;
+            this.txtMANHA.BorderRadius = 8;
             this.txtMANHA.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMANHA.DefaultText = "";
             this.txtMANHA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -385,7 +385,7 @@
             // txtMA_PHONG
             // 
             this.txtMA_PHONG.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtMA_PHONG.BorderRadius = 5;
+            this.txtMA_PHONG.BorderRadius = 8;
             this.txtMA_PHONG.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMA_PHONG.DefaultText = "";
             this.txtMA_PHONG.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -407,7 +407,7 @@
             // txtSDT_THANNHAN
             // 
             this.txtSDT_THANNHAN.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtSDT_THANNHAN.BorderRadius = 5;
+            this.txtSDT_THANNHAN.BorderRadius = 8;
             this.txtSDT_THANNHAN.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSDT_THANNHAN.DefaultText = "";
             this.txtSDT_THANNHAN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -429,7 +429,7 @@
             // txtDIACHI
             // 
             this.txtDIACHI.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtDIACHI.BorderRadius = 5;
+            this.txtDIACHI.BorderRadius = 8;
             this.txtDIACHI.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDIACHI.DefaultText = "";
             this.txtDIACHI.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -520,8 +520,8 @@
             this.comTENKHOA.Name = "comTENKHOA";
             this.comTENKHOA.Size = new System.Drawing.Size(313, 51);
             this.comTENKHOA.TabIndex = 45;
-            this.comTENKHOA.SelectedIndexChanged += new System.EventHandler(this.comTENKHOA_SelectedIndexChanged);
             this.comTENKHOA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.comTENKHOA.SelectedIndexChanged += new System.EventHandler(this.comTENKHOA_SelectedIndexChanged);
             // 
             // comTENLOP
             // 

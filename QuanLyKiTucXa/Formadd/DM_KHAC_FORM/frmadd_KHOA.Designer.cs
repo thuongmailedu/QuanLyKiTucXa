@@ -40,12 +40,12 @@
             this.txtTENKHOA = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMAKHOA = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvadd_KHOA = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnaddtemp_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btndeletetemp_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnedittemp_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvadd_KHOA)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,11 +65,13 @@
             // btnLuu
             // 
             this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLuu.BorderRadius = 5;
             this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLuu.FillColor = System.Drawing.Color.Navy;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Location = new System.Drawing.Point(766, 502);
             this.btnLuu.Name = "btnLuu";
@@ -81,11 +83,13 @@
             // btnHuy
             // 
             this.btnHuy.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHuy.BorderRadius = 5;
             this.btnHuy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHuy.FillColor = System.Drawing.Color.Navy;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
             this.btnHuy.Location = new System.Drawing.Point(652, 502);
             this.btnHuy.Name = "btnHuy";
@@ -122,6 +126,7 @@
             // 
             this.txtTENKHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTENKHOA.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTENKHOA.BorderRadius = 5;
             this.txtTENKHOA.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTENKHOA.DefaultText = "";
             this.txtTENKHOA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -144,6 +149,7 @@
             // 
             this.txtMAKHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMAKHOA.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtMAKHOA.BorderRadius = 5;
             this.txtMAKHOA.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMAKHOA.DefaultText = "";
             this.txtMAKHOA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -172,7 +178,6 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvadd_KHOA.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvadd_KHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvadd_KHOA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvadd_KHOA.BackgroundColor = System.Drawing.Color.White;
             this.dgvadd_KHOA.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvadd_KHOA.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -210,27 +215,6 @@
             this.dgvadd_KHOA.Size = new System.Drawing.Size(784, 289);
             this.dgvadd_KHOA.TabIndex = 74;
             this.dgvadd_KHOA.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvadd_KHOA_CellClick);
-            // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            // 
-            // MAKHOA
-            // 
-            this.MAKHOA.DataPropertyName = "MAKHOA";
-            this.MAKHOA.HeaderText = "Mã khoa";
-            this.MAKHOA.MinimumWidth = 8;
-            this.MAKHOA.Name = "MAKHOA";
-            // 
-            // TENKHOA
-            // 
-            this.TENKHOA.DataPropertyName = "TENKHOA";
-            this.TENKHOA.HeaderText = "Tên khoa";
-            this.TENKHOA.MinimumWidth = 8;
-            this.TENKHOA.Name = "TENKHOA";
             // 
             // btnaddtemp_KHOA
             // 
@@ -288,6 +272,29 @@
             this.btnedittemp_KHOA.Size = new System.Drawing.Size(31, 32);
             this.btnedittemp_KHOA.TabIndex = 76;
             this.btnedittemp_KHOA.Click += new System.EventHandler(this.btnedittemp_KHOA_Click);
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            // 
+            // MAKHOA
+            // 
+            this.MAKHOA.DataPropertyName = "MAKHOA";
+            this.MAKHOA.HeaderText = "Mã khoa";
+            this.MAKHOA.MinimumWidth = 8;
+            this.MAKHOA.Name = "MAKHOA";
+            this.MAKHOA.Width = 250;
+            // 
+            // TENKHOA
+            // 
+            this.TENKHOA.DataPropertyName = "TENKHOA";
+            this.TENKHOA.HeaderText = "Tên khoa";
+            this.TENKHOA.MinimumWidth = 8;
+            this.TENKHOA.Name = "TENKHOA";
+            this.TENKHOA.Width = 400;
             // 
             // frmadd_KHOA
             // 

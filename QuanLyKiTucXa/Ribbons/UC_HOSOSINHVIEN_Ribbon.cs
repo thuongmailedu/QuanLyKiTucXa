@@ -46,8 +46,8 @@ namespace QuanLyKiTucXa.Ribbons
                                         HD. MA_PHONG,
                                         P.MANHA,
                                         CASE 
-                                            WHEN HD. NGAYKTTT IS NOT NULL AND GETDATE() > HD. NGAYKTTT THEN N'Đã thanh lý hợp đồng'
-                                            WHEN HD.NGAYKTTT IS NULL AND GETDATE() > HD.DENNGAY THEN N'Hết hạn hợp đồng'
+                                            WHEN HD. NGAYKTTT IS NOT NULL AND GETDATE() > HD. NGAYKTTT THEN N'Đã rời KTX'
+                                            WHEN HD.NGAYKTTT IS NULL AND GETDATE() > HD.DENNGAY THEN N'Đã rời KTX'
                                             WHEN GETDATE() >= HD. TUNGAY AND GETDATE() <= HD.DENNGAY THEN N'Đang cư trú'
                                             WHEN GETDATE() < HD. TUNGAY THEN N'Chưa nhận phòng'
                                             ELSE N'Chưa có hợp đồng'

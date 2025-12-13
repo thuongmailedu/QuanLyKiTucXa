@@ -37,15 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDM_KHOA = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDM_LOP = new System.Windows.Forms.DataGridView();
-            this.STT_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MALOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENLOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAKHOA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKHOA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSinhVien = new System.Windows.Forms.Label();
             this.btndelete_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btndelete_LOP = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -55,6 +47,14 @@
             this.btnadd_LOP = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.STT_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MALOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENLOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAKHOA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKHOA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_KHOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_LOP)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +69,6 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvDM_KHOA.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDM_KHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvDM_KHOA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDM_KHOA.BackgroundColor = System.Drawing.Color.White;
             this.dgvDM_KHOA.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDM_KHOA.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -108,31 +107,6 @@
             this.dgvDM_KHOA.TabIndex = 18;
             this.dgvDM_KHOA.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDMPhong_CellContentClick);
             // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.Width = 60;
-            // 
-            // MAKHOA
-            // 
-            this.MAKHOA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.MAKHOA.DataPropertyName = "MAKHOA";
-            this.MAKHOA.HeaderText = "Mã khoa";
-            this.MAKHOA.MinimumWidth = 8;
-            this.MAKHOA.Name = "MAKHOA";
-            this.MAKHOA.Width = 86;
-            // 
-            // TENKHOA
-            // 
-            this.TENKHOA.DataPropertyName = "TENKHOA";
-            this.TENKHOA.HeaderText = "Tên khoa";
-            this.TENKHOA.MinimumWidth = 8;
-            this.TENKHOA.Name = "TENKHOA";
-            // 
             // dgvDM_LOP
             // 
             this.dgvDM_LOP.AllowUserToResizeRows = false;
@@ -143,7 +117,6 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvDM_LOP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDM_LOP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvDM_LOP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDM_LOP.BackgroundColor = System.Drawing.Color.White;
             this.dgvDM_LOP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDM_LOP.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -183,48 +156,6 @@
             this.dgvDM_LOP.Size = new System.Drawing.Size(955, 703);
             this.dgvDM_LOP.TabIndex = 18;
             this.dgvDM_LOP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // STT_2
-            // 
-            this.STT_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.STT_2.DataPropertyName = "STT";
-            this.STT_2.HeaderText = "STT";
-            this.STT_2.MinimumWidth = 6;
-            this.STT_2.Name = "STT_2";
-            this.STT_2.Width = 60;
-            // 
-            // MALOP
-            // 
-            this.MALOP.DataPropertyName = "MALOP";
-            this.MALOP.HeaderText = "Mã lớp";
-            this.MALOP.MinimumWidth = 6;
-            this.MALOP.Name = "MALOP";
-            this.MALOP.Width = 77;
-            // 
-            // TENLOP
-            // 
-            this.TENLOP.DataPropertyName = "TENLOP";
-            this.TENLOP.HeaderText = "Tên lớp";
-            this.TENLOP.MinimumWidth = 6;
-            this.TENLOP.Name = "TENLOP";
-            this.TENLOP.Width = 59;
-            // 
-            // MAKHOA_2
-            // 
-            this.MAKHOA_2.DataPropertyName = "MAKHOA";
-            this.MAKHOA_2.HeaderText = "Mã khoa";
-            this.MAKHOA_2.MinimumWidth = 8;
-            this.MAKHOA_2.Name = "MAKHOA_2";
-            this.MAKHOA_2.Visible = false;
-            this.MAKHOA_2.Width = 88;
-            // 
-            // TENKHOA_2
-            // 
-            this.TENKHOA_2.DataPropertyName = "TENKHOA";
-            this.TENKHOA_2.HeaderText = "Tên khoa";
-            this.TENKHOA_2.MinimumWidth = 8;
-            this.TENKHOA_2.Name = "TENKHOA_2";
-            this.TENKHOA_2.Width = 88;
             // 
             // lblSinhVien
             // 
@@ -379,6 +310,72 @@
             this.label2.Text = "Danh mục lớp";
             this.label2.Click += new System.EventHandler(this.lblSinhVien_Click);
             // 
+            // STT_2
+            // 
+            this.STT_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.STT_2.DataPropertyName = "STT";
+            this.STT_2.HeaderText = "STT";
+            this.STT_2.MinimumWidth = 6;
+            this.STT_2.Name = "STT_2";
+            this.STT_2.Width = 60;
+            // 
+            // MALOP
+            // 
+            this.MALOP.DataPropertyName = "MALOP";
+            this.MALOP.HeaderText = "Mã lớp";
+            this.MALOP.MinimumWidth = 6;
+            this.MALOP.Name = "MALOP";
+            this.MALOP.Width = 150;
+            // 
+            // TENLOP
+            // 
+            this.TENLOP.DataPropertyName = "TENLOP";
+            this.TENLOP.HeaderText = "Tên lớp";
+            this.TENLOP.MinimumWidth = 6;
+            this.TENLOP.Name = "TENLOP";
+            this.TENLOP.Width = 300;
+            // 
+            // MAKHOA_2
+            // 
+            this.MAKHOA_2.DataPropertyName = "MAKHOA";
+            this.MAKHOA_2.HeaderText = "Mã khoa";
+            this.MAKHOA_2.MinimumWidth = 8;
+            this.MAKHOA_2.Name = "MAKHOA_2";
+            this.MAKHOA_2.Visible = false;
+            this.MAKHOA_2.Width = 140;
+            // 
+            // TENKHOA_2
+            // 
+            this.TENKHOA_2.DataPropertyName = "TENKHOA";
+            this.TENKHOA_2.HeaderText = "Tên khoa";
+            this.TENKHOA_2.MinimumWidth = 8;
+            this.TENKHOA_2.Name = "TENKHOA_2";
+            this.TENKHOA_2.Width = 380;
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.Width = 60;
+            // 
+            // MAKHOA
+            // 
+            this.MAKHOA.DataPropertyName = "MAKHOA";
+            this.MAKHOA.HeaderText = "Mã khoa";
+            this.MAKHOA.MinimumWidth = 8;
+            this.MAKHOA.Name = "MAKHOA";
+            this.MAKHOA.Width = 120;
+            // 
+            // TENKHOA
+            // 
+            this.TENKHOA.DataPropertyName = "TENKHOA";
+            this.TENKHOA.HeaderText = "Tên khoa";
+            this.TENKHOA.MinimumWidth = 8;
+            this.TENKHOA.Name = "TENKHOA";
+            this.TENKHOA.Width = 399;
+            // 
             // UC_DM_LOP_KHOA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -417,15 +414,15 @@
         private Guna.UI2.WinForms.Guna2CircleButton btnadd_KHOA;
         private Guna.UI2.WinForms.Guna2CircleButton btnedit_KHOA;
         private Guna.UI2.WinForms.Guna2CircleButton btndelete_KHOA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MAKHOA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENKHOA;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MALOP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENLOP;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAKHOA_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENKHOA_2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAKHOA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENKHOA;
     }
 }

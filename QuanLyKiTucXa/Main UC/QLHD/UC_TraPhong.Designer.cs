@@ -30,8 +30,12 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btndelete_Traphong = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnedit_Traphong = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btn_Traphong = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -248,17 +252,17 @@
             this.dgvTraPhong.Location = new System.Drawing.Point(46, 145);
             this.dgvTraPhong.Name = "dgvTraPhong";
             this.dgvTraPhong.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTraPhong.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTraPhong.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTraPhong.RowHeadersWidth = 62;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTraPhong.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvTraPhong.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvTraPhong.RowTemplate.Height = 45;
             this.dgvTraPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvTraPhong.Size = new System.Drawing.Size(1555, 859);
@@ -340,6 +344,8 @@
             // TUNGAY
             // 
             this.TUNGAY.DataPropertyName = "TUNGAY";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            this.TUNGAY.DefaultCellStyle = dataGridViewCellStyle3;
             this.TUNGAY.HeaderText = "Ngày bắt đầu";
             this.TUNGAY.MinimumWidth = 8;
             this.TUNGAY.Name = "TUNGAY";
@@ -348,6 +354,8 @@
             // DENNGAY
             // 
             this.DENNGAY.DataPropertyName = "DENNGAY";
+            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
+            this.DENNGAY.DefaultCellStyle = dataGridViewCellStyle4;
             this.DENNGAY.HeaderText = "Ngày kết thúc";
             this.DENNGAY.MinimumWidth = 6;
             this.DENNGAY.Name = "DENNGAY";
@@ -356,6 +364,8 @@
             // NGAYKTTT
             // 
             this.NGAYKTTT.DataPropertyName = "NGAYKTTT";
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
+            this.NGAYKTTT.DefaultCellStyle = dataGridViewCellStyle5;
             this.NGAYKTTT.HeaderText = "Ngày thanh lý";
             this.NGAYKTTT.MinimumWidth = 8;
             this.NGAYKTTT.Name = "NGAYKTTT";
@@ -364,6 +374,8 @@
             // NGAYKY_TL
             // 
             this.NGAYKY_TL.DataPropertyName = "NGAYKY_TL";
+            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
+            this.NGAYKY_TL.DefaultCellStyle = dataGridViewCellStyle6;
             this.NGAYKY_TL.HeaderText = "Ngày ký";
             this.NGAYKY_TL.MinimumWidth = 8;
             this.NGAYKY_TL.Name = "NGAYKY_TL";

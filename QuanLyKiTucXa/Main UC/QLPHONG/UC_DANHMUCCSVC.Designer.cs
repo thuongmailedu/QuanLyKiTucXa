@@ -230,7 +230,7 @@
             this.panel2.Controls.Add(this.comfillter_NHA_CSVC);
             this.panel2.Location = new System.Drawing.Point(779, 84);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(716, 71);
+            this.panel2.Size = new System.Drawing.Size(782, 71);
             this.panel2.TabIndex = 15;
             // 
             // btnfillter_NHA_CSVC
@@ -244,7 +244,7 @@
             this.btnfillter_NHA_CSVC.FillColor = System.Drawing.Color.Transparent;
             this.btnfillter_NHA_CSVC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnfillter_NHA_CSVC.ForeColor = System.Drawing.Color.White;
-            this.btnfillter_NHA_CSVC.Location = new System.Drawing.Point(535, 15);
+            this.btnfillter_NHA_CSVC.Location = new System.Drawing.Point(595, 15);
             this.btnfillter_NHA_CSVC.Name = "btnfillter_NHA_CSVC";
             this.btnfillter_NHA_CSVC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnfillter_NHA_CSVC.Size = new System.Drawing.Size(35, 40);
@@ -262,7 +262,7 @@
             this.btndelete_NHA_CSVC.FillColor = System.Drawing.Color.Transparent;
             this.btndelete_NHA_CSVC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btndelete_NHA_CSVC.ForeColor = System.Drawing.Color.White;
-            this.btndelete_NHA_CSVC.Location = new System.Drawing.Point(668, 23);
+            this.btndelete_NHA_CSVC.Location = new System.Drawing.Point(728, 23);
             this.btndelete_NHA_CSVC.Name = "btndelete_NHA_CSVC";
             this.btndelete_NHA_CSVC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btndelete_NHA_CSVC.Size = new System.Drawing.Size(35, 32);
@@ -280,7 +280,7 @@
             this.btnedit_NHA_CSVC.FillColor = System.Drawing.Color.Transparent;
             this.btnedit_NHA_CSVC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnedit_NHA_CSVC.ForeColor = System.Drawing.Color.White;
-            this.btnedit_NHA_CSVC.Location = new System.Drawing.Point(631, 23);
+            this.btnedit_NHA_CSVC.Location = new System.Drawing.Point(691, 23);
             this.btnedit_NHA_CSVC.Name = "btnedit_NHA_CSVC";
             this.btnedit_NHA_CSVC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnedit_NHA_CSVC.Size = new System.Drawing.Size(31, 32);
@@ -298,7 +298,7 @@
             this.btnadd_NHA_CSVC.FillColor = System.Drawing.Color.Transparent;
             this.btnadd_NHA_CSVC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnadd_NHA_CSVC.ForeColor = System.Drawing.Color.White;
-            this.btnadd_NHA_CSVC.Location = new System.Drawing.Point(585, 19);
+            this.btnadd_NHA_CSVC.Location = new System.Drawing.Point(645, 19);
             this.btnadd_NHA_CSVC.Name = "btnadd_NHA_CSVC";
             this.btnadd_NHA_CSVC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnadd_NHA_CSVC.Size = new System.Drawing.Size(30, 32);
@@ -364,7 +364,6 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvDMCSVC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDMCSVC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvDMCSVC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDMCSVC.BackgroundColor = System.Drawing.Color.White;
             this.dgvDMCSVC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDMCSVC.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -415,7 +414,6 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvNHA_CSVC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvNHA_CSVC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvNHA_CSVC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNHA_CSVC.BackgroundColor = System.Drawing.Color.White;
             this.dgvNHA_CSVC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvNHA_CSVC.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -453,7 +451,7 @@
             this.dgvNHA_CSVC.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvNHA_CSVC.RowTemplate.Height = 45;
             this.dgvNHA_CSVC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNHA_CSVC.Size = new System.Drawing.Size(716, 603);
+            this.dgvNHA_CSVC.Size = new System.Drawing.Size(782, 603);
             this.dgvNHA_CSVC.TabIndex = 16;
             // 
             // STT
@@ -471,6 +469,7 @@
             this.MA_CSVC.HeaderText = "Mã CSVC";
             this.MA_CSVC.MinimumWidth = 8;
             this.MA_CSVC.Name = "MA_CSVC";
+            this.MA_CSVC.Width = 130;
             // 
             // TEN_CSVC
             // 
@@ -478,6 +477,7 @@
             this.TEN_CSVC.HeaderText = "Tên CSVC";
             this.TEN_CSVC.MinimumWidth = 8;
             this.TEN_CSVC.Name = "TEN_CSVC";
+            this.TEN_CSVC.Width = 130;
             // 
             // TEN_NHACC
             // 
@@ -485,6 +485,7 @@
             this.TEN_NHACC.HeaderText = "Nhà cung cấp";
             this.TEN_NHACC.MinimumWidth = 8;
             this.TEN_NHACC.Name = "TEN_NHACC";
+            this.TEN_NHACC.Width = 200;
             // 
             // TRANGTHAI
             // 
@@ -492,6 +493,7 @@
             this.TRANGTHAI.HeaderText = "Trạng thái";
             this.TRANGTHAI.MinimumWidth = 8;
             this.TRANGTHAI.Name = "TRANGTHAI";
+            this.TRANGTHAI.Width = 130;
             // 
             // CHITIET
             // 
@@ -499,10 +501,11 @@
             this.CHITIET.HeaderText = "Chi tiết";
             this.CHITIET.MinimumWidth = 8;
             this.CHITIET.Name = "CHITIET";
+            this.CHITIET.Width = 130;
             // 
             // STT_2
             // 
-            this.STT_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.STT_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.STT_2.DataPropertyName = "STT";
             this.STT_2.HeaderText = "STT";
             this.STT_2.MinimumWidth = 8;
@@ -515,6 +518,7 @@
             this.MANHA.HeaderText = "Mã nhà";
             this.MANHA.MinimumWidth = 8;
             this.MANHA.Name = "MANHA";
+            this.MANHA.Width = 118;
             // 
             // MA_CSVC_2
             // 
@@ -522,6 +526,7 @@
             this.MA_CSVC_2.HeaderText = "Mã CSVC";
             this.MA_CSVC_2.MinimumWidth = 6;
             this.MA_CSVC_2.Name = "MA_CSVC_2";
+            this.MA_CSVC_2.Width = 130;
             // 
             // TEN_CSVC_2
             // 
@@ -529,6 +534,7 @@
             this.TEN_CSVC_2.HeaderText = "Tên CSVC";
             this.TEN_CSVC_2.MinimumWidth = 8;
             this.TEN_CSVC_2.Name = "TEN_CSVC_2";
+            this.TEN_CSVC_2.Width = 130;
             // 
             // SOLUONG
             // 
@@ -536,6 +542,7 @@
             this.SOLUONG.HeaderText = "Số lượng";
             this.SOLUONG.MinimumWidth = 8;
             this.SOLUONG.Name = "SOLUONG";
+            this.SOLUONG.Width = 110;
             // 
             // NHACC_2
             // 
@@ -543,6 +550,7 @@
             this.NHACC_2.HeaderText = "Nhà cung cấp";
             this.NHACC_2.MinimumWidth = 8;
             this.NHACC_2.Name = "NHACC_2";
+            this.NHACC_2.Width = 200;
             // 
             // UC_DANHMUCCSVC
             // 

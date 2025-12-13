@@ -33,14 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDM_NHANVIEN = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MANHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSinhVien = new System.Windows.Forms.Label();
             this.btndelete_NHA = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnedit_NHANVIEN = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnadd_NHANVIEN = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_NHANVIEN)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +54,6 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvDM_NHANVIEN.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDM_NHANVIEN.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvDM_NHANVIEN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDM_NHANVIEN.BackgroundColor = System.Drawing.Color.White;
             this.dgvDM_NHANVIEN.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDM_NHANVIEN.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -92,40 +91,6 @@
             this.dgvDM_NHANVIEN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDM_NHANVIEN.Size = new System.Drawing.Size(1438, 653);
             this.dgvDM_NHANVIEN.TabIndex = 18;
-            // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.STT.DataPropertyName = "STT";
-            this.STT.FillWeight = 130.5728F;
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.Width = 60;
-            // 
-            // MANHA
-            // 
-            this.MANHA.DataPropertyName = "MANHA";
-            this.MANHA.FillWeight = 119.2565F;
-            this.MANHA.HeaderText = "Nhà";
-            this.MANHA.MinimumWidth = 6;
-            this.MANHA.Name = "MANHA";
-            // 
-            // MANV
-            // 
-            this.MANV.DataPropertyName = "MANV";
-            this.MANV.FillWeight = 119.2565F;
-            this.MANV.HeaderText = "Mã nhân viên";
-            this.MANV.MinimumWidth = 8;
-            this.MANV.Name = "MANV";
-            // 
-            // TENNV
-            // 
-            this.TENNV.DataPropertyName = "TENNV";
-            this.TENNV.FillWeight = 119.2565F;
-            this.TENNV.HeaderText = "Tên nhân viên";
-            this.TENNV.MinimumWidth = 8;
-            this.TENNV.Name = "TENNV";
             // 
             // lblSinhVien
             // 
@@ -192,6 +157,43 @@
             this.btnadd_NHANVIEN.Size = new System.Drawing.Size(30, 32);
             this.btnadd_NHANVIEN.TabIndex = 20;
             this.btnadd_NHANVIEN.Click += new System.EventHandler(this.btnadd_NHANVIEN_Click);
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.FillWeight = 130.5728F;
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.Width = 60;
+            // 
+            // MANHA
+            // 
+            this.MANHA.DataPropertyName = "MANHA";
+            this.MANHA.FillWeight = 119.2565F;
+            this.MANHA.HeaderText = "Nhà";
+            this.MANHA.MinimumWidth = 6;
+            this.MANHA.Name = "MANHA";
+            this.MANHA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.MANHA.Width = 438;
+            // 
+            // MANV
+            // 
+            this.MANV.DataPropertyName = "MANV";
+            this.MANV.FillWeight = 119.2565F;
+            this.MANV.HeaderText = "Mã nhân viên";
+            this.MANV.MinimumWidth = 8;
+            this.MANV.Name = "MANV";
+            this.MANV.Width = 438;
+            // 
+            // TENNV
+            // 
+            this.TENNV.DataPropertyName = "TENNV";
+            this.TENNV.FillWeight = 119.2565F;
+            this.TENNV.HeaderText = "Tên nhân viên";
+            this.TENNV.MinimumWidth = 8;
+            this.TENNV.Name = "TENNV";
+            this.TENNV.Width = 438;
             // 
             // UC_DM_NHANVIEN
             // 

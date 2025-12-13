@@ -222,11 +222,13 @@
             // 
             // btnLuu
             // 
+            this.btnLuu.BorderRadius = 5;
             this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLuu.FillColor = System.Drawing.Color.Navy;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Location = new System.Drawing.Point(1007, 729);
             this.btnLuu.Name = "btnLuu";
@@ -237,11 +239,13 @@
             // 
             // btnHuy
             // 
+            this.btnHuy.BorderRadius = 5;
             this.btnHuy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHuy.FillColor = System.Drawing.Color.Navy;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
             this.btnHuy.Location = new System.Drawing.Point(893, 729);
             this.btnHuy.Name = "btnHuy";
@@ -297,6 +301,7 @@
             // txtDIACHI
             // 
             this.txtDIACHI.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtDIACHI.BorderRadius = 5;
             this.txtDIACHI.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDIACHI.DefaultText = "";
             this.txtDIACHI.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -318,6 +323,7 @@
             // txtSDT
             // 
             this.txtSDT.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtSDT.BorderRadius = 5;
             this.txtSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSDT.DefaultText = "";
             this.txtSDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -339,6 +345,7 @@
             // txtTEN_NHACC
             // 
             this.txtTEN_NHACC.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTEN_NHACC.BorderRadius = 5;
             this.txtTEN_NHACC.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTEN_NHACC.DefaultText = "";
             this.txtTEN_NHACC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -360,6 +367,7 @@
             // txtMA_NHACC
             // 
             this.txtMA_NHACC.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtMA_NHACC.BorderRadius = 5;
             this.txtMA_NHACC.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMA_NHACC.DefaultText = "";
             this.txtMA_NHACC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -381,6 +389,7 @@
             // txtGHICHU
             // 
             this.txtGHICHU.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtGHICHU.BorderRadius = 5;
             this.txtGHICHU.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtGHICHU.DefaultText = "";
             this.txtGHICHU.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

@@ -76,7 +76,7 @@
             this.DIACHI,
             this.GHICHU});
             this.dgvDM_NHACC.EnableHeadersVisualStyles = false;
-            this.dgvDM_NHACC.Location = new System.Drawing.Point(66, 96);
+            this.dgvDM_NHACC.Location = new System.Drawing.Point(35, 96);
             this.dgvDM_NHACC.Name = "dgvDM_NHACC";
             this.dgvDM_NHACC.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -92,7 +92,7 @@
             this.dgvDM_NHACC.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDM_NHACC.RowTemplate.Height = 45;
             this.dgvDM_NHACC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDM_NHACC.Size = new System.Drawing.Size(1331, 660);
+            this.dgvDM_NHACC.Size = new System.Drawing.Size(1436, 660);
             this.dgvDM_NHACC.TabIndex = 18;
             // 
             // STT
@@ -150,7 +150,7 @@
             this.btndelete_NHACC.FillColor = System.Drawing.Color.Transparent;
             this.btndelete_NHACC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btndelete_NHACC.ForeColor = System.Drawing.Color.White;
-            this.btndelete_NHACC.Location = new System.Drawing.Point(1362, 58);
+            this.btndelete_NHACC.Location = new System.Drawing.Point(1431, 58);
             this.btndelete_NHACC.Name = "btndelete_NHACC";
             this.btndelete_NHACC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btndelete_NHACC.Size = new System.Drawing.Size(35, 32);
@@ -168,7 +168,7 @@
             this.btnedit_NHACC.FillColor = System.Drawing.Color.Transparent;
             this.btnedit_NHACC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnedit_NHACC.ForeColor = System.Drawing.Color.White;
-            this.btnedit_NHACC.Location = new System.Drawing.Point(1325, 58);
+            this.btnedit_NHACC.Location = new System.Drawing.Point(1394, 58);
             this.btnedit_NHACC.Name = "btnedit_NHACC";
             this.btnedit_NHACC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnedit_NHACC.Size = new System.Drawing.Size(31, 32);
@@ -186,7 +186,7 @@
             this.btnadd_NHACC.FillColor = System.Drawing.Color.Transparent;
             this.btnadd_NHACC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnadd_NHACC.ForeColor = System.Drawing.Color.White;
-            this.btnadd_NHACC.Location = new System.Drawing.Point(1280, 58);
+            this.btnadd_NHACC.Location = new System.Drawing.Point(1349, 58);
             this.btnadd_NHACC.Name = "btnadd_NHACC";
             this.btnadd_NHACC.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnadd_NHACC.Size = new System.Drawing.Size(30, 32);

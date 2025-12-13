@@ -42,7 +42,7 @@ namespace QuanLyKiTucXa
             comTRANGTHAI.DropDownStyle = ComboBoxStyle.DropDownList;
 
             // Thiết lập DataGridView TRƯỚC
-             SetupDataGridView();
+            SetupDataGridView();
 
             // Load ComboBox
             LoadComboBoxTrangThai();
@@ -71,7 +71,7 @@ namespace QuanLyKiTucXa
             {
                 HeaderText = "STT",
                 Name = "STT",
-                Width = 50,
+                Width = 60,
                 ReadOnly = true
             });
 
@@ -81,7 +81,7 @@ namespace QuanLyKiTucXa
                 DataPropertyName = "MANHA",
                 HeaderText = "Mã Nhà",
                 Name = "MANHA",
-                Width = 80
+                Width = 110
             });
 
             dgv_HD_TONGHOP.Columns.Add(new DataGridViewTextBoxColumn
@@ -89,7 +89,7 @@ namespace QuanLyKiTucXa
                 DataPropertyName = "MA_PHONG",
                 HeaderText = "Mã Phòng",
                 Name = "MA_PHONG",
-                Width = 100
+                Width = 120
             });
             
             dgv_HD_TONGHOP.Columns.Add(new DataGridViewTextBoxColumn
@@ -97,21 +97,21 @@ namespace QuanLyKiTucXa
                 DataPropertyName = "TENHD",
                 HeaderText = "Tên Hóa Đơn",
                 Name = "TENHD",
-                //   Width = 150
+                   Width = 170
             });
             dgv_HD_TONGHOP.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "THOIGIAN",
                 HeaderText = "Thời gian",
                 Name = "THOIGIAN",
-                Width = 100
+                Width = 120
             });
             dgv_HD_TONGHOP.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "MAHD_DIEN",
                 HeaderText = "Mã HĐ Điện",
                 Name = "MAHD_DIEN",
-                Width = 100
+                Width = 150
             });
 
             dgv_HD_TONGHOP.Columns.Add(new DataGridViewTextBoxColumn
@@ -119,7 +119,7 @@ namespace QuanLyKiTucXa
                 DataPropertyName = "MAHD_NUOC",
                 HeaderText = "Mã HĐ Nước",
                 Name = "MAHD_NUOC",
-                Width = 100
+                Width = 150
             });
 
             dgv_HD_TONGHOP.Columns.Add(new DataGridViewTextBoxColumn
@@ -127,7 +127,7 @@ namespace QuanLyKiTucXa
                 DataPropertyName = "MAHD_INT",
                 HeaderText = "Mã HĐ Internet",
                 Name = "MAHD_INT",
-                Width = 120
+                Width = 150
             });
 
             dgv_HD_TONGHOP.Columns.Add(new DataGridViewTextBoxColumn
@@ -135,7 +135,7 @@ namespace QuanLyKiTucXa
                 DataPropertyName = "TIENDIEN",
                 HeaderText = "Tiền Điện",
                 Name = "TIENDIEN",
-                Width = 100,
+                Width = 120,
                 DefaultCellStyle = new DataGridViewCellStyle { Format = "N0", Alignment = DataGridViewContentAlignment.MiddleRight }
             });
 
@@ -144,7 +144,7 @@ namespace QuanLyKiTucXa
                 DataPropertyName = "TIENNUOC",
                 HeaderText = "Tiền Nước",
                 Name = "TIENNUOC",
-                Width = 100,
+                Width = 120,
                 DefaultCellStyle = new DataGridViewCellStyle { Format = "N0", Alignment = DataGridViewContentAlignment.MiddleRight }
             });
 
@@ -153,7 +153,7 @@ namespace QuanLyKiTucXa
                 DataPropertyName = "TIENINTERNET",
                 HeaderText = "Tiền Internet",
                 Name = "TIENINTERNET",
-                Width = 100,
+                Width = 120,
                 DefaultCellStyle = new DataGridViewCellStyle { Format = "N0", Alignment = DataGridViewContentAlignment.MiddleRight }
             });
 
@@ -177,7 +177,7 @@ namespace QuanLyKiTucXa
                 DataPropertyName = "TINHTRANGTT",
                 HeaderText = "Trạng Thái",
                 Name = "TINHTRANGTT",
-                Width = 120
+                Width = 150
             });
 
             dgv_HD_TONGHOP.RowPostPaint += dgv_HD_TONGHOP_RowPostPaint;

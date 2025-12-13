@@ -37,10 +37,6 @@
             this.btnedittemp_LOP = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnaddtemp_LOP = new Guna.UI2.WinForms.Guna2CircleButton();
             this.dgvadd_LOP = new System.Windows.Forms.DataGridView();
-            this.MALOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENLOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,6 +47,10 @@
             this.txtTENLOP = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.MALOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENLOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvadd_LOP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             this.panelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.panelMenu.MaximumSize = new System.Drawing.Size(1646, 100);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1039, 21);
+            this.panelMenu.Size = new System.Drawing.Size(988, 21);
             this.panelMenu.TabIndex = 61;
             // 
             // btndeletetemp_LOP
@@ -130,7 +130,6 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvadd_LOP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvadd_LOP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvadd_LOP.BackgroundColor = System.Drawing.Color.White;
             this.dgvadd_LOP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvadd_LOP.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -170,41 +169,15 @@
             this.dgvadd_LOP.TabIndex = 84;
             this.dgvadd_LOP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvadd_LOP_CellClick);
             // 
-            // MALOP
-            // 
-            this.MALOP.DataPropertyName = "MALOP";
-            this.MALOP.HeaderText = "Mã lớp";
-            this.MALOP.MinimumWidth = 6;
-            this.MALOP.Name = "MALOP";
-            // 
-            // TENLOP
-            // 
-            this.TENLOP.DataPropertyName = "TENLOP";
-            this.TENLOP.HeaderText = "Tên lớp";
-            this.TENLOP.MinimumWidth = 6;
-            this.TENLOP.Name = "TENLOP";
-            // 
-            // MAKHOA
-            // 
-            this.MAKHOA.DataPropertyName = "MAKHOA";
-            this.MAKHOA.HeaderText = "Mã khoa";
-            this.MAKHOA.MinimumWidth = 8;
-            this.MAKHOA.Name = "MAKHOA";
-            // 
-            // TENKHOA
-            // 
-            this.TENKHOA.DataPropertyName = "TENKHOA";
-            this.TENKHOA.HeaderText = "Tên khoa";
-            this.TENKHOA.MinimumWidth = 8;
-            this.TENKHOA.Name = "TENKHOA";
-            // 
             // btnLuu
             // 
+            this.btnLuu.BorderRadius = 5;
             this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLuu.FillColor = System.Drawing.Color.Navy;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Location = new System.Drawing.Point(840, 573);
             this.btnLuu.Name = "btnLuu";
@@ -215,11 +188,13 @@
             // 
             // btnHuy
             // 
+            this.btnHuy.BorderRadius = 5;
             this.btnHuy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHuy.FillColor = System.Drawing.Color.Navy;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
             this.btnHuy.Location = new System.Drawing.Point(726, 573);
             this.btnHuy.Name = "btnHuy";
@@ -253,6 +228,7 @@
             // txtMAKHOA
             // 
             this.txtMAKHOA.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtMAKHOA.BorderRadius = 5;
             this.txtMAKHOA.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMAKHOA.DefaultText = "";
             this.txtMAKHOA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -294,6 +270,7 @@
             // txtMALOP
             // 
             this.txtMALOP.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtMALOP.BorderRadius = 5;
             this.txtMALOP.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMALOP.DefaultText = "";
             this.txtMALOP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -315,6 +292,7 @@
             // txtTENLOP
             // 
             this.txtTENLOP.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTENLOP.BorderRadius = 5;
             this.txtTENLOP.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTENLOP.DefaultText = "";
             this.txtTENLOP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -355,11 +333,43 @@
             this.label3.TabIndex = 80;
             this.label3.Text = "Tên lớp";
             // 
+            // MALOP
+            // 
+            this.MALOP.DataPropertyName = "MALOP";
+            this.MALOP.HeaderText = "Mã lớp";
+            this.MALOP.MinimumWidth = 6;
+            this.MALOP.Name = "MALOP";
+            this.MALOP.Width = 150;
+            // 
+            // TENLOP
+            // 
+            this.TENLOP.DataPropertyName = "TENLOP";
+            this.TENLOP.HeaderText = "Tên lớp";
+            this.TENLOP.MinimumWidth = 6;
+            this.TENLOP.Name = "TENLOP";
+            this.TENLOP.Width = 200;
+            // 
+            // MAKHOA
+            // 
+            this.MAKHOA.DataPropertyName = "MAKHOA";
+            this.MAKHOA.HeaderText = "Mã khoa";
+            this.MAKHOA.MinimumWidth = 8;
+            this.MAKHOA.Name = "MAKHOA";
+            this.MAKHOA.Width = 150;
+            // 
+            // TENKHOA
+            // 
+            this.TENKHOA.DataPropertyName = "TENKHOA";
+            this.TENKHOA.HeaderText = "Tên khoa";
+            this.TENKHOA.MinimumWidth = 8;
+            this.TENKHOA.Name = "TENKHOA";
+            this.TENKHOA.Width = 250;
+            // 
             // frmadd_LOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1039, 693);
+            this.ClientSize = new System.Drawing.Size(988, 669);
             this.Controls.Add(this.comTENKHOA);
             this.Controls.Add(this.btndeletetemp_LOP);
             this.Controls.Add(this.btnedittemp_LOP);
@@ -399,14 +409,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtMAKHOA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MALOP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENLOP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MAKHOA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENKHOA;
         private Guna.UI2.WinForms.Guna2ComboBox comTENKHOA;
         private Guna.UI2.WinForms.Guna2TextBox txtMALOP;
         private Guna.UI2.WinForms.Guna2TextBox txtTENLOP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MALOP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENLOP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAKHOA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENKHOA;
     }
 }

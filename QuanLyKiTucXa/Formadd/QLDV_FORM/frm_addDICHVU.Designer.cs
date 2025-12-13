@@ -173,7 +173,7 @@
             // txtDONVI
             // 
             this.txtDONVI.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtDONVI.BorderRadius = 5;
+            this.txtDONVI.BorderRadius = 8;
             this.txtDONVI.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDONVI.DefaultText = "";
             this.txtDONVI.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -197,7 +197,7 @@
             // txtDONGIA
             // 
             this.txtDONGIA.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtDONGIA.BorderRadius = 5;
+            this.txtDONGIA.BorderRadius = 8;
             this.txtDONGIA.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDONGIA.DefaultText = "";
             this.txtDONGIA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -219,7 +219,7 @@
             // txtMADV
             // 
             this.txtMADV.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtMADV.BorderRadius = 5;
+            this.txtMADV.BorderRadius = 8;
             this.txtMADV.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMADV.DefaultText = "";
             this.txtMADV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

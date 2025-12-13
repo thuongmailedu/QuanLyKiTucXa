@@ -80,7 +80,6 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvSCCSVC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSCCSVC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvSCCSVC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSCCSVC.BackgroundColor = System.Drawing.Color.White;
             this.dgvSCCSVC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvSCCSVC.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -276,6 +275,7 @@
             this.MA_SCCSVC.HeaderText = "Mã SCCSVC";
             this.MA_SCCSVC.MinimumWidth = 8;
             this.MA_SCCSVC.Name = "MA_SCCSVC";
+            this.MA_SCCSVC.Width = 136;
             // 
             // MANHA
             // 
@@ -283,6 +283,7 @@
             this.MANHA.HeaderText = "Mã nhà";
             this.MANHA.MinimumWidth = 6;
             this.MANHA.Name = "MANHA";
+            this.MANHA.Width = 136;
             // 
             // MA_PHONG
             // 
@@ -290,6 +291,7 @@
             this.MA_PHONG.HeaderText = "Mã phòng";
             this.MA_PHONG.MinimumWidth = 8;
             this.MA_PHONG.Name = "MA_PHONG";
+            this.MA_PHONG.Width = 135;
             // 
             // MA_CSVC
             // 
@@ -297,6 +299,7 @@
             this.MA_CSVC.HeaderText = "Mã CSVC";
             this.MA_CSVC.MinimumWidth = 8;
             this.MA_CSVC.Name = "MA_CSVC";
+            this.MA_CSVC.Width = 136;
             // 
             // TEN_CSVC
             // 
@@ -304,6 +307,7 @@
             this.TEN_CSVC.HeaderText = "Tên CSVC";
             this.TEN_CSVC.MinimumWidth = 8;
             this.TEN_CSVC.Name = "TEN_CSVC";
+            this.TEN_CSVC.Width = 136;
             // 
             // TEN_NHACC
             // 
@@ -311,6 +315,7 @@
             this.TEN_NHACC.HeaderText = "Nhà cung cấp";
             this.TEN_NHACC.MinimumWidth = 8;
             this.TEN_NHACC.Name = "TEN_NHACC";
+            this.TEN_NHACC.Width = 136;
             // 
             // NGAY_YEUCAU
             // 
@@ -321,6 +326,7 @@
             this.NGAY_YEUCAU.HeaderText = "Ngày yêu cầu";
             this.NGAY_YEUCAU.MinimumWidth = 6;
             this.NGAY_YEUCAU.Name = "NGAY_YEUCAU";
+            this.NGAY_YEUCAU.Width = 136;
             // 
             // NGAY_HOANTHANH
             // 
@@ -331,6 +337,7 @@
             this.NGAY_HOANTHANH.HeaderText = "Ngày hoàn thành";
             this.NGAY_HOANTHANH.MinimumWidth = 6;
             this.NGAY_HOANTHANH.Name = "NGAY_HOANTHANH";
+            this.NGAY_HOANTHANH.Width = 150;
             // 
             // TRANGTHAI
             // 
@@ -338,6 +345,7 @@
             this.TRANGTHAI.HeaderText = "Trạng thái";
             this.TRANGTHAI.MinimumWidth = 6;
             this.TRANGTHAI.Name = "TRANGTHAI";
+            this.TRANGTHAI.Width = 140;
             // 
             // CHITIET
             // 
@@ -345,6 +353,7 @@
             this.CHITIET.HeaderText = "Chi tiết";
             this.CHITIET.MinimumWidth = 6;
             this.CHITIET.Name = "CHITIET";
+            this.CHITIET.Width = 150;
             // 
             // UC_SCCSVC
             // 

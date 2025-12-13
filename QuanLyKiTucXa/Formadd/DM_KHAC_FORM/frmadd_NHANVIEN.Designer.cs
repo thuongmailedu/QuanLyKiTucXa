@@ -65,26 +65,30 @@
             // 
             // btnLuu
             // 
+            this.btnLuu.BorderRadius = 5;
             this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLuu.FillColor = System.Drawing.Color.Navy;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Location = new System.Drawing.Point(742, 340);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(85, 45);
+            this.btnLuu.Size = new System.Drawing.Size(96, 45);
             this.btnLuu.TabIndex = 56;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
+            this.btnHuy.BorderRadius = 5;
             this.btnHuy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHuy.FillColor = System.Drawing.Color.Navy;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
             this.btnHuy.Location = new System.Drawing.Point(615, 340);
             this.btnHuy.Name = "btnHuy";
@@ -140,6 +144,7 @@
             // txtMANV
             // 
             this.txtMANV.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtMANV.BorderRadius = 10;
             this.txtMANV.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMANV.DefaultText = "";
             this.txtMANV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -191,6 +196,7 @@
             // txtTENDN
             // 
             this.txtTENDN.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTENDN.BorderRadius = 10;
             this.txtTENDN.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTENDN.DefaultText = "";
             this.txtTENDN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -212,6 +218,7 @@
             // txtMATKHAU
             // 
             this.txtMATKHAU.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtMATKHAU.BorderRadius = 10;
             this.txtMATKHAU.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMATKHAU.DefaultText = "";
             this.txtMATKHAU.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -233,6 +240,7 @@
             // txtTENNV
             // 
             this.txtTENNV.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtTENNV.BorderRadius = 10;
             this.txtTENNV.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTENNV.DefaultText = "";
             this.txtTENNV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
