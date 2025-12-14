@@ -1,8 +1,10 @@
 ﻿using QuanLyKiTucXa.Formadd.QLHD_FORM;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Web.Configuration;
 using System.Windows.Forms;
 
 namespace QuanLyKiTucXa.Main_UC.QLHD
@@ -19,7 +21,7 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
         {
             InitializeComponent();
         }
-
+        private bool isFilterMode = false; // Biến theo dõi trạng thái lọc
         private void UC_ThuePhong_Load(object sender, EventArgs e)
         {
             // Thiết lập font cho header
@@ -33,38 +35,67 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
             dgvThuePhong.MultiSelect = false;
 
             // ✅ Load dữ liệu ban đầu
-            LoadData();
+            //  LoadData();
 
             // ✅ Load các tùy chọn cho ComboBox lọc
-            LoadFilterOptions();
+            // LoadFilterOptions();
+            InitializeFilterControls();
         }
-
-        // ✅ THÊM: Load các tùy chọn cho ComboBox lọc
-        private void LoadFilterOptions()
+        private void InitializeFilterControls()
         {
-            try
-            {
-                // Xóa items cũ
-                comfillter.Items.Clear();
+            //// Khởi tạo comFilter
+            //if (comFilter.Items.Count == 0)
+            //{
+            //    comFilter.Items.Add("Mã SV");
+            //    comFilter.Items.Add("Mã phòng");
+            //    comFilter.Items.Add("Mã nhà");
+            //    comFilter.Items.Add("Mã NV");
+            //    comFilter.SelectedIndex = 0;
+            //}
 
-                // Thêm các tùy chọn lọc
-                comfillter.Items.Add("Mã SV");
-                comfillter.Items.Add("Mã hợp đồng");
-                comfillter.Items.Add("Ngày bắt đầu");
-                comfillter.Items.Add("Ngày kết thúc");
-                comfillter.Items.Add("Ngày thanh lý");
-                comfillter.Items.Add("Mã nhà");
-                comfillter.Items.Add("Mã nhân viên");
+            //// Khởi tạo comNgay
+            //if (comNgay.Items.Count == 0)
+            //{
+            //    comNgay.Items.Add("Ngày bắt đầu");
+            //    comNgay.Items.Add("Ngày kết thúc");
+            //    comNgay.Items.Add("Ngày thanh lý");
+            //    comNgay.Items.Add("Ngày ký");
+            //    comNgay.SelectedIndex = 0;
+            //}
 
-                // Chọn mặc định
-                comfillter.SelectedIndex = 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi load filter options: " + ex.Message, "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // Load dữ liệu ban đầu
+            LoadAllContracts();
+
+            // Reset trạng thái filter
+            isFilterMode = false;
+            btnfillter_HOPDONG.Text = "Lọc";
         }
+        // ✅ THÊM: Load các tùy chọn cho ComboBox lọc
+        //private void LoadFilterOptions()
+        //{
+        //    try
+        //    {
+        //        // Xóa items cũ
+        //        comfillter.Items.Clear();
+
+        //        // Thêm các tùy chọn lọc
+        //        comfillter.Items.Add("Mã SV");
+        //        comfillter.Items.Add("Mã hợp đồng");
+        //        comfillter.Items.Add("Ngày bắt đầu");
+        //        comfillter.Items.Add("Ngày kết thúc");
+        //        comfillter.Items.Add("Ngày thanh lý");
+        //        comfillter.Items.Add("Mã nhà");
+        //        comfillter.Items.Add("Mã nhân viên");
+
+        //        // Chọn mặc định
+        //        comfillter.SelectedIndex = 0;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Lỗi khi load filter options: " + ex.Message, "Lỗi",
+        //            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
         private void btn_AddHopDong_Click(object sender, EventArgs e)
         {
@@ -74,7 +105,7 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     // Refresh lại danh sách sau khi thêm thành công
-                    LoadData();
+                   // LoadData();
                 }
             }
         }
@@ -223,7 +254,38 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void LoadAllContracts()
+        {
+            string query = @"
+        SELECT 
+            HD.MAHD,
+            HD.TENHD,
+            HD.MASV,
+            SV.TENSV,SV.GIOITINH,
+            HD.MA_PHONG,
+            P. MANHA,
+            HD. TUNGAY,
+            HD. DENNGAY,
+            HD.THOIHAN,
+            HD.NGAYKTTT,
+            HD.DONGIA,
+            HD.TONGTIEN,
+            HD.MANV,
+            NV.TENNV,
+            HD.NGAYKY
 
+
+        FROM HOPDONG HD
+        INNER JOIN SINHVIEN SV ON HD. MASV = SV. MASV
+        INNER JOIN PHONG P ON HD.MA_PHONG = P.MA_PHONG
+        INNER JOIN NHA N ON P.MANHA = N.MANHA
+        LEFT JOIN NHANVIEN NV ON HD.MANV = NV.MANV
+        ORDER BY HD.TUNGAY DESC";
+
+            DataTable dt = ExecuteQuery(query);
+            dgvThuePhong.DataSource = dt;
+          //  FormatDataGridView();
+        }
         private void dgvThuePhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
@@ -328,11 +390,163 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
         // ✅ THÊM: Event handler cho nút lọc
         private void btnfillter_HOPDONG_Click(object sender, EventArgs e)
         {
-            string searchType = comfillter.Text;
-            string keyword = txtSearch.Text.Trim();
-
-            // Load dữ liệu với điều kiện lọc
-            LoadData(searchType, keyword);
+            try
+            {
+                if (isFilterMode)
+                {
+                    // Đang ở chế độ lọc -> Reset về chế độ bình thường
+                    ResetFilter();
+                    isFilterMode = false;
+                    //btnfillter_HOPDONG.Text = "Lọc";
+                    //btnfillter_HOPDONG.BackColor = SystemColors.Control;
+                }
+                else
+                {
+                    // Chế độ bình thường -> Thực hiện lọc
+                    ApplyFilter();
+                    isFilterMode = true;
+                    //btnfillter_HOPDONG.Text = "Reset";
+                    //btnfillter_HOPDONG.BackColor = Color.LightCoral;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+        private void ApplyFilter()
+        {
+            string query = @"
+        SELECT 
+            HD. MAHD,
+            HD.TENHD,
+            HD.MASV,
+            SV.TENSV,
+            HD.MA_PHONG,
+            P.MANHA,
+            HD.TUNGAY,
+            HD.DENNGAY,
+            HD.THOIHAN,
+            HD.NGAYKTTT,
+            HD. DONGIA,
+            HD.TONGTIEN,
+            HD. MANV,
+            NV. TENNV,
+            HD. NGAYKY
+        FROM HOPDONG HD
+        INNER JOIN SINHVIEN SV ON HD.MASV = SV.MASV
+        INNER JOIN PHONG P ON HD.MA_PHONG = P.MA_PHONG
+        INNER JOIN NHA N ON P.MANHA = N. MANHA
+        LEFT JOIN NHANVIEN NV ON HD.MANV = NV.MANV
+        WHERE 1=1";
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            // Lọc theo comFilter (text-based filter)
+            if (comfillter.SelectedItem != null && !string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                string selectedFilter = comfillter.SelectedItem.ToString();
+                string searchValue = txtSearch.Text.Trim();
+
+                switch (selectedFilter)
+                {
+                    case "Mã SV":
+                        query += " AND HD.MASV LIKE @SearchValue";
+                        parameters.Add(new SqlParameter("@SearchValue", "%" + searchValue + "%"));
+                        break;
+                    case "Mã phòng":
+                        query += " AND HD.MA_PHONG LIKE @SearchValue";
+                        parameters.Add(new SqlParameter("@SearchValue", "%" + searchValue + "%"));
+                        break;
+                    case "Mã nhà":
+                        query += " AND P.MANHA LIKE @SearchValue";
+                        parameters.Add(new SqlParameter("@SearchValue", "%" + searchValue + "%"));
+                        break;
+                    case "Mã NV":
+                        query += " AND HD.MANV LIKE @SearchValue";
+                        parameters.Add(new SqlParameter("@SearchValue", "%" + searchValue + "%"));
+                        break;
+                }
+            }
+
+            // Lọc theo comNgay (date-based filter)
+            if (comNgay.SelectedItem != null)
+            {
+                string selectedDate = comNgay.SelectedItem.ToString();
+                DateTime dateValue = dtpTHANG.Value.Date;
+
+                switch (selectedDate)
+                {
+                    case "Ngày bắt đầu":
+                        query += " AND CAST(HD.TUNGAY AS DATE) = @DateValue";
+                        parameters.Add(new SqlParameter("@DateValue", dateValue));
+                        break;
+                    case "Ngày kết thúc":
+                        query += " AND CAST(HD. DENNGAY AS DATE) = @DateValue";
+                        parameters.Add(new SqlParameter("@DateValue", dateValue));
+                        break;
+                    case "Ngày thanh lý":
+                        query += " AND CAST(HD. NGAYKTTT AS DATE) = @DateValue";
+                        parameters.Add(new SqlParameter("@DateValue", dateValue));
+                        break;
+                    case "Ngày ký":
+                        query += " AND CAST(HD.NGAYKY AS DATE) = @DateValue";
+                        parameters.Add(new SqlParameter("@DateValue", dateValue));
+                        break;
+                }
+            }
+
+            query += " ORDER BY HD.TUNGAY DESC";
+
+            // Thực hiện truy vấn
+            DataTable dt = ExecuteQuery(query, parameters.ToArray());
+
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy hợp đồng nào phù hợp với điều kiện lọc!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            dgvThuePhong.DataSource = dt;
+            //FormatDataGridView();
+        }
+
+        private void ResetFilter()
+        {
+            // Load lại toàn bộ dữ liệu
+            LoadAllContracts();
+
+            // Reset các control về trạng thái mặc định
+            txtSearch.Clear();
+            if (comfillter.Items.Count > 0)
+                comfillter.SelectedIndex = 0;
+            if (comNgay.Items.Count > 0)
+                comNgay.SelectedIndex = 0;
+            dtpTHANG.Value = DateTime.Now;
+        }
+        private DataTable ExecuteQuery(string query, params SqlParameter[] parameters)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection conn = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    if (parameters != null && parameters.Length > 0)
+                    {
+                        cmd.Parameters.AddRange(parameters);
+                    }
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+
+            return dt;
+        }
+
     }
 }
