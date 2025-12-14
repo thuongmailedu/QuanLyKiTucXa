@@ -56,6 +56,8 @@
             this.CHITIET = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comNGAY = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dtpTHOIGIAN = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSCCSVC)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -132,10 +134,12 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.Controls.Add(this.dtpTHOIGIAN);
             this.panel2.Controls.Add(this.btnfillter);
             this.panel2.Controls.Add(this.btndelete);
             this.panel2.Controls.Add(this.btnedit);
             this.panel2.Controls.Add(this.btnadd);
+            this.panel2.Controls.Add(this.comNGAY);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.comfillter);
             this.panel2.Location = new System.Drawing.Point(38, 61);
@@ -231,13 +235,13 @@
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
             this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txtSearch.Location = new System.Drawing.Point(177, 11);
+            this.txtSearch.Location = new System.Drawing.Point(236, 11);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtSearch.PlaceholderText = "Nhập để tìm kiếm";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(968, 51);
+            this.txtSearch.Size = new System.Drawing.Size(333, 51);
             this.txtSearch.TabIndex = 10;
             this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
@@ -256,10 +260,12 @@
             this.comfillter.ItemHeight = 45;
             this.comfillter.Items.AddRange(new object[] {
             "Mã nhà",
-            "Mã phòng"});
+            "Mã phòng",
+            "Mã nhân viên",
+            "Mã CSVC"});
             this.comfillter.Location = new System.Drawing.Point(3, 11);
             this.comfillter.Name = "comfillter";
-            this.comfillter.Size = new System.Drawing.Size(157, 51);
+            this.comfillter.Size = new System.Drawing.Size(213, 51);
             this.comfillter.StartIndex = 0;
             this.comfillter.TabIndex = 0;
             this.comfillter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -375,6 +381,50 @@
             this.TENNV.Name = "TENNV";
             this.TENNV.Width = 160;
             // 
+            // comNGAY
+            // 
+            this.comNGAY.BackColor = System.Drawing.Color.Transparent;
+            this.comNGAY.BorderColor = System.Drawing.Color.Gray;
+            this.comNGAY.BorderRadius = 12;
+            this.comNGAY.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comNGAY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comNGAY.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comNGAY.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comNGAY.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comNGAY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comNGAY.ItemHeight = 45;
+            this.comNGAY.Items.AddRange(new object[] {
+            "Ngày yêu cầu",
+            "Ngày hoàn thành"});
+            this.comNGAY.Location = new System.Drawing.Point(699, 11);
+            this.comNGAY.Name = "comNGAY";
+            this.comNGAY.Size = new System.Drawing.Size(216, 51);
+            this.comNGAY.StartIndex = 0;
+            this.comNGAY.TabIndex = 0;
+            this.comNGAY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dtpTHOIGIAN
+            // 
+            this.dtpTHOIGIAN.BackColor = System.Drawing.Color.White;
+            this.dtpTHOIGIAN.BorderColor = System.Drawing.Color.Silver;
+            this.dtpTHOIGIAN.BorderRadius = 5;
+            this.dtpTHOIGIAN.BorderThickness = 1;
+            this.dtpTHOIGIAN.Checked = true;
+            this.dtpTHOIGIAN.CheckedState.FillColor = System.Drawing.Color.White;
+            this.dtpTHOIGIAN.CustomFormat = "dd/MM/yyyy";
+            this.dtpTHOIGIAN.FillColor = System.Drawing.Color.White;
+            this.dtpTHOIGIAN.FocusedColor = System.Drawing.Color.White;
+            this.dtpTHOIGIAN.Font = new System.Drawing.Font("Segoe UI", 9.857143F);
+            this.dtpTHOIGIAN.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTHOIGIAN.Location = new System.Drawing.Point(931, 11);
+            this.dtpTHOIGIAN.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpTHOIGIAN.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpTHOIGIAN.Name = "dtpTHOIGIAN";
+            this.dtpTHOIGIAN.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpTHOIGIAN.Size = new System.Drawing.Size(219, 51);
+            this.dtpTHOIGIAN.TabIndex = 65;
+            this.dtpTHOIGIAN.Value = new System.DateTime(2025, 10, 25, 0, 0, 0, 0);
+            // 
             // UC_SCCSVC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -419,5 +469,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHITIET;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENNV;
+        private Guna.UI2.WinForms.Guna2ComboBox comNGAY;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpTHOIGIAN;
     }
 }

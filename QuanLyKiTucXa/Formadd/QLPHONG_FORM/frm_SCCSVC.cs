@@ -38,6 +38,9 @@ namespace QuanLyKiTucXa
             dtpNGAY_HOANTHANH.ShowCheckBox = true; // Hiển thị checkbox để bật/tắt
             dtpNGAY_HOANTHANH.Checked = false; // Mặc định không chọn (NULL)
 
+            // ✅ Load thông tin nhân viên từ UserSession
+            LoadNhanVienInfo();
+
             if (isEditMode)
             {
                 txtMA_SCCSVC.ReadOnly = true;
@@ -50,9 +53,58 @@ namespace QuanLyKiTucXa
                 txtMA_SCCSVC.Text = GenerateNewMASCCSVC();
                 txtMA_SCCSVC.ReadOnly = true;
                 dtpNGAY_YEUCAU.Value = DateTime.Now;
-                // KHÔNG gán giá trị cho dtpNGAY_HOANTHANH - để null
-                // dtpNGAY_HOANTHANH.Value = DateTime.Now.AddDays(7); // XÓA DÒNG NÀY
                 comTRANGTHAI.SelectedIndex = 0;
+            }
+        }
+
+        // ✅ THÊM:  Load thông tin nhân viên từ UserSession
+        private void LoadNhanVienInfo()
+        {
+            try
+            {
+                // Lấy MANV từ UserSession (TenDangNhap chính là MANV)
+                string maNV = UserSession.TenDangNhap;
+
+                if (string.IsNullOrEmpty(maNV))
+                {
+                    MessageBox.Show("Không tìm thấy thông tin đăng nhập!\nVui lòng đăng nhập lại.", "Cảnh báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Điền MANV vào textbox
+                txtMANV.Text = maNV;
+                txtMANV.ReadOnly = true; // Không cho phép sửa
+
+                // Truy vấn để lấy TENNV từ database
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT TENNV FROM NHANVIEN WHERE MANV = @MANV";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MANV", maNV);
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            txtTENNV.Text = result.ToString();
+                            txtTENNV.ReadOnly = true; // Không cho phép sửa
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Không tìm thấy thông tin nhân viên với mã {maNV}!", "Cảnh báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txtTENNV.Text = "";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi load thông tin nhân viên:  " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -88,7 +140,7 @@ namespace QuanLyKiTucXa
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi tải danh sách nhà: " + ex.Message, "Lỗi",
+                MessageBox.Show("Lỗi tải danh sách nhà:  " + ex.Message, "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -152,7 +204,7 @@ namespace QuanLyKiTucXa
                                         DM.TEN_CSVC,
                                         ISNULL(NCC.TEN_NHACC, N'') AS TEN_NHACC,
                                         NC.SOLUONG,
-                                        ISNULL(DM.CHITIET, N'') AS CHITIET
+                                        ISNULL(DM. CHITIET, N'') AS CHITIET
                                     FROM NHA_CSVC NC
                                     INNER JOIN DM_CSVC DM ON NC.MA_CSVC = DM.MA_CSVC
                                     LEFT JOIN NHACC NCC ON DM.MA_NHACC = NCC.MA_NHACC
@@ -275,6 +327,7 @@ namespace QuanLyKiTucXa
             }
         }
 
+        // ✅ CẬP NHẬT: Load thông tin yêu cầu kèm MANV và TENNV
         private void LoadYeuCauInfo()
         {
             try
@@ -285,14 +338,17 @@ namespace QuanLyKiTucXa
                     string query = @"SELECT 
                                         SC.MA_SCCSVC,
                                         SC.MA_PHONG,
-                                        P.MANHA,
+                                        P. MANHA,
                                         SC.MA_CSVC,
                                         SC.NGAY_YEUCAU,
                                         SC.NGAY_HOANTHANH,
                                         SC.CHITIET,
-                                        SC.TRANGTHAI
+                                        SC.TRANGTHAI,
+                                        SC.MANV,
+                                        NV. TENNV
                                     FROM SC_CSVC SC
                                     INNER JOIN PHONG P ON SC.MA_PHONG = P.MA_PHONG
+                                    LEFT JOIN NHANVIEN NV ON SC. MANV = NV.MANV
                                     WHERE SC.MA_SCCSVC = @MA_SCCSVC";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -327,6 +383,23 @@ namespace QuanLyKiTucXa
 
                                 txtCHITIET.Text = reader["CHITIET"]?.ToString() ?? "";
                                 comTRANGTHAI.SelectedItem = reader["TRANGTHAI"].ToString();
+
+                                // ✅ Load thông tin nhân viên từ database (khi sửa)
+                                if (reader["MANV"] != DBNull.Value)
+                                {
+                                    txtMANV.Text = reader["MANV"].ToString();
+                                    txtTENNV.Text = reader["TENNV"]?.ToString() ?? "";
+                                }
+                                else
+                                {
+                                    // Nếu chưa có MANV, lấy từ UserSession
+                                    txtMANV.Text = UserSession.TenDangNhap;
+                                    // Load TENNV
+                                    LoadNhanVienInfo();
+                                }
+
+                                txtMANV.ReadOnly = true;
+                                txtTENNV.ReadOnly = true;
                             }
                         }
                     }
@@ -380,9 +453,18 @@ namespace QuanLyKiTucXa
                 return false;
             }
 
+            // ✅ THÊM:  Kiểm tra MANV
+            if (string.IsNullOrWhiteSpace(txtMANV.Text))
+            {
+                MessageBox.Show("Không tìm thấy mã nhân viên!\nVui lòng đăng nhập lại.", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             return true;
         }
 
+        // ✅ CẬP NHẬT: Lưu MANV vào database
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (!ValidateInput())
@@ -391,6 +473,7 @@ namespace QuanLyKiTucXa
             try
             {
                 string maCSVC = dgvDM_CSVC.SelectedRows[0].Cells["MA_CSVC"].Value?.ToString();
+                string maNV = txtMANV.Text.Trim(); // ✅ Lấy MANV từ textbox
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
@@ -399,16 +482,19 @@ namespace QuanLyKiTucXa
 
                     if (isEditMode)
                     {
+                        // ✅ Khi sửa, cập nhật cả MANV
                         query = @"UPDATE SC_CSVC 
                                 SET NGAY_HOANTHANH = @NGAY_HOANTHANH,
                                     CHITIET = @CHITIET,
-                                    TRANGTHAI = @TRANGTHAI
+                                    TRANGTHAI = @TRANGTHAI,
+                                    MANV = @MANV
                                 WHERE MA_SCCSVC = @MA_SCCSVC";
                     }
                     else
                     {
+                        // ✅ Khi thêm, insert MANV
                         query = @"INSERT INTO SC_CSVC (MA_SCCSVC, MA_PHONG, MA_CSVC, NGAY_YEUCAU, NGAY_HOANTHANH, CHITIET, TRANGTHAI, MANV)
-                                VALUES (@MA_SCCSVC, @MA_PHONG, @MA_CSVC, @NGAY_YEUCAU, @NGAY_HOANTHANH, @CHITIET, @TRANGTHAI, NULL)";
+                                VALUES (@MA_SCCSVC, @MA_PHONG, @MA_CSVC, @NGAY_YEUCAU, @NGAY_HOANTHANH, @CHITIET, @TRANGTHAI, @MANV)";
                     }
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -436,10 +522,15 @@ namespace QuanLyKiTucXa
                             string.IsNullOrWhiteSpace(txtCHITIET.Text) ? (object)DBNull.Value : txtCHITIET.Text.Trim());
                         cmd.Parameters.AddWithValue("@TRANGTHAI", comTRANGTHAI.SelectedItem.ToString());
 
+                        // ✅ Thêm parameter MANV
+                        cmd.Parameters.AddWithValue("@MANV", maNV);
+
                         int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
+                            MessageBox.Show(isEditMode ? "Cập nhật yêu cầu sửa chữa thành công!" : "Thêm yêu cầu sửa chữa thành công!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.DialogResult = DialogResult.OK;
                             this.Close();
                         }
