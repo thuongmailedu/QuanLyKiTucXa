@@ -58,6 +58,7 @@
             this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comNGAY = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpTHOIGIAN = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.comTRANGTHAI = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSCCSVC)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -139,6 +140,7 @@
             this.panel2.Controls.Add(this.btndelete);
             this.panel2.Controls.Add(this.btnedit);
             this.panel2.Controls.Add(this.btnadd);
+            this.panel2.Controls.Add(this.comTRANGTHAI);
             this.panel2.Controls.Add(this.comNGAY);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.comfillter);
@@ -241,7 +243,7 @@
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtSearch.PlaceholderText = "Nhập để tìm kiếm";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(333, 51);
+            this.txtSearch.Size = new System.Drawing.Size(235, 51);
             this.txtSearch.TabIndex = 10;
             this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
@@ -396,7 +398,7 @@
             this.comNGAY.Items.AddRange(new object[] {
             "Ngày yêu cầu",
             "Ngày hoàn thành"});
-            this.comNGAY.Location = new System.Drawing.Point(699, 11);
+            this.comNGAY.Location = new System.Drawing.Point(567, 11);
             this.comNGAY.Name = "comNGAY";
             this.comNGAY.Size = new System.Drawing.Size(216, 51);
             this.comNGAY.StartIndex = 0;
@@ -416,7 +418,7 @@
             this.dtpTHOIGIAN.FocusedColor = System.Drawing.Color.White;
             this.dtpTHOIGIAN.Font = new System.Drawing.Font("Segoe UI", 9.857143F);
             this.dtpTHOIGIAN.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTHOIGIAN.Location = new System.Drawing.Point(931, 11);
+            this.dtpTHOIGIAN.Location = new System.Drawing.Point(802, 11);
             this.dtpTHOIGIAN.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpTHOIGIAN.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpTHOIGIAN.Name = "dtpTHOIGIAN";
@@ -424,6 +426,30 @@
             this.dtpTHOIGIAN.Size = new System.Drawing.Size(219, 51);
             this.dtpTHOIGIAN.TabIndex = 65;
             this.dtpTHOIGIAN.Value = new System.DateTime(2025, 10, 25, 0, 0, 0, 0);
+            // 
+            // comTRANGTHAI
+            // 
+            this.comTRANGTHAI.BackColor = System.Drawing.Color.Transparent;
+            this.comTRANGTHAI.BorderColor = System.Drawing.Color.Gray;
+            this.comTRANGTHAI.BorderRadius = 12;
+            this.comTRANGTHAI.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comTRANGTHAI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comTRANGTHAI.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comTRANGTHAI.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comTRANGTHAI.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comTRANGTHAI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comTRANGTHAI.ItemHeight = 45;
+            this.comTRANGTHAI.Items.AddRange(new object[] {
+            "--Tất cả--",
+            "Đã tiếp nhận",
+            "Đang xử lý",
+            "Hoàn thành"});
+            this.comTRANGTHAI.Location = new System.Drawing.Point(1093, 11);
+            this.comTRANGTHAI.Name = "comTRANGTHAI";
+            this.comTRANGTHAI.Size = new System.Drawing.Size(216, 51);
+            this.comTRANGTHAI.StartIndex = 0;
+            this.comTRANGTHAI.TabIndex = 0;
+            this.comTRANGTHAI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // UC_SCCSVC
             // 
@@ -471,5 +497,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TENNV;
         private Guna.UI2.WinForms.Guna2ComboBox comNGAY;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTHOIGIAN;
+        private Guna.UI2.WinForms.Guna2ComboBox comTRANGTHAI;
     }
 }
