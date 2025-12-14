@@ -27,10 +27,7 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
             // ✅ Tắt tự động chọn dòng đầu tiên
             dgvTraPhong.ClearSelection();
 
-            // Đăng ký events
-            //btnedit_Traphong.Click += btnedit_Traphong_Click;
-            //btndelete_Traphong.Click += btndelete_Traphong_Click;
-            //btnfillter_TraPhong.Click += btnfillter_TraPhong_Click;
+          
 
             // Load dữ liệu
             LoadData();
