@@ -93,7 +93,7 @@
             this.MAKHOA,
             this.TENKHOA});
             this.dgvDM_KHOA.EnableHeadersVisualStyles = false;
-            this.dgvDM_KHOA.Location = new System.Drawing.Point(38, 145);
+            this.dgvDM_KHOA.Location = new System.Drawing.Point(38, 158);
             this.dgvDM_KHOA.Name = "dgvDM_KHOA";
             this.dgvDM_KHOA.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -167,7 +167,7 @@
             this.MAKHOA_2,
             this.TENKHOA_2});
             this.dgvDM_LOP.EnableHeadersVisualStyles = false;
-            this.dgvDM_LOP.Location = new System.Drawing.Point(667, 145);
+            this.dgvDM_LOP.Location = new System.Drawing.Point(667, 158);
             this.dgvDM_LOP.Name = "dgvDM_LOP";
             this.dgvDM_LOP.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -446,6 +446,7 @@
             this.btnfillter_KHOA.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnfillter_KHOA.Size = new System.Drawing.Size(35, 40);
             this.btnfillter_KHOA.TabIndex = 25;
+            this.btnfillter_KHOA.Click += new System.EventHandler(this.btnfillter_KHOA_Click);
             // 
             // comfillter_LOP
             // 
@@ -512,6 +513,7 @@
             this.btnfillter_LOP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnfillter_LOP.Size = new System.Drawing.Size(35, 40);
             this.btnfillter_LOP.TabIndex = 25;
+            this.btnfillter_LOP.Click += new System.EventHandler(this.btnfillter_LOP_Click);
             // 
             // UC_DM_LOP_KHOA
             // 

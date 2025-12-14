@@ -463,5 +463,10 @@ namespace QuanLyKiTucXa
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -122,7 +122,7 @@
             this.dgvSCCSVC.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSCCSVC.RowTemplate.Height = 45;
             this.dgvSCCSVC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSCCSVC.Size = new System.Drawing.Size(1482, 646);
+            this.dgvSCCSVC.Size = new System.Drawing.Size(1556, 646);
             this.dgvSCCSVC.TabIndex = 19;
             // 
             // panel2
@@ -136,7 +136,7 @@
             this.panel2.Controls.Add(this.comfillter);
             this.panel2.Location = new System.Drawing.Point(38, 61);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1482, 71);
+            this.panel2.Size = new System.Drawing.Size(1556, 71);
             this.panel2.TabIndex = 18;
             // 
             // btnfillter
@@ -150,7 +150,7 @@
             this.btnfillter.FillColor = System.Drawing.Color.Transparent;
             this.btnfillter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnfillter.ForeColor = System.Drawing.Color.White;
-            this.btnfillter.Location = new System.Drawing.Point(1288, 15);
+            this.btnfillter.Location = new System.Drawing.Point(1371, 17);
             this.btnfillter.Name = "btnfillter";
             this.btnfillter.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnfillter.Size = new System.Drawing.Size(35, 40);
@@ -168,7 +168,7 @@
             this.btndelete.FillColor = System.Drawing.Color.Transparent;
             this.btndelete.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btndelete.ForeColor = System.Drawing.Color.White;
-            this.btndelete.Location = new System.Drawing.Point(1421, 19);
+            this.btndelete.Location = new System.Drawing.Point(1504, 21);
             this.btndelete.Name = "btndelete";
             this.btndelete.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btndelete.Size = new System.Drawing.Size(35, 32);
@@ -186,7 +186,7 @@
             this.btnedit.FillColor = System.Drawing.Color.Transparent;
             this.btnedit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnedit.ForeColor = System.Drawing.Color.White;
-            this.btnedit.Location = new System.Drawing.Point(1384, 19);
+            this.btnedit.Location = new System.Drawing.Point(1467, 21);
             this.btnedit.Name = "btnedit";
             this.btnedit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnedit.Size = new System.Drawing.Size(31, 32);
@@ -204,7 +204,7 @@
             this.btnadd.FillColor = System.Drawing.Color.Transparent;
             this.btnadd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnadd.ForeColor = System.Drawing.Color.White;
-            this.btnadd.Location = new System.Drawing.Point(1339, 19);
+            this.btnadd.Location = new System.Drawing.Point(1422, 21);
             this.btnadd.Name = "btnadd";
             this.btnadd.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnadd.Size = new System.Drawing.Size(30, 32);
@@ -353,7 +353,7 @@
             this.CHITIET.HeaderText = "Chi tiết";
             this.CHITIET.MinimumWidth = 6;
             this.CHITIET.Name = "CHITIET";
-            this.CHITIET.Width = 150;
+            this.CHITIET.Width = 200;
             // 
             // UC_SCCSVC
             // 

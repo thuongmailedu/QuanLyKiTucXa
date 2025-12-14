@@ -34,6 +34,7 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
             //btnupdate.Click += btnupdate_Click;
            // btncancel.Click += btncancel_Click;
             btnfillter.Click += btnfillter_Click;
+           // dtpTHOIGIAN.Value = DateTime.Now;
         }
 
         private void LoadData()

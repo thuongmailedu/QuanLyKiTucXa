@@ -29,7 +29,7 @@ namespace QuanLyKiTucXa.Main_UC.BAOCAO
                 //dtpTHANG.Format = DateTimePickerFormat.Custom;
                 //dtpTHANG.CustomFormat = "MM/yyyy";
                 //dtpTHANG.ShowUpDown = true; // Dùng nút lên/xuống thay vì calendar
-                //dtpTHANG.Value = DateTime.Now;
+                dtpTHANG.Value = DateTime.Now;
 
                 // Load ReportViewer
                 this.reportViewer1.RefreshReport();

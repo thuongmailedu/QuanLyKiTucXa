@@ -23,6 +23,7 @@ namespace QuanLyKiTucXa
                 isInitializing = true;
                 InitializeControls();
                 isInitializing = false;
+               // dtpTHOIGIAN.Value = DateTime.Now;
             }
             catch (Exception ex)
             {

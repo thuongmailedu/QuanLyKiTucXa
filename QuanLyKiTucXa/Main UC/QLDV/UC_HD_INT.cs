@@ -46,6 +46,7 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
             comNHA.SelectedIndexChanged += Filter_Changed;
             comPHONG.SelectedIndexChanged += Filter_Changed;
             dtpTHOIGIAN.ValueChanged += Filter_Changed;
+            //dtpTHOIGIAN.Value = DateTime.Now;
         }
 
         private void LoadData()

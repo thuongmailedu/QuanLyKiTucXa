@@ -27,11 +27,11 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
             LoadComboBoxNha();
             LoadComboBoxTrangThai();
             LoadDataGridView();
-
+           // dtpTHOIGIAN.Value = DateTime.Now;
             // Gắn sự kiện
-            btnedit.Click += btnedit_Click;
+            // btnedit.Click += btnedit_Click;
             //btnupdate.Click += btnupdate_Click;
-           // btncancel.Click += btncancel_Click;
+            // btncancel.Click += btncancel_Click;
         }
 
         private void LoadData()
