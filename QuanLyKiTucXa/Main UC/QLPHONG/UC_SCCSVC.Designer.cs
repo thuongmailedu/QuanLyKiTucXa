@@ -396,6 +396,7 @@
             this.comNGAY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comNGAY.ItemHeight = 45;
             this.comNGAY.Items.AddRange(new object[] {
+            "Không lọc theo ngày",
             "Ngày yêu cầu",
             "Ngày hoàn thành"});
             this.comNGAY.Location = new System.Drawing.Point(567, 11);
@@ -440,7 +441,7 @@
             this.comTRANGTHAI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comTRANGTHAI.ItemHeight = 45;
             this.comTRANGTHAI.Items.AddRange(new object[] {
-            "--Tất cả--",
+            "Tất cả trạng thái",
             "Đã tiếp nhận",
             "Đang xử lý",
             "Hoàn thành"});
