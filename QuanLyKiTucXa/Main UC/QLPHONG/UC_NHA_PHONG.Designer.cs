@@ -32,16 +32,29 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDM_NHA = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANHA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIOITINH_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAIPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIAPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOIDA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDM_PHONG = new System.Windows.Forms.DataGridView();
+            this.STT_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MA_PHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIOITINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAIPHONG_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIAPHONG_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSinhVien = new System.Windows.Forms.Label();
             this.comNHA = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btndelete_PHONG = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -52,19 +65,6 @@
             this.btnadd_NHA = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MANHA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIOITINH_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAIPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIAPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOIDA_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STT_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MANHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MA_PHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIOITINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAIPHONG_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIAPHONG_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_NHA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_PHONG)).BeginInit();
             this.SuspendLayout();
@@ -102,6 +102,7 @@
             this.TOIDA_2});
             this.dgvDM_NHA.EnableHeadersVisualStyles = false;
             this.dgvDM_NHA.Location = new System.Drawing.Point(41, 125);
+            this.dgvDM_NHA.MultiSelect = false;
             this.dgvDM_NHA.Name = "dgvDM_NHA";
             this.dgvDM_NHA.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -119,6 +120,54 @@
             this.dgvDM_NHA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDM_NHA.Size = new System.Drawing.Size(598, 674);
             this.dgvDM_NHA.TabIndex = 18;
+            // 
+            // STT
+            // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.Width = 60;
+            // 
+            // MANHA_2
+            // 
+            this.MANHA_2.DataPropertyName = "MANHA";
+            this.MANHA_2.HeaderText = "Mã nhà";
+            this.MANHA_2.MinimumWidth = 8;
+            this.MANHA_2.Name = "MANHA_2";
+            // 
+            // GIOITINH_2
+            // 
+            this.GIOITINH_2.DataPropertyName = "GIOITINH";
+            this.GIOITINH_2.HeaderText = "Giới tính";
+            this.GIOITINH_2.MinimumWidth = 8;
+            this.GIOITINH_2.Name = "GIOITINH_2";
+            // 
+            // LOAIPHONG
+            // 
+            this.LOAIPHONG.DataPropertyName = "LOAIPHONG";
+            this.LOAIPHONG.HeaderText = "Loại phòng";
+            this.LOAIPHONG.MinimumWidth = 8;
+            this.LOAIPHONG.Name = "LOAIPHONG";
+            // 
+            // GIAPHONG
+            // 
+            this.GIAPHONG.DataPropertyName = "GIAPHONG";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.GIAPHONG.DefaultCellStyle = dataGridViewCellStyle3;
+            this.GIAPHONG.HeaderText = "Giá phòng";
+            this.GIAPHONG.MinimumWidth = 8;
+            this.GIAPHONG.Name = "GIAPHONG";
+            // 
+            // TOIDA_2
+            // 
+            this.TOIDA_2.DataPropertyName = "TOIDA";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.TOIDA_2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.TOIDA_2.HeaderText = "Tối đa";
+            this.TOIDA_2.MinimumWidth = 6;
+            this.TOIDA_2.Name = "TOIDA_2";
             // 
             // dgvDM_PHONG
             // 
@@ -171,6 +220,61 @@
             this.dgvDM_PHONG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDM_PHONG.Size = new System.Drawing.Size(927, 674);
             this.dgvDM_PHONG.TabIndex = 18;
+            // 
+            // STT_2
+            // 
+            this.STT_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.STT_2.DataPropertyName = "STT";
+            this.STT_2.HeaderText = "STT";
+            this.STT_2.MinimumWidth = 6;
+            this.STT_2.Name = "STT_2";
+            this.STT_2.Width = 60;
+            // 
+            // MANHA
+            // 
+            this.MANHA.DataPropertyName = "MANHA";
+            this.MANHA.HeaderText = "Mã nhà";
+            this.MANHA.MinimumWidth = 8;
+            this.MANHA.Name = "MANHA";
+            // 
+            // MA_PHONG
+            // 
+            this.MA_PHONG.DataPropertyName = "MA_PHONG";
+            this.MA_PHONG.HeaderText = "Mã Phòng";
+            this.MA_PHONG.MinimumWidth = 6;
+            this.MA_PHONG.Name = "MA_PHONG";
+            // 
+            // GIOITINH
+            // 
+            this.GIOITINH.DataPropertyName = "GIOITINH";
+            this.GIOITINH.HeaderText = "Giới tính";
+            this.GIOITINH.MinimumWidth = 8;
+            this.GIOITINH.Name = "GIOITINH";
+            // 
+            // LOAIPHONG_2
+            // 
+            this.LOAIPHONG_2.DataPropertyName = "LOAIPHONG";
+            this.LOAIPHONG_2.HeaderText = "Loại phòng";
+            this.LOAIPHONG_2.MinimumWidth = 8;
+            this.LOAIPHONG_2.Name = "LOAIPHONG_2";
+            // 
+            // GIAPHONG_2
+            // 
+            this.GIAPHONG_2.DataPropertyName = "GIAPHONG";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.GIAPHONG_2.DefaultCellStyle = dataGridViewCellStyle9;
+            this.GIAPHONG_2.HeaderText = "Giá phòng";
+            this.GIAPHONG_2.MinimumWidth = 8;
+            this.GIAPHONG_2.Name = "GIAPHONG_2";
+            // 
+            // TOIDA
+            // 
+            this.TOIDA.DataPropertyName = "TOIDA";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.TOIDA.DefaultCellStyle = dataGridViewCellStyle10;
+            this.TOIDA.HeaderText = "Tối đa";
+            this.TOIDA.MinimumWidth = 6;
+            this.TOIDA.Name = "TOIDA";
             // 
             // lblSinhVien
             // 
@@ -333,109 +437,6 @@
             this.label2.Size = new System.Drawing.Size(176, 28);
             this.label2.TabIndex = 19;
             this.label2.Text = "Danh sách phòng";
-            // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.Width = 60;
-            // 
-            // MANHA_2
-            // 
-            this.MANHA_2.DataPropertyName = "MANHA";
-            this.MANHA_2.HeaderText = "Mã nhà";
-            this.MANHA_2.MinimumWidth = 8;
-            this.MANHA_2.Name = "MANHA_2";
-            // 
-            // GIOITINH_2
-            // 
-            this.GIOITINH_2.DataPropertyName = "GIOITINH";
-            this.GIOITINH_2.HeaderText = "Giới tính";
-            this.GIOITINH_2.MinimumWidth = 8;
-            this.GIOITINH_2.Name = "GIOITINH_2";
-            // 
-            // LOAIPHONG
-            // 
-            this.LOAIPHONG.DataPropertyName = "LOAIPHONG";
-            this.LOAIPHONG.HeaderText = "Loại phòng";
-            this.LOAIPHONG.MinimumWidth = 8;
-            this.LOAIPHONG.Name = "LOAIPHONG";
-            // 
-            // GIAPHONG
-            // 
-            this.GIAPHONG.DataPropertyName = "GIAPHONG";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.GIAPHONG.DefaultCellStyle = dataGridViewCellStyle3;
-            this.GIAPHONG.HeaderText = "Giá phòng";
-            this.GIAPHONG.MinimumWidth = 8;
-            this.GIAPHONG.Name = "GIAPHONG";
-            // 
-            // TOIDA_2
-            // 
-            this.TOIDA_2.DataPropertyName = "TOIDA";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.TOIDA_2.DefaultCellStyle = dataGridViewCellStyle4;
-            this.TOIDA_2.HeaderText = "Tối đa";
-            this.TOIDA_2.MinimumWidth = 6;
-            this.TOIDA_2.Name = "TOIDA_2";
-            // 
-            // STT_2
-            // 
-            this.STT_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.STT_2.DataPropertyName = "STT";
-            this.STT_2.HeaderText = "STT";
-            this.STT_2.MinimumWidth = 6;
-            this.STT_2.Name = "STT_2";
-            this.STT_2.Width = 60;
-            // 
-            // MANHA
-            // 
-            this.MANHA.DataPropertyName = "MANHA";
-            this.MANHA.HeaderText = "Mã nhà";
-            this.MANHA.MinimumWidth = 8;
-            this.MANHA.Name = "MANHA";
-            // 
-            // MA_PHONG
-            // 
-            this.MA_PHONG.DataPropertyName = "MA_PHONG";
-            this.MA_PHONG.HeaderText = "Mã Phòng";
-            this.MA_PHONG.MinimumWidth = 6;
-            this.MA_PHONG.Name = "MA_PHONG";
-            // 
-            // GIOITINH
-            // 
-            this.GIOITINH.DataPropertyName = "GIOITINH";
-            this.GIOITINH.HeaderText = "Giới tính";
-            this.GIOITINH.MinimumWidth = 8;
-            this.GIOITINH.Name = "GIOITINH";
-            // 
-            // LOAIPHONG_2
-            // 
-            this.LOAIPHONG_2.DataPropertyName = "LOAIPHONG";
-            this.LOAIPHONG_2.HeaderText = "Loại phòng";
-            this.LOAIPHONG_2.MinimumWidth = 8;
-            this.LOAIPHONG_2.Name = "LOAIPHONG_2";
-            // 
-            // GIAPHONG_2
-            // 
-            this.GIAPHONG_2.DataPropertyName = "GIAPHONG";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.GIAPHONG_2.DefaultCellStyle = dataGridViewCellStyle9;
-            this.GIAPHONG_2.HeaderText = "Giá phòng";
-            this.GIAPHONG_2.MinimumWidth = 8;
-            this.GIAPHONG_2.Name = "GIAPHONG_2";
-            // 
-            // TOIDA
-            // 
-            this.TOIDA.DataPropertyName = "TOIDA";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.TOIDA.DefaultCellStyle = dataGridViewCellStyle10;
-            this.TOIDA.HeaderText = "Tối đa";
-            this.TOIDA.MinimumWidth = 6;
-            this.TOIDA.Name = "TOIDA";
             // 
             // UC_NHA_PHONG
             // 
