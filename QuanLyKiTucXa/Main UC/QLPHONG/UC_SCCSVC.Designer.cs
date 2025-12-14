@@ -54,6 +54,8 @@
             this.NGAY_HOANTHANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TRANGTHAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHITIET = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSCCSVC)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -104,7 +106,9 @@
             this.NGAY_YEUCAU,
             this.NGAY_HOANTHANH,
             this.TRANGTHAI,
-            this.CHITIET});
+            this.CHITIET,
+            this.MANV,
+            this.TENNV});
             this.dgvSCCSVC.EnableHeadersVisualStyles = false;
             this.dgvSCCSVC.Location = new System.Drawing.Point(38, 138);
             this.dgvSCCSVC.Name = "dgvSCCSVC";
@@ -355,6 +359,22 @@
             this.CHITIET.Name = "CHITIET";
             this.CHITIET.Width = 200;
             // 
+            // MANV
+            // 
+            this.MANV.DataPropertyName = "MANV";
+            this.MANV.HeaderText = "Mã nhân viên";
+            this.MANV.MinimumWidth = 6;
+            this.MANV.Name = "MANV";
+            this.MANV.Width = 125;
+            // 
+            // TENNV
+            // 
+            this.TENNV.DataPropertyName = "TENNV";
+            this.TENNV.HeaderText = "Tên nhân viên";
+            this.TENNV.MinimumWidth = 6;
+            this.TENNV.Name = "TENNV";
+            this.TENNV.Width = 160;
+            // 
             // UC_SCCSVC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -397,5 +417,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAY_HOANTHANH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TRANGTHAI;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHITIET;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MANV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENNV;
     }
 }
