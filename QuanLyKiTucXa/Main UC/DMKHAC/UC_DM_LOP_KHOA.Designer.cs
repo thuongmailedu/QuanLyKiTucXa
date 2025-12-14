@@ -55,11 +55,11 @@
             this.btnadd_LOP = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.comfillter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtSearch_KHOA = new Guna.UI2.WinForms.Guna2TextBox();
+            this.comfillter_KHOA = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnfillter_KHOA = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.comfillter_LOP = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtSearch_LOP = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnfillter_LOP = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_KHOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_LOP)).BeginInit();
@@ -382,53 +382,53 @@
             this.label2.Text = "Danh mục lớp";
             this.label2.Click += new System.EventHandler(this.lblSinhVien_Click);
             // 
-            // txtSearch
+            // txtSearch_KHOA
             // 
-            this.txtSearch.BorderColor = System.Drawing.Color.Gray;
-            this.txtSearch.BorderRadius = 12;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
-            this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txtSearch.Location = new System.Drawing.Point(218, 94);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(5);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch.PlaceholderText = "Nhập để tìm kiếm";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(272, 46);
-            this.txtSearch.TabIndex = 24;
-            this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
+            this.txtSearch_KHOA.BorderColor = System.Drawing.Color.Gray;
+            this.txtSearch_KHOA.BorderRadius = 12;
+            this.txtSearch_KHOA.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch_KHOA.DefaultText = "";
+            this.txtSearch_KHOA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch_KHOA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch_KHOA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch_KHOA.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch_KHOA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch_KHOA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch_KHOA.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch_KHOA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch_KHOA.IconLeftOffset = new System.Drawing.Point(20, 0);
+            this.txtSearch_KHOA.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.txtSearch_KHOA.Location = new System.Drawing.Point(218, 94);
+            this.txtSearch_KHOA.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSearch_KHOA.Name = "txtSearch_KHOA";
+            this.txtSearch_KHOA.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch_KHOA.PlaceholderText = "Nhập để tìm kiếm";
+            this.txtSearch_KHOA.SelectedText = "";
+            this.txtSearch_KHOA.Size = new System.Drawing.Size(272, 46);
+            this.txtSearch_KHOA.TabIndex = 24;
+            this.txtSearch_KHOA.TextOffset = new System.Drawing.Point(10, 0);
             // 
-            // comfillter
+            // comfillter_KHOA
             // 
-            this.comfillter.BackColor = System.Drawing.Color.Transparent;
-            this.comfillter.BorderColor = System.Drawing.Color.Gray;
-            this.comfillter.BorderRadius = 12;
-            this.comfillter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comfillter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comfillter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comfillter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comfillter.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.comfillter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comfillter.ItemHeight = 40;
-            this.comfillter.Items.AddRange(new object[] {
+            this.comfillter_KHOA.BackColor = System.Drawing.Color.Transparent;
+            this.comfillter_KHOA.BorderColor = System.Drawing.Color.Gray;
+            this.comfillter_KHOA.BorderRadius = 12;
+            this.comfillter_KHOA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comfillter_KHOA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comfillter_KHOA.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comfillter_KHOA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comfillter_KHOA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comfillter_KHOA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comfillter_KHOA.ItemHeight = 40;
+            this.comfillter_KHOA.Items.AddRange(new object[] {
             "Mã khoa",
             "Tên khoa"});
-            this.comfillter.Location = new System.Drawing.Point(38, 94);
-            this.comfillter.Name = "comfillter";
-            this.comfillter.Size = new System.Drawing.Size(172, 46);
-            this.comfillter.StartIndex = 0;
-            this.comfillter.TabIndex = 23;
-            this.comfillter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.comfillter_KHOA.Location = new System.Drawing.Point(38, 94);
+            this.comfillter_KHOA.Name = "comfillter_KHOA";
+            this.comfillter_KHOA.Size = new System.Drawing.Size(172, 46);
+            this.comfillter_KHOA.StartIndex = 0;
+            this.comfillter_KHOA.TabIndex = 23;
+            this.comfillter_KHOA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnfillter_KHOA
             // 
@@ -447,54 +447,54 @@
             this.btnfillter_KHOA.Size = new System.Drawing.Size(35, 40);
             this.btnfillter_KHOA.TabIndex = 25;
             // 
-            // guna2ComboBox1
+            // comfillter_LOP
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderColor = System.Drawing.Color.Gray;
-            this.guna2ComboBox1.BorderRadius = 12;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 40;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
+            this.comfillter_LOP.BackColor = System.Drawing.Color.Transparent;
+            this.comfillter_LOP.BorderColor = System.Drawing.Color.Gray;
+            this.comfillter_LOP.BorderRadius = 12;
+            this.comfillter_LOP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comfillter_LOP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comfillter_LOP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comfillter_LOP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comfillter_LOP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comfillter_LOP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comfillter_LOP.ItemHeight = 40;
+            this.comfillter_LOP.Items.AddRange(new object[] {
             "Mã lớp",
             "Tên lớp",
             "Tên khoa"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(667, 93);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(172, 46);
-            this.guna2ComboBox1.StartIndex = 0;
-            this.guna2ComboBox1.TabIndex = 23;
-            this.guna2ComboBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.comfillter_LOP.Location = new System.Drawing.Point(667, 93);
+            this.comfillter_LOP.Name = "comfillter_LOP";
+            this.comfillter_LOP.Size = new System.Drawing.Size(172, 46);
+            this.comfillter_LOP.StartIndex = 0;
+            this.comfillter_LOP.TabIndex = 23;
+            this.comfillter_LOP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2TextBox1
+            // txtSearch_LOP
             // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.BorderRadius = 12;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.IconLeftOffset = new System.Drawing.Point(20, 0);
-            this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.guna2TextBox1.Location = new System.Drawing.Point(847, 93);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.guna2TextBox1.PlaceholderText = "Nhập để tìm kiếm";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(576, 46);
-            this.guna2TextBox1.TabIndex = 24;
-            this.guna2TextBox1.TextOffset = new System.Drawing.Point(10, 0);
+            this.txtSearch_LOP.BorderColor = System.Drawing.Color.Gray;
+            this.txtSearch_LOP.BorderRadius = 12;
+            this.txtSearch_LOP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch_LOP.DefaultText = "";
+            this.txtSearch_LOP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch_LOP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch_LOP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch_LOP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch_LOP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch_LOP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch_LOP.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch_LOP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch_LOP.IconLeftOffset = new System.Drawing.Point(20, 0);
+            this.txtSearch_LOP.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.txtSearch_LOP.Location = new System.Drawing.Point(847, 93);
+            this.txtSearch_LOP.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSearch_LOP.Name = "txtSearch_LOP";
+            this.txtSearch_LOP.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch_LOP.PlaceholderText = "Nhập để tìm kiếm";
+            this.txtSearch_LOP.SelectedText = "";
+            this.txtSearch_LOP.Size = new System.Drawing.Size(576, 46);
+            this.txtSearch_LOP.TabIndex = 24;
+            this.txtSearch_LOP.TextOffset = new System.Drawing.Point(10, 0);
             // 
             // btnfillter_LOP
             // 
@@ -519,10 +519,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnfillter_LOP);
             this.Controls.Add(this.btnfillter_KHOA);
-            this.Controls.Add(this.guna2TextBox1);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.guna2ComboBox1);
-            this.Controls.Add(this.comfillter);
+            this.Controls.Add(this.txtSearch_LOP);
+            this.Controls.Add(this.txtSearch_KHOA);
+            this.Controls.Add(this.comfillter_LOP);
+            this.Controls.Add(this.comfillter_KHOA);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblSinhVien);
@@ -567,11 +567,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAKHOA;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENKHOA;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
-        private Guna.UI2.WinForms.Guna2ComboBox comfillter;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch_KHOA;
+        private Guna.UI2.WinForms.Guna2ComboBox comfillter_KHOA;
         private Guna.UI2.WinForms.Guna2CircleButton btnfillter_KHOA;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox comfillter_LOP;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch_LOP;
         private Guna.UI2.WinForms.Guna2CircleButton btnfillter_LOP;
     }
 }
