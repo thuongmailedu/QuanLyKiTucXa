@@ -1,10 +1,15 @@
-﻿using QuanLyKiTucXa.Formadd.QLHD_FORM;
+﻿using OfficeOpenXml;
+using OfficeOpenXml.Style;
+using QuanLyKiTucXa.Formadd.QLHD_FORM;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
+
 
 namespace QuanLyKiTucXa.Main_UC.QLHD
 {
@@ -37,8 +42,8 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
                 conn.Open();
             }
 
-            dgvThuePhong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvThuePhong.MultiSelect = false;
+            dgvThuePhong.ClearSelection();
+            // dgvThuePhong.MultiSelect = false;
 
             // ✅ Khởi tạo các control và load dữ liệu
             InitializeFilterControls();
@@ -656,14 +661,134 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
             }
         }
 
-        private void btnExport_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void dgvThuePhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Xử lý sự kiện click vào cell (nếu cần)
         }
+ 
+
+    private void btnExport_Click(object sender, EventArgs e)
+    {
+        try
+        {
+                // Thiết lập License cho EPPlus (miễn phí cho mục đích phi thương mại)
+                OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+                // Tạo SaveFileDialog
+                SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+            saveDialog.FilterIndex = 1;
+            saveDialog.RestoreDirectory = true;
+            saveDialog.FileName = $"DanhSachHopDong_{DateTime.Now:ddMMyyy_HHmmss}.xlsx";
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (ExcelPackage excel = new ExcelPackage())
+                {
+                    // Tạo worksheet
+                    var worksheet = excel.Workbook.Worksheets.Add("Danh sách hợp đồng");
+
+                    // XÁC ĐỊNH DÒNG CẦN XUẤT
+                    List<DataGridViewRow> rowsToExport = new List<DataGridViewRow>();
+
+                    if (dgvThuePhong.SelectedRows.Count > 0)
+                    {
+                        // NẾU CÓ DÒNG ĐƯỢC CHỌN -> CHỈ XUẤT DÒNG ĐÓ
+                        foreach (DataGridViewRow row in dgvThuePhong.SelectedRows)
+                        {
+                            if (!row.IsNewRow)
+                                rowsToExport.Add(row);
+                        }
+                    }
+                    else
+                    {
+                        // NẾU KHÔNG CÓ DÒNG NÀO ĐƯỢC CHỌN -> XUẤT TẤT CẢ
+                        foreach (DataGridViewRow row in dgvThuePhong.Rows)
+                        {
+                            if (!row.IsNewRow)
+                                rowsToExport.Add(row);
+                        }
+                    }
+
+                    // THÊM TIÊU ĐỀ (HEADER)
+                    int colIndex = 1;
+                    foreach (DataGridViewColumn col in dgvThuePhong.Columns)
+                    {
+                        if (col.Visible) // Chỉ xuất cột hiển thị
+                        {
+                            worksheet.Cells[1, colIndex].Value = col.HeaderText;
+
+                            // Định dạng header
+                            worksheet.Cells[1, colIndex].Style.Font.Bold = true;
+                            worksheet.Cells[1, colIndex].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                            worksheet.Cells[1, colIndex].Style.Fill.BackgroundColor.SetColor(Color.LightBlue);
+                            worksheet.Cells[1, colIndex].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                            colIndex++;
+                        }
+                    }
+
+                    // THÊM DỮ LIỆU
+                    int rowIndex = 2;
+                    foreach (DataGridViewRow row in rowsToExport)
+                    {
+                        colIndex = 1;
+                        foreach (DataGridViewColumn col in dgvThuePhong.Columns)
+                        {
+                            if (col.Visible)
+                            {
+                                var cellValue = row.Cells[col.Index].Value;
+                                worksheet.Cells[rowIndex, colIndex].Value = cellValue?.ToString() ?? "";
+
+                                // Định dạng cho các kiểu dữ liệu đặc biệt
+                                if (cellValue is DateTime)
+                                {
+                                    worksheet.Cells[rowIndex, colIndex].Style.Numberformat.Format = "dd/MM/yyyy";
+                                }
+                                else if (cellValue is decimal || cellValue is double || cellValue is float)
+                                {
+                                    worksheet.Cells[rowIndex, colIndex].Style.Numberformat.Format = "#,##0.00";
+                                }
+
+                                colIndex++;
+                            }
+                        }
+                        rowIndex++;
+                    }
+
+                    // TỰ ĐỘNG ĐIỀU CHỈNH ĐỘ RỘNG CỘT
+                    worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+
+                    // VẼ VIỀN CHO BẢNG
+                    var range = worksheet.Cells[1, 1, rowIndex - 1, colIndex - 1];
+                    range.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                    range.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                    range.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                    range.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+
+                    // LƯU FILE
+                    FileInfo excelFile = new FileInfo(saveDialog.FileName);
+                    excel.SaveAs(excelFile);
+
+                    MessageBox.Show($"Xuất file Excel thành công!\nĐã xuất {rowsToExport.Count} dòng dữ liệu.",
+                        "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // MỞ FILE SAU KHI XUẤT
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                    {
+                        FileName = saveDialog.FileName,
+                        UseShellExecute = true
+                    });
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Lỗi khi xuất file Excel: {ex.Message}",
+                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
+}
 }

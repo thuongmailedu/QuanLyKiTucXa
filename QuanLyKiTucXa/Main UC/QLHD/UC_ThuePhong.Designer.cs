@@ -132,7 +132,7 @@
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvThuePhong.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvThuePhong.RowTemplate.Height = 45;
-            this.dgvThuePhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvThuePhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvThuePhong.Size = new System.Drawing.Size(1555, 679);
             this.dgvThuePhong.TabIndex = 12;
             this.dgvThuePhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThuePhong_CellContentClick);
