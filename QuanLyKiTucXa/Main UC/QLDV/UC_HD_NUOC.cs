@@ -29,8 +29,8 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
             LoadDataGridView();
 
             // Gắn sự kiện
-            btnadd.Click += btnadd_Click;
-            btnedit.Click += btnedit_Click;
+            //btnadd.Click += btnadd_Click;
+            //btnedit.Click += btnedit_Click;
             //btnupdate.Click += btnupdate_Click;
            // btncancel.Click += btncancel_Click;
             btnfillter.Click += btnfillter_Click;
