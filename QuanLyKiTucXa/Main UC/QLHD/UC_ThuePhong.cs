@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
+using System.Linq;
 
 
 namespace QuanLyKiTucXa.Main_UC.QLHD
@@ -677,6 +678,8 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
             // Xử lý sự kiện click vào cell (nếu cần)
         }
 
+      
+
         private void btnExport_Click(object sender, EventArgs e)
         {
             // XÁC ĐỊNH DÒNG CẦN XUẤT
@@ -836,7 +839,524 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
                 GC.WaitForPendingFinalizers();
             }
         }
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            // ✅ HIỂN THỊ DIALOG CHỌN CHỨC NĂNG
+            DialogResult result = MessageBox.Show(
+                "Bạn muốn thực hiện thao tác nào?\n\n" +
+                "☑ YES - Xuất file mẫu Excel\n" +
+                "☑ NO - Nhập dữ liệu từ file Excel\n" +
+                "☑ CANCEL - Hủy thao tác",
+                "Chức năng Import/Export Hợp Đồng",
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Question);
 
+            if (result == DialogResult.Yes)
+            {
+                // XUẤT FILE MẪU
+                ExportTemplateHopDong();
+            }
+            else if (result == DialogResult.No)
+            {
+                // NHẬP DỮ LIỆU TỪ FILE
+                ImportHopDongFromExcel();
+            }
+        }
+        private void ExportTemplateHopDong()
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog
+            {
+                Filter = "Excel files (*.xlsx)|*.xlsx",
+                FilterIndex = 1,
+                RestoreDirectory = true,
+                FileName = $"MauNhapHopDong_{DateTime.Now:ddMMyyyy_HHmmss}.xlsx"
+            };
 
+            if (saveDialog.ShowDialog() != DialogResult.OK) return;
+
+            Excel.Application excelApp = null;
+            Excel.Workbook workbook = null;
+            Excel.Worksheet worksheet = null;
+
+            try
+            {
+                excelApp = new Excel.Application();
+                excelApp.Visible = false;
+                excelApp.DisplayAlerts = false;
+
+                workbook = excelApp.Workbooks.Add();
+                worksheet = (Excel.Worksheet)workbook.Worksheets[1];
+                worksheet.Name = "HopDong";
+
+                // ===== TIÊU ĐỀ =====
+                worksheet.Cells[1, 1] = "FILE MẪU NHẬP HỢP ĐỒNG THUÊ PHÒNG";
+                Excel.Range title = worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, 13]];
+                title.Merge();
+                title.Font.Bold = true;
+                title.Font.Size = 14;
+                title.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                title.Interior.Color = ColorTranslator.ToOle(Color.LightBlue);
+
+                // ===== LƯU Ý =====
+                worksheet.Cells[2, 1] = "LƯU Ý QUAN TRỌNG: ";
+                Excel.Range noteTitle = worksheet.Range[worksheet.Cells[2, 1], worksheet.Cells[2, 13]];
+                noteTitle.Merge();
+                noteTitle.Font.Bold = true;
+                noteTitle.Font.Color = ColorTranslator.ToOle(Color.Red);
+
+                worksheet.Cells[3, 1] = "1. Định dạng ngày:  dd/mm/yyyy (VD: 15/03/2024) - Format ô thành 'Date' trước khi nhập";
+                Excel.Range note1 = worksheet.Range[worksheet.Cells[3, 1], worksheet.Cells[3, 13]];
+                note1.Merge();
+                note1.Font.Italic = true;
+
+                worksheet.Cells[4, 1] = "2. Các cột có dấu (*) là bắt buộc phải nhập";
+                Excel.Range note2 = worksheet.Range[worksheet.Cells[4, 1], worksheet.Cells[4, 13]];
+                note2.Merge();
+                note2.Font.Italic = true;
+
+                worksheet.Cells[5, 1] = "3. Thông tin thanh lý (NGAYKTTT, MANV_TL, NGAYKY_TL) để trống nếu chưa thanh lý";
+                Excel.Range note3 = worksheet.Range[worksheet.Cells[5, 1], worksheet.Cells[5, 13]];
+                note3.Merge();
+                note3.Font.Italic = true;
+
+                // ===== HEADER =====
+                int headerRow = 7;
+                string[] headers = new string[]
+                {
+            "Mã HĐ *",
+            "Tên HĐ",
+            "Mã SV *",
+            "Mã Phòng *",
+            "Từ ngày *\n(dd/mm/yyyy)",
+            "Đến ngày *\n(dd/mm/yyyy)",
+            "Thời hạn\n(tháng)",
+            "Đơn giá *",
+            "Tổng tiền",
+            "Mã NV ký",
+            "Ngày ký\n(dd/mm/yyyy)",
+            "Ngày thanh lý\n(dd/mm/yyyy)",
+            "Mã NV thanh lý",
+            "Ngày ký TL\n(dd/mm/yyyy)"
+                };
+
+                for (int i = 0; i < headers.Length; i++)
+                {
+                    worksheet.Cells[headerRow, i + 1] = headers[i];
+                    Excel.Range headerCell = worksheet.Cells[headerRow, i + 1];
+                    headerCell.Font.Bold = true;
+                    headerCell.Interior.Color = ColorTranslator.ToOle(Color.LightGreen);
+                    headerCell.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                    headerCell.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                    headerCell.WrapText = true;
+                }
+
+                // ===== DỮ LIỆU MẪU =====
+                int dataRow = headerRow + 1;
+
+                // Mẫu 1: Hợp đồng đang còn hiệu lực
+                worksheet.Cells[dataRow, 1] = "HD001";
+                worksheet.Cells[dataRow, 2] = "Hợp đồng thuê phòng KTX";
+                worksheet.Cells[dataRow, 3] = "SV001";
+                worksheet.Cells[dataRow, 4] = "A101";
+                worksheet.Cells[dataRow, 5] = "01/09/2024";
+                worksheet.Cells[dataRow, 6] = "31/08/2025";
+                worksheet.Cells[dataRow, 7] = 12;
+                worksheet.Cells[dataRow, 8] = 500000;
+                worksheet.Cells[dataRow, 9] = 6000000;
+                worksheet.Cells[dataRow, 10] = "NV001";
+                worksheet.Cells[dataRow, 11] = "25/08/2024";
+                worksheet.Cells[dataRow, 12] = ""; // Chưa thanh lý
+                worksheet.Cells[dataRow, 13] = "";
+                worksheet.Cells[dataRow, 14] = "";
+
+                dataRow++;
+
+                // Mẫu 2: Hợp đồng đã thanh lý
+                worksheet.Cells[dataRow, 1] = "HD002";
+                worksheet.Cells[dataRow, 2] = "Hợp đồng thuê phòng KTX";
+                worksheet.Cells[dataRow, 3] = "SV002";
+                worksheet.Cells[dataRow, 4] = "B201";
+                worksheet.Cells[dataRow, 5] = "01/09/2023";
+                worksheet.Cells[dataRow, 6] = "31/08/2024";
+                worksheet.Cells[dataRow, 7] = 12;
+                worksheet.Cells[dataRow, 8] = 450000;
+                worksheet.Cells[dataRow, 9] = 5400000;
+                worksheet.Cells[dataRow, 10] = "NV001";
+                worksheet.Cells[dataRow, 11] = "20/08/2023";
+                worksheet.Cells[dataRow, 12] = "15/06/2024"; // Đã thanh lý trước hạn
+                worksheet.Cells[dataRow, 13] = "NV002";
+                worksheet.Cells[dataRow, 14] = "15/06/2024";
+
+                // ===== FORMAT CÁC CỘT NGÀY =====
+                Excel.Range dateColumns = worksheet.Range[worksheet.Cells[dataRow - 1, 5], worksheet.Cells[dataRow + 100, 6]];
+                dateColumns.NumberFormat = "dd/mm/yyyy";
+
+                Excel.Range dateColumns2 = worksheet.Range[worksheet.Cells[dataRow - 1, 11], worksheet.Cells[dataRow + 100, 11]];
+                dateColumns2.NumberFormat = "dd/mm/yyyy";
+
+                Excel.Range dateColumns3 = worksheet.Range[worksheet.Cells[dataRow - 1, 12], worksheet.Cells[dataRow + 100, 12]];
+                dateColumns3.NumberFormat = "dd/mm/yyyy";
+
+                Excel.Range dateColumns4 = worksheet.Range[worksheet.Cells[dataRow - 1, 14], worksheet.Cells[dataRow + 100, 14]];
+                dateColumns4.NumberFormat = "dd/mm/yyyy";
+
+                // ===== FORMAT CỘT TIỀN =====
+                Excel.Range moneyColumns = worksheet.Range[worksheet.Cells[dataRow - 1, 8], worksheet.Cells[dataRow + 100, 9]];
+                moneyColumns.NumberFormat = "#,##0";
+
+                // ===== ĐỊNH DẠNG CỘT =====
+                worksheet.Columns[1].ColumnWidth = 12;  // Mã HĐ
+                worksheet.Columns[2].ColumnWidth = 25;  // Tên HĐ
+                worksheet.Columns[3].ColumnWidth = 12;  // Mã SV
+                worksheet.Columns[4].ColumnWidth = 12;  // Mã Phòng
+                worksheet.Columns[5].ColumnWidth = 13;  // Từ ngày
+                worksheet.Columns[6].ColumnWidth = 13;  // Đến ngày
+                worksheet.Columns[7].ColumnWidth = 10;  // Thời hạn
+                worksheet.Columns[8].ColumnWidth = 13;  // Đơn giá
+                worksheet.Columns[9].ColumnWidth = 13;  // Tổng tiền
+                worksheet.Columns[10].ColumnWidth = 12; // Mã NV
+                worksheet.Columns[11].ColumnWidth = 13; // Ngày ký
+                worksheet.Columns[12].ColumnWidth = 13; // Ngày thanh lý
+                worksheet.Columns[13].ColumnWidth = 14; // Mã NV TL
+                worksheet.Columns[14].ColumnWidth = 13; // Ngày ký TL
+
+                // ===== VẼ VIỀN =====
+                Excel.Range tableRange = worksheet.Range[worksheet.Cells[headerRow, 1], worksheet.Cells[dataRow + 50, 14]];
+                tableRange.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                tableRange.Borders.Weight = Excel.XlBorderWeight.xlThin;
+
+                // ===== LƯU FILE =====
+                workbook.SaveAs(saveDialog.FileName);
+                workbook.Close();
+
+                MessageBox.Show(
+                    "Xuất file mẫu thành công!\n\n" +
+                    "📄 File chứa:\n" +
+                    "  - Hướng dẫn nhập ngày\n" +
+                    "  - 2 mẫu dữ liệu (HĐ bình thường và HĐ đã thanh lý)\n" +
+                    "  - Format sẵn cột ngày và tiền\n\n" +
+                    "⚠️ Lưu ý:  Format ô ngày thành 'Date' trước khi nhập! ",
+                    "Thành công",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = saveDialog.FileName,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi xuất file mẫu: {ex.Message}",
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (worksheet != null) Marshal.ReleaseComObject(worksheet);
+                if (workbook != null) Marshal.ReleaseComObject(workbook);
+                if (excelApp != null)
+                {
+                    excelApp.Quit();
+                    Marshal.ReleaseComObject(excelApp);
+                }
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+        }
+        private void ImportHopDongFromExcel()
+        {
+            OpenFileDialog openDialog = new OpenFileDialog
+            {
+                Filter = "Excel files (*.xlsx;*.xls)|*.xlsx;*.xls",
+                FilterIndex = 1,
+                RestoreDirectory = true,
+                Title = "Chọn file Excel để nhập hợp đồng"
+            };
+
+            if (openDialog.ShowDialog() != DialogResult.OK) return;
+
+            Excel.Application excelApp = null;
+            Excel.Workbook workbook = null;
+            Excel.Worksheet worksheet = null;
+
+            try
+            {
+                excelApp = new Excel.Application();
+                excelApp.Visible = false;
+                excelApp.DisplayAlerts = false;
+
+                workbook = excelApp.Workbooks.Open(openDialog.FileName);
+                worksheet = (Excel.Worksheet)workbook.Worksheets[1];
+
+                // ĐỌC DỮ LIỆU TỪ EXCEL
+                List<HopDongImportData> danhSachHD = ReadHopDongFromExcel(worksheet);
+
+                workbook.Close(false);
+
+                if (danhSachHD.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu hợp lệ để import!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // IMPORT VÀO DATABASE
+                ImportHopDongToDatabase(danhSachHD);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi nhập dữ liệu: {ex.Message}\n\n{ex.StackTrace}",
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (worksheet != null) Marshal.ReleaseComObject(worksheet);
+                if (workbook != null) Marshal.ReleaseComObject(workbook);
+                if (excelApp != null)
+                {
+                    excelApp.Quit();
+                    Marshal.ReleaseComObject(excelApp);
+                }
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+        }
+
+        // Helper class
+        private class HopDongImportData
+        {
+            public string MAHD { get; set; }
+            public string TENHD { get; set; }
+            public string MASV { get; set; }
+            public string MA_PHONG { get; set; }
+            public DateTime TUNGAY { get; set; }
+            public DateTime DENNGAY { get; set; }
+            public int? THOIHAN { get; set; }
+            public decimal DONGIA { get; set; }
+            public decimal? TONGTIEN { get; set; }
+            public string MANV { get; set; }
+            public DateTime? NGAYKY { get; set; }
+            public DateTime? NGAYKTTT { get; set; }
+            public string MANV_TL { get; set; }
+            public DateTime? NGAYKY_TL { get; set; }
+        }
+
+        private List<HopDongImportData> ReadHopDongFromExcel(Excel.Worksheet worksheet)
+        {
+            List<HopDongImportData> list = new List<HopDongImportData>();
+            int row = 8; // Bắt đầu từ dòng 8 (sau header và mẫu)
+
+            while (true)
+            {
+                string maHD = worksheet.Cells[row, 1].Value?.ToString()?.Trim();
+
+                if (string.IsNullOrEmpty(maHD))
+                    break;
+
+                try
+                {
+                    HopDongImportData hd = new HopDongImportData
+                    {
+                        MAHD = maHD,
+                        TENHD = worksheet.Cells[row, 2].Value?.ToString()?.Trim(),
+                        MASV = worksheet.Cells[row, 3].Value?.ToString()?.Trim(),
+                        MA_PHONG = worksheet.Cells[row, 4].Value?.ToString()?.Trim(),
+                        TUNGAY = ParseExcelDate(worksheet.Cells[row, 5].Value),
+                        DENNGAY = ParseExcelDate(worksheet.Cells[row, 6].Value),
+                        THOIHAN = ParseInt(worksheet.Cells[row, 7].Value),
+                        DONGIA = ParseDecimal(worksheet.Cells[row, 8].Value),
+                        TONGTIEN = ParseDecimalNullable(worksheet.Cells[row, 9].Value),
+                        MANV = worksheet.Cells[row, 10].Value?.ToString()?.Trim(),
+                        NGAYKY = ParseExcelDateNullable(worksheet.Cells[row, 11].Value),
+                        NGAYKTTT = ParseExcelDateNullable(worksheet.Cells[row, 12].Value),
+                        MANV_TL = worksheet.Cells[row, 13].Value?.ToString()?.Trim(),
+                        NGAYKY_TL = ParseExcelDateNullable(worksheet.Cells[row, 14].Value)
+                    };
+
+                    // Validate bắt buộc
+                    if (string.IsNullOrEmpty(hd.MASV) || string.IsNullOrEmpty(hd.MA_PHONG))
+                    {
+                        throw new Exception($"Dòng {row}: Thiếu Mã SV hoặc Mã Phòng");
+                    }
+
+                    list.Add(hd);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi đọc dòng {row}: {ex.Message}", "Cảnh báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                row++;
+            }
+
+            return list;
+        }
+
+        // Helper methods để parse dữ liệu
+        private DateTime ParseExcelDate(object value)
+        {
+            if (value == null) return DateTime.Now;
+
+            if (value is DateTime dt)
+                return dt;
+
+            if (value is double dbl)
+                return DateTime.FromOADate(dbl);
+
+            if (DateTime.TryParse(value.ToString(), out DateTime result))
+                return result;
+
+            return DateTime.Now;
+        }
+
+        private DateTime? ParseExcelDateNullable(object value)
+        {
+            if (value == null) return null;
+
+            if (value is DateTime dt)
+                return dt;
+
+            if (value is double dbl)
+                return DateTime.FromOADate(dbl);
+
+            if (DateTime.TryParse(value.ToString(), out DateTime result))
+                return result;
+
+            return null;
+        }
+
+        private int? ParseInt(object value)
+        {
+            if (value == null) return null;
+
+            if (value is int i)
+                return i;
+
+            if (int.TryParse(value.ToString(), out int result))
+                return result;
+
+            return null;
+        }
+
+        private decimal ParseDecimal(object value)
+        {
+            if (value == null) return 0;
+
+            if (value is decimal d)
+                return d;
+
+            if (decimal.TryParse(value.ToString(), out decimal result))
+                return result;
+
+            return 0;
+        }
+
+        private decimal? ParseDecimalNullable(object value)
+        {
+            if (value == null) return null;
+
+            if (value is decimal d)
+                return d;
+
+            if (decimal.TryParse(value.ToString(), out decimal result))
+                return result;
+
+            return null;
+        }
+
+        private void ImportHopDongToDatabase(List<HopDongImportData> danhSachHD)
+        {
+            int soHDThem = 0;
+            int soHDBiTrung = 0;
+            List<string> errors = new List<string>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(constr))
+                {
+                    conn.Open();
+                    SqlTransaction transaction = conn.BeginTransaction();
+
+                    try
+                    {
+                        foreach (var hd in danhSachHD)
+                        {
+                            // Kiểm tra tồn tại
+                            string checkQuery = "SELECT COUNT(*) FROM HOPDONG WHERE MAHD = @MAHD";
+                            using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn, transaction))
+                            {
+                                checkCmd.Parameters.AddWithValue("@MAHD", hd.MAHD);
+                                int count = (int)checkCmd.ExecuteScalar();
+
+                                if (count > 0)
+                                {
+                                    soHDBiTrung++;
+                                    continue;
+                                }
+                            }
+
+                            // Insert
+                            string insertQuery = @"INSERT INTO HOPDONG 
+                        (MAHD, TENHD, MASV, MA_PHONG, TUNGAY, DENNGAY, THOIHAN, DONGIA, TONGTIEN, 
+                         MANV, NGAYKY, NGAYKTTT, MANV_TL, NGAYKY_TL)
+                        VALUES 
+                        (@MAHD, @TENHD, @MASV, @MA_PHONG, @TUNGAY, @DENNGAY, @THOIHAN, @DONGIA, @TONGTIEN,
+                         @MANV, @NGAYKY, @NGAYKTTT, @MANV_TL, @NGAYKY_TL)";
+
+                            using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn, transaction))
+                            {
+                                insertCmd.Parameters.AddWithValue("@MAHD", hd.MAHD);
+                                insertCmd.Parameters.AddWithValue("@TENHD", (object)hd.TENHD ?? DBNull.Value);
+                                insertCmd.Parameters.AddWithValue("@MASV", hd.MASV);
+                                insertCmd.Parameters.AddWithValue("@MA_PHONG", hd.MA_PHONG);
+                                insertCmd.Parameters.AddWithValue("@TUNGAY", hd.TUNGAY);
+                                insertCmd.Parameters.AddWithValue("@DENNGAY", hd.DENNGAY);
+                                insertCmd.Parameters.AddWithValue("@THOIHAN", (object)hd.THOIHAN ?? DBNull.Value);
+                                insertCmd.Parameters.AddWithValue("@DONGIA", hd.DONGIA);
+                                insertCmd.Parameters.AddWithValue("@TONGTIEN", (object)hd.TONGTIEN ?? DBNull.Value);
+                                insertCmd.Parameters.AddWithValue("@MANV", (object)hd.MANV ?? DBNull.Value);
+                                insertCmd.Parameters.AddWithValue("@NGAYKY", (object)hd.NGAYKY ?? DBNull.Value);
+                                insertCmd.Parameters.AddWithValue("@NGAYKTTT", (object)hd.NGAYKTTT ?? DBNull.Value);
+                                insertCmd.Parameters.AddWithValue("@MANV_TL", (object)hd.MANV_TL ?? DBNull.Value);
+                                insertCmd.Parameters.AddWithValue("@NGAYKY_TL", (object)hd.NGAYKY_TL ?? DBNull.Value);
+
+                                insertCmd.ExecuteNonQuery();
+                                soHDThem++;
+                            }
+                        }
+
+                        transaction.Commit();
+
+                        string message = "✅ IMPORT HỢP ĐỒNG THÀNH CÔNG!\n\n";
+                        message += $"📊 KẾT QUẢ:\n";
+                        message += $"  - Thêm mới: {soHDThem} hợp đồng\n";
+                        message += $"  - Trùng (bỏ qua): {soHDBiTrung} hợp đồng\n";
+
+                        if (errors.Count > 0)
+                        {
+                            message += $"\n⚠️ CÓ {errors.Count} LỖI:\n";
+                            message += string.Join("\n", errors.Take(5));
+                        }
+
+                        MessageBox.Show(message, "Kết quả Import", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Refresh dữ liệu
+                        LoadAllContracts();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi import vào database: {ex.Message}",
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
