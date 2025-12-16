@@ -656,6 +656,11 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
             }
         }
 
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void dgvThuePhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Xử lý sự kiện click vào cell (nếu cần)
