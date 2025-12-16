@@ -5,7 +5,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 namespace QuanLyKiTucXa
 {
     public partial class UC_SCCSVC : UserControl
@@ -497,6 +498,198 @@ namespace QuanLyKiTucXa
             {
                 MessageBox.Show("Lỗi khi xóa:  " + ex.Message + "\n\n" + ex.StackTrace, "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            // XÁC ĐỊNH DÒNG CẦN XUẤT
+            List<DataGridViewRow> rowsToExport = new List<DataGridViewRow>();
+
+            if (dgvSCCSVC.SelectedRows.Count > 0)
+            {
+                // ✅ CHỈ XUẤT DÒNG ĐƯỢC CHỌN
+                foreach (DataGridViewRow row in dgvSCCSVC.SelectedRows)
+                {
+                    if (!row.IsNewRow)
+                        rowsToExport.Add(row);
+                }
+            }
+            else
+            {
+                // ✅ XUẤT TẤT CẢ DÒNG (KHI KHÔNG CHỌN GÌ)
+                foreach (DataGridViewRow row in dgvSCCSVC.Rows)
+                {
+                    if (!row.IsNewRow)
+                        rowsToExport.Add(row);
+                }
+            }
+
+            if (rowsToExport.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Tạo SaveFileDialog
+            SaveFileDialog saveDialog = new SaveFileDialog
+            {
+                Filter = "Excel files (*.xlsx)|*.xlsx|Excel 97-2003 (*.xls)|*.xls",
+                FilterIndex = 1,
+                RestoreDirectory = true,
+                FileName = $"DanhSachSuaChuaCSVC_{DateTime.Now:ddMMyyyy_HHmmss}"
+            };
+
+            if (saveDialog.ShowDialog() != DialogResult.OK) return;
+
+            // ✅ XUẤT EXCEL DÙNG INTEROP
+            Excel.Application excelApp = null;
+            Excel.Workbook workbook = null;
+            Excel.Worksheet worksheet = null;
+
+            try
+            {
+                // Tạo Excel Application
+                excelApp = new Excel.Application();
+                excelApp.Visible = false;
+                excelApp.DisplayAlerts = false;
+
+                // Tạo Workbook và Worksheet
+                workbook = excelApp.Workbooks.Add();
+                worksheet = (Excel.Worksheet)workbook.Worksheets[1];
+                worksheet.Name = "Danh sách sửa chữa CSVC";
+
+                // ✅ THÊM HEADER (Dòng 1)
+                int colIndex = 1;
+                foreach (DataGridViewColumn col in dgvSCCSVC.Columns)
+                {
+                    if (col.Visible)
+                    {
+                        worksheet.Cells[1, colIndex] = col.HeaderText;
+
+                        // Định dạng header
+                        Excel.Range headerCell = worksheet.Cells[1, colIndex];
+                        headerCell.Font.Bold = true;
+                        headerCell.Interior.Color = System.Drawing.ColorTranslator.ToOle(Color.LightGreen);
+                        headerCell.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                        headerCell.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+
+                        colIndex++;
+                    }
+                }
+
+                // ✅ THÊM DỮ LIỆU (Từ dòng 2)
+                int rowIndex = 2;
+                foreach (DataGridViewRow row in rowsToExport)
+                {
+                    colIndex = 1;
+                    foreach (DataGridViewColumn col in dgvSCCSVC.Columns)
+                    {
+                        if (col.Visible)
+                        {
+                            var cellValue = row.Cells[col.Index].Value;
+
+                            if (cellValue != null)
+                            {
+                                // Xử lý DateTime
+                                if (cellValue is DateTime dateValue)
+                                {
+                                    worksheet.Cells[rowIndex, colIndex] = dateValue.ToString("dd/MM/yyyy HH:mm");
+                                }
+                                // Xử lý số
+                                else if (cellValue is decimal || cellValue is double || cellValue is int)
+                                {
+                                    worksheet.Cells[rowIndex, colIndex] = cellValue;
+                                }
+                                else
+                                {
+                                    worksheet.Cells[rowIndex, colIndex] = cellValue.ToString();
+                                }
+                            }
+
+                            colIndex++;
+                        }
+                    }
+                    rowIndex++;
+                }
+
+                // ✅ TỰ ĐỘNG ĐIỀU CHỈNH ĐỘ RỘNG CỘT
+                worksheet.Columns.AutoFit();
+
+                // ✅ VẼ VIỀN CHO BẢNG
+                Excel.Range tableRange = worksheet.Range[
+                    worksheet.Cells[1, 1],
+                    worksheet.Cells[rowIndex - 1, colIndex - 1]
+                ];
+                tableRange.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                tableRange.Borders.Weight = Excel.XlBorderWeight.xlThin;
+
+                // ✅ ĐẶT MÀU CHO TRẠNG THÁI (nếu có cột TRANGTHAI)
+                for (int i = 2; i < rowIndex; i++)
+                {
+                    // Tìm cột TRANGTHAI
+                    int trangThaiColIndex = 0;
+                    foreach (DataGridViewColumn col in dgvSCCSVC.Columns)
+                    {
+                        if (col.Visible)
+                        {
+                            trangThaiColIndex++;
+                            if (col.DataPropertyName == "TRANGTHAI" || col.Name == "TRANGTHAI")
+                            {
+                                string trangThai = worksheet.Cells[i, trangThaiColIndex].Value?.ToString();
+                                Excel.Range statusCell = worksheet.Cells[i, trangThaiColIndex];
+
+                                if (trangThai == "Hoàn thành")
+                                {
+                                    statusCell.Interior.Color = System.Drawing.ColorTranslator.ToOle(Color.LightGreen);
+                                }
+                                else if (trangThai == "Đang xử lý")
+                                {
+                                    statusCell.Interior.Color = System.Drawing.ColorTranslator.ToOle(Color.LightYellow);
+                                }
+                                else if (trangThai == "Đã tiếp nhận")
+                                {
+                                    statusCell.Interior.Color = System.Drawing.ColorTranslator.ToOle(Color.LightBlue);
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                // ✅ LƯU FILE
+                workbook.SaveAs(saveDialog.FileName);
+                workbook.Close();
+
+                MessageBox.Show($"Xuất file Excel thành công!\nĐã xuất {rowsToExport.Count} dòng dữ liệu.",
+                    "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // MỞ FILE
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = saveDialog.FileName,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi xuất file Excel: {ex.Message}\n\n{ex.StackTrace}",
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // ✅ GIẢI PHÓNG TÀI NGUYÊN COM
+                if (worksheet != null) Marshal.ReleaseComObject(worksheet);
+                if (workbook != null) Marshal.ReleaseComObject(workbook);
+                if (excelApp != null)
+                {
+                    excelApp.Quit();
+                    Marshal.ReleaseComObject(excelApp);
+                }
+
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
             }
         }
     }
