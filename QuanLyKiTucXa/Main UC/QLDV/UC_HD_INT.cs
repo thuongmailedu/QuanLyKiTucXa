@@ -259,5 +259,10 @@ namespace QuanLyKiTucXa.Main_UC.QLDV
                 MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message);
             }
         }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
