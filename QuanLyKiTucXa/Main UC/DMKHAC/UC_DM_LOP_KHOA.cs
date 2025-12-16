@@ -796,7 +796,7 @@ namespace QuanLyKiTucXa.Main_UC.DMKHAC
                 worksheetLop.Cells[5, 4] = "Công nghệ thông tin 01";
 
                 worksheetLop.Cells[6, 1] = "KTDL";
-                worksheetLop.Cells[6, 2] = "=IFERROR(VLOOKUP(A6,Khoa! $A$5:$B$100,2,FALSE),\"\")";
+                worksheetLop.Cells[6, 2] = "=IFERROR(VLOOKUP(A6,Khoa!$A$5:$B$100,2,FALSE),\"\")";
                 worksheetLop.Cells[6, 3] = "KTDL01";
                 worksheetLop.Cells[6, 4] = "Kế toán - Dữ liệu 01";
 
@@ -820,24 +820,38 @@ namespace QuanLyKiTucXa.Main_UC.DMKHAC
                 Excel.Range formulaDest = worksheetLop.Range[worksheetLop.Cells[5, 2], worksheetLop.Cells[100, 2]];
                 formulaSource.Copy(formulaDest);
 
+                // ✅ ĐỊNH DẠNG CỘT
                 worksheetLop.Columns[1].ColumnWidth = 12;
                 worksheetLop.Columns[2].ColumnWidth = 35;
                 worksheetLop.Columns[3].ColumnWidth = 12;
                 worksheetLop.Columns[4].ColumnWidth = 35;
 
-                // Bảo vệ cột Tên Khoa (chỉ đọc)
-                worksheetLop.Columns[2].Locked = true;
-                worksheetLop.Columns[1].Locked = false;
-                worksheetLop.Columns[3].Locked = false;
-                worksheetLop.Columns[4].Locked = false;
-                worksheetLop.Protect(
-                    DrawingObjects: false,
-                    Contents: true,
-                    Scenarios: false,
-                    AllowFormattingCells: true,
-                    AllowFormattingColumns: true,
-                    AllowFormattingRows: true
-                );
+                // ✅ BẢO VỆ SHEET (cột Tên Khoa read-only)
+                try
+                {
+                    // Unlock toàn bộ sheet trước
+                    worksheetLop.Cells.Locked = false;
+
+                    // Lock riêng cột Tên Khoa (cột B từ dòng 5 đến 1000)
+                    Excel.Range colTenKhoa = worksheetLop.Range[worksheetLop.Cells[5, 2], worksheetLop.Cells[1000, 2]];
+                    colTenKhoa.Locked = true;
+
+                    // Protect sheet
+                    worksheetLop.Protect(
+                        DrawingObjects: false,
+                        Contents: true,
+                        Scenarios: false,
+                        AllowFormattingCells: true,
+                        AllowFormattingColumns: true,
+                        AllowFormattingRows: true,
+                        AllowInsertingRows: true,
+                        AllowDeletingRows: true
+                    );
+                }
+                catch
+                {
+                    // Nếu protect lỗi thì bỏ qua, không quan trọng
+                }
 
                 // ===== LƯU FILE =====
                 workbook.SaveAs(saveDialog.FileName);
