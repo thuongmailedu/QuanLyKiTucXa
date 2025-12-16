@@ -61,6 +61,7 @@
             this.comfillter_LOP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtSearch_LOP = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnfillter_LOP = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnImport = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_KHOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_LOP)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +75,6 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvDM_KHOA.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDM_KHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvDM_KHOA.BackgroundColor = System.Drawing.Color.White;
             this.dgvDM_KHOA.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDM_KHOA.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -93,7 +93,7 @@
             this.MAKHOA,
             this.TENKHOA});
             this.dgvDM_KHOA.EnableHeadersVisualStyles = false;
-            this.dgvDM_KHOA.Location = new System.Drawing.Point(38, 158);
+            this.dgvDM_KHOA.Location = new System.Drawing.Point(38, 148);
             this.dgvDM_KHOA.Name = "dgvDM_KHOA";
             this.dgvDM_KHOA.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -146,7 +146,6 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvDM_LOP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvDM_LOP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvDM_LOP.BackgroundColor = System.Drawing.Color.White;
             this.dgvDM_LOP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDM_LOP.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -167,7 +166,7 @@
             this.MAKHOA_2,
             this.TENKHOA_2});
             this.dgvDM_LOP.EnableHeadersVisualStyles = false;
-            this.dgvDM_LOP.Location = new System.Drawing.Point(667, 158);
+            this.dgvDM_LOP.Location = new System.Drawing.Point(667, 147);
             this.dgvDM_LOP.Name = "dgvDM_LOP";
             this.dgvDM_LOP.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -183,7 +182,7 @@
             this.dgvDM_LOP.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDM_LOP.RowTemplate.Height = 45;
             this.dgvDM_LOP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDM_LOP.Size = new System.Drawing.Size(955, 666);
+            this.dgvDM_LOP.Size = new System.Drawing.Size(924, 666);
             this.dgvDM_LOP.TabIndex = 18;
             this.dgvDM_LOP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -235,7 +234,7 @@
             this.lblSinhVien.AutoSize = true;
             this.lblSinhVien.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSinhVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.lblSinhVien.Location = new System.Drawing.Point(593, 9);
+            this.lblSinhVien.Location = new System.Drawing.Point(597, 9);
             this.lblSinhVien.Name = "lblSinhVien";
             this.lblSinhVien.Size = new System.Drawing.Size(393, 46);
             this.lblSinhVien.TabIndex = 22;
@@ -244,7 +243,6 @@
             // 
             // btndelete_KHOA
             // 
-            this.btndelete_KHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btndelete_KHOA.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
             this.btndelete_KHOA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btndelete_KHOA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -263,7 +261,6 @@
             // 
             // btndelete_LOP
             // 
-            this.btndelete_LOP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btndelete_LOP.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.del;
             this.btndelete_LOP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btndelete_LOP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -273,7 +270,7 @@
             this.btndelete_LOP.FillColor = System.Drawing.Color.Transparent;
             this.btndelete_LOP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btndelete_LOP.ForeColor = System.Drawing.Color.White;
-            this.btndelete_LOP.Location = new System.Drawing.Point(1545, 102);
+            this.btndelete_LOP.Location = new System.Drawing.Point(1407, 100);
             this.btndelete_LOP.Name = "btndelete_LOP";
             this.btndelete_LOP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btndelete_LOP.Size = new System.Drawing.Size(35, 32);
@@ -282,7 +279,6 @@
             // 
             // btnedit_KHOA
             // 
-            this.btnedit_KHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnedit_KHOA.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
             this.btnedit_KHOA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnedit_KHOA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -301,7 +297,6 @@
             // 
             // btnedit_LOP
             // 
-            this.btnedit_LOP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnedit_LOP.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.edit;
             this.btnedit_LOP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnedit_LOP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -311,7 +306,7 @@
             this.btnedit_LOP.FillColor = System.Drawing.Color.Transparent;
             this.btnedit_LOP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnedit_LOP.ForeColor = System.Drawing.Color.White;
-            this.btnedit_LOP.Location = new System.Drawing.Point(1508, 102);
+            this.btnedit_LOP.Location = new System.Drawing.Point(1370, 100);
             this.btnedit_LOP.Name = "btnedit_LOP";
             this.btnedit_LOP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnedit_LOP.Size = new System.Drawing.Size(31, 32);
@@ -320,7 +315,6 @@
             // 
             // btnadd_KHOA
             // 
-            this.btnadd_KHOA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnadd_KHOA.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
             this.btnadd_KHOA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnadd_KHOA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -339,7 +333,6 @@
             // 
             // btnadd_LOP
             // 
-            this.btnadd_LOP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnadd_LOP.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.create;
             this.btnadd_LOP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnadd_LOP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -349,7 +342,7 @@
             this.btnadd_LOP.FillColor = System.Drawing.Color.Transparent;
             this.btnadd_LOP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnadd_LOP.ForeColor = System.Drawing.Color.White;
-            this.btnadd_LOP.Location = new System.Drawing.Point(1592, 102);
+            this.btnadd_LOP.Location = new System.Drawing.Point(1454, 100);
             this.btnadd_LOP.Name = "btnadd_LOP";
             this.btnadd_LOP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnadd_LOP.Size = new System.Drawing.Size(30, 32);
@@ -358,7 +351,6 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
@@ -371,7 +363,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
@@ -493,7 +484,7 @@
             this.txtSearch_LOP.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtSearch_LOP.PlaceholderText = "Nhập để tìm kiếm";
             this.txtSearch_LOP.SelectedText = "";
-            this.txtSearch_LOP.Size = new System.Drawing.Size(576, 46);
+            this.txtSearch_LOP.Size = new System.Drawing.Size(458, 46);
             this.txtSearch_LOP.TabIndex = 24;
             this.txtSearch_LOP.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -508,17 +499,34 @@
             this.btnfillter_LOP.FillColor = System.Drawing.Color.Transparent;
             this.btnfillter_LOP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnfillter_LOP.ForeColor = System.Drawing.Color.White;
-            this.btnfillter_LOP.Location = new System.Drawing.Point(1467, 99);
+            this.btnfillter_LOP.Location = new System.Drawing.Point(1329, 97);
             this.btnfillter_LOP.Name = "btnfillter_LOP";
             this.btnfillter_LOP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnfillter_LOP.Size = new System.Drawing.Size(35, 40);
             this.btnfillter_LOP.TabIndex = 25;
             this.btnfillter_LOP.Click += new System.EventHandler(this.btnfillter_LOP_Click);
             // 
+            // btnImport
+            // 
+            this.btnImport.BorderRadius = 5;
+            this.btnImport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnImport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnImport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnImport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnImport.FillColor = System.Drawing.Color.Navy;
+            this.btnImport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.ForeColor = System.Drawing.Color.White;
+            this.btnImport.Location = new System.Drawing.Point(1526, 93);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(65, 45);
+            this.btnImport.TabIndex = 70;
+            this.btnImport.Text = "Im";
+            // 
             // UC_DM_LOP_KHOA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnfillter_LOP);
             this.Controls.Add(this.btnfillter_KHOA);
             this.Controls.Add(this.txtSearch_LOP);
@@ -539,7 +547,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_DM_LOP_KHOA";
-            this.Size = new System.Drawing.Size(1664, 849);
+            this.Size = new System.Drawing.Size(1672, 849);
             this.Load += new System.EventHandler(this.UC_DM_LOP_KHOA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_KHOA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDM_LOP)).EndInit();
@@ -575,5 +583,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox comfillter_LOP;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch_LOP;
         private Guna.UI2.WinForms.Guna2CircleButton btnfillter_LOP;
+        private Guna.UI2.WinForms.Guna2Button btnImport;
     }
 }

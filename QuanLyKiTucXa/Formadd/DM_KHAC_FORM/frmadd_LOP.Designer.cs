@@ -47,6 +47,7 @@
             this.txtTENLOP = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MALOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENLOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -144,6 +145,7 @@
             this.dgvadd_LOP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvadd_LOP.ColumnHeadersHeight = 45;
             this.dgvadd_LOP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
             this.MALOP,
             this.TENLOP,
             this.MAKHOA,
@@ -333,6 +335,14 @@
             this.label3.TabIndex = 80;
             this.label3.Text = "Tên lớp";
             // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.Width = 125;
+            // 
             // MALOP
             // 
             this.MALOP.DataPropertyName = "MALOP";
@@ -414,6 +424,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTENLOP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MALOP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENLOP;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAKHOA;
