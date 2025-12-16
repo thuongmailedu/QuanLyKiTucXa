@@ -606,5 +606,10 @@ namespace QuanLyKiTucXa.Ribbons
                 GC.WaitForPendingFinalizers();
             }
         }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
