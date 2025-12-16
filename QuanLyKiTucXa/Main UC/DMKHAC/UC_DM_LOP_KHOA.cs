@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
+using System.Drawing;
+using System.IO;
+using System.Linq;
 
 namespace QuanLyKiTucXa.Main_UC.DMKHAC
 {
@@ -667,5 +672,487 @@ namespace QuanLyKiTucXa.Main_UC.DMKHAC
         }
 
         #endregion
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            // ✅ HIỂN THỊ DIALOG CHỌN CHỨC NĂNG
+            DialogResult result = MessageBox.Show(
+                "Bạn muốn thực hiện thao tác nào?\n\n" +
+                "☑ YES - Xuất file mẫu Excel\n" +
+                "☑ NO - Nhập dữ liệu từ file Excel\n" +
+                "☑ CANCEL - Hủy thao tác",
+                "Chức năng Import/Export",
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // XUẤT FILE MẪU
+                ExportTemplateLopKhoa();
+            }
+            else if (result == DialogResult.No)
+            {
+                // NHẬP DỮ LIỆU TỪ FILE
+                ImportDataFromExcel();
+            }
+            // Cancel thì không làm gì
+        }
+        private void ExportTemplateLopKhoa()
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog
+            {
+                Filter = "Excel files (*.xlsx)|*.xlsx",
+                FilterIndex = 1,
+                RestoreDirectory = true,
+                FileName = $"MauNhapLopKhoa_{DateTime.Now:ddMMyyyy_HHmmss}.xlsx"
+            };
+
+            if (saveDialog.ShowDialog() != DialogResult.OK) return;
+
+            Excel.Application excelApp = null;
+            Excel.Workbook workbook = null;
+            Excel.Worksheet worksheetKhoa = null;
+            Excel.Worksheet worksheetLop = null;
+
+            try
+            {
+                excelApp = new Excel.Application();
+                excelApp.Visible = false;
+                excelApp.DisplayAlerts = false;
+
+                workbook = excelApp.Workbooks.Add();
+
+                // ===== SHEET 1: KHOA =====
+                worksheetKhoa = (Excel.Worksheet)workbook.Worksheets[1];
+                worksheetKhoa.Name = "Khoa";
+
+                // Tiêu đề
+                worksheetKhoa.Cells[1, 1] = "FILE MẪU NHẬP DANH MỤC KHOA";
+                Excel.Range titleKhoa = worksheetKhoa.Range[worksheetKhoa.Cells[1, 1], worksheetKhoa.Cells[1, 2]];
+                titleKhoa.Merge();
+                titleKhoa.Font.Bold = true;
+                titleKhoa.Font.Size = 14;
+                titleKhoa.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                titleKhoa.Interior.Color = ColorTranslator.ToOle(Color.LightBlue);
+
+                worksheetKhoa.Cells[2, 1] = "Lưu ý: Nhập sheet Khoa trước, sau đó nhập sheet Lớp";
+                Excel.Range noteKhoa = worksheetKhoa.Range[worksheetKhoa.Cells[2, 1], worksheetKhoa.Cells[2, 2]];
+                noteKhoa.Merge();
+                noteKhoa.Font.Italic = true;
+                noteKhoa.Font.Color = ColorTranslator.ToOle(Color.Red);
+
+                // Header
+                worksheetKhoa.Cells[4, 1] = "Mã Khoa *";
+                worksheetKhoa.Cells[4, 2] = "Tên Khoa *";
+
+                Excel.Range headerKhoa = worksheetKhoa.Range[worksheetKhoa.Cells[4, 1], worksheetKhoa.Cells[4, 2]];
+                headerKhoa.Font.Bold = true;
+                headerKhoa.Interior.Color = ColorTranslator.ToOle(Color.LightGreen);
+                headerKhoa.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                // Dữ liệu mẫu
+                worksheetKhoa.Cells[5, 1] = "CNTT";
+                worksheetKhoa.Cells[5, 2] = "Khoa Công nghệ thông tin";
+                worksheetKhoa.Cells[6, 1] = "KTDL";
+                worksheetKhoa.Cells[6, 2] = "Khoa Kế toán - Dữ liệu";
+
+                worksheetKhoa.Columns[1].ColumnWidth = 15;
+                worksheetKhoa.Columns[2].ColumnWidth = 40;
+
+                // ===== SHEET 2: LỚP =====
+                worksheetLop = (Excel.Worksheet)workbook.Worksheets.Add(After: worksheetKhoa);
+                worksheetLop.Name = "Lop";
+
+                // Tiêu đề
+                worksheetLop.Cells[1, 1] = "FILE MẪU NHẬP DANH MỤC LỚP";
+                Excel.Range titleLop = worksheetLop.Range[worksheetLop.Cells[1, 1], worksheetLop.Cells[1, 4]];
+                titleLop.Merge();
+                titleLop.Font.Bold = true;
+                titleLop.Font.Size = 14;
+                titleLop.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                titleLop.Interior.Color = ColorTranslator.ToOle(Color.LightCoral);
+
+                worksheetLop.Cells[2, 1] = "Lưu ý: Cột 'Tên Khoa' sẽ tự động điền khi chọn Mã Khoa";
+                Excel.Range noteLop = worksheetLop.Range[worksheetLop.Cells[2, 1], worksheetLop.Cells[2, 4]];
+                noteLop.Merge();
+                noteLop.Font.Italic = true;
+                noteLop.Font.Color = ColorTranslator.ToOle(Color.Red);
+
+                // Header
+                worksheetLop.Cells[4, 1] = "Mã Khoa *";
+                worksheetLop.Cells[4, 2] = "Tên Khoa";
+                worksheetLop.Cells[4, 3] = "Mã Lớp *";
+                worksheetLop.Cells[4, 4] = "Tên Lớp *";
+
+                Excel.Range headerLop = worksheetLop.Range[worksheetLop.Cells[4, 1], worksheetLop.Cells[4, 4]];
+                headerLop.Font.Bold = true;
+                headerLop.Interior.Color = ColorTranslator.ToOle(Color.LightYellow);
+                headerLop.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                // Dữ liệu mẫu
+                worksheetLop.Cells[5, 1] = "CNTT";
+                worksheetLop.Cells[5, 2] = "=IFERROR(VLOOKUP(A5,Khoa!$A$5:$B$100,2,FALSE),\"\")";
+                worksheetLop.Cells[5, 3] = "CNTT01";
+                worksheetLop.Cells[5, 4] = "Công nghệ thông tin 01";
+
+                worksheetLop.Cells[6, 1] = "KTDL";
+                worksheetLop.Cells[6, 2] = "=IFERROR(VLOOKUP(A6,Khoa! $A$5:$B$100,2,FALSE),\"\")";
+                worksheetLop.Cells[6, 3] = "KTDL01";
+                worksheetLop.Cells[6, 4] = "Kế toán - Dữ liệu 01";
+
+                // ✅ TẠO DATA VALIDATION (Dropdown) cho cột Mã Khoa trong sheet Lớp
+                Excel.Range validationRange = worksheetLop.Range[worksheetLop.Cells[5, 1], worksheetLop.Cells[100, 1]];
+                validationRange.Validation.Delete();
+                validationRange.Validation.Add(
+                    Type: Excel.XlDVType.xlValidateList,
+                    AlertStyle: Excel.XlDVAlertStyle.xlValidAlertStop,
+                    Operator: Excel.XlFormatConditionOperator.xlBetween,
+                    Formula1: "=Khoa!$A$5:$A$100"
+                );
+                validationRange.Validation.IgnoreBlank = true;
+                validationRange.Validation.InCellDropdown = true;
+                validationRange.Validation.ShowError = true;
+                validationRange.Validation.ErrorTitle = "Lỗi";
+                validationRange.Validation.ErrorMessage = "Vui lòng chọn Mã Khoa từ danh sách! ";
+
+                // ✅ COPY FORMULA cho cột Tên Khoa
+                Excel.Range formulaSource = worksheetLop.Range[worksheetLop.Cells[5, 2], worksheetLop.Cells[6, 2]];
+                Excel.Range formulaDest = worksheetLop.Range[worksheetLop.Cells[5, 2], worksheetLop.Cells[100, 2]];
+                formulaSource.Copy(formulaDest);
+
+                worksheetLop.Columns[1].ColumnWidth = 12;
+                worksheetLop.Columns[2].ColumnWidth = 35;
+                worksheetLop.Columns[3].ColumnWidth = 12;
+                worksheetLop.Columns[4].ColumnWidth = 35;
+
+                // Bảo vệ cột Tên Khoa (chỉ đọc)
+                worksheetLop.Columns[2].Locked = true;
+                worksheetLop.Columns[1].Locked = false;
+                worksheetLop.Columns[3].Locked = false;
+                worksheetLop.Columns[4].Locked = false;
+                worksheetLop.Protect(
+                    DrawingObjects: false,
+                    Contents: true,
+                    Scenarios: false,
+                    AllowFormattingCells: true,
+                    AllowFormattingColumns: true,
+                    AllowFormattingRows: true
+                );
+
+                // ===== LƯU FILE =====
+                workbook.SaveAs(saveDialog.FileName);
+                workbook.Close();
+
+                MessageBox.Show(
+                    "Xuất file mẫu thành công!\n\n" +
+                    "📄 Sheet 'Khoa':  Nhập danh sách khoa\n" +
+                    "📄 Sheet 'Lop': Nhập danh sách lớp (có dropdown chọn Mã Khoa)\n\n" +
+                    "⚠️ Lưu ý: Import sheet Khoa trước, sau đó mới import sheet Lớp! ",
+                    "Thành công",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = saveDialog.FileName,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi xuất file mẫu: {ex.Message}",
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (worksheetLop != null) Marshal.ReleaseComObject(worksheetLop);
+                if (worksheetKhoa != null) Marshal.ReleaseComObject(worksheetKhoa);
+                if (workbook != null) Marshal.ReleaseComObject(workbook);
+                if (excelApp != null)
+                {
+                    excelApp.Quit();
+                    Marshal.ReleaseComObject(excelApp);
+                }
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+        }
+        private void ImportDataFromExcel()
+        {
+            OpenFileDialog openDialog = new OpenFileDialog
+            {
+                Filter = "Excel files (*.xlsx;*.xls)|*.xlsx;*.xls",
+                FilterIndex = 1,
+                RestoreDirectory = true,
+                Title = "Chọn file Excel để nhập dữ liệu"
+            };
+
+            if (openDialog.ShowDialog() != DialogResult.OK) return;
+
+            Excel.Application excelApp = null;
+            Excel.Workbook workbook = null;
+            Excel.Worksheet worksheetKhoa = null;
+            Excel.Worksheet worksheetLop = null;
+
+            try
+            {
+                excelApp = new Excel.Application();
+                excelApp.Visible = false;
+                excelApp.DisplayAlerts = false;
+
+                workbook = excelApp.Workbooks.Open(openDialog.FileName);
+
+                // Tìm sheet Khoa và Lop
+                worksheetKhoa = FindWorksheet(workbook, "Khoa");
+                worksheetLop = FindWorksheet(workbook, "Lop");
+
+                if (worksheetKhoa == null || worksheetLop == null)
+                {
+                    MessageBox.Show(
+                        "File Excel không đúng định dạng!\n\n" +
+                        "Vui lòng sử dụng file mẫu có 2 sheet:  'Khoa' và 'Lop'",
+                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // ===== ĐỌC DỮ LIỆU TỪ EXCEL =====
+                List<KhoaData> danhSachKhoa = ReadKhoaFromExcel(worksheetKhoa);
+                List<LopData> danhSachLop = ReadLopFromExcel(worksheetLop);
+
+                workbook.Close(false);
+
+                // ===== IMPORT VÀO DATABASE =====
+                ImportToDatabase(danhSachKhoa, danhSachLop);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi nhập dữ liệu:  {ex.Message}\n\n{ex.StackTrace}",
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (worksheetLop != null) Marshal.ReleaseComObject(worksheetLop);
+                if (worksheetKhoa != null) Marshal.ReleaseComObject(worksheetKhoa);
+                if (workbook != null) Marshal.ReleaseComObject(workbook);
+                if (excelApp != null)
+                {
+                    excelApp.Quit();
+                    Marshal.ReleaseComObject(excelApp);
+                }
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+        }
+
+        // Helper classes
+        private class KhoaData
+        {
+            public string MaKhoa { get; set; }
+            public string TenKhoa { get; set; }
+        }
+
+        private class LopData
+        {
+            public string MaKhoa { get; set; }
+            public string MaLop { get; set; }
+            public string TenLop { get; set; }
+        }
+
+        private Excel.Worksheet FindWorksheet(Excel.Workbook workbook, string sheetName)
+        {
+            foreach (Excel.Worksheet sheet in workbook.Worksheets)
+            {
+                if (sheet.Name.Equals(sheetName, StringComparison.OrdinalIgnoreCase))
+                {
+                    return sheet;
+                }
+            }
+            return null;
+        }
+
+        private List<KhoaData> ReadKhoaFromExcel(Excel.Worksheet worksheet)
+        {
+            List<KhoaData> list = new List<KhoaData>();
+            int row = 5; // Bắt đầu từ dòng 5 (sau header)
+
+            while (true)
+            {
+                string maKhoa = worksheet.Cells[row, 1].Value?.ToString()?.Trim();
+                string tenKhoa = worksheet.Cells[row, 2].Value?.ToString()?.Trim();
+
+                if (string.IsNullOrEmpty(maKhoa))
+                    break;
+
+                if (!string.IsNullOrEmpty(tenKhoa))
+                {
+                    list.Add(new KhoaData
+                    {
+                        MaKhoa = maKhoa,
+                        TenKhoa = tenKhoa
+                    });
+                }
+
+                row++;
+            }
+
+            return list;
+        }
+
+        private List<LopData> ReadLopFromExcel(Excel.Worksheet worksheet)
+        {
+            List<LopData> list = new List<LopData>();
+            int row = 5; // Bắt đầu từ dòng 5 (sau header)
+
+            while (true)
+            {
+                string maKhoa = worksheet.Cells[row, 1].Value?.ToString()?.Trim();
+                string maLop = worksheet.Cells[row, 3].Value?.ToString()?.Trim();
+                string tenLop = worksheet.Cells[row, 4].Value?.ToString()?.Trim();
+
+                if (string.IsNullOrEmpty(maLop))
+                    break;
+
+                if (!string.IsNullOrEmpty(maKhoa) && !string.IsNullOrEmpty(tenLop))
+                {
+                    list.Add(new LopData
+                    {
+                        MaKhoa = maKhoa,
+                        MaLop = maLop,
+                        TenLop = tenLop
+                    });
+                }
+
+                row++;
+            }
+
+            return list;
+        }
+
+        private void ImportToDatabase(List<KhoaData> danhSachKhoa, List<LopData> danhSachLop)
+        {
+            int soKhoaThem = 0;
+            int soKhoaBiTrung = 0;
+            int soLopThem = 0;
+            int soLopBiTrung = 0;
+            List<string> errors = new List<string>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlTransaction transaction = conn.BeginTransaction();
+
+                    try
+                    {
+                        // ===== INSERT KHOA TRƯỚC =====
+                        foreach (var khoa in danhSachKhoa)
+                        {
+                            // Kiểm tra tồn tại
+                            string checkQuery = "SELECT COUNT(*) FROM KHOA WHERE MAKHOA = @MAKHOA";
+                            using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn, transaction))
+                            {
+                                checkCmd.Parameters.AddWithValue("@MAKHOA", khoa.MaKhoa);
+                                int count = (int)checkCmd.ExecuteScalar();
+
+                                if (count > 0)
+                                {
+                                    soKhoaBiTrung++;
+                                    continue; // Bỏ qua nếu đã tồn tại
+                                }
+                            }
+
+                            // Insert
+                            string insertQuery = "INSERT INTO KHOA (MAKHOA, TENKHOA) VALUES (@MAKHOA, @TENKHOA)";
+                            using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn, transaction))
+                            {
+                                insertCmd.Parameters.AddWithValue("@MAKHOA", khoa.MaKhoa);
+                                insertCmd.Parameters.AddWithValue("@TENKHOA", khoa.TenKhoa);
+                                insertCmd.ExecuteNonQuery();
+                                soKhoaThem++;
+                            }
+                        }
+
+                        // ===== INSERT LỚP SAU =====
+                        foreach (var lop in danhSachLop)
+                        {
+                            // Kiểm tra tồn tại
+                            string checkQuery = "SELECT COUNT(*) FROM LOP WHERE MALOP = @MALOP";
+                            using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn, transaction))
+                            {
+                                checkCmd.Parameters.AddWithValue("@MALOP", lop.MaLop);
+                                int count = (int)checkCmd.ExecuteScalar();
+
+                                if (count > 0)
+                                {
+                                    soLopBiTrung++;
+                                    continue;
+                                }
+                            }
+
+                            // Kiểm tra khoa có tồn tại không
+                            string checkKhoaQuery = "SELECT COUNT(*) FROM KHOA WHERE MAKHOA = @MAKHOA";
+                            using (SqlCommand checkKhoaCmd = new SqlCommand(checkKhoaQuery, conn, transaction))
+                            {
+                                checkKhoaCmd.Parameters.AddWithValue("@MAKHOA", lop.MaKhoa);
+                                int count = (int)checkKhoaCmd.ExecuteScalar();
+
+                                if (count == 0)
+                                {
+                                    errors.Add($"Lớp '{lop.MaLop}':  Khoa '{lop.MaKhoa}' không tồn tại!");
+                                    continue;
+                                }
+                            }
+
+                            // Insert
+                            string insertQuery = "INSERT INTO LOP (MALOP, TENLOP, MAKHOA) VALUES (@MALOP, @TENLOP, @MAKHOA)";
+                            using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn, transaction))
+                            {
+                                insertCmd.Parameters.AddWithValue("@MALOP", lop.MaLop);
+                                insertCmd.Parameters.AddWithValue("@TENLOP", lop.TenLop);
+                                insertCmd.Parameters.AddWithValue("@MAKHOA", lop.MaKhoa);
+                                insertCmd.ExecuteNonQuery();
+                                soLopThem++;
+                            }
+                        }
+
+                        transaction.Commit();
+
+                        // Hiển thị kết quả
+                        string message = "✅ IMPORT DỮ LIỆU THÀNH CÔNG!\n\n";
+                        message += $"📊 KHOA:\n";
+                        message += $"  - Thêm mới: {soKhoaThem}\n";
+                        message += $"  - Trùng (bỏ qua): {soKhoaBiTrung}\n\n";
+                        message += $"📊 LỚP:\n";
+                        message += $"  - Thêm mới: {soLopThem}\n";
+                        message += $"  - Trùng (bỏ qua): {soLopBiTrung}\n";
+
+                        if (errors.Count > 0)
+                        {
+                            message += $"\n⚠️ CÓ {errors.Count} LỖI:\n";
+                            message += string.Join("\n", errors.Take(5));
+                            if (errors.Count > 5)
+                                message += $"\n... và {errors.Count - 5} lỗi khác";
+                        }
+
+                        MessageBox.Show(message, "Kết quả Import", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Refresh dữ liệu
+                        LoadDanhSachKhoa();
+                        LoadDanhSachLop();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi import vào database: {ex.Message}",
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
