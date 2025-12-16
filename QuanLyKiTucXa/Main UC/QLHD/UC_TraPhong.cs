@@ -26,7 +26,7 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
 
             // Đổi SelectionMode
             dgvTraPhong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTraPhong.MultiSelect = false;
+           // dgvTraPhong.MultiSelect = false;
 
             // ✅ Tắt tự động chọn dòng đầu tiên
             dgvTraPhong.ClearSelection();

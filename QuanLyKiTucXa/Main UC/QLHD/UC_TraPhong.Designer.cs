@@ -41,6 +41,8 @@
             this.btn_Traphong = new Guna.UI2.WinForms.Guna2CircleButton();
             this.comfillter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpTHANG = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.comNgay = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnfillter_TraPhong = new Guna.UI2.WinForms.Guna2CircleButton();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblSinhVien = new System.Windows.Forms.Label();
@@ -60,8 +62,7 @@
             this.NGAYKY_TL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANV_TL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENNV_THANHLY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comNgay = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dtpTHANG = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btnExport = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTraPhong)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +78,7 @@
             this.btndelete_Traphong.FillColor = System.Drawing.Color.Transparent;
             this.btndelete_Traphong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btndelete_Traphong.ForeColor = System.Drawing.Color.White;
-            this.btndelete_Traphong.Location = new System.Drawing.Point(1506, 12);
+            this.btndelete_Traphong.Location = new System.Drawing.Point(1405, 12);
             this.btndelete_Traphong.Name = "btndelete_Traphong";
             this.btndelete_Traphong.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btndelete_Traphong.Size = new System.Drawing.Size(35, 34);
@@ -95,7 +96,7 @@
             this.btnedit_Traphong.FillColor = System.Drawing.Color.Transparent;
             this.btnedit_Traphong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnedit_Traphong.ForeColor = System.Drawing.Color.White;
-            this.btnedit_Traphong.Location = new System.Drawing.Point(1451, 12);
+            this.btnedit_Traphong.Location = new System.Drawing.Point(1348, 12);
             this.btnedit_Traphong.Name = "btnedit_Traphong";
             this.btnedit_Traphong.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnedit_Traphong.Size = new System.Drawing.Size(40, 34);
@@ -113,7 +114,7 @@
             this.btn_Traphong.FillColor = System.Drawing.Color.Transparent;
             this.btn_Traphong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Traphong.ForeColor = System.Drawing.Color.White;
-            this.btn_Traphong.Location = new System.Drawing.Point(1396, 12);
+            this.btn_Traphong.Location = new System.Drawing.Point(1298, 12);
             this.btn_Traphong.Name = "btn_Traphong";
             this.btn_Traphong.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btn_Traphong.Size = new System.Drawing.Size(31, 34);
@@ -148,6 +149,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Controls.Add(this.btnExport);
             this.panel1.Controls.Add(this.dtpTHANG);
             this.panel1.Controls.Add(this.comNgay);
             this.panel1.Controls.Add(this.btnfillter_TraPhong);
@@ -161,6 +163,53 @@
             this.panel1.Size = new System.Drawing.Size(1555, 58);
             this.panel1.TabIndex = 17;
             // 
+            // dtpTHANG
+            // 
+            this.dtpTHANG.BackColor = System.Drawing.Color.White;
+            this.dtpTHANG.BorderColor = System.Drawing.Color.Silver;
+            this.dtpTHANG.BorderRadius = 5;
+            this.dtpTHANG.BorderThickness = 1;
+            this.dtpTHANG.Checked = true;
+            this.dtpTHANG.CheckedState.FillColor = System.Drawing.Color.White;
+            this.dtpTHANG.CustomFormat = "dd/MM/yyyy";
+            this.dtpTHANG.FillColor = System.Drawing.Color.White;
+            this.dtpTHANG.FocusedColor = System.Drawing.Color.White;
+            this.dtpTHANG.Font = new System.Drawing.Font("Segoe UI", 9.857143F);
+            this.dtpTHANG.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTHANG.Location = new System.Drawing.Point(960, 4);
+            this.dtpTHANG.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpTHANG.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpTHANG.Name = "dtpTHANG";
+            this.dtpTHANG.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpTHANG.Size = new System.Drawing.Size(187, 51);
+            this.dtpTHANG.TabIndex = 65;
+            this.dtpTHANG.Value = new System.DateTime(2025, 10, 25, 0, 0, 0, 0);
+            // 
+            // comNgay
+            // 
+            this.comNgay.BackColor = System.Drawing.Color.Transparent;
+            this.comNgay.BorderColor = System.Drawing.Color.Gray;
+            this.comNgay.BorderRadius = 12;
+            this.comNgay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comNgay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comNgay.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comNgay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comNgay.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.comNgay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comNgay.ItemHeight = 40;
+            this.comNgay.Items.AddRange(new object[] {
+            "--Không lọc theo ngày--",
+            "Ngày bắt đầu",
+            "Ngày kết thúc",
+            "Ngày thanh lý",
+            "Ngày ký"});
+            this.comNgay.Location = new System.Drawing.Point(705, 6);
+            this.comNgay.Name = "comNgay";
+            this.comNgay.Size = new System.Drawing.Size(237, 46);
+            this.comNgay.StartIndex = 0;
+            this.comNgay.TabIndex = 17;
+            this.comNgay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // btnfillter_TraPhong
             // 
             this.btnfillter_TraPhong.BackgroundImage = global::QuanLyKiTucXa.Properties.Resources.filter;
@@ -172,7 +221,7 @@
             this.btnfillter_TraPhong.FillColor = System.Drawing.Color.Transparent;
             this.btnfillter_TraPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnfillter_TraPhong.ForeColor = System.Drawing.Color.White;
-            this.btnfillter_TraPhong.Location = new System.Drawing.Point(1329, 6);
+            this.btnfillter_TraPhong.Location = new System.Drawing.Point(1231, 12);
             this.btnfillter_TraPhong.Name = "btnfillter_TraPhong";
             this.btnfillter_TraPhong.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnfillter_TraPhong.Size = new System.Drawing.Size(35, 40);
@@ -404,52 +453,21 @@
             this.TENNV_THANHLY.Name = "TENNV_THANHLY";
             this.TENNV_THANHLY.Width = 140;
             // 
-            // comNgay
+            // btnExport
             // 
-            this.comNgay.BackColor = System.Drawing.Color.Transparent;
-            this.comNgay.BorderColor = System.Drawing.Color.Gray;
-            this.comNgay.BorderRadius = 12;
-            this.comNgay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comNgay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comNgay.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comNgay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comNgay.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.comNgay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comNgay.ItemHeight = 40;
-            this.comNgay.Items.AddRange(new object[] {
-            "--Không lọc theo ngày--",
-            "Ngày bắt đầu",
-            "Ngày kết thúc",
-            "Ngày thanh lý",
-            "Ngày ký"});
-            this.comNgay.Location = new System.Drawing.Point(705, 6);
-            this.comNgay.Name = "comNgay";
-            this.comNgay.Size = new System.Drawing.Size(237, 46);
-            this.comNgay.StartIndex = 0;
-            this.comNgay.TabIndex = 17;
-            this.comNgay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // dtpTHANG
-            // 
-            this.dtpTHANG.BackColor = System.Drawing.Color.White;
-            this.dtpTHANG.BorderColor = System.Drawing.Color.Silver;
-            this.dtpTHANG.BorderRadius = 5;
-            this.dtpTHANG.BorderThickness = 1;
-            this.dtpTHANG.Checked = true;
-            this.dtpTHANG.CheckedState.FillColor = System.Drawing.Color.White;
-            this.dtpTHANG.CustomFormat = "dd/MM/yyyy";
-            this.dtpTHANG.FillColor = System.Drawing.Color.White;
-            this.dtpTHANG.FocusedColor = System.Drawing.Color.White;
-            this.dtpTHANG.Font = new System.Drawing.Font("Segoe UI", 9.857143F);
-            this.dtpTHANG.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTHANG.Location = new System.Drawing.Point(960, 4);
-            this.dtpTHANG.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpTHANG.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpTHANG.Name = "dtpTHANG";
-            this.dtpTHANG.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpTHANG.Size = new System.Drawing.Size(187, 51);
-            this.dtpTHANG.TabIndex = 65;
-            this.dtpTHANG.Value = new System.DateTime(2025, 10, 25, 0, 0, 0, 0);
+            this.btnExport.BorderRadius = 5;
+            this.btnExport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExport.FillColor = System.Drawing.Color.Navy;
+            this.btnExport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.ForeColor = System.Drawing.Color.White;
+            this.btnExport.Location = new System.Drawing.Point(1473, 7);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(65, 45);
+            this.btnExport.TabIndex = 66;
+            this.btnExport.Text = "Ex";
             // 
             // UC_TraPhong
             // 
@@ -499,5 +517,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TENNV_THANHLY;
         private Guna.UI2.WinForms.Guna2ComboBox comNgay;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTHANG;
+        private Guna.UI2.WinForms.Guna2Button btnExport;
     }
 }

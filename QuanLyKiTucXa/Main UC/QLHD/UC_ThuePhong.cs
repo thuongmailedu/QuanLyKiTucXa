@@ -45,7 +45,7 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
                 conn.Open();
             }
 
-            dgvThuePhong.ClearSelection();
+           // dgvThuePhong.ClearSelection();
             // dgvThuePhong.MultiSelect = false;
 
             // ✅ Khởi tạo các control và load dữ liệu
