@@ -280,13 +280,13 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                 return;
             }
 
-            if (comTENLOP.SelectedIndex == -1)
-            {
-                MessageBox.Show("Vui lòng chọn lớp!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                comTENLOP.Focus();
-                return;
-            }
+            //if (comTENLOP.SelectedIndex == -1)
+            //{
+            //    MessageBox.Show("Vui lòng chọn lớp!", "Thông báo",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    comTENLOP.Focus();
+            //    return;
+            //}
 
             try
             {
@@ -364,7 +364,9 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                                     insertSVCmd.Parameters.AddWithValue("@GIOITINH", string.IsNullOrEmpty(comGIOITINH.Text) ? (object)DBNull.Value : comGIOITINH.Text);
                                     insertSVCmd.Parameters.AddWithValue("@CCCD", string.IsNullOrEmpty(txtCCCD.Text) ? (object)DBNull.Value : txtCCCD.Text.Trim());
                                     insertSVCmd.Parameters.AddWithValue("@SDT", string.IsNullOrEmpty(txtSDT.Text) ? (object)DBNull.Value : txtSDT.Text.Trim());
-                                    insertSVCmd.Parameters.AddWithValue("@MALOP", comTENLOP.SelectedValue.ToString());
+                                   // insertSVCmd.Parameters.AddWithValue("@MALOP", comTENLOP.SelectedValue.ToString());
+                                    insertSVCmd.Parameters.Add("@MALOP", SqlDbType.VarChar).Value = comTENLOP.SelectedValue ?? (object)DBNull.Value;
+
                                     insertSVCmd.ExecuteNonQuery();
                                 }
 
@@ -487,7 +489,8 @@ namespace QuanLyKiTucXa.Formadd.HSSV
                                 cmd.Parameters.AddWithValue("@GIOITINH", string.IsNullOrEmpty(comGIOITINH.Text) ? (object)DBNull.Value : comGIOITINH.Text);
                                 cmd.Parameters.AddWithValue("@CCCD", string.IsNullOrEmpty(txtCCCD.Text) ? (object)DBNull.Value : txtCCCD.Text.Trim());
                                 cmd.Parameters.AddWithValue("@SDT", string.IsNullOrEmpty(txtSDT.Text) ? (object)DBNull.Value : txtSDT.Text.Trim());
-                                cmd.Parameters.AddWithValue("@MALOP", comTENLOP.SelectedValue.ToString());
+                                cmd.Parameters.AddWithValue("@MALOP", string.IsNullOrEmpty(comTENLOP.Text) ? (object)DBNull.Value : comTENLOP.Text.Trim());
+                              //  cmd.Parameters.AddWithValue("@MALOP", comTENLOP.SelectedValue.ToString());
                                 cmd.ExecuteNonQuery();
                             }
 

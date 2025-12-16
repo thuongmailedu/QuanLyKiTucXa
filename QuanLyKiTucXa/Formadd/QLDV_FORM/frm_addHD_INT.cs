@@ -303,9 +303,9 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (dgv_add_HD_INT.DataSource == null || dgv_add_HD_INT.Rows.Count == 0)
+            if (dgv_add_HD_INT.Rows.Count == 0)
             {
-                MessageBox.Show("Không có dữ liệu để lưu!", "Thông báo",
+                MessageBox.Show("Không có hóa đơn nào để lưu!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -319,32 +319,86 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
 
                     try
                     {
-                        string query = @"INSERT INTO HD_INTERNET 
-                                        (MAHD_INT,TENHD, MADV, MA_PHONG, DONGIA, THOIGIAN, TINHTRANGTT, TONGTIEN)
-                                        VALUES 
-                                        (@MAHD_INT,N'Hóa đơn Internet', @MADV, @MA_PHONG, @DONGIA, @THOIGIAN, @TINHTRANGTT, @TONGTIEN)";
+                        int soHoaDonDaLuu = 0;
+                        int soHoaDonTrung = 0;
+                        StringBuilder danhSachTrung = new StringBuilder();
 
-                        DataTable dt = (DataTable)dgv_add_HD_INT.DataSource;
-                        int count = 0;
-
-                        foreach (DataRow row in dt.Rows)
+                        // ===== BẮT ĐẦU ĐOẠN CODE KIỂM TRA TRÙNG LẶP =====
+                        foreach (DataGridViewRow row in dgv_add_HD_INT.Rows)
                         {
-                            SqlCommand cmd = new SqlCommand(query, conn, transaction);
-                            cmd.Parameters.AddWithValue("@MAHD_INT", row["MAHD_INT"]);
-                            cmd.Parameters.AddWithValue("@MADV", row["MADV"]); // Lấy từ cột ẩn
-                            cmd.Parameters.AddWithValue("@MA_PHONG", row["MA_PHONG"]);
-                            cmd.Parameters.AddWithValue("@DONGIA", row["DONGIA"]);
-                            cmd.Parameters.AddWithValue("@THOIGIAN", row["THOIGIAN_SAVE"]); // Lưu DateTime đầy đủ
-                            cmd.Parameters.AddWithValue("@TINHTRANGTT", row["TINHTRANGTT"]);
-                            cmd.Parameters.AddWithValue("@TONGTIEN", row["TONGTIEN"]);
+                            if (row.IsNewRow) continue;
 
-                            cmd.ExecuteNonQuery();
-                            count++;
+                            string maPhong = row.Cells["MA_PHONG"].Value.ToString();
+                            DateTime thoiGian = Convert.ToDateTime(row.Cells["THOIGIAN"].Value);
+                            int thang = thoiGian.Month;
+                            int nam = thoiGian.Year;
+
+                            // Kiểm tra xem phòng này đã có hóa đơn Internet trong tháng này chưa
+                            string queryKiemTra = @"
+                        SELECT COUNT(*) 
+                        FROM HD_INTERNET 
+                        WHERE MA_PHONG = @MA_PHONG 
+                          AND MONTH(THOIGIAN) = @THANG 
+                          AND YEAR(THOIGIAN) = @NAM";
+
+                            SqlCommand cmdKiemTra = new SqlCommand(queryKiemTra, conn, transaction);
+                            cmdKiemTra.Parameters.AddWithValue("@MA_PHONG", maPhong);
+                            cmdKiemTra.Parameters.AddWithValue("@THANG", thang);
+                            cmdKiemTra.Parameters.AddWithValue("@NAM", nam);
+
+                            int soLuongHoaDon = (int)cmdKiemTra.ExecuteScalar();
+
+                            if (soLuongHoaDon > 0)
+                            {
+                                // Hóa đơn đã tồn tại, ghi nhận lại
+                                soHoaDonTrung++;
+                                danhSachTrung.AppendLine($"- Phòng {maPhong} (Tháng {thang}/{nam})");
+                                continue; // Bỏ qua không lưu hóa đơn này
+                            }
+                            // ===== KẾT THÚC ĐOẠN CODE KIỂM TRA TRÙNG LẶP =====
+
+                            // Nếu không trùng, tiến hành lưu hóa đơn
+                            string maHD = row.Cells["MAHD_INT"].Value.ToString();
+                            string maDV = row.Cells["MADV"].Value.ToString();
+                            decimal donGia = Convert.ToDecimal(row.Cells["DONGIA"].Value);
+                            decimal tongTien = Convert.ToDecimal(row.Cells["TONGTIEN"].Value);
+                            string tinhTrangTT = "Chưa thanh toán";
+
+                            string queryInsert = @"
+                        INSERT INTO HD_INTERNET (MAHD_INT, MADV, MA_PHONG, DONGIA, THOIGIAN, TINHTRANGTT, TONGTIEN, TENHD)
+                        VALUES (@MAHD_INT, @MADV, @MA_PHONG, @DONGIA, @THOIGIAN, @TINHTRANGTT, @TONGTIEN, @TENHD)";
+
+                            SqlCommand cmdInsert = new SqlCommand(queryInsert, conn, transaction);
+                            cmdInsert.Parameters.AddWithValue("@MAHD_INT", maHD);
+                            cmdInsert.Parameters.AddWithValue("@MADV", maDV);
+                            cmdInsert.Parameters.AddWithValue("@MA_PHONG", maPhong);
+                            cmdInsert.Parameters.AddWithValue("@DONGIA", donGia);
+                            cmdInsert.Parameters.AddWithValue("@THOIGIAN", thoiGian);
+                            cmdInsert.Parameters.AddWithValue("@TINHTRANGTT", tinhTrangTT);
+                            cmdInsert.Parameters.AddWithValue("@TONGTIEN", tongTien);
+                            cmdInsert.Parameters.AddWithValue("@TENHD", "Hóa đơn Internet");
+
+                            cmdInsert.ExecuteNonQuery();
+                            soHoaDonDaLuu++;
                         }
 
                         transaction.Commit();
-                        MessageBox.Show($"Lưu {count} hóa đơn thành công!", "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Thông báo kết quả
+                        string thongBao = $"Đã lưu thành công {soHoaDonDaLuu} hóa đơn! ";
+
+                        if (soHoaDonTrung > 0)
+                        {
+                            thongBao += $"\n\n⚠️ Có {soHoaDonTrung} hóa đơn bị trùng (đã tồn tại trong hệ thống):\n" +
+                                        danhSachTrung.ToString();
+                            MessageBox.Show(thongBao, "Kết quả lưu hóa đơn",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            MessageBox.Show(thongBao, "Thành công",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
 
                         this.DialogResult = DialogResult.OK;
                         this.Close();
@@ -352,13 +406,13 @@ namespace QuanLyKiTucXa.Formadd.QLDV_FORM
                     catch (Exception ex)
                     {
                         transaction.Rollback();
-                        throw ex;
+                        throw;
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message + "\n\nChi tiết:\n" + ex.StackTrace, "Lỗi",
+                MessageBox.Show("Lỗi khi lưu hóa đơn: " + ex.Message, "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
