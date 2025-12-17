@@ -378,14 +378,14 @@ namespace QuanLyKiTucXa.Formadd.QLHD_FORM
             }
 
             // ✅ Kiểm tra ngày ký thanh lý phải >= ngày thanh lý
-            if (ngayKyTL < ngayKTTT)
-            {
-                MessageBox.Show($"Ngày ký biên bản thanh lý không thể trước ngày thanh lý ({ngayKTTT:dd/MM/yyyy})!",
-                    "Thông báo",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
+            //if (ngayKyTL < ngayKTTT)
+            //{
+            //    MessageBox.Show($"Ngày ký biên bản thanh lý không thể trước ngày thanh lý ({ngayKTTT:dd/MM/yyyy})!",
+            //        "Thông báo",
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Warning);
+            //    return;
+            //}
 
             try
             {

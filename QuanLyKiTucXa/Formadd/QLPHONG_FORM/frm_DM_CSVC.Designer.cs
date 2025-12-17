@@ -234,11 +234,13 @@
             this.comNHACC.BorderColor = System.Drawing.Color.Gray;
             this.comNHACC.BorderRadius = 12;
             this.comNHACC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comNHACC.DropDownHeight = 360;
             this.comNHACC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comNHACC.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comNHACC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comNHACC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comNHACC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comNHACC.IntegralHeight = false;
             this.comNHACC.ItemHeight = 45;
             this.comNHACC.Location = new System.Drawing.Point(150, 144);
             this.comNHACC.Name = "comNHACC";

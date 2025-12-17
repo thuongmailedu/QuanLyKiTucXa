@@ -193,11 +193,13 @@
             this.comNHA.BorderColor = System.Drawing.Color.Gray;
             this.comNHA.BorderRadius = 12;
             this.comNHA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comNHA.DropDownHeight = 360;
             this.comNHA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comNHA.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comNHA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comNHA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comNHA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comNHA.IntegralHeight = false;
             this.comNHA.ItemHeight = 40;
             this.comNHA.Location = new System.Drawing.Point(151, 49);
             this.comNHA.Name = "comNHA";
@@ -244,11 +246,13 @@
             this.comMA_CSVC.BorderColor = System.Drawing.Color.Gray;
             this.comMA_CSVC.BorderRadius = 12;
             this.comMA_CSVC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comMA_CSVC.DropDownHeight = 360;
             this.comMA_CSVC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comMA_CSVC.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comMA_CSVC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comMA_CSVC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comMA_CSVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comMA_CSVC.IntegralHeight = false;
             this.comMA_CSVC.ItemHeight = 40;
             this.comMA_CSVC.Location = new System.Drawing.Point(151, 125);
             this.comMA_CSVC.Name = "comMA_CSVC";
