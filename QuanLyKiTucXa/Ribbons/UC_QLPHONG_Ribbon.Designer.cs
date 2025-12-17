@@ -31,8 +31,8 @@
             this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.panelMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSCCSVC = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDMCSVC = new Guna.UI2.WinForms.Guna2Button();
             this.btnDMPhong = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDMCSVC = new Guna.UI2.WinForms.Guna2Button();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,35 +75,12 @@
             this.btnSCCSVC.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             this.btnSCCSVC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSCCSVC.ForeColor = System.Drawing.Color.White;
-            this.btnSCCSVC.Location = new System.Drawing.Point(546, 0);
+            this.btnSCCSVC.Location = new System.Drawing.Point(554, 0);
             this.btnSCCSVC.Name = "btnSCCSVC";
             this.btnSCCSVC.Size = new System.Drawing.Size(273, 80);
             this.btnSCCSVC.TabIndex = 4;
             this.btnSCCSVC.Text = "SỬA CHỮA CSVC";
             this.btnSCCSVC.Click += new System.EventHandler(this.btnSCCSVC_Click);
-            // 
-            // btnDMCSVC
-            // 
-            this.btnDMCSVC.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnDMCSVC.CheckedState.CustomBorderColor = System.Drawing.Color.Green;
-            this.btnDMCSVC.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnDMCSVC.CheckedState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDMCSVC.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.btnDMCSVC.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnDMCSVC.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.btnDMCSVC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDMCSVC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDMCSVC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDMCSVC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDMCSVC.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnDMCSVC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDMCSVC.ForeColor = System.Drawing.Color.White;
-            this.btnDMCSVC.Location = new System.Drawing.Point(282, 0);
-            this.btnDMCSVC.Name = "btnDMCSVC";
-            this.btnDMCSVC.Size = new System.Drawing.Size(273, 80);
-            this.btnDMCSVC.TabIndex = 2;
-            this.btnDMCSVC.Text = "DANH MỤC CSVC";
-            this.btnDMCSVC.Click += new System.EventHandler(this.btnDMCSVC_Click);
             // 
             // btnDMPhong
             // 
@@ -121,12 +98,35 @@
             this.btnDMPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             this.btnDMPhong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDMPhong.ForeColor = System.Drawing.Color.White;
-            this.btnDMPhong.Location = new System.Drawing.Point(3, 0);
+            this.btnDMPhong.Location = new System.Drawing.Point(0, 0);
             this.btnDMPhong.Name = "btnDMPhong";
             this.btnDMPhong.Size = new System.Drawing.Size(273, 80);
             this.btnDMPhong.TabIndex = 2;
             this.btnDMPhong.Text = "DANH SÁCH NHÀ_PHÒNG";
             this.btnDMPhong.Click += new System.EventHandler(this.btnDMPhong_Click);
+            // 
+            // btnDMCSVC
+            // 
+            this.btnDMCSVC.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDMCSVC.CheckedState.CustomBorderColor = System.Drawing.Color.Green;
+            this.btnDMCSVC.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnDMCSVC.CheckedState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDMCSVC.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnDMCSVC.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnDMCSVC.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.btnDMCSVC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDMCSVC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDMCSVC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDMCSVC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDMCSVC.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnDMCSVC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDMCSVC.ForeColor = System.Drawing.Color.White;
+            this.btnDMCSVC.Location = new System.Drawing.Point(279, 0);
+            this.btnDMCSVC.Name = "btnDMCSVC";
+            this.btnDMCSVC.Size = new System.Drawing.Size(273, 80);
+            this.btnDMCSVC.TabIndex = 2;
+            this.btnDMCSVC.Text = "DANH MỤC CSVC";
+            this.btnDMCSVC.Click += new System.EventHandler(this.btnDMCSVC_Click);
             // 
             // UC_QLPHONG_Ribbon
             // 

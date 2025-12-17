@@ -170,11 +170,13 @@
             this.comMANHA.BorderColor = System.Drawing.Color.Gray;
             this.comMANHA.BorderRadius = 12;
             this.comMANHA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comMANHA.DropDownHeight = 180;
             this.comMANHA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comMANHA.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comMANHA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comMANHA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comMANHA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comMANHA.IntegralHeight = false;
             this.comMANHA.ItemHeight = 45;
             this.comMANHA.Location = new System.Drawing.Point(190, 150);
             this.comMANHA.Name = "comMANHA";

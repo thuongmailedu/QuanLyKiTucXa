@@ -170,6 +170,7 @@ namespace QuanLyKiTucXa
                 HeaderText = "Tổng Tiền",
                 Name = "TONGTIEN",
                 Width = 120,
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "N0", Alignment = DataGridViewContentAlignment.MiddleRight }
                 //DefaultCellStyle = new DataGridViewCellStyle
                 //{
                 //    Format = "N0",

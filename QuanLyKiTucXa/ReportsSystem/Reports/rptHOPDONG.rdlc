@@ -1645,7 +1645,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Tổng doanh thu</Value>
+                                  <Value>Tổng thu</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>11pt</FontSize>

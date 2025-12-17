@@ -347,11 +347,13 @@
             this.comTEN_NHACC.BorderColor = System.Drawing.Color.Gray;
             this.comTEN_NHACC.BorderRadius = 12;
             this.comTEN_NHACC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comTEN_NHACC.DropDownHeight = 360;
             this.comTEN_NHACC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comTEN_NHACC.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comTEN_NHACC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comTEN_NHACC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comTEN_NHACC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comTEN_NHACC.IntegralHeight = false;
             this.comTEN_NHACC.ItemHeight = 45;
             this.comTEN_NHACC.Location = new System.Drawing.Point(162, 321);
             this.comTEN_NHACC.Name = "comTEN_NHACC";

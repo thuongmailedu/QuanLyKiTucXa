@@ -67,7 +67,7 @@ namespace QuanLyKiTucXa.Main_UC.QLHD
                 }
 
                 // ✅ Vô hiệu hóa DateTimePicker ban đầu
-                dtpTHANG.Enabled = false;
+             //   dtpTHANG.Enabled = false;
                 dtpTHANG.CustomFormat = " "; // Hiển thị rỗng
                 dtpTHANG.Format = DateTimePickerFormat.Custom;
 

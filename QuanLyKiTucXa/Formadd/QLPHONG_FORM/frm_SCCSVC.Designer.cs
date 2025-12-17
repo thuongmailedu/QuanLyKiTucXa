@@ -134,7 +134,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(444, 525);
+            this.label13.Location = new System.Drawing.Point(471, 525);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(130, 20);
             this.label13.TabIndex = 63;
@@ -164,7 +164,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(444, 64);
+            this.label4.Location = new System.Drawing.Point(471, 64);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 20);
             this.label4.TabIndex = 54;
@@ -261,11 +261,13 @@
             this.comNHA.BorderColor = System.Drawing.Color.Gray;
             this.comNHA.BorderRadius = 12;
             this.comNHA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comNHA.DropDownHeight = 180;
             this.comNHA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comNHA.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comNHA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comNHA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comNHA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comNHA.IntegralHeight = false;
             this.comNHA.ItemHeight = 40;
             this.comNHA.Location = new System.Drawing.Point(593, 52);
             this.comNHA.Name = "comNHA";
@@ -280,11 +282,13 @@
             this.comPHONG.BorderColor = System.Drawing.Color.Gray;
             this.comPHONG.BorderRadius = 12;
             this.comPHONG.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comPHONG.DropDownHeight = 360;
             this.comPHONG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comPHONG.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comPHONG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comPHONG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comPHONG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comPHONG.IntegralHeight = false;
             this.comPHONG.ItemHeight = 40;
             this.comPHONG.Location = new System.Drawing.Point(1000, 51);
             this.comPHONG.Name = "comPHONG";
@@ -479,7 +483,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(444, 433);
+            this.label5.Location = new System.Drawing.Point(471, 430);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 48);
             this.label5.TabIndex = 60;

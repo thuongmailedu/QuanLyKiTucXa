@@ -516,7 +516,7 @@
             this.comTENKHOA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comTENKHOA.IntegralHeight = false;
             this.comTENKHOA.ItemHeight = 45;
-            this.comTENKHOA.Location = new System.Drawing.Point(233, 294);
+            this.comTENKHOA.Location = new System.Drawing.Point(233, 296);
             this.comTENKHOA.Name = "comTENKHOA";
             this.comTENKHOA.Size = new System.Drawing.Size(313, 51);
             this.comTENKHOA.TabIndex = 45;
@@ -529,11 +529,13 @@
             this.comTENLOP.BorderColor = System.Drawing.Color.Gray;
             this.comTENLOP.BorderRadius = 12;
             this.comTENLOP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comTENLOP.DropDownHeight = 360;
             this.comTENLOP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comTENLOP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comTENLOP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comTENLOP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comTENLOP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comTENLOP.IntegralHeight = false;
             this.comTENLOP.ItemHeight = 45;
             this.comTENLOP.Location = new System.Drawing.Point(870, 296);
             this.comTENLOP.Name = "comTENLOP";

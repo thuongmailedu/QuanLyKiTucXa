@@ -37,6 +37,11 @@
             this.btnedittemp_LOP = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnaddtemp_LOP = new Guna.UI2.WinForms.Guna2CircleButton();
             this.dgvadd_LOP = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MALOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENLOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,11 +52,6 @@
             this.txtTENLOP = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MALOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENLOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvadd_LOP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,6 +171,46 @@
             this.dgvadd_LOP.TabIndex = 84;
             this.dgvadd_LOP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvadd_LOP_CellClick);
             // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.Width = 125;
+            // 
+            // MALOP
+            // 
+            this.MALOP.DataPropertyName = "MALOP";
+            this.MALOP.HeaderText = "Mã lớp";
+            this.MALOP.MinimumWidth = 6;
+            this.MALOP.Name = "MALOP";
+            this.MALOP.Width = 150;
+            // 
+            // TENLOP
+            // 
+            this.TENLOP.DataPropertyName = "TENLOP";
+            this.TENLOP.HeaderText = "Tên lớp";
+            this.TENLOP.MinimumWidth = 6;
+            this.TENLOP.Name = "TENLOP";
+            this.TENLOP.Width = 200;
+            // 
+            // MAKHOA
+            // 
+            this.MAKHOA.DataPropertyName = "MAKHOA";
+            this.MAKHOA.HeaderText = "Mã khoa";
+            this.MAKHOA.MinimumWidth = 8;
+            this.MAKHOA.Name = "MAKHOA";
+            this.MAKHOA.Width = 150;
+            // 
+            // TENKHOA
+            // 
+            this.TENKHOA.DataPropertyName = "TENKHOA";
+            this.TENKHOA.HeaderText = "Tên khoa";
+            this.TENKHOA.MinimumWidth = 8;
+            this.TENKHOA.Name = "TENKHOA";
+            this.TENKHOA.Width = 250;
+            // 
             // btnLuu
             // 
             this.btnLuu.BorderRadius = 5;
@@ -256,11 +296,13 @@
             this.comTENKHOA.BorderColor = System.Drawing.Color.Gray;
             this.comTENKHOA.BorderRadius = 12;
             this.comTENKHOA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comTENKHOA.DropDownHeight = 360;
             this.comTENKHOA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comTENKHOA.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comTENKHOA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comTENKHOA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comTENKHOA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comTENKHOA.IntegralHeight = false;
             this.comTENKHOA.ItemHeight = 45;
             this.comTENKHOA.Location = new System.Drawing.Point(141, 57);
             this.comTENKHOA.Name = "comTENKHOA";
@@ -334,46 +376,6 @@
             this.label3.Size = new System.Drawing.Size(60, 20);
             this.label3.TabIndex = 80;
             this.label3.Text = "Tên lớp";
-            // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.Width = 125;
-            // 
-            // MALOP
-            // 
-            this.MALOP.DataPropertyName = "MALOP";
-            this.MALOP.HeaderText = "Mã lớp";
-            this.MALOP.MinimumWidth = 6;
-            this.MALOP.Name = "MALOP";
-            this.MALOP.Width = 150;
-            // 
-            // TENLOP
-            // 
-            this.TENLOP.DataPropertyName = "TENLOP";
-            this.TENLOP.HeaderText = "Tên lớp";
-            this.TENLOP.MinimumWidth = 6;
-            this.TENLOP.Name = "TENLOP";
-            this.TENLOP.Width = 200;
-            // 
-            // MAKHOA
-            // 
-            this.MAKHOA.DataPropertyName = "MAKHOA";
-            this.MAKHOA.HeaderText = "Mã khoa";
-            this.MAKHOA.MinimumWidth = 8;
-            this.MAKHOA.Name = "MAKHOA";
-            this.MAKHOA.Width = 150;
-            // 
-            // TENKHOA
-            // 
-            this.TENKHOA.DataPropertyName = "TENKHOA";
-            this.TENKHOA.HeaderText = "Tên khoa";
-            this.TENKHOA.MinimumWidth = 8;
-            this.TENKHOA.Name = "TENKHOA";
-            this.TENKHOA.Width = 250;
             // 
             // frmadd_LOP
             // 
